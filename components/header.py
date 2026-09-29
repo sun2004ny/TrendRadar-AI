@@ -1,0 +1,50 @@
+import streamlit as st
+
+def render_header(current_source: str = "Reddit"):
+    """
+    Renders the master top intelligence header matching the reference design:
+    - LIVE animated pill
+    - Multi-source selector chips (Reddit, X, Forums)
+    - Search input field
+    - Operational status telemetry
+    """
+    if "search_query" not in st.session_state:
+        st.session_state["search_query"] = ""
+
+    col_h_left, col_h_mid, col_h_right = st.columns([4.2, 3.4, 4.2], vertical_alignment="center")
+
+    reddit_active = " active" if current_source == "Reddit" else ""
+    x_active = " active" if current_source == "X" else ""
+    forums_active = " active" if current_source == "Forums" else ""
+
+    with col_h_left:
+        st.markdown(f"""
+        <div class="tr-brand-group">
+            <span class="tr-pill-live"><span class="tr-pulse-dot"></span> LIVE</span>
+            <div class="tr-source-selector">
+                <span class="tr-source-chip{reddit_active}">🔴 Reddit</span>
+                <span class="tr-source-chip{x_active}">𝕏 X / Twitter</span>
+                <span class="tr-source-chip{forums_active}">💬 Forums ▾</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col_h_mid:
+        search_val = st.text_input(
+            "Search Console",
+            value=st.session_state["search_query"],
+            placeholder="🔍 Search topics, keywords, entities...",
+            label_visibility="collapsed",
+            key="header_search_input"
+        )
+        if search_val != st.session_state["search_query"]:
+            st.session_state["search_query"] = search_val
+
+    with col_h_right:
+        st.markdown("""
+        <div class="tr-meta-status">
+            <span class="tr-meta-chip">Last updated: <strong>10s ago</strong></span>
+            <span class="tr-meta-alert">🔔 3 Alerts</span>
+            <span class="tr-meta-user">👤 Analyst Admin</span>
+        </div>
+        """, unsafe_allow_html=True)

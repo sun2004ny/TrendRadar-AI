@@ -1,0 +1,1136 @@
+/* ==========================================================================
+   TrendRadar AI - Master Design System & Complete Light Enterprise Theme
+   Target: Full Light Mode (Canvas, Sidebar Menu, Header & Top Bar)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* Connect Page Stylesheets */
+@import url('overview.css');
+@import url('monitoring.css');
+@import url('topics.css');
+@import url('alerts.css');
+@import url('research.css');
+@import url('workspace.css');
+@import url('analytics.css');
+@import url('research_lab.css');
+
+:root {
+    --tr-bg-canvas: #F8FAFC;
+    --tr-bg-surface: #FFFFFF;
+    --tr-bg-card: #FFFFFF;
+    --tr-bg-card-hover: #F8FAFC;
+    --tr-bg-elevated: #F1F5F9;
+    --tr-border: #E2E8F0;
+    --tr-border-subtle: #F1F5F9;
+    --tr-border-hover: #CBD5E1;
+    
+    --tr-emerald: #059669;
+    --tr-emerald-glow: rgba(5, 150, 105, 0.15);
+    --tr-emerald-bg: #ECFDF5;
+    --tr-crimson: #DC2626;
+    --tr-crimson-glow: rgba(220, 38, 38, 0.15);
+    --tr-crimson-bg: #FEF2F2;
+    --tr-amber: #D97706;
+    --tr-amber-bg: #FFFBEB;
+    --tr-blue: #2563EB;
+    --tr-blue-bg: #EFF6FF;
+    --tr-purple: #7C3AED;
+    --tr-purple-bg: #F5F3FF;
+    
+    --tr-text-primary: #0F172A;
+    --tr-text-secondary: #334155;
+    --tr-text-muted: #64748B;
+    --tr-text-dim: #94A3B8;
+
+    --tr-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --tr-font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ==========================================================================
+   BASE & TOP OF SCREEN (ELIMINATE BLANK TOP SECTION)
+   ========================================================================== */
+html, body, [class*="css"], .stApp {
+    font-family: var(--tr-font-sans) !important;
+    background-color: var(--tr-bg-canvas) !important;
+    color: var(--tr-text-primary) !important;
+}
+
+/* Clean Transparent Streamlit Header: Zero height, no background/border, but keeps controls accessible */
+header[data-testid="stHeader"] {
+    background: transparent !important;
+    border: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+}
+
+/* Ensure the sidebar open/expand button is ALWAYS visible, clickable, and perfectly aligned */
+[data-testid="stExpandSidebarButton"],
+[data-testid="stSidebarCollapsedControl"],
+header[data-testid="stHeader"] [data-testid="stExpandSidebarButton"],
+header[data-testid="stHeader"] [data-testid="stSidebarCollapsedControl"],
+[data-testid="stToolbar"] [data-testid="stExpandSidebarButton"],
+button[data-testid="stExpandSidebarButton"] {
+    position: fixed !important;
+    top: 22px !important; /* EXACTLY ALIGNED at Y = 38px center with the LIVE / Reddit chips */
+    left: 14px !important;
+    z-index: 10000 !important;
+    background: #0B132B !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius: 8px !important;
+    color: #CBD5E1 !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(11, 19, 43, 0.35) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-testid="stExpandSidebarButton"]:hover,
+[data-testid="stSidebarCollapsedControl"]:hover,
+header[data-testid="stHeader"] [data-testid="stExpandSidebarButton"]:hover {
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #FFFFFF !important;
+    transform: scale(1.06) !important;
+    box-shadow: 0 4px 16px rgba(11, 19, 43, 0.5) !important;
+}
+
+[data-testid="stExpandSidebarButton"] *,
+[data-testid="stSidebarCollapsedControl"] * {
+    color: #CBD5E1 !important;
+    fill: currentColor !important;
+    pointer-events: none !important;
+    font-size: 16px !important;
+}
+
+[data-testid="stExpandSidebarButton"]:hover *,
+[data-testid="stSidebarCollapsedControl"]:hover * {
+    color: #FFFFFF !important;
+}
+
+/* Eliminate empty top blank section on main canvas and move top bar to top */
+[data-testid="stAppViewContainer"] .main,
+[data-testid="stAppViewContainer"] > .main,
+.main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.main .block-container,
+[data-testid="stMainBlockContainer"],
+div[data-testid="stAppViewBlockContainer"],
+.block-container {
+    padding-top: 15px !important; /* EXACTLY ALIGNED at Y = 38px center line with TrendRadar AI brand header */
+    padding-bottom: 2.5rem !important;
+    padding-left: 3.8rem !important; /* ~60px from left, perfectly clearing the 32px button at left:14px */
+    padding-right: 1.75rem !important;
+    max-width: 100% !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* ==========================================================================
+   SIDEBAR MENU (DARK ENTERPRISE SPECIFICATION: #0B132B / #0F172A)
+   ========================================================================== */
+[data-testid="stSidebar"] {
+    background-color: #0B132B !important;
+    border-right: 1px solid #1E293B !important;
+    border-top-right-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+    padding-top: 0 !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12) !important;
+    position: relative !important;
+}
+[data-testid="stSidebar"] > div:first-child {
+    background-color: #0B132B !important;
+    border-top-right-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+}
+[data-testid="stSidebar"] * {
+    color: #94A3B8 !important;
+}
+[data-testid="stSidebar"] hr {
+    border-color: #1E293B !important;
+    margin: 14px 0 !important;
+}
+
+[data-testid="stSidebarContent"] {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+[data-testid="stSidebarUserContent"] {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+/* Brand Header Container inside User Content - Centered at Y = 45px */
+.tr-sidebar-brand-header {
+    height: 48px !important;
+    min-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin-left: -9px !important; /* Move ~9.5px left so 📡 centers at x=55px, perfectly aligned with radio dots */
+    padding: 0 38px 0 0 !important; /* Leave room for close button on right */
+    margin-top: 21px !important; /* 21px + 24px = 45px vertical center line */
+    margin-bottom: 24px !important; /* Generous breathing space above menu buttons */
+    box-sizing: border-box !important;
+}
+
+.tr-brand-dish-icon {
+    font-size: 1.35rem !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 22px !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+}
+
+.tr-brand-heading {
+    font-size: 1.10rem !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -0.02em !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
+}
+
+.tr-brand-subheading {
+    font-size: 0.63rem !important;
+    color: #94A3B8 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important; /* Guarantees single line */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-top: 2px !important;
+    line-height: 1.2 !important;
+}
+
+/* Sidebar Header & Menu Close/Collapse Button (Centered at Y = 45px) */
+[data-testid="stSidebarHeader"],
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarCollapseButton"] button,
+[data-testid="stSidebarHeader"] button,
+[data-testid="stSidebar"] button[kind="header"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+[data-testid="stSidebarHeader"] {
+    position: absolute !important;
+    top: 29px !important; /* 29px + 16px = 45px vertical center line */
+    right: 1rem !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    max-height: 32px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    z-index: 9999 !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+[data-testid="stSidebarCollapseButton"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+[data-testid="stSidebarCollapseButton"] button,
+[data-testid="stSidebarHeader"] button {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    border-radius: 8px !important;
+    color: #CBD5E1 !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+[data-testid="stSidebarCollapseButton"] button:hover,
+[data-testid="stSidebarHeader"] button:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #FFFFFF !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-testid="stSidebarCollapseButton"] button svg,
+[data-testid="stSidebarHeader"] button svg {
+    display: block !important;
+    fill: currentColor !important;
+    stroke: currentColor !important;
+    width: 16px !important;
+    height: 16px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* ==========================================================================
+   NAVIGATION RADIO ITEMS & SUPPRESSION OF EXTRA "NAVIGATION" TEXT
+   ========================================================================== */
+
+/* Completely eliminate any radio widget label or "NAVIGATION" text */
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"],
+[data-testid="stSidebar"] .stRadio > label,
+[data-testid="stSidebar"] .stRadio label[data-testid="stWidgetLabel"],
+[data-testid="stSidebar"] [data-testid="stRadio"] label[data-testid="stWidgetLabel"],
+[data-testid="stSidebar"] [data-testid="stRadio"] > div:first-child:not([role="radiogroup"]) {
+    display: none !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Navigation Radios in Sidebar */
+[data-testid="stSidebar"] .stRadio > div[role="radiogroup"] {
+    gap: 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Scope pill card styles strictly to radio options */
+[data-testid="stSidebar"] div[role="radiogroup"] > label {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 9px 14px !important;
+    border-radius: 10px !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    color: #94A3B8 !important;
+    transition: background 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease, color 0.12s ease !important;
+    margin: 1px 0 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+}
+
+/* Ensure clicks anywhere on the card trigger the label without child interception */
+[data-testid="stSidebar"] div[role="radiogroup"] > label * {
+    pointer-events: none !important;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] > label:active {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: scale(0.99) !important;
+}
+
+/* Radio button indicator (circle) styling */
+[data-testid="stSidebar"] div[role="radiogroup"] > label > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 10px !important;
+}
+
+/* Active item: illuminated state matching user visual */
+[data-testid="stSidebar"] div[role="radiogroup"] > label[data-checked="true"] {
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.18) 0%, rgba(16, 185, 129, 0.05) 100%) !important;
+    border: 1px solid rgba(16, 185, 129, 0.45) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.2) !important;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] > label[data-checked="true"] * {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] > label div[data-testid="stMarkdownContainer"] p {
+    font-size: 0.82rem !important;
+    letter-spacing: 0.05em !important;
+    margin: 0 !important;
+    color: inherit !important;
+    font-weight: inherit !important;
+    text-transform: uppercase !important;
+}
+
+/* Bottom Pinned Settings & Expanders in Sidebar */
+[data-testid="stSidebar"] [data-testid="stExpander"] {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid #1E293B !important;
+    border-radius: 8px !important;
+}
+[data-testid="stSidebar"] [data-testid="stExpander"] summary {
+    color: #94A3B8 !important;
+    font-size: 0.82rem !important;
+}
+[data-testid="stSidebar"] [data-testid="stExpander"] summary:hover {
+    color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   INPUTS & SEARCH FIELD (LIGHT Crisp Inputs)
+   ========================================================================== */
+/* ==========================================================================
+   INPUTS & SEARCH FIELD (LIGHT Crisp Inputs - Exactly 40px Height)
+   ========================================================================== */
+div[data-baseweb="input"], 
+.stTextInput > div > div {
+    background-color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: all 0.15s ease !important;
+}
+div[data-baseweb="input"]:hover, 
+.stTextInput > div > div:hover {
+    border-color: #94A3B8 !important;
+}
+div[data-baseweb="input"]:focus-within, 
+.stTextInput > div > div:focus-within {
+    border-color: #059669 !important;
+    box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.15) !important;
+}
+input, 
+.stTextInput input {
+    background-color: transparent !important;
+    color: #0F172A !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    height: 100% !important;
+    padding: 0 14px !important;
+    box-sizing: border-box !important;
+    font-family: var(--tr-font-sans) !important;
+}
+input::placeholder, 
+.stTextInput input::placeholder {
+    color: #94A3B8 !important;
+    opacity: 1 !important;
+    font-size: 0.82rem !important;
+}
+
+/* ==========================================================================
+   TOP BAR / HEADER (Unified 40px Height & Vertical Alignment)
+   ========================================================================== */
+.tr-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid var(--tr-border);
+    border-radius: 12px;
+    padding: 10px 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.tr-brand-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+.tr-brand-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--tr-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Animated Live Pill (40px Height Matching Search Input) */
+.tr-pill-live {
+    background: #ECFDF5 !important;
+    border: 1px solid #A7F3D0 !important;
+    color: #059669 !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding: 0 14px !important;
+    border-radius: 8px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    user-select: none !important;
+}
+.tr-pulse-dot {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #10B981 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 6px #10B981 !important;
+    animation: tr-pulse 1.8s infinite ease-in-out !important;
+    flex-shrink: 0 !important;
+}
+@keyframes tr-pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* Source Filter Chips (40px Height Matching Search Input) */
+.tr-source-selector {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    height: 40px !important;
+    box-sizing: border-box !important;
+}
+.tr-source-chip {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    color: var(--tr-text-secondary) !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding: 0 14px !important;
+    border-radius: 8px !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    transition: all 0.15s ease !important;
+}
+.tr-source-chip:hover {
+    border-color: #94A3B8 !important;
+    background: #F8FAFC !important;
+    color: var(--tr-text-primary) !important;
+}
+.tr-source-chip.active {
+    background: #ECFDF5 !important;
+    border-color: #6EE7B7 !important;
+    color: #065F46 !important;
+    font-weight: 700 !important;
+}
+
+/* Header Telemetry Status (40px Height Matching Search Input) */
+.tr-meta-status {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+.tr-meta-chip {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    color: #475569 !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding: 0 14px !important;
+    border-radius: 8px !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+.tr-meta-chip strong {
+    color: #0F172A !important;
+    font-weight: 700 !important;
+}
+.tr-meta-alert {
+    background: #FEF2F2 !important;
+    border: 1px solid #FECACA !important;
+    color: #DC2626 !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding: 0 14px !important;
+    border-radius: 8px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    box-shadow: 0 1px 2px rgba(220, 38, 38, 0.06) !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+}
+.tr-meta-alert:hover {
+    background: #FEE2E2 !important;
+    border-color: #FCA5A5 !important;
+}
+.tr-meta-user {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    color: #0F172A !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding: 0 14px !important;
+    border-radius: 8px !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+.tr-meta-status > span {
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Master Top Header Row & Column Alignment */
+div[data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) {
+    align-items: center !important;
+    min-height: 40px !important;
+    margin-bottom: 1.25rem !important;
+}
+div[data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) > div[data-testid="stColumn"] {
+    display: flex !important;
+    align-items: center !important;
+}
+div[data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) .element-container,
+div[data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) [data-testid="stVerticalBlock"] > div {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+div[data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) [data-testid="stTextInput"] {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+div[data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) [data-testid="stMarkdownContainer"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 40px !important;
+}
+div[data-testid="stHorizontalBlock"]:has([data-testid="stTextInput"]) [data-testid="stMarkdownContainer"] > p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ==========================================================================
+   KPI STRIP CARDS (Clean White Cards)
+   ========================================================================== */
+.tr-kpi-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+}
+@media (max-width: 1200px) {
+    .tr-kpi-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .tr-kpi-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.tr-kpi-card {
+    background: #FFFFFF;
+    border: 1px solid var(--tr-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tr-kpi-card:hover {
+    border-color: var(--tr-border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+.tr-kpi-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--tr-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+}
+.tr-kpi-val {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--tr-text-primary);
+    font-family: var(--tr-font-mono);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+.tr-kpi-delta {
+    font-size: 0.73rem;
+    font-weight: 600;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.tr-kpi-delta.pos { color: var(--tr-emerald); }
+.tr-kpi-delta.warn { color: var(--tr-amber); }
+.tr-kpi-delta.crit { color: var(--tr-crimson); }
+.tr-kpi-delta.dim { color: var(--tr-text-muted); }
+
+/* Section Title */
+.tr-section-title {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--tr-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   WHAT'S EMERGING RIGHT NOW (Topic Grid Cards)
+   ========================================================================== */
+.tr-topic-card {
+    background: #FFFFFF;
+    border: 1px solid var(--tr-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 148px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tr-topic-card:hover {
+    border-color: var(--tr-border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+.tr-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.tr-card-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--tr-text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.tr-card-dots {
+    color: var(--tr-text-dim);
+    font-size: 1.1rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Status Badges */
+.tr-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.tr-badge-emerging {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #DC2626;
+}
+.tr-badge-watching {
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    color: #D97706;
+}
+.tr-badge-confirmed {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #059669;
+}
+.tr-badge-new {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    color: #2563EB;
+}
+.tr-badge-stable {
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    color: #475569;
+}
+
+.tr-growth-pill {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #059669;
+    font-family: var(--tr-font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.tr-posts-pill {
+    color: var(--tr-text-muted);
+    font-size: 0.74rem;
+    font-weight: 600;
+    font-family: var(--tr-font-mono);
+}
+
+.tr-topic-meta-strip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.tr-kw-container {
+    font-size: 0.72rem;
+    color: var(--tr-text-muted);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+.tr-kw-tag {
+    background: #F8FAFC;
+    border: 1px solid var(--tr-border);
+    color: #334155;
+    font-size: 0.68rem;
+    font-family: var(--tr-font-mono);
+    padding: 2px 5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   LIVE FEED STREAM
+   ========================================================================== */
+.tr-feed-card {
+    background: #FFFFFF;
+    border: 1px solid var(--tr-border);
+    border-radius: 8px;
+    padding: 11px 14px;
+    margin-bottom: 8px;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+.tr-feed-card:hover {
+    border-color: var(--tr-border-hover);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+.tr-feed-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--tr-text-muted);
+    margin-bottom: 6px;
+}
+.tr-feed-topic {
+    font-family: var(--tr-font-mono);
+    color: var(--tr-blue);
+    font-weight: 600;
+}
+.tr-feed-text {
+    font-size: 0.83rem;
+    color: #1E293B;
+    line-height: 1.4;
+}
+.tr-sim-pill {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #059669;
+    font-family: var(--tr-font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   ALERT CENTER CARD & ACTIONS
+   ========================================================================== */
+.tr-alert-banner {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-left: 5px solid var(--tr-crimson);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.06);
+}
+
+/* ==========================================================================
+   TOPIC DETAILS BANNER
+   ========================================================================== */
+.tr-topic-detail-banner {
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    border-radius: 10px;
+    padding: 20px 24px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.2);
+}
+.tr-topic-detail-banner h2 {
+    color: #FFFFFF !important;
+    font-size: 1.85rem !important;
+    font-weight: 800 !important;
+    margin: 4px 0 12px 0 !important;
+    letter-spacing: -0.02em;
+}
+.tr-banner-metrics-strip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    font-family: var(--tr-font-mono);
+}
+.tr-banner-metric-item strong {
+    font-size: 1.15rem;
+    color: #FFFFFF;
+}
+
+/* Canonical Post Quote */
+.tr-post-quote {
+    font-size: 0.86rem;
+    color: #1E293B;
+    font-style: italic;
+    background: #F8FAFC;
+    border-left: 3px solid #CBD5E1;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    margin: 8px 0;
+    line-height: 1.45;
+}
+
+/* Checklist */
+.tr-checklist {
+    background: #FFFFFF;
+    border: 1px solid var(--tr-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tr-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.84rem;
+    color: #334155;
+    margin-bottom: 8px;
+}
+.tr-checklist-item strong {
+    color: var(--tr-text-primary);
+}
+
+/* ==========================================================================
+   BRIEFING 4-BOX CARDS
+   ========================================================================== */
+.tr-brief-card {
+    background: #FFFFFF;
+    border: 1px solid var(--tr-border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    height: 100%;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tr-brief-card.what { border-left: 4px solid var(--tr-blue); }
+.tr-brief-card.why { border-left: 4px solid var(--tr-amber); }
+.tr-brief-card.evidence { border-left: 4px solid var(--tr-emerald); }
+.tr-brief-card.next { border-left: 4px solid var(--tr-purple); }
+
+.tr-brief-title {
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 10px 0;
+}
+
+/* ==========================================================================
+   BOTTOM TECHNICAL PIPELINE PROCESS LOOP
+   ========================================================================== */
+.tr-pipeline-loop {
+    background: #FFFFFF;
+    border: 1px solid var(--tr-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 26px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    overflow-x: auto;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tr-pipe-node {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #475569;
+    white-space: nowrap;
+}
+.tr-pipe-arrow {
+    color: #94A3B8;
+    font-weight: 900;
+}
+.tr-pipe-decision {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    color: #1E40AF;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+/* Button Stylings */
+.stButton > button {
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    padding: 5px 12px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    transition: all 0.15s ease !important;
+}
+.stButton > button:hover {
+    background-color: #F8FAFC !important;
+    border-color: #94A3B8 !important;
+    color: #0F172A !important;
+    transform: translateY(-1px);
+}
+.stDownloadButton > button {
+    background-color: #059669 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #047857 !important;
+    font-weight: 700 !important;
+    border-radius: 6px !important;
+}
+.stDownloadButton > button:hover {
+    background-color: #047857 !important;
+    color: #FFFFFF !important;
+}
