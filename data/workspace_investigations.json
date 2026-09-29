@@ -1,0 +1,45 @@
+{
+  "investigations": {
+    "INV_TRAJ_284": {
+      "id": "INV_TRAJ_284",
+      "trajectory_id": "TRAJ_284",
+      "topic_name": "OnlyFans Explicit Content Ban",
+      "lifecycle_status": "[BURST]",
+      "volume_path": "11",
+      "avg_coherence": 0.68,
+      "birth_window": "D_11",
+      "representative_post": "With Onlyfans banning...",
+      "keywords": [
+        "onlyfans",
+        "ban"
+      ],
+      "research_dossier": {},
+      "ai_brief": {},
+      "analyst_notes": "High PR impact; monitor competitor platform migrations.",
+      "status": "Active",
+      "created_at": "2026-09-29 08:34:19 UTC",
+      "updated_at": "2026-09-29 08:34:19 UTC"
+    },
+    "INV_TRAJ_456": {
+      "id": "INV_TRAJ_456",
+      "trajectory_id": "TRAJ_456",
+      "topic_name": "Vaccine Mandate Discussion",
+      "lifecycle_status": "[CONFIRMED_SEED]",
+      "volume_path": "3",
+      "avg_coherence": 0.938,
+      "birth_window": "D_16",
+      "representative_post": "Should one try and reason with a friend ready to throw away their medical career because they don't want the covid vaccine?",
+      "keywords": [
+        "vaccine",
+        "mandate",
+        "medical"
+      ],
+      "research_dossier": {},
+      "ai_brief": {},
+      "analyst_notes": "Upgraded to active investigation.",
+      "status": "Active",
+      "created_at": "2026-09-29 08:44:12 UTC",
+      "updated_at": "2026-09-29 08:44:51 UTC"
+    }
+  }
+}

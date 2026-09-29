@@ -1,6 +1,6 @@
-# EmergNLP: Comprehensive Feature Guide, Architecture & Future Roadmap
+# TrendRadar AI: Comprehensive Feature Guide, Architecture & Future Roadmap
 
-This document provides a feature-by-feature breakdown of **EmergNLP**. For every feature, it explains:
+This document provides a feature-by-feature breakdown of **TrendRadar AI**. For every feature, it explains:
 1. **What the feature is**
 2. **How it works under the hood (algorithm, logic, and math)**
 3. **The problem it solves and why it matters**
@@ -34,7 +34,7 @@ This document provides a feature-by-feature breakdown of **EmergNLP**. For every
 
 Traditional social media monitoring tools alert whenever single words spike in frequency (e.g., words like *"help"*, *"school"*, *"money"*). This creates severe **alert fatigue**—hundreds of false alarms with zero context.
 
-**EmergNLP** monitors text streams (evaluated on 8,784 Reddit posts across 30 days) to detect emerging discussions by **semantic meaning** rather than isolated keywords. It consolidates fragmented noise, cuts alert volume by **87.6%**, and catches breaking events cleanly.
+**TrendRadar AI** monitors text streams (evaluated on 8,784 Reddit posts across 30 days) to detect emerging discussions by **semantic meaning** rather than isolated keywords. It consolidates fragmented noise, cuts alert volume by **87.6%**, and catches breaking events cleanly.
 
 ---
 
@@ -49,7 +49,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
   * Posts are partitioned strictly into discrete temporal windows ($D_t$).
   * The algorithm processes each window sequentially. At checkpoint $D_t$, the system has access **only** to data up to $D_t$. It has zero knowledge of future days ($D_{t+1}, D_{t+2}$).
 * **Problem it solves:** Prevents "data leakage" where retrospective evaluation models cheat by knowing what topics will become popular in the future.
-* **Code Location:** [`src/data_loader.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/data_loader.py), [`src/daily_data_loader.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/daily_data_loader.py)
+* **Code Location:** [`src/data_loader.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/data_loader.py), [`src/daily_data_loader.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/daily_data_loader.py)
 * **Dashboard Location:** Section 1 (Dataset Overview)
 
 ---
@@ -61,7 +61,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
   * Strips URLs, user mentions, excessive whitespace, and special characters.
   * Preserves the core conceptual predicate and topic nouns while discarding the interrogative shell.
 * **Problem it solves:** Without this, AI models group unrelated posts together simply because they start with the same question format. In our experiments, this feature **suppressed 82.4% (28 of 34)** of conversational false alarms.
-* **Code Location:** [`src/preprocessing.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/preprocessing.py)
+* **Code Location:** [`src/preprocessing.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/preprocessing.py)
 * **Dashboard Location:** Section 1 & Section 8 (E2 condition)
 
 ---
@@ -74,7 +74,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
   * Applies **L2 normalization** ($\|v\|_2 = 1$) so that cosine similarity can be computed via simple dot products.
   * Applies Truncated SVD (50 components) for dimensionality compression prior to density clustering.
 * **Problem it solves:** Overcomes the vocabulary mismatch problem. For example, posts saying *"vaccine mandate"* and *"compulsory COVID immunization"* share zero identical words, but their semantic vectors are nearly identical.
-* **Code Location:** [`src/embeddings.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/embeddings.py)
+* **Code Location:** [`src/embeddings.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/embeddings.py)
 * **Dashboard Location:** Powers all clustering and similarity operations across Sections 2, 3, and 6.
 
 ---
@@ -87,7 +87,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
   * Discovers clusters of varying shapes and densities.
   * Automatically classifies unaligned, random chatter as **Noise (-1)** instead of forcing posts into artificial clusters.
 * **Problem it solves:** Standard algorithms like K-Means require you to guess the number of topics $K$ and force every single post into a cluster. HDBSCAN naturally isolates genuine discussion clusters from background noise.
-* **Code Location:** [`src/clustering.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/clustering.py)
+* **Code Location:** [`src/clustering.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/clustering.py)
 * **Dashboard Location:** Section 2 & Section 6
 
 ---
@@ -101,7 +101,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
     where $\text{TF}_{t, c}$ is the frequency of word $t$ in cluster $c$, $A$ is the average number of words per cluster, and $f_t$ is the overall frequency of word $t$ across all clusters.
   * Selects the highest-scoring terms to serve as human-readable topic labels.
 * **Problem it solves:** Dense embedding clusters are just lists of post IDs. c-TF-IDF makes clusters immediately human-interpretable so an analyst can glance at a topic and know what it is about.
-* **Code Location:** [`src/clustering.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/clustering.py)
+* **Code Location:** [`src/clustering.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/clustering.py)
 * **Dashboard Location:** Section 2, Section 3, and Section 6 (Topic Inspector)
 
 ---
@@ -115,7 +115,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
   * Enforces **strict 1-to-1 matching** within each window (a trajectory can absorb at most one cluster per day).
   * Tracks metrics over time: birth date, active lifespan (days), total post volume, and volume history path.
 * **Problem it solves:** Allows the system to distinguish between a one-day random spike and a genuine multi-day developing event (such as the 5-day Afghanistan evacuation crisis).
-* **Code Location:** [`src/temporal.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/temporal.py)
+* **Code Location:** [`src/temporal.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/temporal.py)
 * **Dashboard Location:** Section 2 (Topic Evolution & Trajectories)
 
 ---
@@ -128,7 +128,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
     2. **Keyword Jaccard Overlap:** $J_{\text{lex}} = \frac{|K_{t-1} \cap K_t|}{|K_{t-1} \cup K_t|} \ge 0.20$ (between top-10 c-TF-IDF words).
   * If the topic changes words completely, the link is broken and a new trajectory is created.
 * **Problem it solves:** In naive vector models, a topic can drift from school exams $\to$ career choices $\to$ salary talks over 24 days without breaking. This gate dismantled that artificial 24-day drift pseudo-chain, keeping trajectories focused on genuine events.
-* **Code Location:** [`src/temporal.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/temporal.py)
+* **Code Location:** [`src/temporal.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/temporal.py)
 * **Dashboard Location:** Section 8 (E3 Condition)
 
 ---
@@ -140,7 +140,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
   * **Growth Velocity:** Measures velocity ($V = \text{Volume}_t - \text{Volume}_{t-1}$) and acceleration ($A = V_t - V_{t-1}$).
   * **Lifecycle Tagging:** Labels topics as `[BURST]`, `[EMERGING]`, `[STABLE]`, or `[DECLINING]`.
 * **Problem it solves:** Static post-count thresholds (e.g. "needs 15 posts") fail when slice sizes fluctuate. Scale normalization ensures breaking events with moderate volumes (such as OnlyFans at 11–12 posts) are reliably captured.
-* **Code Location:** [`src/emergence.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/emergence.py)
+* **Code Location:** [`src/emergence.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/emergence.py)
 * **Dashboard Location:** Section 3 (Vetted Emerging Candidates)
 
 ---
@@ -154,20 +154,20 @@ Traditional social media monitoring tools alert whenever single words spike in f
     * Requires a minimum internal semantic coherence gate ($\ge 0.65$).
     * **Confirmation Criteria:** Upgraded to `[CONFIRMED_SEED]` **only** if the topic recurs across consecutive checkpoints OR pairs a recognized domain entity with extreme coherence ($\ge 0.85$).
 * **Problem it solves:** Lowering cluster thresholds to catch small seeds usually creates 4× candidate inflation (over 700 micro-clusters). The incubation layer successfully recovered the $D_{16}$ vaccine mandate seed while keeping **517 noisy micro-seeds quarantined**.
-* **Code Location:** [`src/emergence.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/emergence.py)
+* **Code Location:** [`src/emergence.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/emergence.py)
 * **Dashboard Location:** Section 8 (E6 Tab: Two-Tier Incubation)
 
 ---
 
 ### Feature 10: Frozen Keyword Baseline & Comparative Evaluation
-* **What it is:** An integrated benchmark engine that runs the legacy keyword-frequency alerting method alongside EmergNLP for head-to-head performance auditing.
+* **What it is:** An integrated benchmark engine that runs the legacy keyword-frequency alerting method alongside TrendRadar AI for head-to-head performance auditing.
 * **How it works:**
   * Ingests the exact same 30 temporal slices.
   * Calculates rolling frequency and z-score spikes for every individual token.
   * Records all alerts where word frequency exceeds baseline thresholds ($z \ge 3.0$).
   * Produces 823 keyword alerts across the stream.
-* **Problem it solves:** Provides mathematical proof of superiority. It demonstrates that EmergNLP eliminates **87.6% of alert noise** (102 clean topics vs. 823 keyword alerts) and measures lead-time lag against actual events.
-* **Code Location:** [`src/baseline.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/baseline.py), [`src/evaluation.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/evaluation.py)
+* **Problem it solves:** Provides mathematical proof of superiority. It demonstrates that TrendRadar AI eliminates **87.6% of alert noise** (102 clean topics vs. 823 keyword alerts) and measures lead-time lag against actual events.
+* **Code Location:** [`src/baseline.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/baseline.py), [`src/evaluation.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/evaluation.py)
 * **Dashboard Location:** Section 4 (Baseline Comparison) & Section 5 (Lead-Time Evaluation)
 
 ---
@@ -183,7 +183,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
   * **Section 6: Interactive Topic Inspector** — Live keyword search box allowing analysts to query any term (e.g., `"hurricane"`, `"vaccine"`, `"onlyfans"`) and inspect all matching posts and clusters.
   * **Section 7: Research Limitations** — Transparent documentation of the single-day density boundary ($\le 2$ posts).
   * **Section 8: Controlled Ablation Suite** — Interactive explorer for conditions E0 through E6.
-* **Code Location:** [`app/streamlit_app.py`](file:///c:/Users/sunny/Downloads/EmergNLP/app/streamlit_app.py)
+* **Code Location:** [`app/streamlit_app.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/app/streamlit_app.py)
 
 ---
 
@@ -197,7 +197,7 @@ Traditional social media monitoring tools alert whenever single words spike in f
   * **E4 (Entity Linkage):** Added spaCy NER. Result: Identified that topics with $<3$ posts require structural incubation.
   * **E5 (Micro-Clustering $N=3$):** Lowered density. Result: High sensitivity to small seeds, but 4× candidate inflation.
   * **E6 (Combined Two-Tier Architecture):** Final architecture combining Tier 1 alerts with Tier 2 quarantined incubation.
-* **Code Location:** [`src/run_e0_daily.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/run_e0_daily.py), [`src/run_e1_scale_normalized.py`](file:///c:/Users/sunny/Downloads/EmergNLP/src/run_e1_scale_normalized.py), [`reports/ablation_study_report.md`](file:///c:/Users/sunny/Downloads/EmergNLP/reports/ablation_study_report.md)
+* **Code Location:** [`src/run_e0_daily.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/run_e0_daily.py), [`src/run_e1_scale_normalized.py`](file:///c:/Users/sunny/Downloads/TrendRadar AI/src/run_e1_scale_normalized.py), [`reports/ablation_study_report.md`](file:///c:/Users/sunny/Downloads/TrendRadar AI/reports/ablation_study_report.md)
 * **Dashboard Location:** Section 8
 
 ---
@@ -242,7 +242,7 @@ Feature 11 & 12: Interactive Streamlit Intelligence Dashboard (Sections 1–8)
 
 All features were evaluated against the frozen 30-checkpoint dataset:
 
-| Measurement | Legacy Keyword Baseline | EmergNLP Pipeline (E6) | Measurable Impact |
+| Measurement | Legacy Keyword Baseline | TrendRadar AI Pipeline (E6) | Measurable Impact |
 |---|---|---|---|
 | **Alerts Generated** | **823 spam alerts** | **102 vetted topics** | **87.6% noise reduction** |
 | **Topic Context** | Single isolated keywords (`"ban"`, `"school"`) | Full topic keywords + sample posts | Zero ambiguity; full contextual story |
@@ -254,7 +254,7 @@ All features were evaluated against the frozen 30-checkpoint dataset:
 
 ## 5. Future Goals & Next-Generation Roadmap
 
-The strategic development goals for EmergNLP are organized into two distinct phases:
+The strategic development goals for TrendRadar AI are organized into two distinct phases:
 
 ### Phase 1: Algorithmic & Research Advancements
 
@@ -282,4 +282,4 @@ The strategic development goals for EmergNLP are organized into two distinct pha
 3. **Automated Alert Webhook Dispatch:**
    * Integrate one-click webhooks to automatically dispatch vetted breaking alerts into **Slack**, **Discord**, **PagerDuty**, or **Microsoft Teams** for security, PR, and intelligence response teams.
 4. **Downstream LLM Synthesis:**
-   * Once EmergNLP isolates a vetted cluster, pass its top-5 representative posts to an LLM (e.g., Gemini 1.5 Flash) to generate a concise, 2-sentence executive summary of the event in real time.
+   * Once TrendRadar AI isolates a vetted cluster, pass its top-5 representative posts to an LLM (e.g., Gemini 1.5 Flash) to generate a concise, 2-sentence executive summary of the event in real time.

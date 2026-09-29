@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-EmergNLP Application Launcher
-==============================
-Main entry point for starting the EmergNLP Streamlit Intelligence Dashboard.
+TrendRadar AI - Application Launcher
+====================================
+Main entry point for starting the TrendRadar AI Intelligence Platform.
 
 Usage:
     python run.py
@@ -23,8 +23,8 @@ def main():
         sys.exit(1)
 
     print("=" * 60)
-    print("  EmergNLP Starting...")
-    print("  AI-Powered Topic Emergence & Intelligence System")
+    print("  TrendRadar AI Starting...")
+    print("  Real-Time Topic Emergence & Intelligence Platform")
     print("  Dashboard: http://localhost:8501")
     print("=" * 60)
     print(f"Interpreter : {sys.executable}")
@@ -55,7 +55,7 @@ def main():
         process = subprocess.run(cmd, cwd=str(root_dir), env=env)
         sys.exit(process.returncode)
     except KeyboardInterrupt:
-        print("\n[EmergNLP] Dashboard server stopped by user.")
+        print("\n[TrendRadar AI] Dashboard server stopped by user.")
         sys.exit(0)
 
 

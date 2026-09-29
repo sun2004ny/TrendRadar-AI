@@ -256,7 +256,7 @@ The zero lead-time finding ($0$ checkpoints) and the error taxonomy directly inf
    * Replace rigid post count cutoffs with entity-weighted z-score density to recover fragmented public discourse (`TRAJ_017` / `TRAJ_027`).
 
 ---
-*Generated as part of Step 8: Error Analysis for EmergNLP.*
+*Generated as part of Step 8: Error Analysis for TrendRadar AI.*
 """
 
     os.makedirs(os.path.dirname(md_out_path), exist_ok=True)

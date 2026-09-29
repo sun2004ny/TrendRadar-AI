@@ -1,35 +1,29 @@
-# EmergNLP: AI-Powered Emerging Topic Detection & Intelligence System
+# TrendRadar AI: Real-Time Topic Emergence & Threat Intelligence Platform
 
-> **Executive Summary:** EmergNLP is a causally constrained NLP system designed to monitor fast-moving social media streams (Reddit, Twitter/X, forums) to detect emerging trends, breaking news, and organic community discussions before they peak—**reducing false-alarm alert noise by 87.6%** compared to traditional keyword-frequency monitoring.
-
----
-
-## Table of Contents
-1. [Business Problem & The "Alert Fatigue" Challenge](#1-business-problem--the-alert-fatigue-challenge)
-2. [How EmergNLP Works (System Architecture)](#2-how-emergnlp-works-system-architecture)
-3. [Step-by-Step Technical Workflow](#3-step-by-step-technical-workflow)
-4. [Empirical Validation & Benchmark Results](#4-empirical-validation--benchmark-results)
-5. [The Controlled Ablation Progression (E0 to E6)](#5-the-controlled-ablation-progression-e0-to-e6)
-6. [Future Roadmap & Strategic Goals](#6-future-roadmap--strategic-goals)
-7. [Quickstart: How to Run the Dashboard](#7-quickstart-how-to-run-the-dashboard)
-8. [Repository Architecture](#8-repository-architecture)
+> **Executive Summary:** TrendRadar AI is an end-to-end intelligence and early-warning platform designed to monitor fast-moving social media streams (Reddit, Twitter/X, forums) to detect emerging trends, breaking news, and organic community discussions before they peak—**reducing false-alarm alert noise by 87.6%** compared to traditional keyword-frequency monitoring.
+>
+> **Core Principle:** Machine Learning detects mathematically proven clusters. Research provides external context. The LLM explains the evidence. The analyst decides.
 
 ---
 
-## 1. Business Problem & The "Alert Fatigue" Challenge
+## The Operational Workflow
+```
+SOCIAL DATA ──► NLP Detection ──► Emerging Topic ──► Trend Radar ──► Topic Details ──► Research Hub ──► AI Brief ──► Action Hub ──► Workspace
+```
 
-In modern brand intelligence, crisis monitoring, and financial surveillance, organizations track high-volume social media streams to catch breaking events early.
-
-Traditional monitoring tools rely on **keyword frequency tracking** (e.g., alert when a word spikes $>3\sigma$ above average). This causes severe operational failure:
-* **Alert Fatigue:** Common words like *"help"*, *"school"*, *"money"*, or *"people"* spike repeatedly without representing actual news events. In our 30-day benchmark, keyword monitoring produced **823 disconnected alert spikes**.
-* **Zero Semantic Context:** A keyword alert like `"ban"` gives an analyst no indication of what is being banned or why.
-* **Semantic Fragmentation:** Ten different synonyms discussing the same crisis trigger ten isolated alerts rather than a single unified event.
-
-**EmergNLP solves this** by grouping discussions by semantic meaning using dense vector representations, tracking topic evolution over time, and filtering syntactic platform noise.
+1. **Overview**: Monitor global stream health, monitored checkpoints, and noise reduction.
+2. **Trend Radar**: Track trajectory curves, velocity, acceleration, and lifecycle phases.
+3. **Emerging Topics**: Actionable alert feed with Tier 1 bursts and Tier 2 confirmed incubation seeds.
+4. **Topic Details**: Inspect canonical posts, coherence metrics, c-TF-IDF keyword distributions, and timeline paths.
+5. **Research Hub**: Fetch live background context and corroboration from Wikipedia and arXiv preprints.
+6. **AI Executive Briefing**: 4-part evidence-grounded brief (What, Why, Evidence, Next Steps).
+7. **Action Hub**: Generate 1-page Intelligence Briefs (.md), Slack/Teams alerts, and dispatch notifications.
+8. **Workspace**: Persistent investigation desk with status tracking (*Active, Monitoring, Escalated, Resolved*).
+9. **Scientific Lab**: Full academic ablation suite (E0–E6), baseline comparisons, and lead-time benchmarks.
 
 ---
 
-## 2. How EmergNLP Works (System Architecture)
+## 2. How TrendRadar AI Works (System Architecture)
 
 ```
                             RAW SOCIAL MEDIA POST STREAM
@@ -87,7 +81,7 @@ Traditional monitoring tools rely on **keyword frequency tracking** (e.g., alert
 Data is ingested into chronological time slices ($D_{00}$ to $D_{29}$). Checkpoints are processed sequentially with zero lookahead, guaranteeing that retrospective evaluation never leaks future information into real-time alerting.
 
 ### 2. Syntactic Template Stripping (`src/preprocessing.py`)
-Social platforms like Reddit have dominant question templates (*"Redditors who work in...", "What is the best..."*). Naive NLP systems group these together because they share grammatical structure. EmergNLP's preprocessor strips leading interrogatives and boilerplate syntax before embedding, forcing clusters to form around **topical substance**.
+Social platforms like Reddit have dominant question templates (*"Redditors who work in...", "What is the best..."*). Naive NLP systems group these together because they share grammatical structure. TrendRadar AI's preprocessor strips leading interrogatives and boilerplate syntax before embedding, forcing clusters to form around **topical substance**.
 
 ### 3. Dense Semantic Representation (`src/embeddings.py`)
 Each cleaned post is mapped into continuous vector space using Sentence-BERT (`all-MiniLM-L6-v2`). Posts discussing *"vaccine mandate"* and *"immunization requirement"* map to adjacent points in vector space even if they share zero identical keywords.
@@ -96,7 +90,7 @@ Each cleaned post is mapped into continuous vector space using Sentence-BERT (`a
 HDBSCAN groups vectors into semantic clusters without requiring the user to specify the number of topics in advance. Class-based TF-IDF (c-TF-IDF) extracts the most salient keywords that uniquely identify each cluster.
 
 ### 5. Trajectory Tracking & Drift Containment (`src/temporal.py`)
-Clusters are connected across consecutive days into long-term trajectories. To eliminate **semantic drift** (topics slowly morphing over weeks while falsely remaining linked), EmergNLP enforces a strict dual gate:
+Clusters are connected across consecutive days into long-term trajectories. To eliminate **semantic drift** (topics slowly morphing over weeks while falsely remaining linked), TrendRadar AI enforces a strict dual gate:
 $$\text{Centroid Cosine Similarity} \ge 0.68 \quad\text{AND}\quad \text{Keyword Jaccard Overlap} \ge 0.20$$
 
 ### 6. Two-Tier Emergence & Incubation (`src/emergence.py`)
@@ -109,7 +103,7 @@ $$\text{Centroid Cosine Similarity} \ge 0.68 \quad\text{AND}\quad \text{Keyword 
 
 The system was benchmarked against a frozen 823-alert keyword frequency baseline across 8,784 posts:
 
-| Metric | Keyword Frequency Baseline | EmergNLP Pipeline (E6) | Business Impact |
+| Metric | Keyword Frequency Baseline | TrendRadar AI Pipeline (E6) | Business Impact |
 |---|---|---|---|
 | **Total Alerts Generated** | **823 alerts** | **102 candidate topics** | **87.6% reduction in alert noise** |
 | **Topic Context** | Isolated keywords (`"ban"`, `"school"`) | Full topic summaries + representative posts | Analysts read full event narratives instantly |
@@ -121,7 +115,7 @@ The system was benchmarked against a frozen 823-alert keyword frequency baseline
 
 ## 5. The Controlled Ablation Progression (E0 to E6)
 
-Every component in EmergNLP was systematically validated through an ablation study:
+Every component in TrendRadar AI was systematically validated through an ablation study:
 
 * **E0 (Baseline Control):** Proved static volume floors ($\ge 15$ posts) miss critical breaking news (e.g., OnlyFans at 12 posts was missed).
 * **E1 (Scale Normalization):** Using topic share ($\ge 2.0\%$) successfully captured OnlyFans, but exposed conversational question templates.
@@ -165,7 +159,7 @@ Every component in EmergNLP was systematically validated through an ablation stu
 ### Installation & Execution
 ```bash
 # 1. Clone the repository and enter the directory
-cd EmergNLP
+cd TrendRadar-AI
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -187,7 +181,7 @@ Once the browser opens at `http://localhost:8501`:
 ## 8. Repository Architecture
 
 ```
-EmergNLP/
+TrendRadar-AI/
 │
 ├── app/
 │   └── streamlit_app.py           # Interactive web dashboard & evaluation visualizer
