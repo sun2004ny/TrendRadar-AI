@@ -1,0 +1,83 @@
+trajectory_id,topic_name,birth_window,birth_window_index,latest_window,active_checkpoints,timeline_path,volume_path,initial_volume,peak_volume,latest_volume,total_volume,net_volume_growth,growth_ratio,avg_coherence,min_coherence,representative_post
+TRAJ_001,"['happened', 'language', 'believe']",D_01,0,D_01,1,D_01,11,11,11,11,11,0,1.0,0.601,0.601,What is the event in human history that you would like not to happen? None
+TRAJ_002,"['annoying', 'comes', 'aggravates']",D_01,0,D_30,28,D_01 -> D_02 -> D_04 -> D_06 -> D_07 -> D_08 -> D_09 -> D_10 -> D_11 -> D_12 -> D_13 -> D_14 -> D_15 -> D_16 -> D_17 -> D_18 -> D_19 -> D_20 -> D_21 -> D_22 -> D_23 -> D_24 -> D_25 -> D_26 -> D_27 -> D_28 -> D_29 -> D_30,10 -> 8 -> 20 -> 10 -> 22 -> 18 -> 10 -> 14 -> 12 -> 23 -> 36 -> 18 -> 27 -> 26 -> 19 -> 14 -> 12 -> 26 -> 20 -> 46 -> 30 -> 17 -> 12 -> 35 -> 39 -> 9 -> 8 -> 10,10,46,10,551,0,1.0,0.604,0.463,What is something you find very annoying/disturbing that others may find very minor? None
+TRAJ_003,"['series', 'watch', 'movie']",D_01,0,D_09,8,D_01 -> D_02 -> D_03 -> D_05 -> D_06 -> D_07 -> D_08 -> D_09,8 -> 8 -> 8 -> 25 -> 10 -> 14 -> 19 -> 12,8,25,12,104,4,1.5,0.638,0.525,Whats a movie that you really enjoyed but probably won't ever watch again? None
+TRAJ_004,"['changed', 'regret', 'paid']",D_01,0,D_01,1,D_01,7,7,7,7,7,0,1.0,0.731,0.731,What experience changed your perspective on life? None
+TRAJ_005,"['sex', 'don', 'men']",D_01,0,D_05,4,D_01 -> D_02 -> D_04 -> D_05,11 -> 8 -> 12 -> 21,11,21,21,52,10,1.91,0.614,0.576,Why do you love Reddit? Meme edition. [removed]
+TRAJ_006,"['song', 'job', 'close']",D_01,0,D_01,1,D_01,11,11,11,11,11,0,1.0,0.581,0.581,What is your darkest secret? None
+TRAJ_007,"['witnessed', 'moment', 'epileptics']",D_01,0,D_21,19,D_01 -> D_02 -> D_03 -> D_04 -> D_05 -> D_06 -> D_08 -> D_09 -> D_10 -> D_11 -> D_12 -> D_13 -> D_14 -> D_15 -> D_16 -> D_17 -> D_18 -> D_20 -> D_21,8 -> 11 -> 26 -> 19 -> 13 -> 20 -> 10 -> 15 -> 17 -> 13 -> 10 -> 9 -> 16 -> 11 -> 7 -> 15 -> 8 -> 11 -> 7,8,26,7,246,-1,0.87,0.668,0.542,what was your biggest embarrassment out in public? None
+TRAJ_008,"['live', 'current', 'usd']",D_01,0,D_01,1,D_01,7,7,7,7,7,0,1.0,0.594,0.594,Where would you rather live: USA or UK? And what are the reasons? [removed]
+TRAJ_009,"['case', 'skin', 'company']",D_02,1,D_02,1,D_02,12,12,12,12,12,0,1.0,0.464,0.464,[SERIOUS] What habit of yours do you think that can eventually kill you? None
+TRAJ_010,"['fact', 'moon', 'completely']",D_02,1,D_02,1,D_02,13,13,13,13,13,0,1.0,0.501,0.501,"What's a fact that's fake, but sounds completely true? None"
+TRAJ_011,"['richard', 'stupid', 'woman']",D_02,1,D_02,1,D_02,7,7,7,7,7,0,1.0,0.606,0.606,Where is Richard Here and what is he up to? [removed]
+TRAJ_012,"['soper', 'movie', 'rename']",D_03,2,D_03,1,D_03,13,13,13,13,13,0,1.0,0.526,0.526,What animal would would you choose as a pet for an inter planetary mission and why ? [deleted]
+TRAJ_013,"['memes', 'videos', 'numbers']",D_03,2,D_03,1,D_03,7,7,7,7,7,0,1.0,0.485,0.485,"When there is more than one milf are they called ""milfs"" or ""milves""? [deleted]"
+TRAJ_014,"['state', 'older', 'wearing']",D_03,2,D_03,1,D_03,10,10,10,10,10,0,1.0,0.566,0.566,What is the worst city in US and why? [deleted]
+TRAJ_015,"['white', 'native', 'afghanistan']",D_03,2,D_07,4,D_03 -> D_04 -> D_06 -> D_07,8 -> 8 -> 15 -> 15,8,15,15,46,7,1.87,0.67,0.578,Why did the US withdraw their troops from Afghanistan? None
+TRAJ_016,"['phone', 'numbers', 'google']",D_04,3,D_04,1,D_04,7,7,7,7,7,0,1.0,0.594,0.594,Are phone numbers given in google profile visible to other people? [removed]
+TRAJ_017,"['username', 'stuck', 'question']",D_04,3,D_04,1,D_04,7,7,7,7,7,0,1.0,0.749,0.749,Your user name is now the answer to a question. What's the question? [removed]
+TRAJ_018,"['buying', 'wish', 'awake']",D_04,3,D_05,2,D_04 -> D_05,10 -> 9,10,10,9,19,-1,0.9,0.631,0.619,what keeps you awake at night? None
+TRAJ_019,"['comes', 'believe', 'mind']",D_04,3,D_07,3,D_04 -> D_06 -> D_07,8 -> 19 -> 9,8,19,9,36,1,1.12,0.693,0.638,What comes to mind when you think of Australia? None
+TRAJ_020,"['differently', 'specific', 'examples']",D_05,4,D_05,1,D_05,10,10,10,10,10,0,1.0,0.648,0.648,"If you knew when your last day would be, what would you do differently? And/or anything you'd want to do? Give specific examples! [removed]"
+TRAJ_021,"['making', 'looking', 'online']",D_05,4,D_05,1,D_05,8,8,8,8,8,0,1.0,0.481,0.481,What's a free online resource that everyone should take advantage of? None
+TRAJ_022,"['warning', 'label', 'parking']",D_05,4,D_05,1,D_05,7,7,7,7,7,0,1.0,0.577,0.577,What conspiracy theories do people close to you believe in? None
+TRAJ_023,"['women', 'lgbtqia', 'members']",D_06,5,D_06,1,D_06,10,10,10,10,10,0,1.0,0.563,0.563,"Women of Reddit, what do you expect from a man during sex? None"
+TRAJ_024,"['mind', 'comes', 'germany']",D_06,5,D_06,1,D_06,9,9,9,9,9,0,1.0,0.793,0.793,What comes to mind when you think of Germany? [deleted]
+TRAJ_025,"['column', 'leronlimab', 'hiv']",D_06,5,D_06,1,D_06,7,7,7,7,7,0,1.0,0.458,0.458,"People who don't own a computer and only use their phone, how's that going for you? None"
+TRAJ_026,"['funniest', 'heard', 'line']",D_06,5,D_06,1,D_06,12,12,12,12,12,0,1.0,0.638,0.638,What is the funniest thing anyone has ever said to you? None
+TRAJ_027,"['sad', 'unfriended', 'friends']",D_07,6,D_07,1,D_07,7,7,7,7,7,0,1.0,0.658,0.658,"If you have “unfriended” anyone since the start of the pandemic, what was the thing that they said to show their true colors? None"
+TRAJ_028,"['porn', 'buying', 'pay']",D_08,7,D_08,1,D_08,8,8,8,8,8,0,1.0,0.762,0.762,Is habit of watching porn awful? [removed]
+TRAJ_029,"['beats', 'enable', 'cheats']",D_08,7,D_08,1,D_08,7,7,7,7,7,0,1.0,0.485,0.485,"Wanting to drop some beats with some music, what is your favorite small setup for making some electronic beats, violin sounds and more with a MacBook? [deleted]"
+TRAJ_030,"['men', 'women', 'ears']",D_09,8,D_09,1,D_09,13,13,13,13,13,0,1.0,0.499,0.499,Why the fuck did I get an orgasm from cleaning my ears with a cotton swab? [removed]
+TRAJ_031,"['home', 'politely', 'visitors']",D_09,8,D_09,1,D_09,7,7,7,7,7,0,1.0,0.696,0.696,What do you do when you're drinking alone and have nothing to do? None
+TRAJ_032,"['wish', 'useful', 'events']",D_09,8,D_18,8,D_09 -> D_11 -> D_12 -> D_13 -> D_14 -> D_15 -> D_17 -> D_18,10 -> 12 -> 11 -> 14 -> 15 -> 7 -> 8 -> 7,10,15,7,84,-3,0.7,0.622,0.493,"Dear people of reddit, What is the most stupid thing you have as a kid? None"
+TRAJ_033,"['revenge', 'secret', 'ruin']",D_09,8,D_09,1,D_09,9,9,9,9,9,0,1.0,0.699,0.699,How do you take revenge on downvotes? [removed]
+TRAJ_034,"['change', 'power', 'bet']",D_10,9,D_10,1,D_10,8,8,8,8,8,0,1.0,0.666,0.666,What's one thing you would change about this world? None
+TRAJ_035,"['superior', 'women', 'census']",D_10,9,D_10,1,D_10,8,8,8,8,8,0,1.0,0.532,0.532,What ruins good food? [deleted]
+TRAJ_036,"['taliban', 'hate', 'watching']",D_10,9,D_10,1,D_10,12,12,12,12,12,0,1.0,0.555,0.555,How dangerous are the Taliban? [deleted]
+TRAJ_037,"['god', 'pick', 'pigs']",D_11,10,D_11,1,D_11,11,11,11,11,11,0,1.0,0.554,0.554,"If you could get a complete, 100% truthful account of one public figure's entire life who would it be? None"
+TRAJ_038,"['ideas', 'pop', 'toilet']",D_11,10,D_11,1,D_11,9,9,9,9,9,0,1.0,0.544,0.544,Do you think the best ideas pop up when your on the toilet? If so share some of them? [removed]
+TRAJ_039,"['onlyfans', 'content', 'sexual']",D_11,10,D_11,1,D_11,12,12,12,12,12,0,1.0,0.646,0.646,Onlyfansers of reddit. What are you going to do now that onlyfans is banning explicit content? None
+TRAJ_040,"['song', 'percentage', 'asian']",D_11,10,D_12,2,D_11 -> D_12,19 -> 12,19,19,12,31,-7,0.63,0.531,0.469,What is your favourite milkshake flavour? None
+TRAJ_041,"['house', 'essential', 'scary']",D_11,10,D_11,1,D_11,9,9,9,9,9,0,1.0,0.695,0.695,"What is something you have eaten, that your pretty sure no one else has? [deleted]"
+TRAJ_042,"['sex', 'blah', 'karma']",D_12,11,D_12,1,D_12,7,7,7,7,7,0,1.0,0.771,0.771,What's something you can say during sex but also blah blah karma please? [removed]
+TRAJ_043,"['climate', 'change', 'personally']",D_12,11,D_12,1,D_12,9,9,9,9,9,0,1.0,0.627,0.627,"Afghans of Reddit, what about your situation should we be aware of that might not be so highlighted by press? None"
+TRAJ_044,"['song', 'game', 'played']",D_12,11,D_30,17,D_12 -> D_14 -> D_16 -> D_17 -> D_18 -> D_19 -> D_20 -> D_21 -> D_22 -> D_23 -> D_24 -> D_25 -> D_26 -> D_27 -> D_28 -> D_29 -> D_30,12 -> 16 -> 14 -> 12 -> 18 -> 17 -> 17 -> 16 -> 15 -> 23 -> 7 -> 21 -> 8 -> 16 -> 18 -> 8 -> 14,12,23,14,252,2,1.17,0.584,0.47,What song gives you the absolute feels every time? None
+TRAJ_045,"['movie', 'watched', 'anime']",D_13,12,D_13,1,D_13,8,8,8,8,8,0,1.0,0.748,0.748,What popular movie have you never seen? [removed]
+TRAJ_046,"['end', 'pandemic', 'happen']",D_14,13,D_14,1,D_14,8,8,8,8,8,0,1.0,0.639,0.639,What if the world admits there is no solution to end the Covid-19 pandemic that they have no choice but to declare it over by having 100% infected and continue normal life as usual and just normalize the virus instead? [deleted]
+TRAJ_047,"['workers', 'cyclists', 'hate']",D_14,13,D_14,1,D_14,7,7,7,7,7,0,1.0,0.643,0.643,Why do some people hate cyclists? [removed]
+TRAJ_048,"['belong', 'pizza', 'yes']",D_14,13,D_14,1,D_14,17,17,17,17,17,0,1.0,0.518,0.518,"Hello, Everyone How are you. [removed]"
+TRAJ_049,"['whats', 'house', 'item']",D_15,14,D_15,1,D_15,7,7,7,7,7,0,1.0,0.648,0.648,Whats the best house item that you ever bought? None
+TRAJ_050,"['country', 'future', 'body']",D_15,14,D_15,1,D_15,7,7,7,7,7,0,1.0,0.574,0.574,What are the future upgrades we can accept in human body as a result of evolution? [deleted]
+TRAJ_051,"['content', 'social', 'media']",D_16,15,D_16,1,D_16,8,8,8,8,8,0,1.0,0.602,0.602,Does anybody else feel the forced breaks reddit makes you take if you post or comment a lot should not be a thing? [removed]
+TRAJ_052,"['heard', 'craziest', 'story']",D_16,15,D_16,1,D_16,22,22,22,22,22,0,1.0,0.642,0.642,What was the craziest thing u have heard of? None
+TRAJ_053,"['game', 'video', 'played']",D_16,15,D_16,1,D_16,8,8,8,8,8,0,1.0,0.837,0.837,What video game you love the most? None
+TRAJ_054,"['movie', 'foreign', 'film']",D_17,16,D_17,1,D_17,7,7,7,7,7,0,1.0,0.785,0.785,Favorite movie? [removed]
+TRAJ_055,"['old', 'city', 'used']",D_17,16,D_17,1,D_17,7,7,7,7,7,0,1.0,0.657,0.657,"When did you know you were ""old""? None"
+TRAJ_056,"['weirdest', 'high', 'school']",D_17,16,D_17,1,D_17,9,9,9,9,9,0,1.0,0.775,0.775,What is the most pettiest thing you’ve ever done? [deleted]
+TRAJ_057,"['username', 'gender', 'respond']",D_17,16,D_17,1,D_17,9,9,9,9,9,0,1.0,0.604,0.604,How do you act like an adult? None
+TRAJ_058,"['non', 'binary', 'pansexual']",D_18,17,D_18,1,D_18,7,7,7,7,7,0,1.0,0.534,0.534,"Dog or cat, why? None"
+TRAJ_059,"['wet', 'water', 'tea']",D_18,17,D_18,1,D_18,11,11,11,11,11,0,1.0,0.533,0.533,I got toothpaste in my eye. Will I be ok? [removed]
+TRAJ_060,"['fictional', 'item', 'real']",D_18,17,D_18,1,D_18,12,12,12,12,12,0,1.0,0.541,0.541,What fictional item from a movie or TV show do you wish was real? [removed]
+TRAJ_061,"['nah', 'tweakin', 'tweaking']",D_18,17,D_18,1,D_18,7,7,7,7,7,0,1.0,0.831,0.831,"Why is everyone commenting, “nah he tweakin” on social media? [removed]"
+TRAJ_062,"['song', 'guilty', 'pleasure']",D_19,18,D_19,1,D_19,12,12,12,12,12,0,1.0,0.727,0.727,What song is a guilty pleasure for you? None
+TRAJ_063,"['memes', 'help', 'karma']",D_19,18,D_19,1,D_19,10,10,10,10,10,0,1.0,0.708,0.708,"Can't post in r/memes, help? [removed]"
+TRAJ_064,"['dumbest', 'conversation', 'overheard']",D_20,19,D_20,1,D_20,8,8,8,8,8,0,1.0,0.689,0.689,What’s the dumbest thing someone’s ever said to you? None
+TRAJ_065,"['username', 'determines', 'ideal']",D_21,20,D_21,1,D_21,10,10,10,10,10,0,1.0,0.575,0.575,Why you hate other people? None
+TRAJ_066,"['change', 'interesting', 'fact']",D_21,20,D_30,9,D_21 -> D_22 -> D_23 -> D_24 -> D_25 -> D_26 -> D_27 -> D_28 -> D_30,15 -> 8 -> 16 -> 18 -> 9 -> 14 -> 8 -> 11 -> 19,15,19,19,118,4,1.27,0.639,0.564,What keeps you living? None
+TRAJ_067,"['die', 'happen', 'tattoo']",D_21,20,D_21,1,D_21,13,13,13,13,13,0,1.0,0.526,0.526,what do you think happens when we die? None
+TRAJ_068,"['taste', 'chinese', 'consume']",D_22,21,D_22,1,D_22,8,8,8,8,8,0,1.0,0.661,0.661,What is the spiciest food that you can tolerate and still enjoy? None
+TRAJ_069,"['add', 'state', 'called']",D_23,22,D_23,1,D_23,7,7,7,7,7,0,1.0,0.569,0.569,If we were to add a new state to the US what would it be called? None
+TRAJ_070,"['expensive', 'worth', 'universally']",D_24,23,D_24,1,D_24,9,9,9,9,9,0,1.0,0.666,0.666,What is something expensive that you might have bought but totally worth the money? None
+TRAJ_071,"['taco', 'bell', 'considered']",D_24,23,D_24,1,D_24,7,7,7,7,7,0,1.0,0.564,0.564,How come Taco Bell is considered a food? None
+TRAJ_072,"['song', 'songs', 'different']",D_26,25,D_26,1,D_26,11,11,11,11,11,0,1.0,0.72,0.72,What’s your favourite song atm? None
+TRAJ_073,"['shows', 'bum', 'cross']",D_26,25,D_26,1,D_26,7,7,7,7,7,0,1.0,0.566,0.566,why would someone where shoes in their own house ? [deleted]
+TRAJ_074,"['buy', 'online', 'item']",D_27,26,D_27,1,D_27,7,7,7,7,7,0,1.0,0.631,0.631,What amazing thing can you buy for less than 50$? None
+TRAJ_075,"['movie', 'story', 'school']",D_27,26,D_27,1,D_27,7,7,7,7,7,0,1.0,0.696,0.696,What is your goto story at a party? None
+TRAJ_076,"['men', 'called', 'handsome']",D_27,26,D_30,4,D_27 -> D_28 -> D_29 -> D_30,11 -> 27 -> 18 -> 17,11,27,17,73,6,1.55,0.551,0.544,"What is something that annoys you, but isn't someone else's fault? [deleted]"
+TRAJ_077,"['models', 'plus', 'size']",D_28,27,D_28,1,D_28,8,8,8,8,8,0,1.0,0.685,0.685,Why do plus size models prefer a brother over an ordinary man? [removed]
+TRAJ_078,"['woke', 'emotions', 'human']",D_28,27,D_28,1,D_28,12,12,12,12,12,0,1.0,0.528,0.528,"What is the biggest avoidable mistake, impacting the most people, of the last 100 years? None"
+TRAJ_079,"['number', 'crap', 'wait']",D_28,27,D_28,1,D_28,10,10,10,10,10,0,1.0,0.623,0.623,Have you ever learned something useful in reddit? [removed]
+TRAJ_080,"['sex', 'girl', 'love']",D_29,28,D_29,1,D_29,7,7,7,7,7,0,1.0,0.638,0.638,How to confess your love creatively? [removed]
+TRAJ_081,"['wish', 'meme', 'erase']",D_30,29,D_30,1,D_30,7,7,7,7,7,0,1.0,0.712,0.712,What is something you wish you could do again as if it was the first time? [deleted]
+TRAJ_082,"['superpower', 'drug', 'examples']",D_30,29,D_30,1,D_30,8,8,8,8,8,0,1.0,0.534,0.534,If you could make a drug go extinct which drug would it be? None

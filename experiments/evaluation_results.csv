@@ -1,0 +1,11 @@
+topic_label,ml_detected_window,ml_window_index,baseline_earliest_window,lead_time_windows,detection_status,ml_emergence_score,semantic_coherence,post_count,representative_sample
+thing / ever / most,W_1,0,W_1,1,ML Detected EARLIER by 1 Window(s) (+2 hrs),0.7686,0.6746,50,What's the creepiest thing you've ever done? (But only judged your actions after it happened)
+thing / most / life,W_2,1,W_1,0,Detected Same Window,0.558,0.5395,145,"Out of all mistakes you have made in your life so far, what’s your favorite one?"
+song / always / will,W_4,3,W_1,-2,Volume Baseline Detected Earlier by 2 Window(s),0.4999,0.7728,11,What Song Always Puts a Tear in Your Eye?
+movie / song / favourite,W_1,0,W_1,1,ML Detected EARLIER by 1 Window(s) (+2 hrs),0.4995,0.713,11,What is your favourite movie? why.
+food / life / thing,W_3,2,W_1,-1,Volume Baseline Detected Earlier by 1 Window(s),0.4973,0.6979,9,"If you were to eat one dish for the rest of your life, what would it be?"
+food / dish / most,W_2,1,W_1,0,Detected Same Window,0.4972,0.7509,8,What home cooked meals are in heavy rotation in your household?
+food / country / most,W_5,4,W_1,-3,Volume Baseline Detected Earlier by 3 Window(s),0.492,0.6946,13,What food do you love that did not originate in your country?
+thing / ever / life,W_4,3,W_1,-2,Volume Baseline Detected Earlier by 2 Window(s),0.4159,0.5784,100,What's the funniest thing that has ever happened to you?
+movie / thing / worst,W_5,4,W_1,-3,Volume Baseline Detected Earlier by 3 Window(s),0.3874,0.5918,64,What movie unexpectedly made you laugh until you cried?
+thing / ever / worst,W_3,2,W_1,-1,Volume Baseline Detected Earlier by 1 Window(s),0.3653,0.6548,41,What's the most SATISFYING incident in your life?

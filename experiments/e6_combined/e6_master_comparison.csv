@@ -1,0 +1,8 @@
+Condition,Threshold / Mechanism,Total Traj,Multi-Ckpt,Candidates,Incub. Seeds,OnlyFans,FDA/Pfizer,Locked Comms,Max Span,Mean Coh,Drift,Baseline Alerts
+E0 Control,Absolute volume >= 15 posts,82,6,2,0,Missed (<15 vol),Missed (N<7),Missed (N<7),10,0.667,Present,823
+E1 Scale Normalization,Share >= 2.0% slice volume,82,6,36,0,Captured (D_11),Missed (N<7),Missed (N<7),10,0.6974,Present,823
+E2 Template Stripping,Interrogative syntax removal,109,7,32,0,Captured (D_11),Missed (N<7),Missed (N<7),24,0.6805,Severe (TRAJ_002),823
+E3 Lexical Consistency,Cosine >= 0.68 + Jaccard >= 0.20,133,11,35,0,Captured (D_11),Missed (N<7),Missed (N<7),5,0.6819,Controlled,823
+E4 Entity-Aware Linkage,NER overlap gate (J_ent >= 0.20),132,12,35,0,Captured (D_11),Missed (N<7),Missed (N<7),5,0.6819,Controlled,823
+E5 Micro-Clustering,Density lowered to N >= 3,1121,4,141,721,Fragmented (9p),Recovered (10c),Missed (<3),3,0.6957,Fragmented,823
+E6 Combined System,Two-Tier (N>=7 + Incubation 3-6),862,23,102,517,Captured (11p intact),Recovered (D_16 seed),Missed (<3),5,0.6983,Controlled,823

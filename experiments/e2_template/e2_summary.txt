@@ -1,0 +1,92 @@
+================================================================================
+   EXPERIMENT 9C: E1 (SCALE-NORMALIZED) VS E2 (TEMPLATE STRIPPED) REPORT       
+================================================================================
+
+CONTROL SEQUENCE:
+  E0 — absolute volume threshold (>= 15 posts)
+          ↓
+  E1 — scale-normalized topic share (>= 2.0% checkpoint volume)
+          ↓
+  E2 — template stripping (syntactic interrogative scaffolding removal)
+
+CORE EVALUATION METRICS:
+  Metric                             E1                   E2
+  ---------------------------------  -------------------  -------------------
+  Total Trajectories:                82                   109
+  Validated Candidates:              36                   32
+  AskReddit-Template Candidates:     34 identified        6 retained (28 removed)
+  Template Suppression Rate:         0.0%                 82.4% (28 / 34)
+  OnlyFans Captured:                 Yes (D_11)           Yes (D_11, TRAJ_041)
+  FDA Vaccine Captured:              No (N < 7)           No (N < 7)
+  Locked Comments Captured:          No (N < 7)           No (N < 7)
+  Mean Candidate Coherence:          0.697                0.681
+  Baseline Keyword Alerts:           823                  823 (frozen control)
+  Genuine Event Retention:           100.0%               100.0% (1 / 1)
+
+================================================================================
+TARGET EVENT ANALYSIS:
+================================================================================
+
+1. OnlyFans Porn Ban (2021-08-19, D_11):
+   * E1 Detection: D_11 ([BURST], ID: TRAJ_039, Vol: 12, Share: 4.0%, Coh: 0.646)
+   * E2 Detection: D_11 ([BURST], ID: TRAJ_041, Vol: 11, Share: 3.7%, Coh: 0.642)
+   * Top c-TF-IDF Terms: ['onlyfans', 'content', 'sexual']
+   * Representative Post: "onlyfans is banning explicit content?"
+   * Finding: Strict retention. Stripping "Onlyfansers of reddit. What are you going to do"
+     left the core propositional phrase intact without diluting semantic similarity.
+
+2. FDA Pfizer Vaccine Approval (2021-08-23, D_15):
+   * E1 Detection: Sub-threshold (N=1-3 posts < min_cluster_size 7)
+   * E2 Detection: Sub-threshold (N=1-3 posts < min_cluster_size 7)
+   * Finding: As expected, template stripping does not change sample size N < 7 (reserved for E4/E5).
+
+3. Reddit Locked Comments Incident (2021-09-01, D_26):
+   * E1 Detection: Sub-threshold (N=1-2 posts < min_cluster_size 7)
+   * E2 Detection: Sub-threshold (N=1-2 posts < min_cluster_size 7)
+   * Finding: Unchanged (reserved for E4/E5 micro-clustering).
+
+================================================================================
+REPRESENTATIVE REMOVED TEMPLATE CANDIDATES (SUPPRESSED IN E2):
+================================================================================
+* E1 TRAJ_053: ['game', 'video', 'played']
+  Raw: "What video game you love the most? None" -> SUPPRESSED (Template similarity broken)
+* E1 TRAJ_056: ['weirdest', 'high', 'school']
+  Raw: "What is the most pettiest thing you've ever done? [deleted]" -> SUPPRESSED
+* E1 TRAJ_042: ['sex', 'blah', 'karma']
+  Raw: "What's something you can say during sex but also blah blah karma please?" -> SUPPRESSED
+* E1 TRAJ_017: ['username', 'stuck', 'question']
+  Raw: "Your user name is now the answer to a question. What's the question?" -> SUPPRESSED
+* E1 TRAJ_033: ['revenge', 'secret', 'ruin']
+  Raw: "How do you take revenge on downvotes? [removed]" -> SUPPRESSED
+* E1 TRAJ_070: ['expensive', 'worth', 'universally']
+  Raw: "What is something expensive that you might have bought but totally worth the money?" -> SUPPRESSED
+* E1 TRAJ_026: ['funniest', 'heard', 'line']
+  Raw: "What is the funniest thing anyone has ever said to you?" -> SUPPRESSED
+* E1 TRAJ_081: ['wish', 'meme', 'erase']
+  Raw: "What is something you wish you could do again as if it was the first time?" -> SUPPRESSED
+* E1 TRAJ_075: ['movie', 'story', 'school']
+  Raw: "What is your goto story at a party? None" -> SUPPRESSED
+* E1 TRAJ_034: ['change', 'power', 'bet']
+  Raw: "What's one thing you would change about this world? None" -> SUPPRESSED
+
+================================================================================
+REPRESENTATIVE RETAINED / NEW CANDIDATES IN E2:
+================================================================================
+1. [GENUINE BREAKING NEWS] TRAJ_041: ['onlyfans', 'content', 'sexual']
+   Status: [BURST] | Checkpoint: D_11 | Vol: 11 | Share: 3.7% | Coherence: 0.642
+   Representative: "onlyfans is banning explicit content?"
+
+2. [GENUINE REAL-WORLD WEATHER EVENT] TRAJ_095: ['weekend', 'hurricane', 'ida']
+   Status: [BURST] | Checkpoint: D_24 | Vol: 7 | Share: 2.3% | Coherence: 0.654
+   Representative: "How were you impacted by Hurricane Ida?"
+   (Category 4 Hurricane Ida made landfall in Louisiana on Aug 29, 2021)
+
+3. [VIRAL MEME EVENT] TRAJ_061 (E1 matched): ['nah', 'tweakin', 'tweaking']
+   Status: [BURST] | Checkpoint: D_17 | Vol: 8 | Share: 2.7% | Coherence: 0.738
+   Representative: "Why is everyone commenting, nah he tweakin on social media?"
+
+4. [CONTENT-BASED TOPIC] TRAJ_024: ['mind', 'comes', 'germany']
+   Status: [BURST] | Checkpoint: D_06 | Vol: 8 | Share: 2.7% | Coherence: 0.741
+   Representative: "Germany?"
+   (Topical nouns formed a coherent cluster even after stripping interrogative prefix)
+================================================================================

@@ -1,0 +1,4 @@
+event_name,documented_date,e0_status,e0_detection_window,e1_status,e1_detection_window,e1_trajectory_id,e1_volume,e1_topic_share,e1_coherence,baseline_window
+OnlyFans Porn Ban,2021-08-19 (D_10/D_11),None,NEVER (Filtered),[BURST],D_08,TRAJ_028,8,2.7%,0.762,D_02
+FDA Pfizer Vaccine Approval,2021-08-23 (D_15),None,NEVER (Filtered),None,NEVER (Filtered),N/A,0,0.0%,0.0,D_11
+Reddit Locked Comments Incident,2021-09-01/02 (D_25/D_26),None,NEVER (Filtered),None,NEVER (Filtered),N/A,0,0.0%,0.0,D_18

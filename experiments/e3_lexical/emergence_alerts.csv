@@ -1,0 +1,134 @@
+trajectory_id,topic_name,birth_window,birth_window_index,latest_window,active_checkpoints,timeline_path,volume_path,initial_volume,peak_volume,latest_volume,total_volume,net_volume_growth,growth_ratio,avg_coherence,min_coherence,representative_post,lifecycle_status,is_vetted_candidate,topic_share,emergence_score
+TRAJ_086,"['song', 'guilty', 'pleasure']",D_19,18,D_19,1,D_19,11,11,11,11,11,0,1.0,0.7375,0.7375,What is a guilty pleasure song for you?,[BURST],True,0.0367,0.9471
+TRAJ_074,"['creepiest', 'experience', 'story']",D_16,15,D_16,1,D_16,12,12,12,12,12,0,1.0,0.7101,0.7101,What's your ghost story ?,[BURST],True,0.0401,0.9112
+TRAJ_038,"['used', 'question', 'social']",D_09,8,D_09,1,D_09,10,10,10,10,10,0,1.0,0.7428,0.7428,How many subreddits are you in?,[BURST],True,0.0337,0.8903
+TRAJ_085,"['nah', 'tweakin', 'tweaking']",D_18,17,D_18,1,D_18,8,8,8,8,8,0,1.0,0.7727,0.7727,"Nah he tweakin, what the hell is going with nah he tweaking on Instagram?? And don't answer me with Nah He Tweakin",[BURST],True,0.0267,0.8172
+TRAJ_097,"['parents', 'school', 'sluttiest']",D_22,21,D_22,1,D_22,9,9,9,9,9,0,1.0,0.7425,0.7425,thing you did at school?,[BURST],True,0.0301,0.8065
+TRAJ_026,"['mind', 'comes', 'czech']",D_06,5,D_06,1,D_06,9,9,9,9,9,0,1.0,0.7408,0.7408,What's the first think that comes to your mind when you think about Britain?,[BURST],True,0.03,0.7998
+TRAJ_059,"['sex', 'sexting', 'sexualized']",D_13,12,D_13,1,D_13,9,9,9,9,9,0,1.0,0.6964,0.6964,Anyone up for sexting?,[BURST],True,0.045,0.7786
+TRAJ_009,"['past', 'cringe', 'dive']",D_02,1,D_02,1,D_02,15,15,15,15,15,0,1.0,0.6282,0.6282,What is the strangest thing you've done with a theragun?,[BURST],True,0.0502,0.6928
+TRAJ_055,"['kindest', 'stranger', 'meanest']",D_12,11,D_12,1,D_12,8,8,8,8,8,0,1.0,0.7254,0.7254,What's the kindest thing a stranger did to you that you will never forget?,[BURST],True,0.0268,0.6763
+TRAJ_013,"['desire', 'right', 'hobby']",D_03,2,D_03,1,D_03,7,7,7,7,7,0,1.0,0.7372,0.7372,What do you desire right now?,[BURST],True,0.0234,0.6357
+TRAJ_088,"['birthday', 'bored', 'grandma']",D_19,18,D_19,1,D_19,7,7,7,7,7,0,1.0,0.7351,0.7351,What can I get for a bored grandma?,[BURST],True,0.0233,0.6294
+TRAJ_087,"['karma', 'posting', 'memes']",D_19,18,D_19,1,D_19,7,7,7,7,7,0,1.0,0.7305,0.7305,"Can't post in r/memes, help?",[BURST],True,0.0233,0.6171
+TRAJ_112,"['dislike', 'instantly', 'question']",D_26,25,D_26,1,D_26,10,10,10,10,10,0,1.0,0.6659,0.6659,people do that makes you dislike them INSTANTLY?,[BURST],True,0.0333,0.6058
+TRAJ_117,"['stupid', 'teenage', 'compared']",D_27,26,D_27,1,D_27,8,8,8,8,8,0,1.0,0.6994,0.6994,What is the stupidest thing you have done as a grown up?,[BURST],True,0.0267,0.5976
+TRAJ_075,"['mistakes', 'glad', 'forgiven']",D_16,15,D_16,1,D_16,12,12,12,12,12,0,1.0,0.6352,0.6352,"[Serious] What mistakes , you feel glad that you have forgiven them ?",[BURST],True,0.0401,0.5863
+TRAJ_127,"['food', 'eat', 'pickles']",D_29,28,D_29,1,D_29,13,13,13,13,13,0,1.0,0.6243,0.6243,What are your food hot takes?,[BURST],True,0.0433,0.5816
+TRAJ_050,"['onlyfans', 'content', 'sexual']",D_11,10,D_11,1,D_11,11,11,11,11,11,0,1.0,0.6416,0.6416,onlyfans is banning explicit content?,[BURST],True,0.0367,0.5647
+TRAJ_039,"['lords', 'music', 'king']",D_09,8,D_09,1,D_09,7,7,7,7,7,0,1.0,0.709,0.709,Who are all the lords of music?,[BURST],True,0.0236,0.5614
+TRAJ_125,"['models', 'plus', 'size']",D_28,27,D_28,1,D_28,7,7,7,7,7,0,1.0,0.7017,0.7017,plus size models prefer a brother over an ordinary man?,[BURST],True,0.0234,0.5406
+TRAJ_101,"['game', 'character', 'added']",D_23,22,D_23,1,D_23,7,7,7,7,7,0,1.0,0.6977,0.6977,Who is the hottest video game character ?,[BURST],True,0.0235,0.5305
+TRAJ_005,"['use', 'kid', 'words']",D_02,1,D_02,1,D_02,7,7,7,7,7,0,1.0,0.696,0.696,"which ""kid-friendly"" words get on your nerves?",[BURST],True,0.0234,0.5253
+TRAJ_007,"['games', 'recommend', 'core']",D_02,1,D_02,1,D_02,9,9,9,9,9,0,1.0,0.653,0.653,What book series would work great as a show rather than a movie?,[BURST],True,0.0301,0.5088
+TRAJ_073,"['pie', 'ice', 'cream']",D_16,15,D_16,1,D_16,7,7,7,7,7,0,1.0,0.6787,0.6787,farting onto an ice cream sandwich change it's flavor ?,[BURST],True,0.0234,0.479
+TRAJ_006,"['movie', 'character', 'watched']",D_02,1,D_02,1,D_02,9,9,9,9,9,0,1.0,0.6426,0.6426,Who has the best chin in movie and television history?,[BURST],True,0.0301,0.4742
+TRAJ_048,"['house', 'saddest', 'news']",D_11,10,D_11,1,D_11,7,7,7,7,7,0,1.0,0.6735,0.6735,thing you have seen that's has happened in your own house?,[BURST],True,0.0233,0.4645
+TRAJ_067,"['milk', 'cow', 'discovered']",D_15,14,D_15,1,D_15,7,7,7,7,7,0,1.0,0.6713,0.6713,"Cow gives us milk, what was the guy who discovered this was trying to do?",[BURST],True,0.0233,0.4586
+TRAJ_035,"['series', 'book', 'games']",D_08,7,D_08,1,D_08,9,9,9,9,9,0,1.0,0.6376,0.6376,What books should get movie/game adaptions?,[BURST],True,0.03,0.457
+TRAJ_083,"['universe', 'caused', 'come']",D_18,17,D_18,1,D_18,8,8,8,8,8,0,1.0,0.6519,0.6519,"Have a project for class, and a survey to ask. So reddit people, what do you think caused the universe to come into existence?",[BURST],True,0.0267,0.4552
+TRAJ_102,"['karma', 'users', 'new']",D_23,22,D_23,1,D_23,7,7,7,7,7,0,1.0,0.6609,0.6609,"I need a sub for low-karma posts please. I've been on reddit for 3 years now, i had a lot of karma and i was able to post on nay sub. Now i have a new account and i wanna post some memes and stuff. But all the subs where i used to post requiers a certain amount of karma. Idk where to go. thank you",[BURST],True,0.0235,0.4317
+TRAJ_123,"['habit', 'refuse', 'break']",D_28,27,D_28,1,D_28,8,8,8,8,8,0,1.0,0.6398,0.6398,What makes you excited?,[BURST],True,0.0268,0.4195
+TRAJ_043,"['power', 'president', 'genders']",D_10,9,D_10,1,D_10,7,7,7,7,7,0,1.0,0.6566,0.6566,"be the President, What would you do?",[BURST],True,0.0233,0.4193
+TRAJ_116,"['weekend', 'hurricane', 'ida']",D_27,26,D_27,1,D_27,7,7,7,7,7,0,1.0,0.6538,0.6538,How were you impacted by Hurricane Ida?,[BURST],True,0.0233,0.4118
+TRAJ_081,"['brand', 'drink', 'better']",D_17,16,D_17,1,D_17,8,8,8,8,8,0,1.0,0.621,0.621,What's an underrated drink everyone should try at least once?,[BURST],True,0.0268,0.363
+TRAJ_090,"['travel', 'touching', 'continent']",D_19,18,D_19,1,D_19,7,7,7,7,7,0,1.0,0.6313,0.6313,How is your day?,[BURST],True,0.0233,0.3515
+TRAJ_037,"['song', 'love', 'artist']",D_08,7,D_08,1,D_08,7,7,7,7,7,0,1.0,0.6232,0.6232,"Reddit, what is your least favorite song by your favorite artist?",[BURST],True,0.0233,0.3298
+TRAJ_015,"['school', 'moment', 'parent']",D_04,3,D_06,2,D_04 -> D_06,28 -> 38,28,38,38,66,10,1.36,0.5354,0.52,"What is the stupidest thing someone has told you as a child, which you believed back then?",[REJECTED (LOW_COHERENCE)],False,0.2207,0.0
+TRAJ_019,"['happen', 'afghanistan', 'fall']",D_04,3,D_09,5,D_04 -> D_06 -> D_07 -> D_08 -> D_09,7 -> 14 -> 15 -> 8 -> 7,7,15,7,51,0,1.0,0.7138,0.6251,What is likely to happen when Talibans gain 100% control of Afghanistan?,[DECLINING],False,0.1706,0.0
+TRAJ_003,"['movie', 'date', 'movies']",D_01,0,D_08,5,D_01 -> D_03 -> D_05 -> D_07 -> D_08,7 -> 10 -> 7 -> 15 -> 9,7,15,9,48,2,1.29,0.6177,0.5209,Whats a movie that you really enjoyed but probably won't ever watch again?,[REJECTED (LOW_COHERENCE)],False,0.16,0.0
+TRAJ_041,"['story', 'dream', 'moment']",D_09,8,D_11,2,D_09 -> D_11,26 -> 17,26,26,17,43,-9,0.65,0.5255,0.4819,Confession Time... What is the nastiest thing you've done?,[REJECTED (LOW_COHERENCE)],False,0.1448,0.0
+TRAJ_077,"['movie', 'song', 'series']",D_17,16,D_21,3,D_17 -> D_19 -> D_21,14 -> 7 -> 18,14,18,18,39,4,1.29,0.6556,0.5751,Favorite movie?,[REJECTED (LOW_COHERENCE)],False,0.1304,0.0
+TRAJ_082,"['parents', 'karma', 'happened']",D_17,16,D_21,3,D_17 -> D_19 -> D_21,16 -> 12 -> 7,16,16,7,35,-9,0.44,0.6307,0.6062,thing you've ever done?,[DECLINING],False,0.1171,0.0
+TRAJ_092,"['story', 'forbid', 'entering']",D_20,19,D_24,3,D_20 -> D_22 -> D_24,9 -> 10 -> 14,9,14,14,33,5,1.56,0.6115,0.5335,"What is your worst, first day of high school story?",[REJECTED (LOW_COHERENCE)],False,0.11,0.0
+TRAJ_014,"['question', 'true', 'bible']",D_03,2,D_03,1,D_03,31,31,31,31,31,0,1.0,0.4689,0.4689,thing you did or said as a teenager that still makes you cringe as an adult?,[REJECTED (LOW_COHERENCE)],False,0.1037,0.0
+TRAJ_022,"['regret', 'hard', 'patient']",D_05,4,D_05,1,D_05,29,29,29,29,29,0,1.0,0.5528,0.5528,"thing you've done, without even realizing you'd done it?",[REJECTED (LOW_COHERENCE)],False,0.0967,0.0
+TRAJ_040,"['song', 'listen', 'songs']",D_09,8,D_12,3,D_09 -> D_10 -> D_12,12 -> 7 -> 7,12,12,7,26,-5,0.58,0.6305,0.5775,What would be the most socially unacceptable song to play at a funeral ?,[REJECTED (LOW_COHERENCE)],False,0.0875,0.0
+TRAJ_078,"['long', 'slept', 'age']",D_17,16,D_17,1,D_17,25,25,25,25,25,0,1.0,0.5298,0.5298,What was the time you knew you screwed up?,[REJECTED (LOW_COHERENCE)],False,0.0836,0.0
+TRAJ_027,"['germany', 'cereal', 'milk']",D_06,5,D_06,1,D_06,24,24,24,24,24,0,1.0,0.5857,0.5857,Germany?,[REJECTED (LOW_COHERENCE)],False,0.08,0.0
+TRAJ_045,"['phrase', 'changed', 'friendship']",D_10,9,D_10,1,D_10,23,23,23,23,23,0,1.0,0.6168,0.6168,"What is your most ""Bruh Moment"" in life?",[REJECTED (LOW_COHERENCE)],False,0.0767,0.0
+TRAJ_046,"['child', 'forever', 'friend']",D_11,10,D_11,1,D_11,23,23,23,23,23,0,1.0,0.5666,0.5666,"What was your ""Not Worth It"" Moment?",[REJECTED (LOW_COHERENCE)],False,0.0767,0.0
+TRAJ_051,"['movie', 'movies', 'relatively']",D_11,10,D_14,3,D_11 -> D_13 -> D_14,7 -> 9 -> 7,7,9,7,23,0,1.0,0.7097,0.6483,"What are some relatively recent shows you've enjoyed (Whatever the platform may be, Netflix, Prime video, cable, etc.)?",[DECLINING],False,0.0767,0.0
+TRAJ_133,"['relationship', 'enjoy', 'looking']",D_30,29,D_30,1,D_30,23,23,23,23,23,0,1.0,0.4648,0.4648,At what point in life do you feel like “Oh God this is it”?,[REJECTED (LOW_COHERENCE)],False,0.0767,0.0
+TRAJ_129,"['cigarettes', 'isn', 'picking']",D_29,28,D_29,1,D_29,22,22,22,22,22,0,1.0,0.4753,0.4753,[throwaway] what is your darkest secret that no-one knows ?,[REJECTED (LOW_COHERENCE)],False,0.0733,0.0
+TRAJ_042,"['home', 'house', 'new']",D_09,8,D_09,1,D_09,21,21,21,21,21,0,1.0,0.4559,0.4559,you're drinking alone and have nothing to do?,[REJECTED (LOW_COHERENCE)],False,0.0707,0.0
+TRAJ_062,"['anime', 'game', 'protagonist']",D_14,13,D_16,2,D_14 -> D_16,7 -> 13,7,13,13,20,6,1.86,0.6016,0.5381,"without saying the title, what's your favorite video game?",[REJECTED (LOW_COHERENCE)],False,0.0667,0.0
+TRAJ_132,"['stranger', 'cried', 'advice']",D_30,29,D_30,1,D_30,19,19,19,19,19,0,1.0,0.6169,0.6169,What is the most scariest/shocking thing someone asked you that still haunts you to this day?,[REJECTED (LOW_COHERENCE)],False,0.0633,0.0
+TRAJ_098,"['kitchen', 'hersheys', 'america']",D_22,21,D_22,1,D_22,18,18,18,18,18,0,1.0,0.525,0.525,food that you can tolerate and still enjoy?,[REJECTED (LOW_COHERENCE)],False,0.0602,0.0
+TRAJ_100,"['game', 'remember', 'known']",D_23,22,D_24,2,D_23 -> D_24,9 -> 9,9,9,9,18,0,1.0,0.5863,0.5803,What Video Game that you loved and used to always play got ruined by New Players?,[REJECTED (LOW_COHERENCE)],False,0.0604,0.0
+TRAJ_052,"['item', 'mustard', 'type']",D_11,10,D_11,1,D_11,17,17,17,17,17,0,1.0,0.4582,0.4582,Which item in your house you wish was yours ?,[REJECTED (LOW_COHERENCE)],False,0.0567,0.0
+TRAJ_024,"['sex', 'women', 'men']",D_05,4,D_05,1,D_05,16,16,16,16,16,0,1.0,0.4935,0.4935,Sex sex sex men women female sex sex fetish,[REJECTED (LOW_COHERENCE)],False,0.0533,0.0
+TRAJ_002,"['changed', 'view', 'keeps']",D_01,0,D_01,1,D_01,15,15,15,15,15,0,1.0,0.6105,0.6105,What experience changed your perspective on life?,[REJECTED (LOW_COHERENCE)],False,0.05,0.0
+TRAJ_053,"['afghanistan', 'taliban', 'misinformation']",D_12,11,D_12,1,D_12,15,15,15,15,15,0,1.0,0.5475,0.5475,"personally fix the US retreat from Afghanistan which some regard as betrayal of its allies and the end of the US ""soft power"" appeal?",[REJECTED (LOW_COHERENCE)],False,0.0502,0.0
+TRAJ_068,"['question', 'answer', 'movie']",D_15,14,D_15,1,D_15,15,15,15,15,15,0,1.0,0.5218,0.5218,What are your irrational fears?,[REJECTED (LOW_COHERENCE)],False,0.05,0.0
+TRAJ_001,"['partner', 'moment', 'break']",D_01,0,D_01,1,D_01,14,14,14,14,14,0,1.0,0.6201,0.6201,wedding moment you've witnessed or heard of?,[STATIC],False,0.0467,0.0
+TRAJ_071,"['karma', 'online', 'inturnet']",D_16,15,D_16,1,D_16,14,14,14,14,14,0,1.0,0.551,0.551,subreddit in reddit ?,[REJECTED (LOW_COHERENCE)],False,0.0468,0.0
+TRAJ_076,"['api', 'rest', 'url']",D_16,15,D_16,1,D_16,14,14,14,14,14,0,1.0,0.4686,0.4686,thing you have ever done?,[REJECTED (LOW_COHERENCE)],False,0.0468,0.0
+TRAJ_094,"['friends', 'drift', 'apart']",D_21,20,D_21,1,D_21,14,14,14,14,14,0,1.0,0.5342,0.5342,you can't reason with your family and they express some extremely not ok opinions?,[REJECTED (LOW_COHERENCE)],False,0.0468,0.0
+TRAJ_011,"['food', 'meal', 'tasted']",D_02,1,D_02,1,D_02,13,13,13,13,13,0,1.0,0.5994,0.5994,What meal are you embarrassed to say that you make when the fridge is empty?,[REJECTED (LOW_COHERENCE)],False,0.0435,0.0
+TRAJ_017,"['history', 'root', 'knowing']",D_04,3,D_04,1,D_04,13,13,13,13,13,0,1.0,0.4655,0.4655,subreddit you know?,[REJECTED (LOW_COHERENCE)],False,0.0435,0.0
+TRAJ_023,"['questions', 'sub', 'question']",D_05,4,D_05,1,D_05,13,13,13,13,13,0,1.0,0.5448,0.5448,the question in the evening SO much better than the questions in the morning? They all seem like Karma whore questions early in the day and real people later in the day?,[REJECTED (LOW_COHERENCE)],False,0.0433,0.0
+TRAJ_036,"['toilet', 'pet', 'lives']",D_08,7,D_08,1,D_08,13,13,13,13,13,0,1.0,0.5372,0.5372,thing you ever Done?,[REJECTED (LOW_COHERENCE)],False,0.0433,0.0
+TRAJ_060,"['parents', 'significant', 'house']",D_13,12,D_13,1,D_13,13,13,13,13,13,0,1.0,0.5513,0.5513,What is the single dumbest thing you have done in your life?,[REJECTED (LOW_COHERENCE)],False,0.065,0.0
+TRAJ_105,"['sex', 'sexed', 'women']",D_23,22,D_23,1,D_23,13,13,13,13,13,0,1.0,0.4947,0.4947,sex position and why?,[REJECTED (LOW_COHERENCE)],False,0.0436,0.0
+TRAJ_126,"['human', 'emotions', 'right']",D_28,27,D_28,1,D_28,13,13,13,13,13,0,1.0,0.4587,0.4587,"What are your thoughts on human emotions and the ability to tell right from wrong, along with everyones own set of morals in this day amd age we live in now?",[REJECTED (LOW_COHERENCE)],False,0.0435,0.0
+TRAJ_016,"['song', 'awake', 'right']",D_04,3,D_04,1,D_04,12,12,12,12,12,0,1.0,0.5268,0.5268,what song is stuck in your head right now?,[REJECTED (LOW_COHERENCE)],False,0.0401,0.0
+TRAJ_031,"['debatable', 'questions', 'reply']",D_06,5,D_06,1,D_06,12,12,12,12,12,0,1.0,0.5569,0.5569,What are some lighthearted but debatable questions?,[REJECTED (LOW_COHERENCE)],False,0.04,0.0
+TRAJ_034,"['non', 'enjoy', 'animal']",D_07,6,D_07,1,D_07,12,12,12,12,12,0,1.0,0.5512,0.5512,What non-generic activity do you personally enjoy?,[REJECTED (LOW_COHERENCE)],False,0.0401,0.0
+TRAJ_047,"['dumb', 'perceive', 'separate']",D_11,10,D_11,1,D_11,12,12,12,12,12,0,1.0,0.51,0.51,you keep on think that you are separate from nature?,[REJECTED (LOW_COHERENCE)],False,0.04,0.0
+TRAJ_054,"['school', 'thoughts', 'calligraphy']",D_12,11,D_12,1,D_12,12,12,12,12,12,0,1.0,0.4771,0.4771,What are your thoughts on Calligraphy? Do you think it'll die soon? Or it'll be used more coming times?,[REJECTED (LOW_COHERENCE)],False,0.0401,0.0
+TRAJ_072,"['witness', 'result', 'hood']",D_16,15,D_16,1,D_16,12,12,12,12,12,0,1.0,0.6035,0.6035,thing u saw on the d a r k w e b?,[REJECTED (LOW_COHERENCE)],False,0.0401,0.0
+TRAJ_106,"['breathe', 'food', 'pistachio']",D_23,22,D_23,1,D_23,12,12,12,12,12,0,1.0,0.4651,0.4651,What food cools down the fastest after cooking it and why?,[REJECTED (LOW_COHERENCE)],False,0.0403,0.0
+TRAJ_124,"['movie', 'video', 'game']",D_28,27,D_28,1,D_28,12,12,12,12,12,0,1.0,0.603,0.603,What's that one movie/game everybody says is really bad but you really enjoyed it?,[REJECTED (LOW_COHERENCE)],False,0.0401,0.0
+TRAJ_012,"['thoughts', 'case', 'skin']",D_02,1,D_02,1,D_02,11,11,11,11,11,0,1.0,0.4751,0.4751,What are your thoughts on anti vaxxers?,[REJECTED (LOW_COHERENCE)],False,0.0368,0.0
+TRAJ_063,"['karma', 'points', 'new']",D_14,13,D_14,1,D_14,11,11,11,11,11,0,1.0,0.479,0.479,"don't have, that you're pretty sure that everyone else has?",[REJECTED (LOW_COHERENCE)],False,0.0367,0.0
+TRAJ_065,"['pregnant', 'women', 'kicked']",D_15,14,D_15,1,D_15,11,11,11,11,11,0,1.0,0.5957,0.5957,day off your life?,[REJECTED (LOW_COHERENCE)],False,0.0367,0.0
+TRAJ_089,"['nihilism', 'naive', 'silly']",D_19,18,D_19,1,D_19,11,11,11,11,11,0,1.0,0.512,0.512,What makes nihilism a naive and silly perspective regarding existence?,[REJECTED (LOW_COHERENCE)],False,0.0367,0.0
+TRAJ_104,"['dick', 'mom', 'born']",D_23,22,D_23,1,D_23,11,11,11,11,11,0,1.0,0.513,0.513,What does born with the squid mean?,[REJECTED (LOW_COHERENCE)],False,0.0369,0.0
+TRAJ_107,"['questions', 'ask', 'asked']",D_24,23,D_24,1,D_24,11,11,11,11,11,0,1.0,0.5081,0.5081,What are some good questions to ask a dead co-worker?,[REJECTED (LOW_COHERENCE)],False,0.055,0.0
+TRAJ_113,"['cereal', 'tea', 'bubble']",D_26,25,D_26,1,D_26,11,11,11,11,11,0,1.0,0.5805,0.5805,Could one consider bubble tea to be a cereal?,[REJECTED (LOW_COHERENCE)],False,0.0367,0.0
+TRAJ_115,"['weird', 'attracted', 'wish']",D_27,26,D_27,1,D_27,11,11,11,11,11,0,1.0,0.5268,0.5268,What weird stuff do you do when no one is looking...but wish someone was?,[REJECTED (LOW_COHERENCE)],False,0.0367,0.0
+TRAJ_118,"['story', 'attended', 'woodstock']",D_27,26,D_27,1,D_27,11,11,11,11,11,0,1.0,0.591,0.591,What is your wmbaressing first day of school story?,[REJECTED (LOW_COHERENCE)],False,0.0367,0.0
+TRAJ_119,"['wish', 'game', 'choose']",D_27,26,D_27,1,D_27,11,11,11,11,11,0,1.0,0.5411,0.5411,"If all of your memories could be erased except for one, which one would you choose to keep?",[REJECTED (LOW_COHERENCE)],False,0.0367,0.0
+TRAJ_029,"['column', 'introverts', 'problem']",D_06,5,D_06,1,D_06,10,10,10,10,10,0,1.0,0.4935,0.4935,"Would you rather have $10m today, or have $5k per day (resets at midnight) for the rest of your life?",[REJECTED (LOW_COHERENCE)],False,0.0333,0.0
+TRAJ_030,"['exchange', 'cash', 'points']",D_06,5,D_06,1,D_06,10,10,10,10,10,0,1.0,0.5391,0.5391,exchange Reddit points for cash?,[REJECTED (LOW_COHERENCE)],False,0.0333,0.0
+TRAJ_058,"['food', 'nay', 'bee']",D_12,11,D_12,1,D_12,10,10,10,10,10,0,1.0,0.5805,0.5805,flavour of Cheeseburger to put inside you?,[REJECTED (LOW_COHERENCE)],False,0.0334,0.0
+TRAJ_066,"['kid', 'stranded', 'desert']",D_15,14,D_15,1,D_15,10,10,10,10,10,0,1.0,0.5894,0.5894,thing that happened to you today?,[REJECTED (LOW_COHERENCE)],False,0.0333,0.0
+TRAJ_121,"['song', 'artist', 'stuck']",D_28,27,D_28,1,D_28,10,10,10,10,10,0,1.0,0.6157,0.6157,What's a song you grew up with that's well known but underappreciated?,[REJECTED (LOW_COHERENCE)],False,0.0334,0.0
+TRAJ_049,"['overpopulated', 'gets', 'kicked']",D_11,10,D_11,1,D_11,9,9,9,9,9,0,1.0,0.5636,0.5636,If there was a zombie apocalypse were to happen. What group of people would die first?,[REJECTED (LOW_COHERENCE)],False,0.03,0.0
+TRAJ_056,"['lost', 'weight', 'manage']",D_12,11,D_12,1,D_12,9,9,9,9,9,0,1.0,0.5341,0.5341,you never done it but pretend you've done it?,[REJECTED (LOW_COHERENCE)],False,0.0301,0.0
+TRAJ_057,"['infinite', 'universes', 'sets']",D_12,11,D_12,1,D_12,9,9,9,9,9,0,1.0,0.47,0.47,WouldUrather?,[REJECTED (LOW_COHERENCE)],False,0.0301,0.0
+TRAJ_064,"['belong', 'pizza', 'yes']",D_14,13,D_14,1,D_14,9,9,9,9,9,0,1.0,0.4569,0.4569,COMMENT for no. UPV0TE for yes...Do does pineapple belong on pizza?,[REJECTED (LOW_COHERENCE)],False,0.03,0.0
+TRAJ_070,"['gtm', 'subject', 'type']",D_15,14,D_15,1,D_15,9,9,9,9,9,0,1.0,0.4819,0.4819,What is a variable in GTM?,[REJECTED (LOW_COHERENCE)],False,0.03,0.0
+TRAJ_079,"['tattoo', 'today', 'phones']",D_17,16,D_17,1,D_17,9,9,9,9,9,0,1.0,0.5779,0.5779,What terrible tattoo ideas are you glad to not have gone through with?,[REJECTED (LOW_COHERENCE)],False,0.0301,0.0
+TRAJ_091,"['poor', 'industry', 'job']",D_20,19,D_20,1,D_20,9,9,9,9,9,0,1.0,0.4993,0.4993,"What is the cheapest lifestyle that you can afford in your area, even if it means giving up your current home?",[REJECTED (LOW_COHERENCE)],False,0.03,0.0
+TRAJ_093,"['generally', 'capability', 'leanest']",D_21,20,D_21,1,D_21,9,9,9,9,9,0,1.0,0.5591,0.5591,"Do you believe people are generally good with the capability of being bad, or generally bad with the capability of being good?",[REJECTED (LOW_COHERENCE)],False,0.0301,0.0
+TRAJ_108,"['pump', 'weird', 'food']",D_25,24,D_25,1,D_25,9,9,9,9,9,0,1.0,0.5909,0.5909,What weird food would go great on top of pasta?,[REJECTED (LOW_COHERENCE)],False,0.0301,0.0
+TRAJ_008,"['key', 'connect', 'binance']",D_02,1,D_02,1,D_02,8,8,8,8,8,0,1.0,0.4715,0.4715,What are some apps that allow you to organize photos by color?,[REJECTED (LOW_COHERENCE)],False,0.0268,0.0
+TRAJ_032,"['left', 'difference', 'liberal']",D_06,5,D_06,1,D_06,8,8,8,8,8,0,1.0,0.5483,0.5483,What's the difference between liberal and left?,[REJECTED (LOW_COHERENCE)],False,0.0267,0.0
+TRAJ_033,"['pandemic', 'unfriended', 'start']",D_07,6,D_07,1,D_07,8,8,8,8,8,0,1.0,0.5785,0.5785,How many people have you “unfriended” (family and friends) since the start of the pandemic?,[REJECTED (LOW_COHERENCE)],False,0.0268,0.0
+TRAJ_061,"['road', 'questions', 'weird']",D_13,12,D_13,1,D_13,8,8,8,8,8,0,1.0,0.5334,0.5334,What are some best shitty questions that you have asked in this sub ?,[REJECTED (LOW_COHERENCE)],False,0.04,0.0
+TRAJ_069,"['plane', 'happens', 'united']",D_15,14,D_15,1,D_15,8,8,8,8,8,0,1.0,0.4626,0.4626,What is a loophole you have operated under for years?,[REJECTED (LOW_COHERENCE)],False,0.0267,0.0
+TRAJ_084,"['types', 'sentences', 'asked']",D_18,17,D_18,1,D_18,8,8,8,8,8,0,1.0,0.5316,0.5316,Can y'all answer the thing in the comments?,[REJECTED (LOW_COHERENCE)],False,0.0267,0.0
+TRAJ_099,"['music', 'albums', 'amp']",D_22,21,D_22,1,D_22,8,8,8,8,8,0,1.0,0.4997,0.4997,music albums of all-time? All genres appreciated,[REJECTED (LOW_COHERENCE)],False,0.0268,0.0
+TRAJ_103,"['hate', 'british', 'consider']",D_23,22,D_23,1,D_23,8,8,8,8,8,0,1.0,0.54,0.54,[Serious] Why does everybody hate the British?,[REJECTED (LOW_COHERENCE)],False,0.0268,0.0
+TRAJ_109,"['lie', 'injury', 'money']",D_25,24,D_25,1,D_25,8,8,8,8,8,0,1.0,0.487,0.487,work-related injury you have witnessed?,[REJECTED (LOW_COHERENCE)],False,0.0268,0.0
+TRAJ_110,"['inch', 'reason', 'cried']",D_25,24,D_25,1,D_25,8,8,8,8,8,0,1.0,0.6084,0.6084,What's the creepiest thing that happened to you that you couldn't explain?,[REJECTED (LOW_COHERENCE)],False,0.0268,0.0
+TRAJ_111,"['song', 'fictional', 'teams']",D_25,24,D_25,1,D_25,8,8,8,8,8,0,1.0,0.4737,0.4737,song (without saying the name) by telling us your favorite line from the tune?,[REJECTED (LOW_COHERENCE)],False,0.0268,0.0
+TRAJ_114,"['overweight', 'gamer', 'immediately']",D_26,25,D_26,1,D_26,8,8,8,8,8,0,1.0,0.5164,0.5164,bug or glitch you've come across?,[REJECTED (LOW_COHERENCE)],False,0.0267,0.0
+TRAJ_122,"['fictional', 'foods', 'real']",D_28,27,D_28,1,D_28,8,8,8,8,8,0,1.0,0.598,0.598,"eat anything from outside of the area of where you live, what would it be?",[REJECTED (LOW_COHERENCE)],False,0.0268,0.0
+TRAJ_131,"['pandemic', 'curse', 'lot']",D_29,28,D_29,1,D_29,8,8,8,8,8,0,1.0,0.5124,0.5124,The pandemic has been a curse for a lot of people. In what way has it been a blessing for you?,[REJECTED (LOW_COHERENCE)],False,0.0267,0.0
+TRAJ_004,"['language', 'non', 'insects']",D_01,0,D_01,1,D_01,7,7,7,7,7,0,1.0,0.4904,0.4904,What are the top 3 best books in your opinion?,[REJECTED (LOW_COHERENCE)],False,0.0233,0.0
+TRAJ_010,"['narcissist', 'times', 'heartfelt']",D_02,1,D_02,1,D_02,7,7,7,7,7,0,1.0,0.6099,0.6099,"I feel like at times that I am a narcissist because when someone is saying something that could be heartfelt and private I don't really react to it the way your average person would. Am I a narcissist ,emotionally disturbed or something?",[REJECTED (LOW_COHERENCE)],False,0.0234,0.0
+TRAJ_018,"['speed', 'limits', 'end']",D_04,3,D_04,1,D_04,7,7,7,7,7,0,1.0,0.452,0.452,"speed limits (in the US, I don't know about other countries) always end in 5 or 0?",[REJECTED (LOW_COHERENCE)],False,0.0234,0.0
+TRAJ_020,"['taxes', 'children', 'karens']",D_05,4,D_05,1,D_05,7,7,7,7,7,0,1.0,0.4926,0.4926,"Children of ""Karens"", how do you feel when you witness firsthand the public outbursts of your parent/s?",[REJECTED (LOW_COHERENCE)],False,0.0233,0.0
+TRAJ_021,"['anxiety', 'attacks', 'smoking']",D_05,4,D_05,1,D_05,7,7,7,7,7,0,1.0,0.5854,0.5854,stop getting anxiety attacks when smoking.,[REJECTED (LOW_COHERENCE)],False,0.0233,0.0
+TRAJ_025,"['almond', 'nautical', 'equivalent']",D_05,4,D_05,1,D_05,7,7,7,7,7,0,1.0,0.5018,0.5018,part of an Oreo?,[REJECTED (LOW_COHERENCE)],False,0.0233,0.0
+TRAJ_028,"['horny', 'etiquette', 'engaging']",D_06,5,D_06,1,D_06,7,7,7,7,7,0,1.0,0.5791,0.5791,Do women enjoy when their male partner has a foot fetish?,[REJECTED (LOW_COHERENCE)],False,0.0233,0.0
+TRAJ_044,"['shop', 'work', 'lots']",D_10,9,D_10,1,D_10,7,7,7,7,7,0,1.0,0.5092,0.5092,"with a 32 hour, 4 day work week?",[REJECTED (LOW_COHERENCE)],False,0.0233,0.0
+TRAJ_080,"['rights', 'function', 'pay']",D_17,16,D_17,1,D_17,7,7,7,7,7,0,1.0,0.6138,0.6138,Could this country function without the Bill of Rights?,[REJECTED (LOW_COHERENCE)],False,0.0234,0.0
+TRAJ_095,"['asked', 'hot', 'question']",D_21,20,D_21,1,D_21,7,7,7,7,7,0,1.0,0.4974,0.4974,How shall I know if a question as already been asked on r/askreddit?,[REJECTED (LOW_COHERENCE)],False,0.0234,0.0
+TRAJ_096,"['zero', 'media', 'decent']",D_21,20,D_21,1,D_21,7,7,7,7,7,0,1.0,0.4517,0.4517,"Any decent pay jobs to work from home? I have crippling anxiety and am almost bankrupt. Ive scoured indeed/monster/CL/ect. Zero luck. I need guidance, I need help. Not to mention my 20 year old car died on me last week, we are about to put my dog down, my Dad has had over 5 strokes in 4 months",[REJECTED (LOW_COHERENCE)],False,0.0234,0.0
+TRAJ_120,"['current', 'online', 'investment']",D_27,26,D_27,1,D_27,7,7,7,7,7,0,1.0,0.505,0.505,investment to make today?,[REJECTED (LOW_COHERENCE)],False,0.0233,0.0
+TRAJ_128,"['friend', 'send', 'selfies']",D_29,28,D_29,1,D_29,7,7,7,7,7,0,1.0,0.6026,0.6026,What are you most insecure about?,[REJECTED (LOW_COHERENCE)],False,0.0233,0.0
+TRAJ_130,"['tiktok', 'popular', 'jonas']",D_29,28,D_29,1,D_29,7,7,7,7,7,0,1.0,0.5404,0.5404,TikTok so popular?,[REJECTED (LOW_COHERENCE)],False,0.0233,0.0

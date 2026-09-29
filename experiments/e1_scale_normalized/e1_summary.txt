@@ -1,0 +1,33 @@
+================================================================================
+   EXPERIMENT 9B: E0 (CONTROL) VS E1 (SCALE-NORMALIZED) COMPARISON REPORT       
+================================================================================
+
+Event: OnlyFans Porn Ban (2021-08-19 (D_10/D_11))
+  * E0 Control Detection:             NEVER (Filtered) (None)
+  * E1 Scale-Normalized Detection:    D_08 ([BURST], ID: TRAJ_028, Vol: 8, Share: 2.7%, Coh: 0.762)
+  * Keyword Baseline Detection:       D_02
+  * E1 Representative Quote:          "Is habit of watching porn awful? [removed]"
+---------------------------------------------------------------------------
+Event: FDA Pfizer Vaccine Approval (2021-08-23 (D_15))
+  * E0 Control Detection:             NEVER (Filtered) (None)
+  * E1 Scale-Normalized Detection:    NEVER (Filtered) (None, ID: N/A, Vol: 0, Share: 0.0%, Coh: 0.000)
+  * Keyword Baseline Detection:       D_11
+---------------------------------------------------------------------------
+Event: Reddit Locked Comments Incident (2021-09-01/02 (D_25/D_26))
+  * E0 Control Detection:             NEVER (Filtered) (None)
+  * E1 Scale-Normalized Detection:    NEVER (Filtered) (None, ID: N/A, Vol: 0, Share: 0.0%, Coh: 0.000)
+  * Keyword Baseline Detection:       D_18
+---------------------------------------------------------------------------
+
+AGGREGATE COMPARISON METRICS:
+  Metric                              E0 Control       E1 Scale-Normalized
+  ---------------------------------   ------------     -------------------
+  Total Trajectories Evaluated:       82               82
+  Total Validated Candidates:         2                36
+  Target Events Captured:             0 / 3 (0.0%)     1 / 3 (33.3% - OnlyFans captured)
+  OnlyFans Event Status:              Missed (<15 vol) Captured at D_11 [BURST] (4.0% share)
+  FDA Vaccine Status:                 Sub-threshold    Sub-threshold (N=1-3 < min_cluster_size 7)
+  Locked Comments Status:             Sub-threshold    Sub-threshold (N=1-2 < min_cluster_size 7)
+  Mean Coherence of Candidates:       0.667            0.697
+  Baseline Keyword Alerts:            823              823
+================================================================================

@@ -1,0 +1,100 @@
+window_id,window_index,week_label,cluster_key,cluster_label,topic_keywords,post_count,avg_semantic_coherence,representative_post
+W_0,0,W0_Late_July,W_0_C0,moment / past / future,"moment, past, future, choose",17,0.6626,If you could relive any day from your past which would it be? Why?
+W_0,0,W0_Late_July,W_0_C1,food / random / choose,"food, random, choose, object",12,0.5941,"If you could have any animal as a pet, what would it be and why?"
+W_0,0,W0_Late_July,W_0_C2,sexual / orientation / fantasize,"sexual, orientation, fantasize, masturbating",10,0.6898,How is it possible that pornography can effect ones sexual orientation?
+W_0,0,W0_Late_July,W_0_C3,lifetime / goalpost / set,"lifetime, goalpost, set, successful",12,0.6639,What is a goal you have for your life that you think others share (such as starting a family or getting a certain job)?
+W_0,0,W0_Late_July,W_0_C4,joke / phrase / little,"joke, phrase, little, sad",18,0.6553,What is your favorite short joke of all time?
+W_0,0,W0_Late_July,W_0_C5,scariest / secret / kept,"scariest, secret, kept, experience",12,0.7159,[Serious] What is the scariest thing that happened to you while you were home alone?
+W_0,0,W0_Late_July,W_0_C6,story / embarrassing / bathroom,"story, embarrassing, bathroom, judges",17,0.6797,What's the most down bad thing you ever did?
+W_0,0,W0_Late_July,W_0_C7,biggest / regret / gotten,"biggest, regret, gotten, decision",7,0.7621,What is your biggest regret?
+W_0,0,W0_Late_July,W_0_C8,custody / battles / men,"custody, battles, men, women",8,0.6024,Why do men get railroaded in custody battles even when the mom blatantly lies?
+W_0,0,W0_Late_July,W_0_C9,movie / watch / wish,"movie, watch, wish, watching",14,0.7419,Which movie you wish for watching again for the first time?
+W_0,0,W0_Late_July,W_0_C10,song / band / movie,"song, band, movie, disney",10,0.6995,What song from your favorite band would you recommend to a new listener to listen to first?
+W_0,0,W0_Late_July,W_0_C11,asking / questions / hell,"asking, questions, hell, going",9,0.5385,What topics on AskReddit do you skip?
+W_0,0,W0_Late_July,W_0_C12,karma / kid / bully,"karma, kid, bully, spoiled",12,0.6614,people of reddit when did a bully or spoiled kid get hit by karma
+W_0,0,W0_Late_July,W_0_C13,putin / doctor / happen,"putin, doctor, happen, planet",8,0.5148,"Has anyone else ever wondered what might happen if every living animal on the planet earth, including humans, all breathed in at the same time? Do you think it would be enough to change air pressure enough to alter the weather?"
+W_0,0,W0_Late_July,W_0_C15,mobile / devices / username,"mobile, devices, username, photos",7,0.6199,Do posts that are posted on mobile devices look different on other devices? I only post via mobile.
+W_1,1,W1_Early_Aug,W_1_C0,didn / online / relationship,"didn, online, relationship, cheaters",9,0.5456,"People of Reddit who are neurotic, what made you that way?"
+W_1,1,W1_Early_Aug,W_1_C1,covid / vaccine / immune,"covid, vaccine, immune, rates",10,0.7504,is it possible to be immune to COVID?
+W_1,1,W1_Early_Aug,W_1_C2,humans / change / climate,"humans, change, climate, future",13,0.6213,"What actions can we do now, to be prepared for the consequences of climate change in say 20 or more years?"
+W_1,1,W1_Early_Aug,W_1_C3,concepts / microchips / antennas,"concepts, microchips, antennas, banned",8,0.9103,Why are there concepts like 10volts DC and + - and microchips and antennas ? When will it stop?
+W_1,1,W1_Early_Aug,W_1_C4,country / try / vegetable,"country, try, vegetable, live",24,0.5449,What are you having for breakfast?
+W_1,1,W1_Early_Aug,W_1_C5,advice / parents / joke,"advice, parents, joke, heard",47,0.6109,What's the worst thing you heard your parents say about you?
+W_1,1,W1_Early_Aug,W_1_C6,wish / military / fact,"wish, military, fact, change",14,0.6267,What's something everyone does but won't admit?
+W_1,1,W1_Early_Aug,W_1_C7,sleep / experienced / paralysis,"sleep, experienced, paralysis, moment",15,0.632,What was an embarrassing time you were sexually aroused?
+W_1,1,W1_Early_Aug,W_1_C8,character / anime / fictional,"character, anime, fictional, dog",9,0.8003,Who is your favourite animated character?
+W_1,1,W1_Early_Aug,W_1_C9,movies / amazon / prime,"movies, amazon, prime, watched",13,0.6915,What are your favourite movies on Amazon Prime?
+W_1,1,W1_Early_Aug,W_1_C10,song / seinfeld / episodes,"song, seinfeld, episodes, rap",8,0.7617,Which is your all time favourite song?
+W_1,1,W1_Early_Aug,W_1_C12,sony / aibo / ers,"sony, aibo, ers, real",8,0.7874,Why it is said adopt an Real Dog instead of Sony aibo ERS - 1000?
+W_1,1,W1_Early_Aug,W_1_C14,button / poop / cucumbers,"button, poop, cucumbers, pasta",11,0.5165,"Do you consider a spoon used for 5 seconds to stir coffee dirty, if it’s run under water and wiped off?"
+W_2,2,W2_Mid_Aug,W_2_C0,celebrity / pick / choose,"celebrity, pick, choose, hours",8,0.7296,"If you could spend 24 hours with one celebrity, who would it be and why?"
+W_2,2,W2_Mid_Aug,W_2_C1,onlyfans / content / october,"onlyfans, content, october, sex",34,0.6758,So OnlyFans bans explicit content. How else do you think these girls will make money now?
+W_2,2,W2_Mid_Aug,W_2_C2,women / pronouns / attractive,"women, pronouns, attractive, notice",10,0.6245,"Women of reddit, what’s the most attractive trait a guy can possess?"
+W_2,2,W2_Mid_Aug,W_2_C3,vaccine / police / won,"vaccine, police, won, fda",14,0.6592,"How should someone respond to those who say they won't take the vaccine because it's not FDA approved, keep in mind this person lives a healthy lifestyle and tries to avoid anything harmful?"
+W_2,2,W2_Mid_Aug,W_2_C4,ask / couldn / apart,"ask, couldn, apart, obvious",14,0.6135,"What’s the one thing you couldn’t live without? (apart from the obvious food, water etc)"
+W_2,2,W2_Mid_Aug,W_2_C5,food / fast / weed,"food, fast, weed, brand",22,0.6323,What is your favorite fast food brand and why?(optional)
+W_2,2,W2_Mid_Aug,W_2_C6,happen / power / choose,"happen, power, choose, super",9,0.5772,"what would happen if you had a whole in your eye lid, no matter how small or big"
+W_2,2,W2_Mid_Aug,W_2_C7,story / happened / friend,"story, happened, friend, psychic",10,0.5945,"[Serious] People who saw or were involved during a crime scene, what’s your story?"
+W_2,2,W2_Mid_Aug,W_2_C8,opinion / mayonnaise / juice,"opinion, mayonnaise, juice, better",13,0.523,What is your opinion on mayonnaise?
+W_2,2,W2_Mid_Aug,W_2_C9,childhood / happened / story,"childhood, happened, story, username",13,0.579,[Serious] what was your biggest heartbreak?
+W_2,2,W2_Mid_Aug,W_2_C10,cheating / secret / kept,"cheating, secret, kept, ruin",11,0.6247,"Reddit, has anyone ever dated you and later confessed they did it for a messed-up reason?"
+W_2,2,W2_Mid_Aug,W_2_C11,dumbest / funniest / heard,"dumbest, funniest, heard, cat",13,0.7146,What's the dumbest thing you've ever done?
+W_2,2,W2_Mid_Aug,W_2_C12,away / stupid / artists,"away, stupid, artists, pulled",10,0.676,"Redditors of reddit, What is the most stupid post on reddit you've ever seen?"
+W_2,2,W2_Mid_Aug,W_2_C13,season / young / justice,"season, young, justice, movies",12,0.6529,Do you like season 3 of Young Justice?
+W_2,2,W2_Mid_Aug,W_2_C14,song / episode / hate,"song, episode, hate, artist",16,0.6233,What song gives you nostalgia based on the info provided in the comment section?
+W_2,2,W2_Mid_Aug,W_2_C15,cool / pop / toilet,"cool, pop, toilet, ideas",9,0.6261,Do u think the best ideas pop up when your on the toilet? If so what are some of them.
+W_2,2,W2_Mid_Aug,W_2_C16,drawing / start / milestones,"drawing, start, milestones, beginner",14,0.5962,What can one do to get better at drawing at 23?
+W_2,2,W2_Mid_Aug,W_2_C17,fact / believe / superstitious,"fact, believe, superstitious, gift",11,0.5999,What is a fact that you know that you definitely should not know?
+W_2,2,W2_Mid_Aug,W_2_C18,number / universe / energy,"number, universe, energy, category",8,0.5685,What's your favorite number?
+W_2,2,W2_Mid_Aug,W_2_C19,store / wants / snap,"store, wants, snap, score",9,0.4736,People of reddit. Why do you buy metal chairs to then place directly in the sunlight?
+W_2,2,W2_Mid_Aug,W_2_C20,xenomorphs / shriek / lack,"xenomorphs, shriek, lack, sleep",9,0.568,[serious] why do xenomorphs shriek so much?
+W_2,2,W2_Mid_Aug,W_2_C21,texans / bury / deshaun,"texans, bury, deshaun, watson",8,0.5051,Are the Houston Texans Trying to Bury Deshaun Watson?
+W_3,3,W3_Early_Sep,W_3_C0,dislike / hate / instantly,"dislike, hate, instantly, love",9,0.7749,What is something that people do that makes you dislike them INSTANTLY?
+W_3,3,W3_Early_Sep,W_3_C1,actor / character / fictional,"actor, character, fictional, choose",7,0.7466,What actor would you choose to play your favorite animated character? Movie or tv series. Why?
+W_3,3,W3_Early_Sep,W_3_C2,money / recommend / going,"money, recommend, going, gaming",10,0.5166,How much boob money do you currently have stashed?
+W_3,3,W3_Early_Sep,W_3_C3,joke / public / dumbest,"joke, public, dumbest, homophobic",17,0.6323,"Redditors of reddit, what's the most f*cked up thing you saw at school?"
+W_3,3,W3_Early_Sep,W_3_C4,regret / important / chance,"regret, important, chance, proud",17,0.6765,What is something good that happened to you today?
+W_3,3,W3_Early_Sep,W_3_C5,longest / jumped / parked,"longest, jumped, parked, gone",11,0.5874,What is the longest time you have gone without showering?
+W_3,3,W3_Early_Sep,W_3_C6,cat / soon / ninja,"cat, soon, ninja, turtle",8,0.7294,What’s your favorite least favorite dog name from a popular movie or television series?
+W_3,3,W3_Early_Sep,W_3_C7,song / movie / game,"song, movie, game, operating",29,0.5818,What's your favourite movie?
+W_3,3,W3_Early_Sep,W_3_C8,brand / whey / protein,"brand, whey, protein, mixes",9,0.6785,What is your favorite thing to snack on while watching your favorite show?
+W_3,3,W3_Early_Sep,W_3_C9,peoples / voices / pitched,"peoples, voices, pitched, gay",9,0.6364,Why are gay peoples voices high pitched?
+W_3,3,W3_Early_Sep,W_3_C10,books / ebooks / real,"books, ebooks, real, buy",9,0.5299,Started reading in my 30s and loving it. Should I buy real books or eBooks?
+W_3,3,W3_Early_Sep,W_3_C11,reality / watch / age,"reality, watch, age, big",19,0.4852,Weirdest/funnies rumor you ever heard of yourself?
+W_3,3,W3_Early_Sep,W_3_C12,celebrity / character / famous,"celebrity, character, famous, surprised",9,0.6981,Who is a current trending celebrity that you can see being dead broke within a couple years?
+W_3,3,W3_Early_Sep,W_3_C13,ask / wanna / ama,"ask, wanna, ama, flag",15,0.5965,Ask anything and then edit it to make it look bad?
+W_3,3,W3_Early_Sep,W_3_C14,feature / tips / door,"feature, tips, door, going",18,0.4797,What do you usually do at 2 am?
+W_3,3,W3_Early_Sep,W_3_C15,school / moment / ride,"school, moment, ride, experience",12,0.7049,"High school grads, what was the most embarrassing moment of your high school years?"
+W_3,3,W3_Early_Sep,W_3_C16,moment / won / biggest,"moment, won, biggest, gotten",7,0.7166,People of Reddit what’s your best ha ha you won moment?
+W_3,3,W3_Early_Sep,W_3_C17,happen / trump / election,"happen, trump, election, kanye",13,0.5198,What would happen if you nuked a hurricane?
+W_3,3,W3_Early_Sep,W_3_C18,lock / vote / locked,"lock, vote, locked, karma",15,0.6386,Why is Reddit locking the comments that an OP makes?
+W_3,3,W3_Early_Sep,W_3_C19,tea / cereal / bubble,"tea, cereal, bubble, fancy",10,0.5621,Is Bubble Tea a Cereal?
+W_3,3,W3_Early_Sep,W_3_C20,australia / upside / mushrooms,"australia, upside, mushrooms, considering",8,0.5233,What does being high on mushrooms (my country is considering legalization and I’m curious) feel like?
+W_4,4,W4_Mid_Sep,W_4_C0,race / opinion / suck,"race, opinion, suck, crappy",7,0.6269,Why are most people crappy in your opinion?
+W_4,4,W4_Mid_Sep,W_4_C3,wishes / true / birthday,"wishes, true, birthday, memory",7,0.776,"Out of all of your birthday wishes, which ones came true and how did it go?"
+W_4,4,W4_Mid_Sep,W_4_C4,night / awake / sleep,"night, awake, sleep, keeps",14,0.7617,What’s a thought that keeps you up at night?
+W_4,4,W4_Mid_Sep,W_4_C5,talents / students / job,"talents, students, job, quit",10,0.7385,What have you achieved in a later stage of life than most other people?
+W_4,4,W4_Mid_Sep,W_4_C6,meal / quick / healthy,"meal, quick, healthy, caffeine",7,0.7783,"What’s your go-to quick, healthy meal?"
+W_4,4,W4_Mid_Sep,W_4_C7,married / partner / ended,"married, partner, ended, coming",13,0.6106,"How old were you the last time your mom seen you naked, and what was the scenario?"
+W_4,4,W4_Mid_Sep,W_4_C8,weirdest / happened / creepiest,"weirdest, happened, creepiest, omg",10,0.7043,"What’s the creepiest thing you’ve ever done, or the creepiest thing that happened to you?"
+W_4,4,W4_Mid_Sep,W_4_C9,lie / signs / heard,"lie, signs, heard, intentionally",21,0.5478,What's the biggest lie you've ever told ?
+W_4,4,W4_Mid_Sep,W_4_C10,crsis / center / rape,"crsis, center, rape, victims",11,0.4727,What is your stance on death sentences?
+W_4,4,W4_Mid_Sep,W_4_C11,website / duolingo / use,"website, duolingo, use, video",9,0.5866,"which is the best free app ro learn italian, because duolingo sucks with that unskipable animations and coins and gems?"
+W_4,4,W4_Mid_Sep,W_4_C13,kind / prefer / tea,"kind, prefer, tea, taste",12,0.6045,What kind of tea do you prefer?
+W_5,5,W5_Late_Sep,W_5_C0,country / live / america,"country, live, america, sets",12,0.6824,What is your favorite country and what sets this country apart from the rest?
+W_5,5,W5_Late_Sep,W_5_C1,die / visit / earth,"die, visit, earth, places",8,0.7621,"It is your last day on earth and you can pick any one place to visit before you die, Where would you go?"
+W_5,5,W5_Late_Sep,W_5_C2,wtf / snap / porn,"wtf, snap, porn, views",8,0.6133,Guys please help me ! I met this girl in my workplace she was my costumer. im 26 shes like 35 and married. we started flirting and we got eachothers instagram. Now after the coffee she invited me to her place the next day and mentioned her husband not being there. wtf should i go or wtf is going on?
+W_5,5,W5_Late_Sep,W_5_C3,glory / hole / okay,"glory, hole, okay, pushing",9,0.5793,Are you okay with your friends pushing you into a pool during a party? Have you seen this happen? What are your stories?
+W_5,5,W5_Late_Sep,W_5_C4,job / careers / laziest,"job, careers, laziest, millionaires",7,0.6858,Which job is way more complicated than it seems?
+W_5,5,W5_Late_Sep,W_5_C5,lie / moment / biggest,"lie, moment, biggest, friend",10,0.7088,What is the biggest lie you told a friend or loved one?
+W_5,5,W5_Late_Sep,W_5_C6,weirdest / terrified / phone,"weirdest, terrified, phone, picked",10,0.7243,What’s the weirdest thing you’ve done lately?
+W_5,5,W5_Late_Sep,W_5_C7,flat / earth / internet,"flat, earth, internet, social",11,0.559,"People who don’t care about their privacy on the internet, why?"
+W_5,5,W5_Late_Sep,W_5_C8,boom / song / add,"boom, song, add, songs",14,0.5864,What song has the best use of the cowbell?
+W_5,5,W5_Late_Sep,W_5_C9,movie / thriller / movies,"movie, thriller, movies, faithful",7,0.7515,"Without actually saying it, what is your favorite movie?"
+W_5,5,W5_Late_Sep,W_5_C10,joke / response / sarcastic,"joke, response, sarcastic, dad",8,0.6806,What has been your best sarcastic response to someone's comment / question?
+W_5,5,W5_Late_Sep,W_5_C11,inch / deep / animal,"inch, deep, animal, kind",8,0.5965,What’s your favorite sentence using only emojis?
+W_5,5,W5_Late_Sep,W_5_C12,guy / woman / tits,"guy, woman, tits, smarter",9,0.6079,Are men or women smarter?
+W_5,5,W5_Late_Sep,W_5_C13,opinion / names / spelled,"opinion, names, spelled, backwards",10,0.5096,Where do you believe Brian Laundrie is hiding?
+W_5,5,W5_Late_Sep,W_5_C14,badass / cheated / high,"badass, cheated, high, adopted",13,0.6237,"What's the most ""badass"" thing you have done?"
+W_5,5,W5_Late_Sep,W_5_C16,hours / sex / hiv,"hours, sex, hiv, risk",12,0.5312,Does rubbing or humping represent a risk of an HIV transmission?
+W_5,5,W5_Late_Sep,W_5_C19,billion / windows / mac,"billion, windows, mac, sport",10,0.4985,What makes the US spending $350 billion/year on infrastructure a bigger deal than $750 billion/year on the military?

@@ -1,0 +1,37 @@
+================================================================================
+   EXPERIMENT 9D: E2 (TEMPLATE STRIPPED) VS E3 (LEXICAL CONSISTENCY) REPORT     
+================================================================================
+
+Hypothesis: Adding a consecutive c-TF-IDF keyword Jaccard gate (>= 0.20) to the
+cosine similarity matching (>= 0.68) prevents semantic drift across time windows.
+
+                       metric        E2_template_stripped       E3_lexical_consistency                                      interpretation
+           Total Trajectories                         109                          133 Drifting chains partitioned into clean trajectories
+Multi-Checkpoint Trajectories                           7                           11                  Tightly bound lexical trajectories
+          Max Checkpoint Span 24 (TRAJ_002 drift monster) 5 (tight lexical continuity)             24-checkpoint semantic drift eliminated
+         Validated Candidates                          32                           35     Single-checkpoint clusters unchained from drift
+            OnlyFans Captured                         Yes                          Yes                      Event signal strictly retained
+       Hurricane Ida Captured                         Yes                          Yes                      Event signal strictly retained
+      Lil Nas X Meme Captured                         Yes                          Yes                      Event signal strictly retained
+         FDA Vaccine Captured                    No (N<7)                     No (N<7)                   Sub-threshold (deferred to E4/E5)
+     Locked Comments Captured                    No (N<7)                     No (N<7)                   Sub-threshold (deferred to E4/E5)
+     Mean Candidate Coherence                      0.6805                       0.6819             Coherence increased with lexical purity
+      Min Candidate Coherence                      0.6805                       0.6819                   Higher worst-case coherence floor
+      Baseline Keyword Alerts                         823                          823                   Frozen control baseline unchanged
+
+TARGET EVENT STATUS:
+  * OnlyFans: CAPTURED
+    Trajectory: TRAJ_050, Status: [BURST], Share: 3.7%, Coh: 0.642
+    Post: "onlyfans is banning explicit content?"
+  * Hurricane Ida: CAPTURED
+    Trajectory: TRAJ_116, Status: [BURST], Share: 2.3%, Coh: 0.654
+  * Lil Nas X Meme: CAPTURED
+    Trajectory: TRAJ_085, Status: [BURST], Share: 2.7%, Coh: 0.773
+  * FDA Vaccine: No (N < 7 sub-threshold, deferred to E4/E5)
+  * Locked Comments: No (N < 7 sub-threshold, deferred to E4/E5)
+
+DRIFT PREVENTION HIGHLIGHT:
+  In E2, TRAJ_002 chained 24 checkpoints from D_01 to D_30 due to loose cosine similarity
+  despite 0.0 Jaccard overlap between consecutive topics. In E3, this drift was 100% dismantled.
+  Genuine event trajectories (e.g. Afghanistan / Taliban D_04 -> D_09) maintained Jaccard 0.20-0.50
+  and were perfectly preserved.

@@ -1,0 +1,473 @@
+term,detected_window,window_index,current_volume,past_avg_volume,surge_ratio
+free,W_1,1,14,1.0,14.0
+crack,W_1,1,12,0.0,12.0
+idea,W_1,1,11,0.0,11.0
+humans,W_1,1,10,1.0,10.0
+microchips antennas,W_1,1,8,0.0,8.0
+transgender,W_1,1,8,1.0,8.0
+week,W_1,1,8,1.0,8.0
+latest,W_1,1,8,0.0,8.0
+concepts like,W_1,1,8,0.0,8.0
+camp,W_1,1,8,0.0,8.0
+microchips,W_1,1,8,0.0,8.0
+antennas,W_1,1,8,0.0,8.0
+concepts,W_1,1,8,0.0,8.0
+banned,W_1,1,7,1.0,7.0
+like microchips,W_1,1,7,0.0,7.0
+breakfast,W_1,1,7,1.0,7.0
+coming,W_1,1,7,1.0,7.0
+while having,W_1,1,6,0.0,6.0
+probably,W_1,1,6,1.0,6.0
+aibo ers,W_1,1,6,0.0,6.0
+attractive,W_1,1,6,0.0,6.0
+climate,W_1,1,6,0.0,6.0
+version free,W_1,1,6,0.0,6.0
+restaurant,W_1,1,6,0.0,6.0
+subreddits,W_1,1,6,1.0,6.0
+sony,W_1,1,6,0.0,6.0
+ers,W_1,1,6,0.0,6.0
+close,W_1,1,6,0.0,6.0
+aibo,W_1,1,6,0.0,6.0
+cute,W_1,1,6,0.0,6.0
+sony aibo,W_1,1,6,0.0,6.0
+fuck,W_1,1,6,0.0,6.0
+differently,W_1,1,6,0.0,6.0
+source,W_1,1,6,1.0,6.0
+real dog,W_1,1,6,0.0,6.0
+full,W_1,1,11,2.0,5.5
+covid,W_1,1,16,3.0,5.33
+thinking about,W_1,1,5,1.0,5.0
+taking,W_1,1,5,1.0,5.0
+other people,W_1,1,5,1.0,5.0
+concept,W_1,1,5,1.0,5.0
+run,W_1,1,5,1.0,5.0
+abt,W_1,1,5,0.0,5.0
+next,W_1,1,10,2.0,5.0
+given,W_1,1,5,1.0,5.0
+sleeping,W_1,1,5,1.0,5.0
+witnessed,W_1,1,5,0.0,5.0
+ball,W_1,1,5,1.0,5.0
+horror,W_1,1,5,1.0,5.0
+speak,W_1,1,5,1.0,5.0
+vaccine,W_1,1,5,1.0,5.0
+most people,W_1,1,5,0.0,5.0
+relationships,W_1,1,5,0.0,5.0
+height,W_1,1,5,1.0,5.0
+premium,W_1,1,5,0.0,5.0
+ask,W_1,1,8,2.0,4.0
+account,W_1,1,11,3.0,3.67
+version,W_1,1,7,2.0,3.5
+experienced,W_1,1,7,2.0,3.5
+met,W_1,1,7,2.0,3.5
+interested,W_1,1,7,2.0,3.5
+country,W_1,1,17,5.0,3.4
+advice,W_1,1,10,3.0,3.33
+character,W_1,1,13,4.0,3.25
+dog,W_1,1,16,5.0,3.2
+later,W_1,1,6,2.0,3.0
+having sex,W_1,1,6,2.0,3.0
+hot,W_1,1,6,2.0,3.0
+travel,W_1,1,6,2.0,3.0
+these,W_1,1,6,2.0,3.0
+such,W_1,1,6,2.0,3.0
+white,W_1,1,6,2.0,3.0
+went,W_1,1,6,2.0,3.0
+totally,W_1,1,6,2.0,3.0
+business,W_1,1,6,2.0,3.0
+deal,W_1,1,9,3.0,3.0
+killed,W_1,1,6,2.0,3.0
+due,W_1,1,6,2.0,3.0
+child,W_1,1,8,3.0,2.67
+big,W_1,1,8,3.0,2.67
+number,W_1,1,5,2.0,2.5
+dream,W_1,1,5,2.0,2.5
+opinion,W_1,1,10,4.0,2.5
+means,W_1,1,5,2.0,2.5
+consider,W_1,1,5,2.0,2.5
+porn,W_1,1,5,2.0,2.5
+calling,W_1,1,5,2.0,2.5
+dreams,W_1,1,5,2.0,2.5
+god,W_1,1,5,2.0,2.5
+build,W_1,1,5,2.0,2.5
+comments,W_1,1,5,2.0,2.5
+other countries,W_1,1,5,2.0,2.5
+her,W_1,1,17,7.0,2.43
+tell,W_1,1,12,5.0,2.4
+stop,W_1,1,12,5.0,2.4
+his,W_1,1,12,5.0,2.4
+mind,W_1,1,12,5.0,2.4
+comes,W_1,1,7,3.0,2.33
+doing,W_1,1,7,3.0,2.33
+favourite,W_1,1,21,9.0,2.33
+thinking,W_1,1,9,4.0,2.25
+another,W_1,1,9,4.0,2.25
+using,W_1,1,9,4.0,2.25
+come,W_1,1,9,4.0,2.25
+friends,W_1,1,11,5.0,2.2
+children,W_1,1,10,5.0,2.0
+countries,W_1,1,6,3.0,2.0
+also,W_1,1,8,4.0,2.0
+thoughts,W_1,1,8,4.0,2.0
+year,W_1,1,16,8.0,2.0
+asked,W_1,1,6,3.0,2.0
+room,W_1,1,6,3.0,2.0
+community,W_1,1,6,3.0,2.0
+worst thing,W_1,1,6,3.0,2.0
+onlyfans,W_2,2,32,0.5,64.0
+content,W_2,2,14,0.5,28.0
+making,W_2,2,7,0.5,14.0
+fans,W_2,2,7,0.5,14.0
+plans,W_2,2,5,0.5,10.0
+healthy,W_2,2,5,0.5,10.0
+pretty,W_2,2,5,0.5,10.0
+advice give,W_2,2,5,0.5,10.0
+parents reddit,W_2,2,5,0.5,10.0
+became,W_2,2,5,0.5,10.0
+toilet,W_2,2,5,0.5,10.0
+tries,W_2,2,5,0.5,10.0
+october,W_2,2,8,0.0,8.0
+around,W_2,2,11,1.5,7.33
+fear,W_2,2,7,1.0,7.0
+without saying,W_2,2,7,1.0,7.0
+saying,W_2,2,14,2.0,7.0
+first thing,W_2,2,7,1.0,7.0
+stand,W_2,2,7,1.0,7.0
+lifestyle,W_2,2,6,0.0,6.0
+get out,W_2,2,6,0.0,6.0
+respond,W_2,2,6,0.0,6.0
+banning,W_2,2,6,0.0,6.0
+explicit,W_2,2,6,0.0,6.0
+avoid,W_2,2,6,1.0,6.0
+woman,W_2,2,8,1.5,5.33
+look like,W_2,2,8,1.5,5.33
+healthy lifestyle,W_2,2,5,0.0,5.0
+approved,W_2,2,5,0.0,5.0
+chicken,W_2,2,5,1.0,5.0
+mind person,W_2,2,5,0.0,5.0
+super power,W_2,2,5,0.0,5.0
+creators,W_2,2,5,0.0,5.0
+drawing,W_2,2,5,0.0,5.0
+fda approved,W_2,2,5,0.0,5.0
+needed,W_2,2,5,1.0,5.0
+tries avoid,W_2,2,5,0.0,5.0
+fda,W_2,2,5,0.0,5.0
+meet,W_2,2,5,1.0,5.0
+vaccine because,W_2,2,5,0.0,5.0
+appearance,W_2,2,5,1.0,5.0
+known,W_2,2,5,1.0,5.0
+thanos,W_2,2,5,0.0,5.0
+pride,W_2,2,5,0.0,5.0
+avoid anything,W_2,2,5,0.0,5.0
+not fda,W_2,2,5,0.0,5.0
+anything harmful,W_2,2,5,0.0,5.0
+take vaccine,W_2,2,5,0.0,5.0
+they won,W_2,2,5,0.0,5.0
+those say,W_2,2,5,0.0,5.0
+say they,W_2,2,5,0.0,5.0
+explicit content,W_2,2,5,0.0,5.0
+harmful,W_2,2,5,0.0,5.0
+lives healthy,W_2,2,5,0.0,5.0
+keep mind,W_2,2,5,0.0,5.0
+lifestyle tries,W_2,2,5,0.0,5.0
+because not,W_2,2,5,0.0,5.0
+respond those,W_2,2,5,0.0,5.0
+approved keep,W_2,2,5,0.0,5.0
+apart,W_2,2,5,0.0,5.0
+item,W_2,2,5,1.0,5.0
+platform,W_2,2,5,1.0,5.0
+meme,W_2,2,5,1.0,5.0
+won take,W_2,2,5,0.0,5.0
+person lives,W_2,2,5,0.0,5.0
+pay,W_2,2,7,1.5,4.67
+allowed,W_2,2,6,1.5,4.0
+reddit most,W_2,2,6,1.5,4.0
+ideas,W_2,2,6,1.5,4.0
+keep,W_2,2,11,3.0,3.67
+happen,W_2,2,14,4.0,3.5
+wait,W_2,2,5,1.5,3.33
+rather,W_2,2,5,1.5,3.33
+comment,W_2,2,5,1.5,3.33
+lives,W_2,2,5,1.5,3.33
+hours,W_2,2,5,1.5,3.33
+super,W_2,2,5,1.5,3.33
+often,W_2,2,5,1.5,3.33
+whole,W_2,2,5,1.5,3.33
+artists,W_2,2,5,1.5,3.33
+company,W_2,2,5,1.5,3.33
+power,W_2,2,16,5.0,3.2
+working,W_2,2,8,2.5,3.2
+high school,W_2,2,9,3.0,3.0
+female,W_2,2,6,2.0,3.0
+police,W_2,2,7,2.5,2.8
+everything,W_2,2,8,3.0,2.67
+end,W_2,2,12,4.5,2.67
+now,W_2,2,41,15.5,2.65
+give,W_2,2,14,5.5,2.55
+gone,W_2,2,5,2.0,2.5
+fast food,W_2,2,5,2.0,2.5
+front,W_2,2,5,2.0,2.5
+cool,W_2,2,5,2.0,2.5
+move,W_2,2,5,2.0,2.5
+high,W_2,2,15,6.0,2.5
+fast,W_2,2,6,2.5,2.4
+online,W_2,2,6,2.5,2.4
+shows,W_2,2,6,2.5,2.4
+death,W_2,2,6,2.5,2.4
+enjoy,W_2,2,6,2.5,2.4
+looking,W_2,2,7,3.0,2.33
+women reddit,W_2,2,7,3.0,2.33
+wouldn,W_2,2,7,3.0,2.33
+celebrity,W_2,2,7,3.0,2.33
+fight,W_2,2,8,3.5,2.29
+won,W_2,2,8,3.5,2.29
+those,W_2,2,18,8.0,2.25
+happened,W_2,2,16,7.5,2.13
+take,W_2,2,19,9.0,2.11
+serious,W_2,2,33,16.0,2.06
+hands,W_2,2,5,2.5,2.0
+wearing,W_2,2,5,2.5,2.0
+reason,W_2,2,7,3.5,2.0
+stupid,W_2,2,5,2.5,2.0
+etc,W_2,2,10,5.0,2.0
+turned,W_2,2,6,3.0,2.0
+matter,W_2,2,5,2.5,2.0
+right now,W_2,2,7,3.5,2.0
+until,W_2,2,5,2.5,2.0
+chance,W_2,2,5,2.5,2.0
+feel like,W_2,2,7,3.5,2.0
+patients,W_3,3,6,0.33,18.0
+buying,W_3,3,6,0.33,18.0
+per,W_3,3,5,0.33,15.0
+overrated,W_3,3,5,0.33,15.0
+train,W_3,3,5,0.33,15.0
+clothing,W_3,3,5,0.33,15.0
+accident,W_3,3,5,0.33,15.0
+make look,W_3,3,7,0.67,10.5
+yet,W_3,3,7,0.67,10.5
+wear,W_3,3,9,1.0,9.0
+about yourself,W_3,3,5,0.67,7.5
+teeth,W_3,3,5,0.67,7.5
+edit make,W_3,3,7,0.0,7.0
+edit,W_3,3,7,0.0,7.0
+then edit,W_3,3,7,0.0,7.0
+look bad,W_3,3,7,0.0,7.0
+genuine,W_3,3,6,1.0,6.0
+hard,W_3,3,9,1.67,5.4
+specific,W_3,3,7,1.33,5.25
+anything then,W_3,3,5,0.0,5.0
+ask anything,W_3,3,5,0.0,5.0
+upvotes,W_3,3,5,1.0,5.0
+dead,W_3,3,5,1.0,5.0
+rumor,W_3,3,5,0.0,5.0
+system,W_3,3,5,1.0,5.0
+cereal,W_3,3,5,0.0,5.0
+eye,W_3,3,5,1.0,5.0
+started,W_3,3,5,1.0,5.0
+response,W_3,3,5,1.0,5.0
+villain,W_3,3,5,1.0,5.0
+president,W_3,3,7,1.67,4.2
+already,W_3,3,8,2.0,4.0
+reddit best,W_3,3,9,2.33,3.86
+anxiety,W_3,3,5,1.33,3.75
+when first,W_3,3,5,1.33,3.75
+strangest,W_3,3,5,1.33,3.75
+lock,W_3,3,5,1.33,3.75
+teacher,W_3,3,5,1.33,3.75
+america,W_3,3,5,1.33,3.75
+gay,W_3,3,6,1.67,3.6
+anti,W_3,3,6,1.67,3.6
+react,W_3,3,7,2.0,3.5
+our,W_3,3,7,2.0,3.5
+worth,W_3,3,7,2.0,3.5
+far,W_3,3,13,4.0,3.25
+learned,W_3,3,6,2.0,3.0
+suggestions,W_3,3,5,1.67,3.0
+hour,W_3,3,5,1.67,3.0
+someone else,W_3,3,6,2.0,3.0
+based,W_3,3,6,2.0,3.0
+but still,W_3,3,5,1.67,3.0
+think will,W_3,3,5,1.67,3.0
+mask,W_3,3,5,1.67,3.0
+curious,W_3,3,5,1.67,3.0
+please,W_3,3,7,2.33,3.0
+creepy,W_3,3,5,1.67,3.0
+hand,W_3,3,5,1.67,3.0
+title,W_3,3,8,2.67,3.0
+car,W_3,3,11,4.0,2.75
+lost,W_3,3,7,2.67,2.62
+least,W_3,3,7,2.67,2.62
+saw,W_3,3,7,2.67,2.62
+tips,W_3,3,6,2.33,2.57
+yourself,W_3,3,17,6.67,2.55
+date,W_3,3,11,4.33,2.54
+absolutely,W_3,3,5,2.0,2.5
+red,W_3,3,5,2.0,2.5
+choice,W_3,3,5,2.0,2.5
+some people,W_3,3,5,2.0,2.5
+single,W_3,3,8,3.33,2.4
+able,W_3,3,8,3.33,2.4
+then,W_3,3,15,6.33,2.37
+youtube,W_3,3,7,3.0,2.33
+favorite,W_3,3,48,20.67,2.32
+buy,W_3,3,10,4.33,2.31
+reality,W_3,3,6,2.67,2.25
+care,W_3,3,8,3.67,2.18
+possible,W_3,3,13,6.0,2.17
+shit,W_3,3,5,2.33,2.14
+cause,W_3,3,5,2.33,2.14
+fictional,W_3,3,5,2.33,2.14
+trump,W_3,3,5,2.33,2.14
+taste,W_3,3,5,2.33,2.14
+will never,W_3,3,5,2.33,2.14
+fun,W_3,3,5,2.33,2.14
+ways,W_3,3,5,2.33,2.14
+smell,W_3,3,5,2.33,2.14
+away,W_3,3,12,5.67,2.12
+share,W_3,3,6,3.0,2.0
+anyone else,W_3,3,6,3.0,2.0
+die,W_3,3,12,6.0,2.0
+subreddit,W_3,3,6,3.0,2.0
+asking,W_3,3,6,3.0,2.0
+grand,W_4,4,6,0.25,24.0
+encounters,W_4,4,6,0.25,24.0
+plays,W_4,4,5,0.25,20.0
+key,W_4,4,19,1.0,19.0
+free download,W_4,4,8,0.5,16.0
+license,W_4,4,15,0.0,15.0
+download,W_4,4,23,1.75,13.14
+license key,W_4,4,12,0.0,12.0
+movie watch,W_4,4,5,0.5,10.0
+bed,W_4,4,5,0.5,10.0
+flat,W_4,4,5,0.5,10.0
+crack license,W_4,4,9,0.0,9.0
+rum,W_4,4,8,0.0,8.0
+full download,W_4,4,7,0.0,7.0
+pro,W_4,4,7,1.0,7.0
+married,W_4,4,12,1.75,6.86
+creepiest,W_4,4,5,0.75,6.67
+serial,W_4,4,5,0.75,6.67
+robux,W_4,4,6,0.0,6.0
+showed,W_4,4,6,0.0,6.0
+trends,W_4,4,6,0.0,6.0
+play grand,W_4,4,6,0.0,6.0
+feet,W_4,4,6,1.0,6.0
+grand piece,W_4,4,6,0.0,6.0
+version download,W_4,4,6,0.0,6.0
+piece,W_4,4,8,1.5,5.33
+thing happened,W_4,4,5,1.0,5.0
+michael,W_4,4,5,0.0,5.0
+than men,W_4,4,5,0.0,5.0
+crack version,W_4,4,5,0.0,5.0
+key latest,W_4,4,5,0.0,5.0
+second,W_4,4,5,1.0,5.0
+pro crack,W_4,4,5,0.0,5.0
+crack full,W_4,4,5,1.0,5.0
+download latest,W_4,4,5,0.0,5.0
+romantic,W_4,4,7,1.5,4.67
+easier,W_4,4,7,1.5,4.67
+health,W_4,4,8,1.75,4.57
+night,W_4,4,20,4.5,4.44
+situation,W_4,4,9,2.25,4.0
+website,W_4,4,7,1.75,4.0
+lie,W_4,4,5,1.25,4.0
+middle,W_4,4,6,1.5,4.0
+voice,W_4,4,5,1.25,4.0
+everyday,W_4,4,5,1.25,4.0
+improve,W_4,4,5,1.25,4.0
+underrated,W_4,4,5,1.25,4.0
+few,W_4,4,5,1.25,4.0
+describe,W_4,4,5,1.25,4.0
+english,W_4,4,9,2.5,3.6
+nothing,W_4,4,8,2.25,3.56
+average,W_4,4,7,2.0,3.5
+many people,W_4,4,5,1.5,3.33
+names,W_4,4,5,1.5,3.33
+last time,W_4,4,5,1.5,3.33
+signs,W_4,4,6,2.0,3.0
+watch,W_4,4,15,5.0,3.0
+there any,W_4,4,6,2.0,3.0
+top,W_4,4,5,1.75,2.86
+goes,W_4,4,5,1.75,2.86
+stuck,W_4,4,5,1.75,2.86
+birthday,W_4,4,6,2.25,2.67
+state,W_4,4,6,2.25,2.67
+here,W_4,4,9,3.5,2.57
+born,W_4,4,5,2.0,2.5
+guys,W_4,4,15,6.5,2.31
+less,W_4,4,5,2.25,2.22
+recently,W_4,4,5,2.25,2.22
+songs,W_4,4,5,2.25,2.22
+month,W_4,4,5,2.25,2.22
+ended,W_4,4,5,2.25,2.22
+called,W_4,4,6,2.75,2.18
+current,W_4,4,6,2.75,2.18
+nsfw,W_4,4,7,3.25,2.15
+house,W_4,4,13,6.5,2.0
+gave,W_4,4,5,2.5,2.0
+line,W_4,4,7,3.5,2.0
+wtf,W_5,5,7,0.2,35.0
+know name,W_5,5,7,0.2,35.0
+before die,W_5,5,5,0.2,25.0
+snapchat,W_5,5,5,0.2,25.0
+blue,W_5,5,5,0.2,25.0
+snap,W_5,5,9,0.4,22.5
+cunt,W_5,5,19,0.0,19.0
+driving,W_5,5,10,0.6,16.67
+out someone,W_5,5,6,0.4,15.0
+credit,W_5,5,5,0.4,12.5
+art,W_5,5,7,0.6,11.67
+halloween,W_5,5,7,0.6,11.67
+gun,W_5,5,7,0.6,11.67
+name movie,W_5,5,8,0.8,10.0
+views,W_5,5,6,0.6,10.0
+smoking,W_5,5,5,0.6,8.33
+please help,W_5,5,5,0.6,8.33
+they get,W_5,5,5,0.6,8.33
+owners,W_5,5,5,0.6,8.33
+safe,W_5,5,5,0.6,8.33
+course,W_5,5,6,0.8,7.5
+cunt cunt,W_5,5,7,0.0,7.0
+dose,W_5,5,7,0.0,7.0
+dose anyone,W_5,5,7,0.0,7.0
+anyone know,W_5,5,8,1.2,6.67
+loved,W_5,5,6,1.0,6.0
+meal,W_5,5,9,1.6,5.62
+guys please,W_5,5,5,0.0,5.0
+shes,W_5,5,5,0.0,5.0
+looked,W_5,5,5,1.0,5.0
+squid game,W_5,5,5,0.0,5.0
+squid,W_5,5,5,0.0,5.0
+stickers,W_5,5,5,0.0,5.0
+christmas,W_5,5,5,0.0,5.0
+people don,W_5,5,5,1.0,5.0
+year old,W_5,5,6,1.4,4.29
+serious people,W_5,5,5,1.2,4.17
+hold,W_5,5,5,1.2,4.17
+sub,W_5,5,9,2.2,4.09
+straight,W_5,5,5,1.4,3.57
+scene,W_5,5,7,2.0,3.5
+jobs,W_5,5,6,1.8,3.33
+billion,W_5,5,6,1.8,3.33
+add,W_5,5,6,1.8,3.33
+besides,W_5,5,5,1.6,3.12
+rest,W_5,5,8,2.6,3.08
+social media,W_5,5,6,2.0,3.0
+feel about,W_5,5,9,3.0,3.0
+nice,W_5,5,5,1.8,2.78
+miss,W_5,5,5,1.8,2.78
+party,W_5,5,5,1.8,2.78
+eat,W_5,5,12,4.4,2.73
+she,W_5,5,14,5.2,2.69
+earth,W_5,5,13,5.0,2.6
+greatest,W_5,5,6,2.4,2.5
+talk,W_5,5,10,4.2,2.38
+partner,W_5,5,8,3.4,2.35
+media,W_5,5,8,3.4,2.35
+college,W_5,5,8,3.4,2.35
+dating,W_5,5,5,2.2,2.27
+past,W_5,5,10,4.4,2.27
+alone,W_5,5,5,2.2,2.27
+redditors,W_5,5,21,10.0,2.1
+tried,W_5,5,5,2.4,2.08
+weird,W_5,5,10,5.0,2.0
+help,W_5,5,18,9.0,2.0

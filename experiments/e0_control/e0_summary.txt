@@ -1,0 +1,37 @@
+================================================================================
+        E0 CONTROL: 30-CHECKPOINT FINE-GRAINED TEMPORAL STREAM RESULTS          
+================================================================================
+
+Event: OnlyFans Porn Ban (Documented Date: 2021-08-19 (D_10/D_11))
+  * First Semantic Candidate Cluster:  D_08 ('['porn', 'buying', 'pay']', Coh: 0.762)
+  * First Validated Emergence Alert:   NEVER (None)
+  * First Keyword Baseline Surge:      D_08 (Term: 'porn', Surge: 4.9x)
+  * Candidate Lead Time:               0 checkpoints
+  * Validated Alert Lead Time:         N/A checkpoints
+  * Sub-threshold Pre-Event Signal:    YES
+      - Pre-Cluster [D_08]: '['porn', 'buying', 'pay']' (Size: 8, Coh: 0.762)
+        Sample: "Is habit of watching porn awful? [removed]"
+---------------------------------------------------------------------------
+Event: FDA Pfizer Vaccine Approval (Documented Date: 2021-08-23 (D_15))
+  * First Semantic Candidate Cluster:  NEVER ('None', Coh: 0.000)
+  * First Validated Emergence Alert:   NEVER (None)
+  * First Keyword Baseline Surge:      D_11 (Term: 'covid', Surge: 2.5x)
+  * Candidate Lead Time:               N/A checkpoints
+  * Validated Alert Lead Time:         N/A checkpoints
+  * Sub-threshold Pre-Event Signal:    NO (No cluster formed in pre-window)
+---------------------------------------------------------------------------
+Event: Reddit Locked Comments Incident (Documented Date: 2021-09-01/02 (D_25/D_26))
+  * First Semantic Candidate Cluster:  D_28 ('['models', 'plus', 'size']', Coh: 0.685)
+  * First Validated Emergence Alert:   NEVER (None)
+  * First Keyword Baseline Surge:      D_18 (Term: 'comments', Surge: 8.5x)
+  * Candidate Lead Time:               -10 checkpoints
+  * Validated Alert Lead Time:         N/A checkpoints
+  * Sub-threshold Pre-Event Signal:    NO (No cluster formed in pre-window)
+---------------------------------------------------------------------------
+
+SUMMARY STATISTICS:
+  Total Clusters Discovered Across 30 Checkpoints: 178
+  Total Trajectories Tracked (1-to-1):             82
+  Total Vetted Emergence Candidates:              2
+  Total Keyword Baseline Alerts:                  823
+================================================================================

@@ -1,0 +1,11 @@
+window_id,window_index,cluster_key,cluster_label,topic_keywords,post_count,avg_semantic_coherence,representative_post
+W_1,1,W_1_C0,thing / ever / most,"thing, ever, most, done",50,0.6746,What's the creepiest thing you've ever done? (But only judged your actions after it happened)
+W_1,1,W_1_C1,movie / song / favourite,"movie, song, favourite, hated",11,0.713,What is your favourite movie? why.
+W_2,2,W_2_C0,thing / most / life,"thing, most, life, reddit",145,0.5395,"Out of all mistakes you have made in your life so far, what’s your favorite one?"
+W_2,2,W_2_C1,food / dish / most,"food, dish, most, underrated",8,0.7509,What home cooked meals are in heavy rotation in your household?
+W_3,3,W_3_C0,thing / ever / worst,"thing, ever, worst, most",41,0.6548,What's the most SATISFYING incident in your life?
+W_3,3,W_3_C1,food / life / thing,"food, life, thing, world",9,0.6979,"If you were to eat one dish for the rest of your life, what would it be?"
+W_4,4,W_4_C0,thing / ever / life,"thing, ever, life, most",100,0.5784,What's the funniest thing that has ever happened to you?
+W_4,4,W_4_C1,song / always / will,"song, always, will, sad",11,0.7728,What Song Always Puts a Tear in Your Eye?
+W_5,5,W_5_C0,movie / thing / worst,"movie, thing, worst, most",64,0.5918,What movie unexpectedly made you laugh until you cried?
+W_5,5,W_5_C1,food / country / most,"food, country, most, without",13,0.6946,What food do you love that did not originate in your country?

@@ -1,0 +1,905 @@
+cluster_key,window_index,window_id,cluster_id,cluster_label,post_count,is_micro_cluster,avg_semantic_coherence,representative_post
+D_01_C0,0,D_01,0,"['moment', 'partner', 'break']",14,False,0.6201,wedding moment you've witnessed or heard of?
+D_01_C1,0,D_01,1,"['changed', 'view', 'keeps']",15,False,0.6105,What experience changed your perspective on life?
+D_01_C2,0,D_01,2,"['movie', 'date', 'movies']",7,False,0.7214,Whats a movie that you really enjoyed but probably won't ever watch again?
+D_01_C3,0,D_01,3,"['language', 'non', 'insects']",7,False,0.4904,What are the top 3 best books in your opinion?
+D_01_C7,0,D_01,7,"['gamers', 'closely', 'aligned']",4,True,0.958,"so many gamers closely aligned with incel/fds type values? I've seen other fandoms that are toxic, but none others seem to have the vitriol and numbers like the gaming community."
+D_01_C8,0,D_01,8,"['received', 'shopping', 'sales']",4,True,0.8309,of your worst purchases?
+D_01_C9,0,D_01,9,"['gift', 'ebay', 'scam']",3,True,0.9255,Is there a scam on ebay where people ask 2 get sent gift cards as well with bought items
+D_01_C10,0,D_01,10,"['vulnerable', 'satisfaction', 'days']",3,True,0.7707,What gives you satisfaction in the worst of days?
+D_01_C11,0,D_01,11,"['content', 'creators', 'trigger']",3,True,0.9666,Do you think content creators Should put a trigger warning if they use a knife in their posts/videos?
+D_01_C12,0,D_01,12,"['username', 'hacks', 'created']",3,True,0.7834,"Life Hacks you are using, have you ever created one by yourself?"
+D_01_C13,0,D_01,13,"['live', 'city', 'visited']",5,True,0.7035,"What's a city you visited you'll never go back to, and why?"
+D_01_C14,0,D_01,14,"['happened', 'standard', 'frame']",4,True,0.5955,thing that happened when delivering a baby?
+D_01_C15,0,D_01,15,"['aggravates', 'annoying', 'question']",6,True,0.6832,"What common phrase or question aggravates you, or feels like a thinly veiled insult?"
+D_01_C16,0,D_01,16,"['danish', 'wear', 'socks']",4,True,0.8342,Do Danish people wear socks?
+D_01_C17,0,D_01,17,"['quest', 'color', 'villain']",3,True,0.7998,Who is your favorite side character and why?
+D_01_C18,0,D_01,18,"['obscure', 'allergy', 'strangest']",3,True,0.8325,most obscure allergy you have?
+D_01_C19,0,D_01,19,"['mean', 'cannibals', 'drink']",3,True,0.8094,Does it mean people are cannibals who drink nut ?
+D_01_C20,0,D_01,20,"['ethereal', 'sublime', 'love']",5,True,0.5537,love ethereal and sublime?
+D_01_C21,0,D_01,21,"['cool', 'underrated', 'internet']",6,True,0.6675,What is an underrated/cool website that you use?
+D_01_C22,0,D_01,22,"['profession', 'legendary', 'job']",4,True,0.7691,"What profession/occupation did you seriously consider at some point, but luckily chose otherwise?"
+D_01_C23,0,D_01,23,"['model', 'skill', 'qualities']",4,True,0.7257,Who is your role model and why?
+D_01_C24,0,D_01,24,"['video', 'game', 'board']",4,True,0.8188,What video game must never be played?
+D_01_C25,0,D_01,25,"['song', 'sit', 'eyes']",3,True,0.8305,"What song makes you ""sit back and close your eyes and let happinness run through you""?"
+D_01_C26,0,D_01,26,"['whould', 'blister', 'tongue']",3,True,0.6763,you can get arrested for on the streets in the USA but not in Europe or other parts of the world?
+D_01_C27,0,D_01,27,"['blink', 'reaction', 'given']",4,True,0.6344,What insane sexual act seems really strange/nonsensical in porn but actually lives up to the hype?
+D_01_C28,0,D_01,28,"['kid', 'popular', 'turn']",3,True,0.6754,"Is there a name for a mixture of punk, goth and grunge?"
+D_01_C29,0,D_01,29,"['fact', 'positive', 'little']",3,True,0.7991,What proclaimed “fact” are you skeptical about?
+D_01_C30,0,D_01,30,"['money', 'help', 'smartest']",3,True,0.7588,What is the smartest way someone stole/earned large sum of money?
+D_01_C31,0,D_01,31,"['walk', 'park', 'spot']",5,True,0.6407,walk? ( I broke my left leg and I'm learning how to walk again. I need tips boys.)
+D_01_C32,0,D_01,32,"['week', 'previous', 'going']",4,True,0.5632,"If a woman is not ever going to be “beautiful” by society's standards, is she ever going to be loved by a man?"
+D_02_C0,1,D_02,0,"['kid', 'use', 'words']",7,False,0.696,"which ""kid-friendly"" words get on your nerves?"
+D_02_C1,1,D_02,1,"['movie', 'character', 'waifu']",9,False,0.6426,Who has the best chin in movie and television history?
+D_02_C2,1,D_02,2,"['games', 'recommend', 'core']",9,False,0.653,What book series would work great as a show rather than a movie?
+D_02_C3,1,D_02,3,"['connect', 'binance', 'review']",8,False,0.4715,What are some apps that allow you to organize photos by color?
+D_02_C4,1,D_02,4,"['past', 'cringe', 'dive']",15,False,0.6282,What is the strangest thing you've done with a theragun?
+D_02_C5,1,D_02,5,"['narcissist', 'times', 'heartfelt']",7,False,0.6099,"I feel like at times that I am a narcissist because when someone is saying something that could be heartfelt and private I don't really react to it the way your average person would. Am I a narcissist ,emotionally disturbed or something?"
+D_02_C6,1,D_02,6,"['food', 'tasted', 'meal']",13,False,0.5994,What meal are you embarrassed to say that you make when the fridge is empty?
+D_02_C8,1,D_02,8,"['thoughts', 'case', 'america']",11,False,0.4751,What are your thoughts on anti vaxxers?
+D_02_C10,1,D_02,10,"['excalibur', 'video', 'martin']",3,True,0.9953,"Is there a video of Martin Cabello saying exactly: ""Hebrews!! He brews what? The ketones that active Gods Key tones to heal your bones. There's a lady in the lake that holds Excalibur on the other side of Merlin I mean mirror lens that has the power to cleanse. Excalibur = [Ex]ercise [Cali]...""?"
+D_02_C11,1,D_02,11,"['arrange', 'meeting', 'disregarding']",3,True,0.8515,"arrange a meeting between two people, disregarding time, language barriers, and likewise, who would they be?"
+D_02_C12,1,D_02,12,"['choose', 'live', 'era']",3,True,0.8076,"live in any era apart from the current one, which would you choose?"
+D_02_C13,1,D_02,13,"['thrift', 'probably', 'donated']",4,True,0.8702,about something you found at a thrift store that was probably donated by accident.
+D_02_C14,1,D_02,14,"['sexiest', 'nonhuman', 'non']",3,True,0.7663,What's your top 3 pizza toppings combos?
+D_02_C15,1,D_02,15,"['vanity', 'plate', 'ideas']",6,True,0.6892,"Vanity Plate Ideas, With A Max Of 6 Alphanumeric Characters, Or The Best You Have Seen In The Wild?"
+D_02_C16,1,D_02,16,"['didn', 'career', 'cars']",5,True,0.7638,"who didn't go to a College, how is your life and career now?"
+D_02_C17,1,D_02,17,"['sleeping', 'blanket', 'pillows']",5,True,0.7036,"What are you guys preferred ways of sleeping, 'leave me the F alone vs cuddle me all night', 'share a blanket vs separate blanket', 'hard pillows vs soft pillows' if so why ?"
+D_02_C18,1,D_02,18,"['theme', 'war', 'song']",5,True,0.6785,wtf movie you have watched ?
+D_02_C19,1,D_02,19,"['helped', 'build', 'raise']",4,True,0.7103,What's your everyday lifehack that you are not sure other people are using?
+D_02_C20,1,D_02,20,"['add', 'nornal', 'collect']",3,True,0.694,What semi precious stone does the pope wear?
+D_02_C21,1,D_02,21,"['healthcare', 'low', 'paying']",3,True,0.7302,"Your current job gets taken by a automated machine that is better in every way, but you're given 1k dollars/month by the goverment. What do you of your life?"
+D_02_C22,1,D_02,22,"['follow', 'circlejerk', 'netflix']",4,True,0.6923,what are some must read / must follow circlejerk subreddits?
+D_02_C23,1,D_02,23,"['similar', 'coffeegonewild', 'subscribe']",3,True,0.8303,Are there any similar subreddits to CoffeeGoneWild?
+D_02_C24,1,D_02,24,"['sex', 'smoothest', 'lines']",5,True,0.6946,What's the strangest dirty talk you have ever heard during sex?
+D_02_C25,1,D_02,25,"['uncomfortable', 'younger', 'positive']",5,True,0.5494,flirt that's gone over your head?
+D_02_C26,1,D_02,26,"['pronounced', 'isn', 'suppose']",3,True,0.6857,pronounced a word a certain way for years and find out it isn't how it's suppose to be said?
+D_02_C27,1,D_02,27,"['moon', 'cause', 'siri']",4,True,0.5635,"Hey Siri: If the moon-cows get angry cause the moon farmers don't milk them cause they all went to Mars with Elon, are we gonna end up with too much moon yogurt to sell on the open market?"
+D_02_C28,1,D_02,28,"['child', 'guilty', 'cheating']",6,True,0.5469,your parents do that drives you absolutely crazy?
+D_02_C29,1,D_02,29,"['manga', 'moments', 'straight']",6,True,0.6532,What were “This is straight out a manga” moments you had?
+D_02_C30,1,D_02,30,"['contact', 'god', 'alien']",3,True,0.6392,Moral dilemma
+D_03_C0,2,D_03,0,"['desire', 'right', 'hobby']",7,False,0.7372,What do you desire right now?
+D_03_C2,2,D_03,2,"['question', 'true', 'bible']",31,False,0.4689,thing you did or said as a teenager that still makes you cringe as an adult?
+D_03_C3,2,D_03,3,"['movie', 'series', 'remake']",10,False,0.5209,What series crossover you're not mentally ready for?
+D_03_C4,2,D_03,4,"['buy', 'wealthy', 'food']",3,True,0.9878,Is it okay to buy your less wealthy friend stuff (food or small items they want) because you just like them and want them to be happy? Could you be indirectly making them uncomfortable?
+D_03_C5,2,D_03,5,"['police', 'funding', 'higher']",4,True,0.891,Should the police have higher funding and wages?
+D_03_C6,2,D_03,6,"['karma', 'low', 'hwo']",4,True,0.8199,Cant post or comment because of low karma. hwo do i get karma with out being able to post or comment... ill be surprised if this works
+D_03_C7,2,D_03,7,"['powers', 'superman', 'legally']",3,True,0.8266,"all the powers of Superman, would you use them to make money legally or illegally?"
+D_03_C8,2,D_03,8,"['workplace', 'management', 'tech']",3,True,0.9369,"[serious] In your workplace, is the management significantly less tech savvy than the workforce?"
+D_03_C9,2,D_03,9,"['memes', 'videos', 'point']",3,True,0.7128,What's the point of having reddit premium ?
+D_03_C10,2,D_03,10,"['important', 'man', 'friends']",4,True,0.8006,"Among all your friends, what are you best known for?"
+D_03_C11,2,D_03,11,"['granted', 'rid', 'religion']",3,True,0.7957,"3 wishes, what would it be?"
+D_03_C12,2,D_03,12,"['receive', 'month', 'frequent']",4,True,0.5621,"If you do direct deposit, did you receive your child tax credit this month? If not, did you receive it normal last month?"
+D_03_C13,2,D_03,13,"['happened', 'carry', 'gun']",5,True,0.6223,"Reddit, what's the strangest thing you've seen on public transit?"
+D_03_C14,2,D_03,14,"['birthday', 'happy', 'sing']",5,True,0.6396,greet the day?
+D_03_C15,2,D_03,15,"['remember', 'wished', 'sooner']",4,True,0.6934,What are the things that you wished you thought of it sooner?
+D_03_C16,2,D_03,16,"['successfully', 'stubborn', 'stay']",5,True,0.6091,stay positive when things aren't working out your way even when do your best?
+D_03_C17,2,D_03,17,"['landed', 'mars', 'woke']",3,True,0.7818,Déjà vu that possibly saved your life?
+D_03_C18,2,D_03,18,"['heroic', 'moment', 'helpless']",3,True,0.8332,What was the One time in your life when you were helpless?
+D_03_C19,2,D_03,19,"['electrocuted', 'meal', 'extinct']",4,True,0.7468,"What fictional character would you totally have lunch with, and what would you eat?"
+D_03_C20,2,D_03,20,"['taste', 'lose', 'dick']",4,True,0.743,"Those of you have experienced loss of taste from the Corona Virus, can you describe your experience? Did you lose absolutely all taste or was it diminished?"
+D_03_C21,2,D_03,21,"['coming', 'annoying', 'voice']",3,True,0.7225,"What profile picture screams ""I am a complete douchebag""?"
+D_03_C22,2,D_03,22,"['hand', 'throw', 'numbers']",5,True,0.5583,"Mr. Rogers famously said he liked to think the numbers in his weight - 143 pounds - equaled the numbers of letters in the words ""I Love You."" What does your weight stand for?"
+D_03_C23,2,D_03,23,"['graduates', 'hows', 'degree']",6,True,0.6524,who have worked in the service industry... what is the worst thing you have experienced on the job?
+D_03_C24,2,D_03,24,"['sydney', 'gone', 'hard']",4,True,0.6228,What was the activity where the valley of despair (from de Dunning-Kruger effect ) hit you the hardest?
+D_03_C25,2,D_03,25,"['item', 'date', 'celebrity']",6,True,0.5652,item in your house and why?
+D_03_C26,2,D_03,26,"['minutes', 'ceo', 'wardrobe']",3,True,0.6876,"20 minutes to look like a CEO using only whatever you have with you in your wardrobe , what would you do and how would you use this this 20 minutes?"
+D_03_C27,2,D_03,27,"['kinds', 'fruits', 'explain']",3,True,0.5987,way to stop a runny nose instantly?
+D_03_C28,2,D_03,28,"['psg', 'finally', 'champions']",4,True,0.6791,Will PSG finally win the Champions League with Messi?
+D_03_C29,2,D_03,29,"['opinion', 'older', 'wearing']",4,True,0.6025,"who take an hour showering, what do you do?"
+D_03_C30,2,D_03,30,"['daily', 'little', 'act']",3,True,0.7848,"What is your daily ""Little act of Anarchy"" you commit every day? I'll go first, I like to leave 1 second on the microwave timer."
+D_04_C2,3,D_04,2,"['school', 'moment', 'parent']",28,False,0.5508,"What is the stupidest thing someone has told you as a child, which you believed back then?"
+D_04_C3,3,D_04,3,"['song', 'awake', 'sing']",12,False,0.5268,what song is stuck in your head right now?
+D_04_C4,3,D_04,4,"['root', 'history', 'knowing']",13,False,0.4655,subreddit you know?
+D_04_C5,3,D_04,5,"['speed', 'limits', 'end']",7,False,0.452,"speed limits (in the US, I don't know about other countries) always end in 5 or 0?"
+D_04_C6,3,D_04,6,"['afghanistan', 'happen', 'fall']",7,False,0.6251,What is likely to happen when Talibans gain 100% control of Afghanistan?
+D_04_C7,3,D_04,7,"['ipad', 'kid', 'use']",6,True,0.8411,"you have angered the ipad kid, whats weapon will you use????"
+D_04_C8,3,D_04,8,"['private', 'organising', 'electro']",3,True,0.966,"Organising a private electro open air in a private location, what shall not be forgotten?"
+D_04_C9,3,D_04,9,"['rock', 'witnessed', 'creepy']",4,True,0.7683,rock thing you've witnessed?
+D_04_C10,3,D_04,10,"['small', 'longest', 'lasting']",3,True,0.7725,What made you feel found?
+D_04_C11,3,D_04,11,"['pleasant', 'partner']",3,True,0.8832,thing you've done to another person and why?
+D_04_C12,3,D_04,12,"['lead', 'relationship']",3,True,0.9208,how much do you like to lead in a relationship? Do you feel like you have to do it?
+D_04_C13,3,D_04,13,"['die', 'heaven', 'god']",4,True,0.8249,How will you die?
+D_04_C14,3,D_04,14,"['earth', 'comes', 'mind']",5,True,0.6782,What comes to your Mind when you think United Kingdom?
+D_04_C15,3,D_04,15,"['profile', 'liked', 'pages']",3,True,0.7987,Are phone numbers linked with google profile visible to others if not hidden?
+D_04_C16,3,D_04,16,"['midlife', 'crisis', 'teachers']",4,True,0.748,What midlife crisis ?
+D_04_C17,3,D_04,17,"['urself', 'weird', 'killing']",3,True,0.8252,Is it weird to think about killing urself without actually wanting to kill urself
+D_04_C18,3,D_04,18,"['learn', 'need', 'choose']",4,True,0.6342,"to choose a species/animal that would become more intelligent than humans, which would it be and how do you think society would change?"
+D_04_C19,3,D_04,19,"['age', 'perfect', 'suicide']",5,True,0.6961,"Given the current state of the world, and your circumstances too, how long do you want to live?"
+D_04_C20,3,D_04,20,"['songs', 'ringtones', 'maybe']",3,True,0.6232,still make songs there ringtones?
+D_04_C21,3,D_04,21,"['power', 'targeted', 'vegan']",6,True,0.6246,Gamers who rage what's your usual phrase?
+D_04_C22,3,D_04,22,"['wish', 'buying', 'couple']",5,True,0.7322,What do you wish you knew before buying your first home?
+D_04_C23,3,D_04,23,"['falling', 'asleep', 'sleep']",4,True,0.6865,before falling asleep?
+D_04_C24,3,D_04,24,"['drinking', 'ipas', 'beer']",3,True,0.662,I tell my Dad that he need to seek help without pushing him over the edge?
+D_04_C25,3,D_04,25,"['girl', 'love', 'says']",3,True,0.7938,there's this girl that i love we spend every day all day together either calling on the phone or in an xbox party she says she's not really ready for a relationship and i respect that but i would love to date this girl does anyone have tips/suggestions?
+D_04_C26,3,D_04,26,"['physics', 'mean', 'transport']",4,True,0.5371,"Is there something similar to a state fair all over the world, and so what is it?"
+D_05_C0,4,D_05,0,"['taxes', 'children', 'karens']",7,False,0.4926,"Children of ""Karens"", how do you feel when you witness firsthand the public outbursts of your parent/s?"
+D_05_C1,4,D_05,1,"['anxiety', 'attacks', 'smoking']",7,False,0.5854,stop getting anxiety attacks when smoking.
+D_05_C2,4,D_05,2,"['regret', 'hard', 'patient']",29,False,0.5528,"thing you've done, without even realizing you'd done it?"
+D_05_C3,4,D_05,3,"['questions', 'sub', 'evening']",13,False,0.5448,the question in the evening SO much better than the questions in the morning? They all seem like Karma whore questions early in the day and real people later in the day?
+D_05_C4,4,D_05,4,"['sex', 'women', 'men']",16,False,0.4935,Sex sex sex men women female sex sex fetish
+D_05_C5,4,D_05,5,"['songs', 'movie', 'funny']",7,False,0.6445,What is arguably the greatest movie scene of all time?
+D_05_C6,4,D_05,6,"['almond', 'nautical', 'equivalent']",7,False,0.5018,part of an Oreo?
+D_05_C7,4,D_05,7,"['doctors', 'america', 'foreign']",3,True,0.9709,most doctors here in America foreign?
+D_05_C8,4,D_05,8,"['nut', 'nasty', 'tried']",3,True,0.9095,guys think their nut is so nasty? Tried it and I don't know what the problem is
+D_05_C9,4,D_05,9,"['community', 'lgbt', 'believe']",5,True,0.8562,of the lgbt+ what do you do or believe that the community gets mad about?
+D_05_C10,4,D_05,10,"['differently', 'specific', 'examples']",5,True,0.8524,"when your last day would be, what would you do differently? And/or anything you'd want to do? Give specific examples!"
+D_05_C11,4,D_05,11,"['consider', 'success', 'self']",5,True,0.8027,What do you consider to be success in life?
+D_05_C12,4,D_05,12,"['city', 'country', 'advice']",3,True,0.7023,What are some Tourist Traps in your country/city?
+D_05_C13,4,D_05,13,"['tonight', 'keeping', 'awake']",4,True,0.8258,What's keeping you awake tonight?
+D_05_C14,4,D_05,14,"['india', 'independence', 'battle']",3,True,0.9385,"since today is Independence day of India, I would like to know if you people know about Battle of Saragarhi or does western media just shows negative aspects of India?"
+D_05_C15,4,D_05,15,"['happened', 'ralstons', 'knife']",4,True,0.7393,What happened to Aaron Ralstons used pocket knife (127 hours) ?
+D_05_C16,4,D_05,16,"['vegetarian', 'food', 'drive']",3,True,0.8176,why you'll never buy food for the any random car behind you in the fast food drive thru line?
+D_05_C17,4,D_05,17,"['trend', 'setter', 'miss']",3,True,0.8247,what do you guys think was the weirdest/worst trends?
+D_05_C18,4,D_05,18,"['different', 'pets', 'asked']",3,True,0.9105,"If different pets (e.g., dog, cat, hamster, bird, turtle) were asked ""what is your life's purpose?"", what would each one say?"
+D_05_C19,4,D_05,19,"['job', 'lucrative', 'diploma']",4,True,0.6548,What's a job that is underrated and underpaid and should be valued more?
+D_05_C20,4,D_05,20,"['recommendations', 'gear', 'start']",3,True,0.9386,i would like some recommendations on gear to start out on the budget of a 17 year old working minimum wage
+D_05_C21,4,D_05,21,"['movies', 'recently', 'recommend']",3,True,0.7704,Name a Movie that Changes Meaning/Understanding as You Age
+D_05_C22,4,D_05,22,"['trilogy', 'horrible', 'continued']",4,True,0.6783,"What is, in your opinion, the best movie trilogy?"
+D_05_C23,4,D_05,23,"['superpower', 'overpowered', 'normal']",3,True,0.9381,what superpower would be overpowered for a normal life?
+D_05_C24,4,D_05,24,"['splitting', 'submit', 'https']",6,True,0.5069,"to sell one State, which one would it be?"
+D_05_C25,4,D_05,25,"['book', 'lost', 'story']",4,True,0.6781,What is your scariest encounter with a wild animal?
+D_05_C26,4,D_05,26,"['livestream', 'happen', 'internet']",4,True,0.6514,If Jesus was around today what would his SoundCloud be like?
+D_05_C27,4,D_05,27,"['explosion', 'near', 'run']",4,True,0.6969,what does falling into the void look like for you?
+D_05_C28,4,D_05,28,"['option', 'youtube', 'key']",6,True,0.4854,thing you have downloaded?
+D_05_C29,4,D_05,29,"['dentist', 'rotate', 'tires']",3,True,0.69,How often do people actually go to the dentist?
+D_06_C0,5,D_06,0,"['comes', 'mind', 'czech']",9,False,0.7408,What's the first think that comes to your mind when you think about Britain?
+D_06_C1,5,D_06,1,"['afghanistan', 'taliban', 'happening']",14,False,0.7766,Afghans in the US and around the world- how do you feel about what's happening currently in Afghanistan?
+D_06_C2,5,D_06,2,"['germany', 'cereal', 'milk']",24,False,0.5857,Germany?
+D_06_C3,5,D_06,3,"['horny', 'etiquette', 'engaging']",7,False,0.5791,Do women enjoy when their male partner has a foot fetish?
+D_06_C4,5,D_06,4,"['happened', 'school', 'moment']",38,False,0.52,thing you've ever done?
+D_06_C5,5,D_06,5,"['column', 'introverts', 'problem']",10,False,0.4935,"Would you rather have $10m today, or have $5k per day (resets at midnight) for the rest of your life?"
+D_06_C6,5,D_06,6,"['exchange', 'cash', 'points']",10,False,0.5391,exchange Reddit points for cash?
+D_06_C7,5,D_06,7,"['debatable', 'questions', 'reply']",12,False,0.5569,What are some lighthearted but debatable questions?
+D_06_C8,5,D_06,8,"['left', 'difference', 'liberal']",8,False,0.5483,What's the difference between liberal and left?
+D_06_C9,5,D_06,9,"['mobile', 'cell', 'hidden']",4,True,0.9965,Is there a way to have a mobile hotspot via cell phone but hidden/masked in a way so that you don't have to have the cost of additional data allowance?
+D_06_C10,5,D_06,10,"['adding', 'profile', 'total']",5,True,0.95,"Post karma not adding to profile total, is it because the post was marked as eighteen plus? Sorry this is the wrong subreddit but need help."
+D_06_C11,5,D_06,11,"['befriended', 'discussion', 'recovering']",3,True,0.7254,Befriended over a post. Have you befriended someone through a post discussion or any sub reddit discussion. What was it like??
+D_06_C12,5,D_06,12,"['sex', 'excited', 'ended']",3,True,0.8893,When was the first time you had sex and how did it happen??
+D_06_C13,5,D_06,13,"['language', 'learn', 'electronic']",5,True,0.6799,What language do you want to learn and why?
+D_06_C14,5,D_06,14,"['relationship', 'grandparents', 'delta']",3,True,0.6628,How has everyone's experience with Delta 8 been ?
+D_06_C15,5,D_06,15,"['female', 'takes', 'toilet']",3,True,0.8427,Who takes out trash from the toilet bin in an aparment where a male and a female are flatmates?
+D_06_C16,5,D_06,16,"['reading', 'forbade', 'encourage']",3,True,0.822,who's parents that forbade them from reading comic books because they were trash (Like mine did). Do you encourage your kids to read them?
+D_06_C17,5,D_06,17,"['traffic', 'love', 'turn']",6,True,0.587,Love can be the best and worst feeling. What's your reasons?
+D_06_C18,5,D_06,18,"['deez', 'nuts', 'turkey']",3,True,0.7954,when you think about Deez Nuts?
+D_06_C19,5,D_06,19,"['red', 'color', 'wearing']",5,True,0.6323,know if the Red color you see is like the red color other people see?
+D_06_C20,5,D_06,20,"['karma', 'scene', 'instence']",3,True,0.789,instence of karma you've ever witnessed?
+D_06_C21,5,D_06,21,"['violent', 'children', 'flintstones']",3,True,0.775,"How violent were children's shows in the 60's (The Flintstones, The Jetsons, Rocky &amp; Bullwinkle, Scooby-Doo, Underdog, Yogi Bear, etc) compared to today?"
+D_06_C22,5,D_06,22,"['type', 'product', 'beautiful']",5,True,0.6012,If there was anything you wanted but you had to draw that specific thing in order to get it what type of thing would you want to have?
+D_06_C23,5,D_06,23,"['engaged', 'significant', 'husbands']",3,True,0.7644,Husbands/Boyfriends of Reddit: What makes your girl so special to you?
+D_06_C24,5,D_06,24,"['weird', 'youtube', 'videos']",3,True,0.6211,movie that specifically has an NBA player and a famous politician in it?
+D_06_C25,5,D_06,25,"['house', 'food', 'accidentally']",4,True,0.8102,thing you've eaten and where was it?
+D_06_C26,5,D_06,26,"['vaccinated', 'disabled', 'antifa']",5,True,0.5675,it wrong for me not to get vaccinated?
+D_06_C27,5,D_06,27,"['covid', 'new', 'leronlimab']",5,True,0.4762,"Leronlimab by CytoDyn, a safe new innovative approach to the treatment of COVID 19 Adult Respiratory Distress Syndrome, Cancer and HIV. Leronlimab is reaching the final stages of clearance from the FDA for HIV. Here I will share my knowledge of this battleground stock."
+D_06_C28,5,D_06,28,"['small', 'happy', 'wish']",3,True,0.6956,What question do you get asked a lot?
+D_06_C29,5,D_06,29,"['hot', 'cooking', 'tips']",3,True,0.7491,Reddit what's your cooking tips?
+D_07_C0,6,D_07,0,"['taliban', 'afghanistan', 'help']",15,False,0.724,What the f*** is happening in Afghanistan?
+D_07_C1,6,D_07,1,"['movie', 'character', 'movies']",15,False,0.634,Which movie do you like most and which character of that movie is most attractive to you?
+D_07_C2,6,D_07,2,"['pandemic', 'unfriended', 'start']",8,False,0.5785,How many people have you “unfriended” (family and friends) since the start of the pandemic?
+D_07_C3,6,D_07,3,"['enjoy', 'non', 'animal']",12,False,0.5512,What non-generic activity do you personally enjoy?
+D_07_C6,6,D_07,6,"['withdrawal', 'afghanistan', 'trump']",3,True,0.7303,"Everyone on the right side of the political spectrum in the US blaming Joe Biden for the mess in Afghanistan, Trump was already going forward with the withdrawal. What do you think he would've done differently? How would you have reacted if the images coming out of there were the same?"
+D_07_C7,6,D_07,7,"['heaven', 'religion', 'pick']",3,True,0.9713,Which religion should I pick to go to heaven?
+D_07_C8,6,D_07,8,"['sex', 'signature', 'happen']",5,True,0.8798,Do you have a signature sex move and what is it
+D_07_C9,6,D_07,9,"['talk', 'smartly', 'intelligently']",4,True,0.9237,most people talk so smartly on Reddit?
+D_07_C10,6,D_07,10,"['dogs', 'buttons', 'lawyers']",4,True,0.7732,"Can dogs teach other dogs (their puppies) how to ""speak"" with buttons (fluentpet)?"
+D_07_C11,6,D_07,11,"['phone', 'shortness', 'breath']",3,True,0.7659,"After 20 days, i still have shortness in breath because of corona why?"
+D_07_C12,6,D_07,12,"['happens', 'die', 'crossing']",4,True,0.8251,"happens when you die, more specificity how does it feel and what happens when you cross over from alive to dead?"
+D_07_C13,6,D_07,13,"['supporter', 'mind', 'change']",3,True,0.9695,way to change a Trump Supporter's mind?
+D_07_C14,6,D_07,14,"['pet', 'peeve', 'unnecessary']",3,True,0.7789,"Authors, musicians, poets, painters etc. of reddit. What's your worst and best encounter on social medias?"
+D_07_C15,6,D_07,15,"['area', 'atlanta', 'prospects']",5,True,0.5514,What are prospects abroad if i do Mphil from Nimhans in India?
+D_07_C16,6,D_07,16,"['right', 'instead', 'try']",3,True,0.7895,What should we try today?
+D_07_C17,6,D_07,17,"['smell', 'dislike', 'hate']",4,True,0.8018,What's a smell you dislike? Why?
+D_07_C18,6,D_07,18,"['sex', 'community', 'free']",4,True,0.682,"of this sub, what's the deal with all the sex related questions?"
+D_07_C19,6,D_07,19,"['women', 'different', 'consistent']",3,True,0.7929,"Which feels better, having one consistent women or being with multiple different women?"
+D_07_C20,6,D_07,20,"['today', 'work', 'weekend']",6,True,0.7253,How's everyone's Monday going so far?
+D_07_C21,6,D_07,21,"['guy', 'khabib', 'nurmagomedov']",6,True,0.6293,What to do if a guy is live little girls
+D_07_C22,6,D_07,22,"['pray', 'tested', 'positive']",5,True,0.5741,deal with a racist and homophobic family?
+D_07_C23,6,D_07,23,"['skin', 'color', 'change']",3,True,0.8178,Do you want to change your skin color?
+D_07_C24,6,D_07,24,"['encountered', 'absolutely', 'terrifying']",5,True,0.7182,What was the most bizarre/scary human interaction you've ever had
+D_07_C25,6,D_07,25,"['working', 'annoying', 'school']",5,True,0.7279,thing you were caught doing?
+D_07_C26,6,D_07,26,"['trash', 'shared', 'legal']",4,True,0.6008,way your company wasted money?
+D_07_C27,6,D_07,27,"['advert', 'called', 'family']",3,True,0.799,Favourite advert of all time?
+D_07_C28,6,D_07,28,"['nsfw', 'illegal', 'scariest']",4,True,0.6447,[Serious] What's something that's not illegal but really should be?
+D_07_C29,6,D_07,29,"['stop', 'helpful', 'collectively']",6,True,0.61,Do you think this reality is boring and how would you change it?
+D_07_C30,6,D_07,30,"['dream', 'regret', 'waking']",3,True,0.7492,What was the lowest point in your life?
+D_07_C31,6,D_07,31,"['press', 'predictive', 'text']",4,True,0.6433,define religion in one line?
+D_07_C32,6,D_07,32,"['power', 'imagine', 'supernatural']",5,True,0.7444,"Imagine if you could get 1 superpower for a day, what would you want it to be?"
+D_08_C0,7,D_08,0,"['series', 'book', 'games']",9,False,0.6376,What books should get movie/game adaptions?
+D_08_C1,7,D_08,1,"['villan', 'fiction', 'movie']",9,False,0.5677,thing a villan did in fiction?
+D_08_C2,7,D_08,2,"['taliban', 'afghanistan', 'story']",8,False,0.6988,we in Afghanistan?
+D_08_C4,7,D_08,4,"['toilet', 'pet', 'lives']",13,False,0.5372,thing you ever Done?
+D_08_C6,7,D_08,6,"['song', 'artist', 'voice']",7,False,0.6232,"Reddit, what is your least favorite song by your favorite artist?"
+D_08_C7,7,D_08,7,"['ban', 'america', 'india']",6,True,0.9487,What is Ban in america actually i am from india
+D_08_C8,7,D_08,8,"['country', 'telling', 'guess']",3,True,0.9793,"something people say in your country, without telling me your country so I can guess your country"
+D_08_C9,7,D_08,9,"['game', 'officially', 'come']",6,True,0.6078,What new video game will take over the world?
+D_08_C10,7,D_08,10,"['short', 'genetic', 'intelligence']",5,True,0.6222,"If intelligence is a genetic trait and can be improved upon by generational mutation, could organisms with a very short generation time be experimentally influenced to become super intelligent in a very short time span?"
+D_08_C11,7,D_08,11,"['wwe', 'scripted', 'convince']",3,True,0.9675,I convince a diehard WWE fan that it's all scripted?
+D_08_C12,7,D_08,12,"['times', 'watched', 'supernatural']",3,True,0.756,and supernatural phenomenon you experienced recently?
+D_08_C13,7,D_08,13,"['passed', 'away', 'sister']",3,True,0.7074,Should I take my gf out of her grave?
+D_08_C14,7,D_08,14,"['user', 'searched', 'nudes']",3,True,0.7271,what do you when your nudes pictures got leaked?
+D_08_C15,7,D_08,15,"['transport', 'hotel', 'work']",4,True,0.7842,Overall worst experience ever had with public transport/hotel rooms?
+D_08_C16,7,D_08,16,"['mature', 'mean', 'talk']",3,True,0.8494,what does being mature mean to you?
+D_08_C17,7,D_08,17,"['history', 'americans', 'textbooks']",3,True,0.7732,Do world history textbooks in other countries mention or talk about 9/11?
+D_08_C18,7,D_08,18,"['pick', 'line', 'mcdonald']",3,True,0.7949,What would be the worst thing to say or do at a McDonald's?
+D_08_C19,7,D_08,19,"['movie', 'play', 'powers']",3,True,0.7853,What movie would make the worst TV series?
+D_08_C20,7,D_08,20,"['believe', 'death', 'immortal']",3,True,0.7112,What if women were immortal but men remained mortal? How would history change?
+D_08_C21,7,D_08,21,"['fictional', 'universe', 'lived']",4,True,0.7771,What fictional universe do you wish you lived in?
+D_08_C22,7,D_08,22,"['college', 'came', 'handy']",5,True,0.675,when did college really came in handy in your life?
+D_08_C23,7,D_08,23,"['culture', 'teenage', 'generally']",5,True,0.6601,What don't you like about your culture?
+D_08_C24,7,D_08,24,"['skill', 'professional', 'abnormal']",3,True,0.8659,skill that you're a professional at?
+D_08_C25,7,D_08,25,"['unnecessary', 'advice', 'drop']",3,True,0.9455,Drop an unnecessary advice?
+D_08_C26,7,D_08,26,"['red', 'flags', 'room']",4,True,0.6444,What're some red flags you lookout for before getting into a relationship?
+D_08_C27,7,D_08,27,"['wear', 'seat', 'belts']",4,True,0.7367,"Those who don't wear seat belts, why not?"
+D_08_C28,7,D_08,28,"['men', 'women', 'unacceptable']",3,True,0.7208,Do women have unwritten rules about men like men do for women?
+D_08_C29,7,D_08,29,"['thoughts', 'actions', 'close']",3,True,0.6696,What is your opinion on furries?
+D_08_C30,7,D_08,30,"['government', 'country', 'minimum']",5,True,0.5911,why should any country or government trust your government in the future?
+D_08_C31,7,D_08,31,"['insomnia', 'effected', 'sport']",3,True,0.721,How much did sport screw up your body? Was it worth it?
+D_09_C0,8,D_09,0,"['afghanistan', 'biden', 'behalf']",7,False,0.7443,America have occupied Afghanistan if the Taliban had nuclear?
+D_09_C1,8,D_09,1,"['used', 'question', 'social']",10,False,0.7428,How many subreddits are you in?
+D_09_C2,8,D_09,2,"['lords', 'music', 'king']",7,False,0.709,Who are all the lords of music?
+D_09_C3,8,D_09,3,"['song', 'listen', 'songs']",12,False,0.6503,What would be the most socially unacceptable song to play at a funeral ?
+D_09_C4,8,D_09,4,"['story', 'dream', 'moment']",26,False,0.5691,Confession Time... What is the nastiest thing you've done?
+D_09_C6,8,D_09,6,"['house', 'home', 'new']",21,False,0.4559,you're drinking alone and have nothing to do?
+D_09_C7,8,D_09,7,"['sorta', 'wants', 'threesome']",3,True,1.0,My SO wants to have a threesome with a previous co-worker she knew . She is bi and they have been sorta into each other Lowkey . Red flag or just communicate through it all . I'm sorta into it but also feel that she more bi than straight .
+D_09_C8,8,D_09,8,"['questions', 'saved', 'spam']",5,True,0.8268,SPAM questions on saved subreddits - are these new and can I turn that crap off?
+D_09_C9,8,D_09,9,"['cancel', 'culture', 'point']",3,True,0.7644,When will cancel culture be over?
+D_09_C10,8,D_09,10,"['white', 'lgbtqia', 'illegal']",4,True,0.6469,you think white men sexualize black bodies in sports and sex?
+D_09_C11,8,D_09,11,"['revenge', 'downvotes', 'downvots']",3,True,0.8583,take revenge on downvotes?
+D_09_C12,8,D_09,12,"['forgotten', 'met', 'famous']",4,True,0.7213,Who was a person so 'out-there' that you've never forgotten them?
+D_09_C13,8,D_09,13,"['scranton', 'detectives', 'hollywood']",4,True,0.6401,"Cops, under which presidency did you experience the most crime, and what's your theory why?"
+D_09_C14,8,D_09,14,"['solar', 'flare', 'wipes']",3,True,0.6617,"Solar flare wipes out all our technology, how long do you think you'd survive?"
+D_09_C15,8,D_09,15,"['ghosting', 'die', 'takes']",4,True,0.7434,ghosting? (serious)
+D_09_C16,8,D_09,16,"['humans', 'natural', 'entity']",4,True,0.7772,"Do you believe humans are natural, or man or other entity made beings and why?"
+D_09_C17,8,D_09,17,"['friends', 'hang', 'depressed']",5,True,0.6518,hang out with your depressed friends?
+D_09_C18,8,D_09,18,"['ears', 'cotton', 'swab']",3,True,0.951,cleaning my ears with a cotton swab give a fucking orgasm?
+D_09_C19,8,D_09,19,"['degrees', 'create', 'speed']",6,True,0.543,Is 60Mbps a good speed for home usage?
+D_09_C20,8,D_09,20,"['women', 'men', 'feminine']",5,True,0.6117,Why don't men and women understand that “women are not men” and “men are not women”?
+D_09_C21,8,D_09,21,"['ask', 'chose', 'arms']",3,True,0.7907,have chose your own name what would it be?
+D_09_C22,8,D_09,22,"['sounds', 'compliment', 'whats']",4,True,0.7535,What do you say to someone that sends you a meme/a photo that you have already seen?
+D_09_C23,8,D_09,23,"['beast', 'touched', 'biological']",4,True,0.6611,"What kind of dick does the Beast from Beauty and the Beast have? A big pink lipstick thing like a dog that busts out of his fur, or a huge dangling horse dong?"
+D_09_C24,8,D_09,24,"['reincarnate', 'animal', 'choose']",4,True,0.7429,"If there is an afterlife, what would you want it to be?"
+D_09_C25,8,D_09,25,"['special', 'simple', 'skill']",4,True,0.629,What is a simple skill most men lack to have?
+D_09_C26,8,D_09,26,"['pets', 'voice', 'change']",5,True,0.6676,"with pets, when you speak to them does your voice change? Why?"
+D_10_C0,9,D_10,0,"['power', 'president', 'genders']",7,False,0.6566,"be the President, What would you do?"
+D_10_C1,9,D_10,1,"['shop', 'work', 'lots']",7,False,0.5092,"with a 32 hour, 4 day work week?"
+D_10_C3,9,D_10,3,"['changed', 'phrase', 'friendship']",23,False,0.6168,"What is your most ""Bruh Moment"" in life?"
+D_10_C4,9,D_10,4,"['song', 'fantastic', 'skip']",7,False,0.5775,What is your Song?
+D_10_C5,9,D_10,5,"['means', 'siblings', 'birthdays']",5,True,0.9751,Parents and siblings with close together or the same birthdays? Got a weird one and wanna know what it means if it means something?
+D_10_C6,9,D_10,6,"['unlimited', 'internet', 'connection']",4,True,0.9533,I make the most of an unlimited internet connection?
+D_10_C7,9,D_10,7,"['mean', 'space', 'asks']",3,True,0.9447,What does 'Space' mean when someone asks for it in a relationship?
+D_10_C8,9,D_10,8,"['hell', 'dante', 'inferno']",4,True,0.9058,"In Dante's Inferno, Usurers (high interest lenders) were placed in the same circle of Hell as murderers. If the book was written today, who else would belong there and what is their punishment?"
+D_10_C9,9,D_10,9,"['join', 'joined', 'try']",3,True,0.9034,why and when did you join Reddit?
+D_10_C10,9,D_10,10,"['wish', 'somebody', 'died']",3,True,0.8078,What do you wish you had told somebody before they died but never got a chance?
+D_10_C11,9,D_10,11,"['haiti', 'cursed', 'reason']",3,True,0.9676,Is Haiti cursed for some reason?
+D_10_C12,9,D_10,12,"['stream', 'football', 'offer']",3,True,0.6527,Does anyone actually pay for YouTube Premium?
+D_10_C13,9,D_10,13,"['flags', 'red', 'girls']",4,True,0.7054,"what do girls do that they think is ""cute"" but is actually the polar opposite?"
+D_10_C14,9,D_10,14,"['great', 'weirdiest', 'strangest']",3,True,0.8088,What's a great office prank to play on your colleagues?
+D_10_C15,9,D_10,15,"['neon', 'lights', 'reference']",5,True,0.6218,What's a 90s cartoon you think everyone should know about?
+D_10_C16,9,D_10,16,"['site', 'attraction', 'city']",3,True,0.678,thing you have seen of ever
+D_10_C17,9,D_10,17,"['experience', 'overall', 'makeover']",4,True,0.6791,What was your “15 minutes of fame” experience?
+D_10_C18,9,D_10,18,"['change', 'water', 'forever']",4,True,0.6876,What would you change water to taste like forever (it still works the same and will hydrate you)?
+D_10_C19,9,D_10,19,"['habits', 'stick', 'nightly']",3,True,0.673,I make healthy habits stick???
+D_10_C20,9,D_10,20,"['stop', 'change', 'given']",3,True,0.7643,Will we ever achieve world peace?
+D_10_C21,9,D_10,21,"['supporters', 'donald', 'trump']",3,True,0.8063,Why do/did you support Donald Trump?
+D_10_C22,9,D_10,22,"['superior', 'americans', 'envy']",3,True,0.6969,the cat considered to be superior to the dog by the majority of America's intellectuals?
+D_10_C23,9,D_10,23,"['statement', 'quote', 'enrages']",3,True,0.8079,What do most people not understand?
+D_10_C24,9,D_10,24,"['jobs', 'little', 'pass']",3,True,0.7928,who have way to much time on your hands. What do you do to keep busy?
+D_10_C25,9,D_10,25,"['word', 'mispronouncing', 'recently']",3,True,0.904,What word have you recently found out you've been mispronouncing all your life?
+D_10_C26,9,D_10,26,"['games', 'played', 'spent']",6,True,0.6827,What were the first one to three video games you played?
+D_10_C27,9,D_10,27,"['deep', 'internet', 'divers']",6,True,0.6748,"Deep divers of the internet, what is the worst thing you have found on the dark / deep web?"
+D_10_C28,9,D_10,28,"['quickest', 'ruin', 'passionate']",4,True,0.7147,to do when your sad?
+D_10_C29,9,D_10,29,"['famous', 'infamous', 'stand']",5,True,0.61,Who are the most famous/infamous Redditors of all time?
+D_10_C30,9,D_10,30,"['train', 'vividly', 'childhood']",4,True,0.7765,from your childhood you always have on your mind?
+D_10_C31,9,D_10,31,"['opinion', 'overhyped', 'ruins']",3,True,0.8129,What tastes so good you can't believe it's healthy?
+D_10_C32,9,D_10,32,"['heaviest', 'lifted', 'weights']",6,True,0.6367,meal you've ever had?
+D_10_C33,9,D_10,33,"['write', 'human', 'care']",4,True,0.6812,What's a piece of advice you'd give to your freshman self in college?
+D_10_C34,9,D_10,34,"['stories', 'listen', 'cool']",6,True,0.7493,Any cool incidents or stories to tell?
+D_10_C35,9,D_10,35,"['inconvenient', 'migraine', 'plastic']",3,True,0.7416,thought you've ever had?
+D_11_C0,10,D_11,0,"['moment', 'child', 'forever']",23,False,0.5666,"What was your ""Not Worth It"" Moment?"
+D_11_C1,10,D_11,1,"['dumb', 'perceive', 'separate']",12,False,0.51,you keep on think that you are separate from nature?
+D_11_C2,10,D_11,2,"['house', 'saddest', 'news']",7,False,0.6735,thing you have seen that's has happened in your own house?
+D_11_C3,10,D_11,3,"['overpopulated', 'gets', 'kicked']",9,False,0.5636,If there was a zombie apocalypse were to happen. What group of people would die first?
+D_11_C4,10,D_11,4,"['content', 'onlyfans', 'sexual']",11,False,0.6416,onlyfans is banning explicit content?
+D_11_C5,10,D_11,5,"['movie', 'movies', 'relatively']",7,False,0.7205,"What are some relatively recent shows you've enjoyed (Whatever the platform may be, Netflix, Prime video, cable, etc.)?"
+D_11_C6,10,D_11,6,"['moment', 'average', 'tattoo']",17,False,0.4819,What was your most rage-inducing moment?
+D_11_C7,10,D_11,7,"['item', 'mustard', 'type']",17,False,0.4582,Which item in your house you wish was yours ?
+D_11_C8,10,D_11,8,"['texans', 'bury', 'deshaun']",3,True,0.9865,the Texans trying to Bury Deshaun Watson?
+D_11_C9,10,D_11,9,"['stand', 'celebrity', 'celeb']",3,True,0.8625,What celebrity can you not stand that everyone seems to love?
+D_11_C10,10,D_11,10,"['afghanistan', 'occupation', 'failure']",4,True,0.7017,"who have traveled back from Afghanistan or are still there, how has the process been from a safe, productive, and efficient standpoint?"
+D_11_C11,10,D_11,11,"['female', 'avatars', 'play']",5,True,0.7331,"Female gamers i know that dudes play female avatars so, i wondered if you played as male avatars in games too?"
+D_11_C12,10,D_11,12,"['notice', 'trait', 'guy']",5,True,0.7059,what do you notice first about guys?
+D_11_C13,10,D_11,13,"['grounded', 'home', 'stupid']",3,True,0.6762,What to do if you are grounded and stuck at home?
+D_11_C14,10,D_11,14,"['piss', 'kids', 'parents']",5,True,0.7014,way to really piss off the kids?
+D_11_C15,10,D_11,15,"['role', 'level', 'lockdown']",3,True,0.8072,While NZ is in level four lockdown... Describe your essential role without saying what it is
+D_11_C16,10,D_11,16,"['boys', 'replying', 'reply']",3,True,0.8245,what is a suitable time for boys to reply to texts in. Is replying instantly ok or a bit over the too?
+D_11_C17,10,D_11,17,"['deal', 'creepy', 'close']",3,True,0.6467,What country has the best prostitutes?
+D_11_C18,10,D_11,18,"['days', 'asian', 'pretty']",3,True,0.6816,"High School Asian redditors: What does it feel like to be an Asian with a pretty bad academic mark(or simply put, pretty bad grade)?"
+D_11_C19,10,D_11,19,"['stopped', 'wearing', 'attacked']",3,True,0.8176,"Those who never stopped wearing masks, did you see this coming?"
+D_11_C20,10,D_11,20,"['don', 'pride', 'online']",4,True,0.6147,"say with pride online, but would never admit irl?"
+D_11_C21,10,D_11,21,"['curious', 'mangos', 'petting']",3,True,0.6729,"Just curious, what do You think about mangos?"
+D_11_C22,10,D_11,22,"['going', 'god', 'super']",6,True,0.614,What's the Cheesiest Super power you can think of?
+D_11_C23,10,D_11,23,"['live', 'daily', 'chips']",5,True,0.6802,question you've ever been asked?
+D_11_C24,10,D_11,24,"['overcome', 'anxiety', 'goal']",3,True,0.7254,What is your excuse for not working out today?
+D_12_C0,11,D_12,0,"['afghanistan', 'taliban', 'misinformation']",15,False,0.5475,"personally fix the US retreat from Afghanistan which some regard as betrayal of its allies and the end of the US ""soft power"" appeal?"
+D_12_C1,11,D_12,1,"['school', 'calligraphy', 'soon']",12,False,0.4771,What are your thoughts on Calligraphy? Do you think it'll die soon? Or it'll be used more coming times?
+D_12_C2,11,D_12,2,"['kindest', 'stranger', 'meanest']",8,False,0.7254,What's the kindest thing a stranger did to you that you will never forget?
+D_12_C3,11,D_12,3,"['song', 'absolutely', 'albums']",7,False,0.6636,What song gives you the absolute feels every time?
+D_12_C4,11,D_12,4,"['lost', 'weight', 'manage']",9,False,0.5341,you never done it but pretend you've done it?
+D_12_C5,11,D_12,5,"['infinite', 'universes', 'sets']",9,False,0.47,WouldUrather?
+D_12_C6,11,D_12,6,"['nay', 'food', 'bee']",10,False,0.5805,flavour of Cheeseburger to put inside you?
+D_12_C7,11,D_12,7,"['female', 'dynamics', 'group']",3,True,0.9773,Ladies: How would you describe female social dynamics behaviors in female-dominated group settings to male social dynamics in male-dominated group settings?
+D_12_C8,11,D_12,8,"['decision', 'long', 'misunderstood']",4,True,0.7605,"Live long enough and you will have been misunderstood or misrepresented. If you could go back and give clarity or defend yourself for a decision you made, what would you say?"
+D_12_C9,11,D_12,9,"['second', 'recognized', 'porn']",4,True,0.7818,"Porn stars that have a second job, have you ever been recognized at your. Second workplace?"
+D_12_C10,11,D_12,10,"['country', 'unlimited', 'pick']",6,True,0.717,"unlimited money and you can buy one thing, what would it be?"
+D_12_C11,11,D_12,11,"['habit', 'teach', 'someday']",3,True,0.7406,make healthy habits stick???
+D_12_C12,11,D_12,12,"['germans', 'merkel', 'trait']",3,True,0.6552,"Germans of Askreddit, how much do you like Merkel?"
+D_12_C13,11,D_12,13,"['tesla', 'need', 'money']",6,True,0.5653,free on the internet everyone should take advantage of?
+D_12_C14,11,D_12,14,"['dancing', 'patrick', 'cowabunga']",5,True,0.6061,When did the Quiet Kid do something wholesome?
+D_12_C15,11,D_12,15,"['obsessed', 'starving', 'sex']",3,True,0.8855,Looool . Reddit is so obsessed with sex . You all starving 😭😭😭.
+D_12_C16,11,D_12,16,"['sex', 'sexy', 'boobs']",4,True,0.7363,"Who would you sexy sex, talk about sex or hot for sexy thoughts? 🤔"
+D_12_C17,11,D_12,17,"['sex', 'church', 'mass']",5,True,0.788,say during sex and while you order at the restaurant?
+D_12_C18,11,D_12,18,"['karma', 'blah', 'sex']",3,True,0.8423,say during sex but also shut up and give me karma?
+D_12_C19,11,D_12,19,"['friend', 'joke', 'prank']",3,True,0.8367,Need help on friend who cant take a joke
+D_12_C20,11,D_12,20,"['naked', 'fetish', 'nsfw']",3,True,0.7418,What's NSFW at your workplace?
+D_12_C21,11,D_12,21,"['react', 'emoji', 'giveaway']",3,True,0.8581,"Is there a no emoji react giveaway bot on discord?... instead of having users react to an emoji, the user just have to have an specific role in the serever! Any bots like that out there?"
+D_12_C22,11,D_12,22,"['dew', 'sus', 'red']",5,True,0.7008,red sus?
+D_12_C23,11,D_12,23,"['career', 'old', 'peaked']",3,True,0.7869,"To the former Automotive Mechanics out there that reached maximum occupational burnout, what career/job did you transition into?"
+D_12_C24,11,D_12,24,"['conspiracy', 'theory', 'cause']",4,True,0.7128,What's the stupidest conspiracy theory you've ever heard?
+D_12_C25,11,D_12,25,"['parties', 'functions', 'farted']",3,True,0.8162,thing that someone you know (or you) did when they were drunk?
+D_12_C26,11,D_12,26,"['acknowledge', 'retail', 'worker']",3,True,0.9728,"If you acknowledge a retail worker is obviously having a bad day, do you throw a compliment/gesture to cheer them up, hope they day gets better, or just keep walking?"
+D_12_C27,11,D_12,27,"['girl', 'haven', 'spoke']",6,True,0.606,way to dm a girl you haven't seen or spoke to in 10 years?
+D_12_C28,11,D_12,28,"['prague', 'contact', 'agency']",3,True,0.9948,contact a a Prague porn agency? Wanna become a pornstar in Prague. How can I do it? Anyone knows?
+D_12_C29,11,D_12,29,"['customers', 'job', 'tradition']",4,True,0.6883,"Chefs, cooks and kitchen workers, what secrets are you keeping from the customers?"
+D_12_C30,11,D_12,30,"['truly', 'terrifying']",3,True,0.9226,What are some of your favourite subreddits?
+D_12_C31,11,D_12,31,"['save', 'til', 'whatcha']",4,True,0.717,"be younger for a Day, What would you do?"
+D_12_C32,11,D_12,32,"['toilet', 'paper', 'roll']",5,True,0.6128,thing on amazon to decorate a room with?
+D_12_C33,11,D_12,33,"['definitely', 'theories', 'weird']",6,True,0.7295,What are your weird but definitely not serious theories?
+D_12_C34,11,D_12,34,"['uncomfortable', 'truth', 'difficult']",3,True,0.7591,What makes you lose respect for a person you're in a relationship with?
+D_12_C35,11,D_12,35,"['matter', 'cool', 'instantly']",6,True,0.6238,what are some jokes you don't find offensive
+D_12_C36,11,D_12,36,"['elaborate', 'push', 'encountered']",3,True,0.7049,s you said around someone under anesthesia that they would not be happy to hear ?
+D_12_C37,11,D_12,37,"['choose', 'superpower', 'limited']",5,True,0.6604,"be a Pokémon, What would you be?"
+D_12_C38,11,D_12,38,"['past', 'mindset', 'cartoon']",5,True,0.6826,Ik this is random but what is your goal in life
+D_13_C0,12,D_13,0,"['sex', 'sexting', 'sexualized']",9,False,0.6964,Anyone up for sexting?
+D_13_C1,12,D_13,1,"['movie', 'watched', 'haven']",9,False,0.7602,movie you have ever watched?
+D_13_C2,12,D_13,2,"['parents', 'significant', 'house']",13,False,0.5513,What is the single dumbest thing you have done in your life?
+D_13_C3,12,D_13,3,"['road', 'questions', 'weird']",8,False,0.5334,What are some best shitty questions that you have asked in this sub ?
+D_13_C5,12,D_13,5,"['disgusting', 'pictures', 'cigarette']",3,True,0.9633,Have the disgusting pictures on cigarette packets ever made anyone quit smoking properly?
+D_13_C6,12,D_13,6,"['fanta', 'ventriloquist', 'dummy']",3,True,0.8233,Has anyone else seen the creepy B&amp;W Fanta ad with the ventriloquist dummy? Or did it beam in from a parallel universe?
+D_13_C7,12,D_13,7,"['hobby', 'username']",3,True,0.9569,What is your hobby?
+D_13_C8,12,D_13,8,"['twin', 'identical', 'gender']",4,True,0.7289,"What if a man impregnate female twin that look 99.99% identical, would these twin give birth to 99.9% identical babies of same gender?"
+D_13_C9,12,D_13,9,"['spend', 'money', 'stupid']",6,True,0.7671,"You've been given $500 in cash, but only one day to spend it all. What do you buy?"
+D_13_C10,12,D_13,10,"['song', 'chorus', 'bit']",6,True,0.7962,Your favourite Song By Only saying The chorus
+D_13_C11,12,D_13,11,"['cheese', 'old', 'flyswatter']",4,True,0.6691,What fragrance is extremely similar to the old forest axe scent?
+D_13_C12,12,D_13,12,"['refuse', 'gut', 'feeling']",3,True,0.7301,When has a gut feeling steered you wrong?
+D_13_C13,12,D_13,13,"['don', 'care', 'fake']",3,True,0.7972,way you've seen someone show or say: “I don't care at all”
+D_13_C14,12,D_13,14,"['overpaid', 'overrated', 'opinions']",3,True,0.6947,"Okay, Are you Interest grow your business"
+D_13_C15,12,D_13,15,"['hurt', 'tattoo', 'damaged']",4,True,0.6292,Does anyone else feel damaged beyond all repair?
+D_13_C16,12,D_13,16,"['ladies', 'size', 'matter']",3,True,0.6835,"In a customer service setting, do you like the person on the other end making small talk and if so, why?"
+D_13_C17,12,D_13,17,"['toy', 'childhood', 'whats']",4,True,0.8415,"If I say ""childhood toy""... whats the first toy that comes into your head and have you stumbled across it years later?"
+D_13_C18,12,D_13,18,"['relating', 'famous', 'living']",3,True,0.7446,What memory do you hold dear to your heart?
+D_13_C19,12,D_13,19,"['food', 'foods', 'eaten']",6,True,0.6799,What's the one food you will not eat?
+D_13_C20,12,D_13,20,"['pickup', 'delivered', 'line']",5,True,0.7065,time an OP delivered?
+D_13_C21,12,D_13,21,"['climate', 'change', 'illness']",3,True,0.7941,what's your solution to climate change?
+D_13_C22,12,D_13,22,"['useless', 'invention', 'completely']",4,True,0.6276,What invention was completely useless?
+D_13_C23,12,D_13,23,"['banana', 'humans', 'minding']",3,True,0.6928,How were humans minding their toenails before metal has been invented?
+D_13_C24,12,D_13,24,"['rhyme', 'exists', 'porn']",5,True,0.5936,What are some satire or joke subreddits that are fun to browse?
+D_13_C25,12,D_13,25,"['bothering', 'happy', 'sentence']",3,True,0.7508,What is bothering you the most this week?
+D_13_C26,12,D_13,26,"['went', 'send', 'elevator']",6,True,0.4881,"When you went up in life, did you send the elevator back down?"
+D_13_C27,12,D_13,27,"['live', 'contest', 'win']",6,True,0.5996,"What was difficult 5 years ago, now anyone can do?"
+D_14_C0,13,D_14,0,"['movie', 'scene', 'childhood']",7,False,0.6483,"What movie or television show do you refuse to watch because of ""that one scene""?"
+D_14_C1,13,D_14,1,"['anime', 'game', 'protagonist']",7,False,0.6651,"without saying the title, what's your favorite video game?"
+D_14_C3,13,D_14,3,"['karma', 'points', 'pretty']",11,False,0.479,"don't have, that you're pretty sure that everyone else has?"
+D_14_C4,13,D_14,4,"['belong', 'pizza', 'word']",9,False,0.4569,COMMENT for no. UPV0TE for yes...Do does pineapple belong on pizza?
+D_14_C5,13,D_14,5,"['cheat', 'significant', 'relationship']",4,True,0.8702,"cheat on your significant other and you knew 100% they would never ever find out, would you do it?"
+D_14_C6,13,D_14,6,"['job', 'love', 'going']",4,True,0.7428,"who truly love their job and enjoy going every day, why do you love going and was this job always part of your plan?"
+D_14_C7,13,D_14,7,"['powers', 'superhero', 'adult']",4,True,0.6508,Who your favorite Star Wars character?
+D_14_C8,13,D_14,8,"['regret', 'cut', 'comtact']",3,True,0.7392,you cut off all comtact with your friends because you're behind in life?
+D_14_C9,13,D_14,9,"['sex', 'cons', 'waiting']",6,True,0.6967,What are the pros and cons you've experienced from waiting til marriage to have sex?
+D_14_C10,13,D_14,10,"['laptop', 'option', 'wearing']",3,True,0.678,Debate: dating apps have a height option.. they should also have a BMI option
+D_14_C11,13,D_14,11,"['business', 'fooling', 'fans']",3,True,0.6833,can or should be done to combat clickbait on the internet?
+D_14_C12,13,D_14,12,"['ladies', 'asked', 'straight']",4,True,0.6693,"(Straight) single ladies: An attractive male stranger approaches you and says ""Pardon me for being blunt, but you are absolutely stunning, and I'd like to get to know you."" and then introduces himself. What is your reaction?"
+D_14_C13,13,D_14,13,"['offered', 'use', 'twisted']",6,True,0.7133,"What would be a subtle way of saying that you have an erection, while making it absolutely clear?"
+D_14_C14,13,D_14,14,"['scars', 'ghost', 'large']",3,True,0.7348,you ghost?
+D_14_C15,13,D_14,15,"['bloody', 'hell', 'everly']",3,True,0.7043,"who are from the Beanbean kingdom, what do you think of me being a Cackletta fangirl?"
+D_14_C16,13,D_14,16,"['pandemic', 'solution', 'covid']",4,True,0.836,"What happens if the whole world admit that the solution to end the Covid-19 pandemic is not found, that they agree that 100% of the worlds population to be infected and be immune is the final solution to end the pandemic?"
+D_14_C17,13,D_14,17,"['die', 'california', 'family']",3,True,0.7026,"What was the situation, where you thought, ""That's it, I think I'm gonna die here""?"
+D_14_C18,13,D_14,18,"['simply', 'delete', 'famous']",3,True,0.8163,simply delete one famous person from this earth who would you choose and why?
+D_14_C19,13,D_14,19,"['law', 'baby', 'happen']",6,True,0.6345,"make 1 law, what law would you make and why? What effects would that law ensue?"
+D_14_C20,13,D_14,20,"['roosevelt', 'george', 'washington']",4,True,0.6897,"Who is more badass: Theadore Roosevelt or George Washington, and why?"
+D_14_C21,13,D_14,21,"['school', 'students', 'academic']",4,True,0.6112,what rule do you always have to follow that is really stupid?
+D_14_C22,13,D_14,22,"['genie', 'kill', 'wish']",5,True,0.7087,I kill myself?
+D_14_C23,13,D_14,23,"['learn', 'live', 'teleport']",6,True,0.6823,"live anywhere in the world, where would move to?"
+D_14_C24,13,D_14,24,"['loved', 'believing', 'fell']",6,True,0.6093,way a grandparent/loved one of yours has passed?
+D_14_C25,13,D_14,25,"['today', 'reconcile', 'period']",5,True,0.5793,reconcile actions with the time period in which they took place?
+D_14_C26,13,D_14,26,"['choose', 'superpower', 'useless']",4,True,0.7025,What do you fear the most?
+D_14_C27,13,D_14,27,"['unusual', 'ability', 'helps']",3,True,0.8381,What is a unusual talent/ability you have that helps you in every day life?
+D_14_C28,13,D_14,28,"['apple', 'maybe', 'looking']",3,True,0.8117,"Smart watches..looking into Fitbit sense, versa 2, Apple Watch SE, and Apple series 3. looking for heart rate, sleep, maybe oxygen level, and pedometer. Maybe phone notifications and calls (with phonein close proximity) Which one is the best?"
+D_14_C29,13,D_14,29,"['ago', 'cult']",3,True,0.7151,about your life?
+D_14_C30,13,D_14,30,"['game', 'finds', 'amazon']",4,True,0.6676,What's an old game that is weirdly expensive on the second hand market?
+D_14_C31,13,D_14,31,"['hate', 'cyclists', 'handle']",6,True,0.5944,some people hate cyclists?
+D_14_C32,13,D_14,32,"['embarrassing', 'gross', 'habit']",3,True,0.7663,makes you laugh yet also feel terrible for laughing at?
+D_14_C33,13,D_14,33,"['username', 'used', 'experiences']",4,True,0.6965,Have you seen your crush naked?
+D_14_C34,13,D_14,34,"['young', 'kid', 'stupidest']",6,True,0.6944,what mischievous thing your child has done at a really young that they think you don't know about it
+D_14_C35,13,D_14,35,"['confront', 'happening', 'tried']",4,True,0.7582,situation you've ever been in?
+D_14_C36,13,D_14,36,"['motivation', 'depression', 'intrusive']",4,True,0.8008,thing you did as a kid you still think about to this day?
+D_14_C37,13,D_14,37,"['turn', 'food', 'delivery']",3,True,0.7681,you've ever been about something and how did it turn out?
+D_14_C38,13,D_14,38,"['lab', 'quit', 'stop']",3,True,0.7936,"Intentionally single people of reddit, what made you realise you were better off enjoying your own company rather than someone else's?"
+D_15_C0,14,D_15,0,"['pregnant', 'kicked', 'lifetime']",11,False,0.5957,day off your life?
+D_15_C1,14,D_15,1,"['kid', 'stranded', 'desert']",10,False,0.5894,thing that happened to you today?
+D_15_C2,14,D_15,2,"['milk', 'cow', 'discovered']",7,False,0.6713,"Cow gives us milk, what was the guy who discovered this was trying to do?"
+D_15_C3,14,D_15,3,"['question', 'movie', 'answer']",15,False,0.5218,What are your irrational fears?
+D_15_C4,14,D_15,4,"['plane', 'united', 'went']",8,False,0.4626,What is a loophole you have operated under for years?
+D_15_C5,14,D_15,5,"['gtm', 'subject', 'calculator']",9,False,0.4819,What is a variable in GTM?
+D_15_C6,14,D_15,6,"['fake', 'covid', 'real']",4,True,0.9923,Is COVID-19 REAL or FAKE ? Honestly
+D_15_C7,14,D_15,7,"['repeat', 'answer']",3,True,1.0,"someone repeat your answer such as ""No?""?"
+D_15_C8,14,D_15,8,"['job', 'looking', 'wish']",3,True,0.7142,what is your dream job?
+D_15_C9,14,D_15,9,"['crime', 'witnesses', 'story']",3,True,0.911,"who were crime witnesses, what was your story?"
+D_15_C10,14,D_15,10,"['car', 'wrote', 'cash']",4,True,0.7115,car you ever owned?
+D_15_C11,14,D_15,11,"['car', 'steal', 'keys']",3,True,0.8461,"you only steal car keys and car documents from a house, but not the car?"
+D_15_C12,14,D_15,12,"['feeling', 'nightmares', 'sleep']",6,True,0.7318,nightmare you've ever experienced?
+D_15_C13,14,D_15,13,"['traits', 'display', 'regularly']",4,True,0.7667,traits we humans display regularly that should have no place in a modern society?
+D_15_C14,14,D_15,14,"['games', 'multiplayer', 'safe']",3,True,0.9655,"Is it safe to buys games off of G2A? If yes, can you play multiplayer mode for a multiplayer game you've bought?"
+D_15_C15,14,D_15,15,"['low', 'point', 'bigger']",5,True,0.6981,What makes you feel happy when you are at a low point in life?
+D_15_C16,14,D_15,16,"['knows', 'hentai', 'nsfw']",3,True,0.8194,[NSFW] Who knows good time stop Hentai ?
+D_15_C17,14,D_15,17,"['wear', 'mask', 'annoyed']",5,True,0.6441,who get dressed in the bathroom right after a shower - how do y'all do it?!
+D_15_C18,14,D_15,18,"['disease', 'food', 'shouldn']",4,True,0.6906,natural occurence you have ever seen?
+D_15_C19,14,D_15,19,"['date', 'breach', 'wedding']",4,True,0.6631,[Serious] What do you call a bad date?
+D_15_C20,14,D_15,20,"['cellulite', 'attract', 'older']",3,True,0.7258,Is it weird to attract older women?
+D_15_C21,14,D_15,21,"['love', 'hate', 'confidence']",6,True,0.5886,get confidence to make it in life alone on your own? [Serious]
+D_15_C22,14,D_15,22,"['second', 'hand', 'embarrassment']",4,True,0.6758,What was your experience with a friend that turned out to be a total dickhed from the start?
+D_15_C23,14,D_15,23,"['dating', 'love', 'forget']",4,True,0.6447,to comfort someone who just lost someone they love?
+D_15_C24,14,D_15,24,"['health', 'lemons', 'lemonade']",3,True,0.7493,health decision you've ever made?
+D_15_C25,14,D_15,25,"['podcasts', 'suggestions', 'counts']",3,True,0.8619,Im trying to find some podcasts... any suggestions? ( anything counts)
+D_15_C26,14,D_15,26,"['man', 'circumcised', 'specifically']",4,True,0.647,circumcised compared to uncircumcised?
+D_15_C27,14,D_15,27,"['shiba', 'inu', 'hits']",4,True,0.5834,a hundred of but not a thousand?
+D_15_C28,14,D_15,28,"['words', 'train', 'english']",6,True,0.6563,What are some confusing English words that have multiple meanings?
+D_15_C29,14,D_15,29,"['catch', 'arrive', 'caught']",4,True,0.6726,"have/do/say one thing what would it be and whats the annoying catch. if you cant think of a catch let the replies do it for you. heres mine, you can fly but after 5 minutes you just stop out of no where and fall from wherever you are"
+D_15_C30,14,D_15,30,"['sexiest', 'rock', 'whore']",3,True,0.7398,What is the sexiest rock?
+D_15_C31,14,D_15,31,"['skin', 'care', 'products']",5,True,0.5975,What are your acne solutions?
+D_15_C32,14,D_15,32,"['karma', 'chat', 'need']",3,True,0.7682,try to farm karma here? What happens if you get a lot of it?
+D_15_C33,14,D_15,33,"['body', 'upgrades', 'human']",6,True,0.6323,What are the future upgrades we can accept in human body as a result of evolution?
+D_15_C34,14,D_15,34,"['learn', 'fast', 'zero']",3,True,0.6716,learn fast?
+D_15_C35,14,D_15,35,"['skill', 'beneficial', 'ranking']",3,True,0.7601,What would be a best skill for online business ??
+D_15_C36,14,D_15,36,"['fun', 'activity', 'intended']",3,True,0.786,"“activity”, intended for fun, you've ever had to do?"
+D_15_C37,14,D_15,37,"['night', 'sleep', 'asleep']",5,True,0.7561,What is keeping you up at night?
+D_15_C38,14,D_15,38,"['country', 'kind', 'religion']",6,True,0.5186,Are water parks built as a kind of flex on third world countries? Why or why not?
+D_16_C0,15,D_16,0,"['karma', 'online', 'inturnet']",14,False,0.551,subreddit in reddit ?
+D_16_C1,15,D_16,1,"['witness', 'result', 'hood']",12,False,0.6035,thing u saw on the d a r k w e b?
+D_16_C2,15,D_16,2,"['videogame', 'game', 'watched']",13,False,0.5381,What Is the videogame you hate but everyone else loves?
+D_16_C3,15,D_16,3,"['pie', 'ice', 'cream']",7,False,0.6787,farting onto an ice cream sandwich change it's flavor ?
+D_16_C4,15,D_16,4,"['creepiest', 'story', 'experience']",12,False,0.7101,What's your ghost story ?
+D_16_C5,15,D_16,5,"['mistakes', 'glad', 'forgiven']",12,False,0.6352,"[Serious] What mistakes , you feel glad that you have forgiven them ?"
+D_16_C6,15,D_16,6,"['api', 'rest', 'url']",14,False,0.4686,thing you have ever done?
+D_16_C8,15,D_16,8,"['heard', 'scam', 'human']",3,True,0.7198,philosopher you have heard of?
+D_16_C9,15,D_16,9,"['friend', 'confront', 'constantly']",3,True,0.8673,"Should you confront a friend who constantly ghosts you and if so what is the best way? Their excuse is always ""oh I just saw this"" / ""I didn't get the notification for this""...and this is days and sometimes a week after a text (serious)."
+D_16_C10,15,D_16,10,"['baby', 'obscure', 'bizarre']",3,True,0.775,name you have seen on social media?
+D_16_C11,15,D_16,11,"['hero', 'villain', 'generation']",3,True,0.9182,Would you rather be a Hero or a Villain?
+D_16_C12,15,D_16,12,"['spider', 'new', 'home']",6,True,0.6909,What are you expectations for spiderman no way home?
+D_16_C13,15,D_16,13,"['snack', 'grandparents', 'certain']",6,True,0.6877,childhood snack?
+D_16_C14,15,D_16,14,"['criminals', 'earliest', 'memory']",3,True,0.7243,What is your earliest memory?
+D_16_C15,15,D_16,15,"['nepotism', 'favour', 'worked']",3,True,0.783,become a good person?
+D_16_C16,15,D_16,16,"['anime', 'offered', 'greatest']",3,True,0.7432,what anime has offered you in real life?
+D_16_C17,15,D_16,17,"['game', 'played', 'video']",5,True,0.7558,game you've ever played?
+D_16_C18,15,D_16,18,"['reason', 'career', 'friend']",3,True,0.9375,Should one try and reason with a friend ready to throw away their medical career because they don't want the covid vaccine?
+D_16_C19,15,D_16,19,"['covid', 'viable', 'lock']",3,True,0.7509,How viable is it to lock everyone inside for a month to get rid of covid?
+D_16_C20,15,D_16,20,"['nsfw', 'story', 'staff']",4,True,0.7596,thing a visitor has ever done in your house?
+D_16_C21,15,D_16,21,"['went', 'holiday', 'destination']",4,True,0.7354,What is your dream vacation if you had to go alone and you could never tell anyone where you went or that you even went there.
+D_16_C22,15,D_16,22,"['mood', 'panic', 'gut']",4,True,0.68,What is the one thing that if you think you might run out of makes you panic?
+D_16_C23,15,D_16,23,"['ruined', 'trouble', 'turn']",3,True,0.8672,[serious] What is the worst thing that has ever happened to you?
+D_16_C24,15,D_16,24,"['brushing', 'floss', 'women']",5,True,0.6094,Are you supposed to floss before or after brushing your teeth?
+D_16_C25,15,D_16,25,"['borderline', 'orgasmic', 'scratching']",3,True,0.6869,I get borderline orgasmic when scratching an itch on my body. Is this normal?
+D_16_C26,15,D_16,26,"['local', 'cryptids', 'halloween']",3,True,0.7304,Where is the best place to find Halloween merch/decor?
+D_16_C27,15,D_16,27,"['industry', 'grey', 'area']",3,True,0.5865,"You have a timer that counts down to your death and a button, when you press the button you instantlly gain your current hourly wage however in doing so the timer fast fowards an hour and fifteen minutes, would you use this power and if so how?"
+D_16_C28,15,D_16,28,"['happens', 'die', 'end']",4,True,0.7097,"You wake up in a multiverse with different reality, what changes do you want?"
+D_16_C29,15,D_16,29,"['everyday', 'don']",3,True,0.756,about yourself?
+D_16_C30,15,D_16,30,"['hack', 'morning', 'efficiently']",3,True,0.8163,What is keeping you up at night?
+D_17_C0,16,D_17,0,"['movie', 'series', 'song']",14,False,0.6729,Favorite movie?
+D_17_C1,16,D_17,1,"['long', 'slept', 'profession']",25,False,0.5298,What was the time you knew you screwed up?
+D_17_C2,16,D_17,2,"['tattoo', 'today', 'phones']",9,False,0.5779,What terrible tattoo ideas are you glad to not have gone through with?
+D_17_C3,16,D_17,3,"['rights', 'function', 'pay']",7,False,0.6138,Could this country function without the Bill of Rights?
+D_17_C4,16,D_17,4,"['brand', 'drink', 'better']",8,False,0.621,What's an underrated drink everyone should try at least once?
+D_17_C5,16,D_17,5,"['parents', 'karma', 'school']",16,False,0.6094,thing you've ever done?
+D_17_C8,16,D_17,8,"['apex', 'friends', 'humans']",4,True,0.9802,What apex predators can be friends with humans?
+D_17_C9,16,D_17,9,"['witnessed', 'cause', 'freak']",3,True,0.791,What was one time you cause a scene but didn't mean to cause it?
+D_17_C10,16,D_17,10,"['hate', 'actor', 'actress']",3,True,0.7601,What over-hated band doesn't deserve the hate?
+D_17_C11,16,D_17,11,"['internet', 'physical', 'negative']",5,True,0.8134,Does the internet disassociate you from the physical world?
+D_17_C12,16,D_17,12,"['assholes', 'realize', 'don']",4,True,0.8553,"Assholes that don't realize they're assholes, how do you not realize it"
+D_17_C13,16,D_17,13,"['highlight', 'till', 'beautiful']",5,True,0.6147,Who is the most beautiful person you have ever seen in your entire life?
+D_17_C14,16,D_17,14,"['dog', 'dinner', 'cooked']",4,True,0.8032,thing you have done for your pet?
+D_17_C15,16,D_17,15,"['darkest', 'secret', 'waiting']",4,True,0.7502,What's your saddest comment you made about yourself?
+D_17_C16,16,D_17,16,"['theme', 'marvel', 'cinematic']",3,True,0.6383,When do you think the Marvel Cinematic Universe will come to an end and how do you think it will go out?
+D_17_C17,16,D_17,17,"['thoughts', 'plastic', 'surgery']",3,True,0.6985,Elon Musk and/or Jeff Bezos have suddenly have a change of heart and want to end world hunger. How would they go about doing it?
+D_17_C18,16,D_17,18,"['tourettes', 'abused', 'condition']",5,True,0.6499,"Food people, what's the worst thing you did to a customers meal?"
+D_17_C19,16,D_17,19,"['moment', 'bothering', 'right']",4,True,0.7501,What is your 'it can't get any worse' moment?
+D_17_C20,16,D_17,20,"['deviled', 'eggs', 'amazing']",3,True,0.911,Who else thinks Deviled Eggs are amazing as fuck?
+D_17_C21,16,D_17,21,"['web', 'deep', 'useless']",3,True,0.8367,"that have been on the deep web, what's the worst thing that you have seen? (by accident, of course)"
+D_18_C0,17,D_18,0,"['universe', 'come', 'existence']",8,False,0.6519,"Have a project for class, and a survey to ask. So reddit people, what do you think caused the universe to come into existence?"
+D_18_C2,17,D_18,2,"['types', 'sentences', 'asked']",8,False,0.5316,Can y'all answer the thing in the comments?
+D_18_C3,17,D_18,3,"['nah', 'tweakin', 'tweaking']",8,False,0.7727,"Nah he tweakin, what the hell is going with nah he tweaking on Instagram?? And don't answer me with Nah He Tweakin"
+D_18_C4,17,D_18,4,"['parent', 'emotionally', 'physically']",6,True,0.9388,"emotionally and physically abused as a child by a parent, could you ever forgive that parent for the sake of their grand kids? And allow them access?"
+D_18_C5,17,D_18,5,"['scam', 'fallen', 'doesn']",3,True,0.9234,"fallen for a scam? If so, what was it?"
+D_18_C6,17,D_18,6,"['living', 'applicable', 'protection']",3,True,0.9992,Can a person living in the US be applicable for a Protection Visa Subclass 866 (Australia) if they are a victim of physical abuse in the household and don't feel safe in their country?
+D_18_C7,17,D_18,7,"['religion', 'overrated', 'outside']",3,True,0.6205,Is religion overrated?
+D_18_C8,17,D_18,8,"['help', 'suffering', 'anhedonia']",5,True,0.6564,someone help as much as possible people suffering from anhedonia ?
+D_18_C9,17,D_18,9,"['sail', 'awolnation', 'series']",5,True,0.6575,"If you've heard it, what do you think of the song Sail by AwolNation?"
+D_18_C10,17,D_18,10,"['paid', 'accept', 'state']",4,True,0.6547,"You're paid 50k a year to sit down on a stool with no form of entertainment or company, Monday to Friday 9-5. Do you accept this job offer and why?"
+D_18_C11,17,D_18,11,"['stay', 'positive', 'psychology']",3,True,0.7547,tips and tricks on how to act/be happy for people in your life when you're down?
+D_18_C12,17,D_18,12,"['critical', 'thinking', 'meaningful']",3,True,0.8117,"In a meaningful way, what could you say is definitely NOT critical thinking?"
+D_18_C13,17,D_18,13,"['worked', 'trying', 'friend']",3,True,0.7655,What has worked for you when trying to get a friend or relative who talks too much to realize they do so and stop?
+D_18_C14,17,D_18,14,"['delta', 'airlines', 'employees']",3,True,0.7925,"I read that Delta Airlines employees will be charged an extra $200 per month for their health insurance if they choose not to vaccinate. Even if every employer did this, it wouldn't affect those on Medicaid/Medicare. What might be an incentive for antivaxers in poverty?"
+D_18_C15,17,D_18,15,"['rid', 'telemarketer', 'doorstep']",3,True,0.9229,(Serious) What's the best way to get rid of a telemarketer at your front door? A sign doesn't work.
+D_18_C16,17,D_18,16,"['fictional', 'item', 'real']",4,True,0.8944,What fictional item from a movie or TV show do you wish was real?
+D_18_C17,17,D_18,17,"['home', 'urge', 'wanting']",3,True,0.9241,I sometimes want to go home even though I am at home.
+D_18_C18,17,D_18,18,"['friends', 'college', 'society']",3,True,0.7152,MAKE FRIENDS IN MY 20
+D_18_C19,17,D_18,19,"['business', 'cute', 'messages']",3,True,0.7152,I reach out to business owners to ask them where do I stand at?
+D_18_C20,17,D_18,20,"['school', 'fulltime', 'working']",3,True,0.7862,what was “the job” for you?
+D_18_C21,17,D_18,21,"['nurse', 'tragic', 'discovery']",3,True,0.7962,What's your craziest/scariest drug experience?
+D_18_C22,17,D_18,22,"['psychiatrist', 'daily', 'habits']",4,True,0.7638,"In 5 words or less, what's your profession?"
+D_18_C23,17,D_18,23,"['eat', 'food', 'suddenly']",6,True,0.7439,"you could talk with one person , if you could only eat one food which would you choose?"
+D_18_C24,17,D_18,24,"['tiny', 'ruin', 'entire']",5,True,0.6788,What tiny thing could ruin your entire life right now?
+D_18_C25,17,D_18,25,"['laugh', 'whats', 'sexiest']",3,True,0.7889,What's the sexiest name?
+D_18_C26,17,D_18,26,"['warned', 'response', 'gave']",6,True,0.6527,were warned about as a kid that you now wish you had taken more seriously?
+D_18_C27,17,D_18,27,"['song', 'remember', 'event']",5,True,0.7028,"possible song, or combination of song and event to play/do at a funeral? (Can be anything)"
+D_18_C28,17,D_18,28,"['eat', 'stall', 'undo']",3,True,0.6955,"who pick their nose and then eat it, why do you eat it?"
+D_18_C29,17,D_18,29,"['annoying', 'habit', 'excessive']",3,True,0.7884,excessive that you see around you everyday?
+D_18_C30,17,D_18,30,"['believe', 'god', 'shared']",3,True,0.69,deal with the shame that is being you?
+D_18_C31,17,D_18,31,"['smokers', 'vapers', 'straw']",3,True,0.8364,Ex smokers/vapers. What was the “last straw” moment that made you realize you had to stop
+D_18_C32,17,D_18,32,"['okay', 'yes', 'didn']",4,True,0.7099,decision you have ever made?
+D_18_C33,17,D_18,33,"['immediately', 'damn', 'food']",4,True,0.809,"ate food so good that you were IMMEDIATELY like ""DAMN I wanna have sex now"" ? - if so, what was it?"
+D_18_C34,17,D_18,34,"['experiece', 'playing', 'tabletop']",6,True,0.6732,thing in your life?
+D_18_C35,17,D_18,35,"['title', 'listened', 'changed']",3,True,0.8103,The title of the last song you've listened to is your life now. What is your life like?
+D_18_C36,17,D_18,36,"['recommend', 'quote', 'shaped']",3,True,0.7821,What is the tv show that shaped your childhood?
+D_19_C0,18,D_19,0,"['song', 'guilty', 'pleasure']",11,False,0.7375,What is a guilty pleasure song for you?
+D_19_C1,18,D_19,1,"['karma', 'posting', 'memes']",7,False,0.7305,"Can't post in r/memes, help?"
+D_19_C2,18,D_19,2,"['movie', 'watch', 'kid']",7,False,0.7187,What's a movie you originally slept on and didn't watch that is now one of your favourites?
+D_19_C3,18,D_19,3,"['scariest', 'creepiest', 'turn']",12,False,0.6764,thing you did as a child without knowing how bad it was?
+D_19_C4,18,D_19,4,"['birthday', 'bored', 'grandma']",7,False,0.7351,What can I get for a bored grandma?
+D_19_C5,18,D_19,5,"['nihilism', 'naive', 'silly']",11,False,0.512,What makes nihilism a naive and silly perspective regarding existence?
+D_19_C7,18,D_19,7,"['travel', 'touching', 'continent']",7,False,0.6313,How is your day?
+D_19_C8,18,D_19,8,"['nasa', 'military', 'budget']",3,True,0.8285,What if NASA had the military budget since 1970?
+D_19_C9,18,D_19,9,"['family', 'wife', 'connoisseur']",3,True,0.7821,"What makes you want to go to work? Family? Wife? Children?, etc?"
+D_19_C10,18,D_19,10,"['screams', 'early', 'mtv']",3,True,0.6617,What screams out early 2000s?
+D_19_C11,18,D_19,11,"['job', 'consequences', 'title']",3,True,0.8266,What was your first job?
+D_19_C12,18,D_19,12,"['hate', 'physical', 'hard']",3,True,0.7564,"The person you hate the most can now feel your physical pain, how hard are you going on yourself?"
+D_19_C13,18,D_19,13,"['weird', 'phobia', 'creature']",3,True,0.8258,What's a weird phobia you have ?
+D_19_C14,18,D_19,14,"['bug', 'humans', 'captured']",4,True,0.6388,be a bug what kind of bug would you be?
+D_19_C15,18,D_19,15,"['decision', 'changes', 'example']",4,True,0.7571,the one decision that you made that changes your whole life
+D_19_C16,18,D_19,16,"['existing', 'max', 'uwu']",3,True,0.6864,"Using only existing subreddit names (max 5), how would you describe yourself?"
+D_19_C17,18,D_19,17,"['different', 'video', 'game']",3,True,0.6891,If countries are analogous to children in a classroom what kind of kid is your country?
+D_19_C18,18,D_19,18,"['love', 'therapy', 'start']",3,True,0.794,When did you know you fell out of love with someone? Were you able to save the relationship?
+D_19_C19,18,D_19,19,"['drugs', 'restaurant', 'tattoos']",5,True,0.6404,"who don't want tattoos, if you were forced to get a tattoo or die, what would you get and where?"
+D_19_C20,18,D_19,20,"['laws', 'forbid', 'entering']",6,True,0.6818,Worst laws to ever exist?
+D_19_C21,18,D_19,21,"['stupid', 'pets', 'ways']",3,True,0.7087,What are some interesting superstitions?
+D_19_C22,18,D_19,22,"['rib', 'right', 'mrbeast']",3,True,0.5771,"MrBeast Gaming making 16,000$ of house in minecraft. Here's the link:- https://shrinke.me/XZfe"
+D_19_C23,18,D_19,23,"['paranormal', 'fight', 'visible']",6,True,0.6274,Can ghosts fight one another? Has anyone witnessed a paranormal situation regarding more than one entity seemingly having visible/audible disagreement?
+D_19_C24,18,D_19,24,"['partner', 'rekindle', 'lost']",4,True,0.6633,Which tips do you have to forget your Ex?
+D_19_C25,18,D_19,25,"['large', 'site', 'wide']",5,True,0.698,the sub WhitePeopleTwitter?
+D_20_C0,19,D_20,0,"['poor', 'industry', 'title']",9,False,0.4993,"What is the cheapest lifestyle that you can afford in your area, even if it means giving up your current home?"
+D_20_C1,19,D_20,1,"['story', 'forbid', 'entering']",9,False,0.6263,"What is your worst, first day of high school story?"
+D_20_C4,19,D_20,4,"['fast', 'days', 'idea']",4,True,0.9446,is it a good idea for someone to fast for days or weeks? i want to lose weight
+D_20_C5,19,D_20,5,"['weren', 'asked', 'friday']",3,True,0.7541,What are you having for dinner?
+D_20_C6,19,D_20,6,[],5,True,0.9566,How are you all?
+D_20_C7,19,D_20,7,"['greatest', 'invention', 'somebody']",3,True,0.7314,What is the single greatest invention of all time?
+D_20_C8,19,D_20,8,"['comes', 'mind', 'wake']",4,True,0.8089,What's the first thing that comes to your mind when you wake up in the morning?
+D_20_C9,19,D_20,9,"['draw', 'line', 'curiosity']",3,True,0.7105,"people who love to talk about other people, whether it's good or bad?"
+D_20_C10,19,D_20,10,"['help', 'new', 'ban']",5,True,0.6629,New to reddit. What are some tips or anything I should know?
+D_20_C11,19,D_20,11,"['truth', 'brings', 'dedicated']",5,True,0.7279,Truth always brings good
+D_20_C12,19,D_20,12,"['live', 'civilization', 'believe']",6,True,0.6099,Do you believe you'll live to see the fall of civilization as we know it?
+D_20_C13,19,D_20,13,"['crush', 'hub', 'bullied']",4,True,0.7123,had that one crush that you just never really got over?
+D_20_C14,19,D_20,14,"['possible', 'drive', 'smelled']",4,True,0.7801,thing you have ever found?
+D_20_C15,19,D_20,15,"['regular', 'cringe', 'hear']",6,True,0.6643,What is your NSFW talent that people would be shocked to learn about you?
+D_20_C16,19,D_20,16,"['better', 'place', 'obsolete']",4,True,0.7603,What little things can we do to legitimately make the world a slightly better place?
+D_20_C17,19,D_20,17,"['chewing', 'misophonia', 'bothers']",3,True,0.7103,"with Misophonia, which bothers you more, dry chewing or wet chewing?"
+D_20_C18,19,D_20,18,"['sex', 'traveled', 'instance']",3,True,0.6892,place you have seen and where is it located?
+D_20_C19,19,D_20,19,"['feeling', 'mental', 'fact']",4,True,0.7492,What fact about reality terrifies you or gives you that dreadful feeling in the pit of your stomach?
+D_20_C20,19,D_20,20,"['don', 'adhd', 'europe']",4,True,0.639,"who get scared of the vertical axis, why?"
+D_20_C21,19,D_20,21,"['fighting', 'paying', 'planes']",5,True,0.5739,What's the point of paying tesla 10000 dollar and extra money for monthly subscription for the FSD(full self driving capability) level 2 if mg vector is giving you the same tech at cheap price ?
+D_20_C22,19,D_20,22,"['sent', 'military', 'gone']",4,True,0.7157,"who have gone through major glowups in life, what was it like for you?"
+D_20_C23,19,D_20,23,"['shower', 'thoughts', 'typical']",6,True,0.6268,Shower thoughts anybody?
+D_20_C24,19,D_20,24,"['traded', 'stock', 'options']",4,True,0.662,"56% of Zoomer investors admit that they have traded stock or options while drunk. Have you ever been caught with a TUI? If so, how did it work out?"
+D_20_C25,19,D_20,25,"['hustle', 'wish', 'young']",3,True,0.7104,do you ever read a Braille book upside down for bragging rights? Are you terrible or great at 'hide and seek'? Has anyone ever hid an alarm clock in your house to prank you? Do you have any favorite table top games?
+D_20_C26,19,D_20,26,"['sign', 'birth', 'certificate']",6,True,0.5655,If you sign the birth certificate are you able to still get a dna test?
+D_20_C27,19,D_20,27,"['movie', 'series', 'mission']",5,True,0.7178,What's a Toy/Movie/Series from your childhood that left an impact on you?
+D_20_C28,19,D_20,28,"['regret', 'better', 'curiousity']",4,True,0.8149,What curiousity do you regret getting the better of you?
+D_20_C29,19,D_20,29,"['voted', 'fucked', 'lives']",3,True,0.7125,My neighbor killed one of my dogs. I need an idea for revenge of the worst kind. The dog did nothing wrong. He seems to be a pos redneck that hates his life so he takes out his anger on other people and in this case my beautiful innocent red nose pup Lexi. Do your worst Reddit. Thank you so much.
+D_20_C30,19,D_20,30,"['love', 'bisexuality', 'friends']",5,True,0.6496,female bisexuality more acceptable than male bisexuality?
+D_20_C31,19,D_20,31,"['compliment', 'girl', 'looked']",3,True,0.7436,way a girl has looked at you? And why?
+D_20_C32,19,D_20,32,"['orespawn', 'incompatible', 'reforged']",4,True,0.6036,anyone looking for genshin discord kittens?
+D_20_C33,19,D_20,33,"['realistically', 'careers', 'juggle']",4,True,0.594,"of the gulf coast preparing for Ida, what do you always do before a storm makes landfall?"
+D_20_C34,19,D_20,34,"['star', 'keanu', 'reeves']",6,True,0.6489,Who is Reddit's favourite movie star? Feels like it could be Keanu Reeves.
+D_20_C35,19,D_20,35,"['object', 'tomorrow', 'inanimate']",4,True,0.7946,"exchange your life for one thing the world can have, what would it be?"
+D_20_C36,19,D_20,36,"['funny', 'fusion', 'wedding']",6,True,0.5762,What will never be funny?
+D_20_C37,19,D_20,37,"['game', 'deal', 'cut']",4,True,0.6726,What's a game so bad that it's good ?
+D_21_C0,20,D_21,0,"['generally', 'capability', 'leanest']",9,False,0.5591,"Do you believe people are generally good with the capability of being bad, or generally bad with the capability of being good?"
+D_21_C1,20,D_21,1,"['drift', 'apart', 'express']",14,False,0.5342,you can't reason with your family and they express some extremely not ok opinions?
+D_21_C2,20,D_21,2,"['movie', 'video', 'food']",18,False,0.5751,What is your guilty pleasure TV show/movie?
+D_21_C3,20,D_21,3,"['photo', 'happened', 'recreate']",7,False,0.6062,You get one do-over what is it? (Must have happened to you)
+D_21_C5,20,D_21,5,"['asked', 'hot', 'question']",7,False,0.4974,How shall I know if a question as already been asked on r/askreddit?
+D_21_C6,20,D_21,6,"['zero', 'decent', 'pay']",7,False,0.4517,"Any decent pay jobs to work from home? I have crippling anxiety and am almost bankrupt. Ive scoured indeed/monster/CL/ect. Zero luck. I need guidance, I need help. Not to mention my 20 year old car died on me last week, we are about to put my dog down, my Dad has had over 5 strokes in 4 months"
+D_21_C7,20,D_21,7,"['item', 'simple', 'purchase']",3,True,0.8085,What is a simple purchase you've made that has greatly improved your quality of life?
+D_21_C8,20,D_21,8,"['song', 'songs', 'entirety']",3,True,0.8119,What popular songs have you not heard in its entirety until now?
+D_21_C9,20,D_21,9,"['bear', 'properly', 'infamously']",4,True,0.7171,What is your earliest memory?
+D_21_C10,20,D_21,10,"['technological', 'technology', 'limited']",3,True,0.7356,What do you think: Is technology only limited to computers?
+D_21_C11,20,D_21,11,"['watch', 'supposedly', 'totally']",5,True,0.6245,"If you enter into a room where people are at, what would be your theme song be?"
+D_21_C12,20,D_21,12,"['conspiracy', 'theory', 'officially']",3,True,0.8941,"that conspiracy theory that has never officially been proven, but that there is undeniable evidence that it's true?"
+D_21_C13,20,D_21,13,"['countries', 'americans', 'current']",3,True,0.731,from other countries: what do you think it's like for Americans to live under our current regime?
+D_21_C14,20,D_21,14,"['enigma', 'machine', 'anybody']",3,True,0.7535,The Enigma machine work?
+D_21_C15,20,D_21,15,"['ghosts', 'mushroom', 'kingdom']",3,True,0.9122,there so many ghosts within the super mario mushroom kingdom?
+D_21_C16,20,D_21,16,"['ultimate', 'deeply', 'love']",3,True,0.7946,"What is the ultimate way to show somehow you TRULY, DEEPLY care/love?"
+D_21_C17,20,D_21,17,"['music', 'sound', 'country']",3,True,0.9077,is “The Sound of Music” disliked in your country?
+D_21_C18,20,D_21,18,"['covid', 'sturgis', 'precautions']",6,True,0.6396,Why haven't you got the vaccine?
+D_21_C19,20,D_21,19,"['teacher', 'title', 'nicest']",4,True,0.8335,the worst teacher you ever have deserve that title?
+D_21_C20,20,D_21,20,"['using', 'live', 'info']",3,True,0.8026,"Only using history,where do you live"
+D_21_C21,20,D_21,21,"['particular', 'moment', 'realize']",3,True,0.833,Ever had a bad day and one thing just set you over the fucking edge? What was it for you?
+D_21_C22,20,D_21,22,"['times', 'jerk', 'week']",4,True,0.8601,How many times do u jerk off in a week?
+D_21_C23,20,D_21,23,"['example', 'understand', 'don']",3,True,0.73,"What are some brutal truths about life that people in their 20s don't realise but people in their 50s+ do? (For example, as children, we couldn't conceive of sex)."
+D_21_C24,20,D_21,24,"['prime', 'war', 'mohammed']",3,True,0.665,What would happen if prime Mohammed Ali fights prime Mike Tyson?
+D_21_C25,20,D_21,25,"['die', 'wat', 'dies']",4,True,0.7937,Wat happen when someone dies on ship ?
+D_21_C26,20,D_21,26,"['channel', 'looking', 'chanal']",4,True,0.6725,Help my youtube channel 🙏♥ https://youtu.be/2d6sYRKdyME
+D_21_C27,20,D_21,27,"['invention', 'better', 'speed']",3,True,0.7252,What invention would the world be better without?
+D_21_C28,20,D_21,28,"['video', 'vice', 'answer']",6,True,0.5548,If the geneva convention existed for video games how fucked are you?
+D_21_C29,20,D_21,29,"['company', 'offer', 'wage']",3,True,0.6492,"If Company A were to offer you minimum wage and Company B were to offer you a real living wage but 100% of that goes toward housing, utilities, transportation, food (no cash deposits into a bank account), then which company would you work for, and why?"
+D_21_C30,20,D_21,30,"['sub', 'shirtless', 'pics']",4,True,0.7289,What sub can you post like shirtless pics of yourself in? For guys
+D_21_C31,20,D_21,31,"['eazy', 'offend', 'thumbs']",5,True,0.7425,so eazy to offend?
+D_21_C32,20,D_21,32,"['karma', 'criminals', 'date']",6,True,0.6696,Why this question have a lot of karma?
+D_22_C0,21,D_22,0,"['funny', 'meet', 'wife']",10,False,0.6747,What miracles have you witnessed?
+D_22_C1,21,D_22,1,"['school', 'parents', 'sluttiest']",9,False,0.7425,thing you did at school?
+D_22_C2,21,D_22,2,"['kitchen', 'hersheys', 'air']",18,False,0.525,food that you can tolerate and still enjoy?
+D_22_C4,21,D_22,4,"['albums', 'amp', 'power']",8,False,0.4997,music albums of all-time? All genres appreciated
+D_22_C5,21,D_22,5,"['basic', 'golf', 'terms']",5,True,1.0,What are some of the basic golf terms I should know?
+D_22_C6,21,D_22,6,"['nice', 'stop', 'brown']",4,True,0.7521,What is your story of someone trying to screw you over but it totally backfiring against themselves?
+D_22_C7,21,D_22,7,"['money', 'case', 'internet']",3,True,0.7417,How often do you use Reddit?
+D_22_C8,21,D_22,8,"['hurricane', 'ida', 'hitting']",3,True,0.8152,What's are the chances that hurricane ida hitting Louisiana the same day Katrina hit is a coincident?
+D_22_C9,21,D_22,9,"['house', 'babysitters', 'snooping']",3,True,0.7909,"What are some things you sneaked in a movie theater, or found?"
+D_22_C10,21,D_22,10,"['glitch', 'matrix', 'multiple']",3,True,0.9803,"It has been done multiple times already but tell everyone, What is your 'glitch in the matrix' story"
+D_22_C11,21,D_22,11,"['nicest', 'memes', 'providing']",5,True,0.8208,What is the nicest thing someone has ever said to you?
+D_22_C12,21,D_22,12,"['cope', 'unattractive', 'handed']",3,True,0.7462,(Serious) How do you cope with being unattractive?
+D_22_C13,21,D_22,13,"['wholesome', 'opposite', 'sex']",3,True,0.8253,What moment did you know you were in love?
+D_22_C14,21,D_22,14,"['disappoints', 'neighbour', 'pisses']",3,True,0.777,people do that disappoints you?
+D_22_C15,21,D_22,15,"['song', 'violin', 'matter']",6,True,0.6271,What Song Plays In Your Head And Carries You Through Life's Ups And Downs And Why?
+D_22_C16,21,D_22,16,"['astrophysics', 'currently', 'reading']",3,True,0.8215,Do you like astrophysics?
+D_22_C17,21,D_22,17,"['wealth', 'privileged', 'inherited']",3,True,0.6902,one must do to “inherit eternal life”?
+D_22_C18,21,D_22,18,"['happens', 'ipad', 'country']",4,True,0.5666,Avast Premier Crack With Activation Code [Latest Version} 2022
+D_22_C19,21,D_22,19,"['wished', 'secret', 'kept']",6,True,0.7039,"Adults, what is something you wished you knew in your teen years?"
+D_22_C20,21,D_22,20,"['dumbest', 'requested', 'divers']",3,True,0.7626,what was the weirdest/dumbest thing requested of you?
+D_22_C21,21,D_22,21,"['saddest', 'truth', 'glad']",3,True,0.713,"Thought I had: feeling on, old,current or future relationships. Does anyone get sick at the idea of everything just being a recycled co tinuation of what another recieved. Nothing special, only new."
+D_22_C22,21,D_22,22,"['hack', 'sleep', 'roll']",3,True,0.727,you need to roll over to the other side of the couch but you're too lazy?
+D_22_C23,21,D_22,23,"['items', 'room', 'lucid']",3,True,0.7107,What are some tips/tricks to Lucid dream easily?
+D_22_C24,21,D_22,24,"['contact', 'let', 'child']",3,True,0.6659,"If You Suspect Someone Is Hazardous to Himself, Would You Contact The Cops Anonymously Through A Fake Email, Or Contact Them As Yourself And Ask To Be Anonymous?"
+D_22_C25,21,D_22,25,"['funds', 'logistics', 'issue']",3,True,0.7104,Which cities would you revisit in a heartbeat if you could?
+D_22_C26,21,D_22,26,"['deciding', 'dog', 'breed']",5,True,0.6024,"If 3 of the 5 big tech companies (Amazon, Apple, Google, Facebook and Microsoft) were to implode, which 2 would you prefer to stay in business?"
+D_22_C27,21,D_22,27,"['family', 'decline', 'deal']",6,True,0.5991,deal with differing opinions with parents/family on subjects that are important to you?
+D_22_C28,21,D_22,28,"['fooled', 'bought', 'fictional']",3,True,0.751,"bring one toy from your childhood back into production that you think would still be popular with kids today, what would it be?"
+D_22_C29,21,D_22,29,"['history', 'moment', 'attend']",6,True,0.6214,teleported into the future which item from the current time would you bring with you?
+D_22_C30,21,D_22,30,"['waiting', 'today']",3,True,0.835,What are you still waiting for?
+D_22_C31,21,D_22,31,"['haircut', 'experience', 'scariest']",6,True,0.6857,Worst haircut experience?
+D_22_C32,21,D_22,32,"['crazy', 'banging', 'prarticular']",3,True,0.6773,"been crazy about BANGING that prarticular woman, but failed to? Why?"
+D_22_C33,21,D_22,33,"['secrets', 'game', 'development']",3,True,0.7085,what are some secrets about game development that people should know about?
+D_22_C34,21,D_22,34,"['gain', 'community', 'manager']",3,True,0.6614,"gain experience in a job, community manager for example?"
+D_22_C35,21,D_22,35,"['dexter', 'justice', 'public']",3,True,0.763,What is the perfect crime?
+D_23_C0,22,D_23,0,"['game', 'remember', 'known']",9,False,0.5803,What Video Game that you loved and used to always play got ruined by New Players?
+D_23_C1,22,D_23,1,"['game', 'added', 'add']",7,False,0.6977,Who is the hottest video game character ?
+D_23_C2,22,D_23,2,"['karma', 'users', 'new']",7,False,0.6609,"I need a sub for low-karma posts please. I've been on reddit for 3 years now, i had a lot of karma and i was able to post on nay sub. Now i have a new account and i wanna post some memes and stuff. But all the subs where i used to post requiers a certain amount of karma. Idk where to go. thank you"
+D_23_C3,22,D_23,3,"['british', 'hate', 'consider']",8,False,0.54,[Serious] Why does everybody hate the British?
+D_23_C4,22,D_23,4,"['dick', 'mom', 'born']",11,False,0.513,What does born with the squid mean?
+D_23_C5,22,D_23,5,"['sex', 'sexed', 'women']",13,False,0.4947,sex position and why?
+D_23_C6,22,D_23,6,"['breathe', 'food', 'pistachio']",12,False,0.4651,What food cools down the fastest after cooking it and why?
+D_23_C8,22,D_23,8,"['cringe', 'definition', 'example']",4,True,0.9193,"What is your definition of cringe ? and if you had one, give us and exemple of what's cringe for you and what's not."
+D_23_C9,22,D_23,9,"['character', 'crush', 'hate']",5,True,0.8976,What is a character that you hate but also have a crush on?
+D_23_C10,22,D_23,10,"['nsfw', 'bring', 'history']",3,True,0.7615,[NSFW] If you could bring to people from history back to life and watch them have sex who would you pick?
+D_23_C11,22,D_23,11,"['movie', 'naming', 'depiction']",3,True,0.7424,movie depiction of your country?
+D_23_C12,22,D_23,12,"['friends', 'teenager', 'new']",3,True,0.8623,How the F* do you make new friends as a teenager?
+D_23_C13,22,D_23,13,"['fortune', 'believe', 'tellers']",3,True,0.9049,Do you believe on fortune tellers? Have you ever had your fortune told?
+D_23_C14,22,D_23,14,"['friend', 'share', 'visit']",6,True,0.5874,"If your friend offers you $5 to go pick up a snack to share, what is your response?"
+D_23_C15,22,D_23,15,"['listen', 'movie', 'song']",6,True,0.6722,What's a song you didn't care for until you heard it in a movie/TV show/music video?
+D_23_C16,22,D_23,16,"['reinvent', 'reactions', 'obvious']",3,True,0.763,thing your school has done?
+D_23_C17,22,D_23,17,"['opposite', 'gender', 'attractive']",4,True,0.7905,is attractive if they're hot but absolutely revolting if they're not?
+D_23_C18,22,D_23,18,"['song', 'epic', 'dragostea']",5,True,0.626,song in the world??
+D_23_C19,22,D_23,19,"['gravestone', 'written', 'words']",5,True,0.8131,What are three words that should be written on your gravestone?
+D_23_C20,22,D_23,20,"['phrases', 'kitchen', 'bedroom']",3,True,0.7713,What are some phrases that work both in the kitchen and in the bedroom ??
+D_23_C21,22,D_23,21,"['corrections', 'police', 'officers']",5,True,0.6945,Corrections/Police officers. What's the funniest/craziest thing you've seen?
+D_23_C22,22,D_23,22,"['awake', 'sundays', 'thankful']",6,True,0.6247,you alive?
+D_23_C23,22,D_23,23,"['monday', 'going', 'hows']",5,True,0.7886,How is your Monday so far?
+D_23_C24,22,D_23,24,"['sorts', 'traits', 'habits']",3,True,0.7103,you want to be an annoying coworker?
+D_23_C25,22,D_23,25,"['issue', 'compared', 'real']",4,True,0.6625,"see everyday that makes you think ""we could be doing that so much better""?"
+D_23_C26,22,D_23,26,"['case', 'wasted', 'potential']",3,True,0.7027,"Those of you who have escaped cults or cultish churches, were you ever guilty or questioning your choice?"
+D_23_C27,22,D_23,27,"['story', 'friends', 'relatives']",5,True,0.7534,Story You And Your Friends Have?
+D_23_C28,22,D_23,28,"['superpower', 'created', 'proud']",6,True,0.6632,What's the closest thing to a superpower you have?
+D_23_C29,22,D_23,29,"['government', 'killing', 'legal']",3,True,0.9288,"The government makes murd*r legal, the very next day killing-crime rates fall to 0. why could this be? It's just a thought that I can't quite seem to get out of my head lately, any explanations?"
+D_23_C30,22,D_23,30,"['small', 'moment', 'office']",4,True,0.7211,"What was your ""the world is small"" Moment?"
+D_23_C31,22,D_23,31,"['age', 'whats', 'fired']",4,True,0.6203,Where are your bullies now and how are they doing?
+D_23_C32,22,D_23,32,"['phase', 'forget', 'thats']",3,True,0.7905,thing thats happened to you this year?
+D_24_C0,23,D_24,0,"['game', 'series', 'character']",9,False,0.5923,What series or fictional character deserves a good video game?
+D_24_C1,23,D_24,1,"['questions', 'ask', 'asked']",11,False,0.5081,What are some good questions to ask a dead co-worker?
+D_24_C2,23,D_24,2,"['story', 'wrong', 'toilet']",14,False,0.5335,what is you're “out of toilet paper mid dump” story?
+D_24_C4,23,D_24,4,"['superpower', 'choose', 'reply']",4,True,0.926,"You get to choose your weakness and the next person to reply, gets to choose your superpower. What is your superpower"
+D_24_C5,23,D_24,5,"['actor', 'tomorrow', 'remembered']",3,True,0.8188,be anyone or anything for a day who or what would you be?
+D_24_C6,23,D_24,6,"['anti', 'feminism', 'catching']",3,True,0.8361,anti-feminism catching heat?
+D_24_C7,23,D_24,7,"['gender', 'yiu', 'opposite']",3,True,0.8138,"who discovered their SO weren't born with the same gender they have now, how is it going now ?"
+D_24_C8,23,D_24,8,"['brand', 'basically', 'controversy']",4,True,0.7556,What is okay to buy cheap?
+D_24_C9,23,D_24,9,"['invention', 'items', 'usd']",3,True,0.8328,Invention ever that made life much more worth living?
+D_24_C10,23,D_24,10,"['ideal', 'woman', 'partner']",5,True,0.8793,describe me the ideal woman
+D_24_C11,23,D_24,11,"['song', 'problem', 'overlooked']",3,True,0.7137,"to replace the song pocketful of sunshine as the song emma stone hates but love singing with any other song, in the movie easy A, what song will you choose?"
+D_24_C12,23,D_24,12,"['aren', 'vaccinated', 'jab']",4,True,0.6883,why aren't you getting vaccinated?
+D_24_C13,23,D_24,13,"['quarantine', 'hobbies', 'taken']",3,True,0.9754,"What are the quarantine hobbies you guys have taken up and how are they going? For me it was writing, and it have given me a lot of peace."
+D_24_C14,23,D_24,14,"['advice', 'self', 'care']",4,True,0.7062,advice you've been told?
+D_24_C15,23,D_24,15,"['looking', 'large', 'moderated']",3,True,0.7297,What are you looking for on Askreddit?
+D_24_C16,23,D_24,16,"['habits', 'potentially', 'harm']",4,True,0.7028,What are habits in daily life that could potentially harm your own life?
+D_24_C17,23,D_24,17,"['zodiac', 'sign', 'great']",3,True,0.708,Would you rather be a social introvert or a shy extrovert and why?
+D_24_C18,23,D_24,18,"['news', 'internet', 'keeping']",5,True,0.6504,Everything that has a beginning has an end. What will be the final piece of information sent over the internet?
+D_24_C19,23,D_24,19,"['regretted', 'turned', 'moment']",6,True,0.7247,once did and regretted in the moment but turned out to be the best thing you ever did to yourself ?
+D_24_C20,23,D_24,20,"['computer', 'age', 'parent']",6,True,0.4969,thing about being a parent?
+D_24_C21,23,D_24,21,"['old', 'mom', 'times']",5,True,0.6513,that have had déjà vu what does it feel like and does it happen while meeting people u have never met how long does it last?
+D_24_C22,23,D_24,22,"['caused', 'cannibal', 'lucky']",4,True,0.7137,What small thing made you feel good today?
+D_24_C23,23,D_24,23,"['happened', 'phobia', 'saved']",3,True,0.8743,Whats a scary thing that happened to you paralyzed you in fear?
+D_25_C0,24,D_25,0,"['pump', 'weird', 'food']",9,False,0.5909,What weird food would go great on top of pasta?
+D_25_C1,24,D_25,1,"['injury', 'lie', 'money']",8,False,0.487,work-related injury you have witnessed?
+D_25_C2,24,D_25,2,"['inch', 'cried', 'woman']",8,False,0.6084,What's the creepiest thing that happened to you that you couldn't explain?
+D_25_C4,24,D_25,4,"['song', 'fictional', 'teams']",8,False,0.4737,song (without saying the name) by telling us your favorite line from the tune?
+D_25_C5,24,D_25,5,"['sex', 'kids', 'sick']",3,True,0.9934,who have sex in front of their kids… why? How do you not feel sick inside? Valid and serious answers only
+D_25_C6,24,D_25,6,"['subtle', 'sign', 'compliment']",4,True,0.8196,What's a subtle sign that someone isn't a good person?
+D_25_C7,24,D_25,7,"['comforting', 'unpleasant', 'truth']",3,True,0.7072,what's the saddest reason someone has come in to pawn off an item?
+D_25_C8,24,D_25,8,"['plan', 'eagerly', 'awaiting']",4,True,0.8066,What are you eagerly awaiting and why?
+D_25_C9,24,D_25,9,"['milk', 'almond', 'triggers']",3,True,0.7118,almond milk trigger mild GERD symptoms? I understand cow milk doing it but almond milk has no lactose. Even just a swig of it triggers the reflux. Why?
+D_25_C10,24,D_25,10,"['futuristic', 'technology', 'today']",4,True,0.726,What to you miss most about 2000-2012?
+D_25_C11,24,D_25,11,"['superstitions', 'breath', 'mirror']",5,True,0.6793,What's your one big breath while looking into the mirror moment?
+D_25_C12,24,D_25,12,"['southern', 'girl', 'couples']",6,True,0.6489,"who have married their childhood/teenage crush, what is your story?"
+D_25_C13,24,D_25,13,"['wish', 'personal', 'ago']",3,True,0.7966,"What's your personal story of someone you remember well from long ago, though you are certain they totally forgot all about you?"
+D_25_C14,24,D_25,14,"['instead', 'lives', 'covid']",5,True,0.6965,"What would the world be like next year if they abandon the Covid-19 pandemic and instead normalize the virus as part of our daily lives ,end masks and restriction and allow death to happen while we continue our normal lives in peace without fear?"
+D_25_C15,24,D_25,15,"['story', 'stumbled', 'background']",4,True,0.7163,What story do you really want to tell bit haven't gotten the chance?
+D_25_C16,24,D_25,16,"['won', 'relationships', 'talk']",4,True,0.6258,"What happened to your will-they-won't-they 'relationships? Did you ever talk about them to the person you had this ""relationship"" with?"
+D_25_C17,24,D_25,17,"['learn', 'changed', 'late']",5,True,0.772,What did you learn too late in life?
+D_25_C18,24,D_25,18,"['word', 'came', 'female']",3,True,0.7907,"honestly wondering everyone's point of view. What word came first, female? male?"
+D_25_C19,24,D_25,19,"['moment', 'wow', 'believe']",4,True,0.8177,"What moment made you stop and think, “wow, that was lucky!”"
+D_25_C20,24,D_25,20,"['small', 'purchase', 'expensive']",4,True,0.7315,small purchase you've ever made?
+D_25_C21,24,D_25,21,"['surprisingly', 'controversial', 'cool']",3,True,0.8449,What's surprisingly controversial?
+D_25_C22,24,D_25,22,"['kind', 'video', 'youtube']",3,True,0.6819,"Does anyone knows that gif/video of a kinda goth girl with a big smile nodding her head like saying yes with some crazy open eyes? There was a computer screen behind her if i remember correctly, as if she was some kind of Youtuber or was in a webcam..."
+D_25_C23,24,D_25,23,"['charge', 'amp', 'anna']",3,True,0.9792,"Apple Watch won't charge properly (&amp;&amp; why cant Anna post a video of it??) it started doing that yesterday evening when Anna put it on the charger, and it keeps beeping every few sec that it's starting to charge. Anna really need help."
+D_25_C24,24,D_25,24,"['stereotype', 'live', 'fit']",4,True,0.6722,What makes Nationalism a great thing?
+D_25_C25,24,D_25,25,"['attractive', 'tan', 'overrated']",5,True,0.7413,What are some drawbacks of being attractive?
+D_25_C26,24,D_25,26,"['movie', 'familiar', 'memory']",4,True,0.661,Familiar To You But You Don't Remember It In Your Memory?
+D_25_C27,24,D_25,27,"['wanking', 'support', 'group']",5,True,0.5567,"You now have the power to shapeshift, What ya going to do?"
+D_25_C28,24,D_25,28,"['royally', 'fucked', 'joined']",3,True,0.7668,what was the reason you joined Reddit?
+D_25_C29,24,D_25,29,"['speak', 'tonal', 'language']",6,True,0.516,insult?
+D_25_C30,24,D_25,30,"['cum', 'lose', 'boner']",5,True,0.6041,"Who is the most famous person, whether in the past or present, that probably make less than you?"
+D_25_C31,24,D_25,31,"['accidentally', 'sucked', 'dryer']",3,True,0.9652,is it okay if someone accidentally sucked in dryer sheet fumes? haha..
+D_26_C0,25,D_26,0,"['dislike', 'instantly', 'question']",10,False,0.6659,people do that makes you dislike them INSTANTLY?
+D_26_C1,25,D_26,1,"['cereal', 'tea', 'bubble']",11,False,0.5805,Could one consider bubble tea to be a cereal?
+D_26_C2,25,D_26,2,"['overweight', 'gamer', 'immediately']",8,False,0.5164,bug or glitch you've come across?
+D_26_C5,25,D_26,5,"['girl', 'interested', 'distinction']",4,True,0.9798,"way to ask out a girl (""friend"") that you are interested in, making the distinction that it is a date and not just a meeting between friends, without it being so obvious or creepy?"
+D_26_C6,25,D_26,6,"['food', 'follow', 'netiquette']",3,True,0.7468,Does anyone actually follow Netiquette?
+D_26_C7,25,D_26,7,"['fictional', 'movie', 'terrifying']",5,True,0.7205,What fictional television or movie universe would you want to travel to most?
+D_26_C8,25,D_26,8,"['attractive', 'combination', 'sexiest']",5,True,0.7022,"As a kid, what adult influenced the type of person you are romantically or sexually attracted to?"
+D_26_C9,25,D_26,9,"['born', 'blind', 'known']",3,True,0.8187,people who are born blind know their sexuality?
+D_26_C10,25,D_26,10,"['stop', 'comparing']",3,True,0.974,what a good way to stop comparing yourself with other
+D_26_C11,25,D_26,11,"['answer', 'forest', 'logan']",4,True,0.658,What's a confession you'd like to make?
+D_26_C12,25,D_26,12,"['sounds', 'wierd', 'help']",3,True,0.7643,How old were you when you first started masturbating?
+D_26_C13,25,D_26,13,"['hamsters', 'died', 'domestic']",5,True,0.6467,"If you are a domestic pig, then where would you like to die - in a slaughterhouse cut open by humans or in the wild eaten by wolves?"
+D_26_C14,25,D_26,14,"['sexy', 'instrument', 'unique']",4,True,0.6592,What are some of the best/unique names for dogs?
+D_26_C15,25,D_26,15,"['learned', 'pandemic', 'false']",3,True,0.7797,What have y'all learned from the pandemic so far?
+D_26_C16,25,D_26,16,"['minutes', 'ate', 'food']",5,True,0.6929,"Pineapple pizza, yummy... Whats the worst invention you think is?"
+D_26_C17,25,D_26,17,"['teens', 'urine', 'tests']",4,True,0.7068,Do teens(16-17)in America need urine tests during physicals.
+D_26_C18,25,D_26,18,"['scariest', 'surreal', 'moment']",3,True,0.7852,was the scariest or most surreal moment of the Trump presidency?
+D_26_C19,25,D_26,19,"['crushed', 'disagree', 'perspective']",6,True,0.6705,"who are being crushed on, how do you know?"
+D_26_C20,25,D_26,20,"['toilet', 'clean', 'ass']",4,True,0.6274,western countrys use toilet paper instead of water to clean their ass after taking a dump.is let it a bit unhygienic to never clean your ass?
+D_26_C21,25,D_26,21,"['men', 'equivalent', 'leggings']",5,True,0.6272,day to wear makeup?
+D_26_C22,25,D_26,22,"['added', 'view', 'counter']",4,True,0.7133,feel if Reddit added a view counter.
+D_26_C23,25,D_26,23,"['art', 'neural', 'links']",3,True,0.8199,"When neural links get to the point where you can capture an 8K video feed of your mind's eye, do you think artists who use their hands to create digital art will be distinguishable from imaginartists? How would you feel about that change?"
+D_26_C24,25,D_26,24,"['internet', 'moments', 'demise']",6,True,0.677,what have you managed to abid your whole life?
+D_26_C25,25,D_26,25,"['dependent', 'work', 'merge']",3,True,0.922,If any of you have a job that was in the process of becoming internet-dependent in the 90's-00's. Was it pure chaos? Or smooth sailing?
+D_26_C26,25,D_26,26,"['simplest', 'advice', 'complex']",3,True,0.8456,"What is the best, yet simplest advice you've been given?"
+D_26_C27,25,D_26,27,"['strangest', 'fetish', 'happyist']",3,True,0.8083,What is the weirdest/most unsettling thing you've seen at a funeral?
+D_26_C28,25,D_26,28,"['animal', 'average', 'dms']",4,True,0.5633,What's your optimal home temperature? Does it change based on the season/outdoor weather?
+D_26_C29,25,D_26,29,"['learnt', 'learn', 'little']",3,True,0.8347,thing you have seen or learnt from Reddit?
+D_26_C30,25,D_26,30,"['looked', 'come', 'right']",3,True,0.8001,thing to come from Reddit over the last 10 years?
+D_26_C31,25,D_26,31,"['gift', 'received', 'job']",3,True,0.7764,job you have ever had ?
+D_27_C0,26,D_27,0,"['weird', 'attracted', 'wish']",11,False,0.5268,What weird stuff do you do when no one is looking...but wish someone was?
+D_27_C1,26,D_27,1,"['weekend', 'hurricane', 'ida']",7,False,0.6538,How were you impacted by Hurricane Ida?
+D_27_C2,26,D_27,2,"['stupid', 'teenage', 'compared']",8,False,0.6994,What is the stupidest thing you have done as a grown up?
+D_27_C3,26,D_27,3,"['story', 'attended', 'woodstock']",11,False,0.591,What is your wmbaressing first day of school story?
+D_27_C4,26,D_27,4,"['wish', 'game', 'choose']",11,False,0.5411,"If all of your memories could be erased except for one, which one would you choose to keep?"
+D_27_C7,26,D_27,7,"['current', 'investment', 'online']",7,False,0.505,investment to make today?
+D_27_C8,26,D_27,8,"['die', 'scientifically', 'painless']",3,True,0.9884,What is scientifically the most painless way to die and the most painful way to die? I'm very curious about this. *Not su1c1dal*
+D_27_C9,26,D_27,9,"['university', 'september', 'studying']",3,True,0.7777,"Starting University this September, studying Marketing, any tips?"
+D_27_C10,26,D_27,10,"['love', 'girl', 'homophobic']",3,True,0.7693,"Help, I really love this girl, she's super homophobic and, I told my friend who sucks at keeping secrets! I love her super bad, what should I do? This post will be buried, but it's still worth a try!"
+D_27_C11,26,D_27,11,"['old', 'called', 'handsome']",6,True,0.6255,piece of advise someone has ever given you?
+D_27_C12,26,D_27,12,"['texas', 'companies', 'based']",4,True,0.8486,What are Texas based companies?
+D_27_C13,26,D_27,13,"['men', 'horny', 'women']",3,True,0.796,women less horny than men on social media?
+D_27_C14,26,D_27,14,"['alive', 'currently', 'feeling']",5,True,0.7698,being alive the best experience you currently have?
+D_27_C15,26,D_27,15,"['recommend', 'trim', 'pubes']",3,True,0.8006,recommend someone to trim their pubes and sack for the first time?
+D_27_C16,26,D_27,16,"['allow', 'body', 'decide']",5,True,0.6082,up subreddit you've found?
+D_27_C17,26,D_27,17,"['movie', 'looking', 'strange']",4,True,0.6145,"Im looking for a specific Internet Video , in which sub should i Start?"
+D_27_C18,26,D_27,18,"['believe', 'end', 'eli']",5,True,0.6501,[Serious] How do you believe the world is going to end?
+D_27_C19,26,D_27,19,"['addicted', 'drugs', 'quality']",4,True,0.6697,say you're addicted to drugs without saying you're addicted to drugs?
+D_27_C20,26,D_27,20,"['online', 'suggestions', 'therapy']",3,True,0.9451,Can anyone suggest a good/real online therapist? More like a friend to talk to?
+D_27_C21,26,D_27,21,"['disney', 'villain', 'mines']",6,True,0.7574,Disney villain? Mines Randy from monsters Inc.
+D_27_C22,26,D_27,22,"['instagram', 'famousonmedia', 'com']",3,True,0.7491,1$ = 1000 instagram followers cheap ? you didnt see the rest just visit famousonmedia.com ____________________________________ 3 Easy steps : sign up &gt; add funds paypal &gt; chose your desired service ! famousonmedia.com
+D_27_C23,26,D_27,23,"['helps', 'knows', 'grind']",3,True,0.9065,Is there a subreddit that helps you find people?
+D_27_C24,26,D_27,24,"['item', 'overpaid', 'consider']",6,True,0.5866,What is a job that you feel is overpaid?
+D_27_C25,26,D_27,25,"['food', 'flavor', 'gatorade']",4,True,0.6946,What flavor of Gatorade is the most delicious?
+D_27_C26,26,D_27,26,"['fed', 'petting', 'zoo']",4,True,0.7095,Legally what would happen if I fed a petting zoo animal an edible?
+D_27_C27,26,D_27,27,"['trait', 'envy', 'mother']",4,True,0.745,what's a trait of your mother's that you admire?
+D_27_C28,26,D_27,28,"['cat', 'needs', 'flex']",3,True,0.6303,How many lives does a cat have in your country?
+D_27_C29,26,D_27,29,"['criminals', 'pool', 'money']",3,True,0.6435,"think the proposal, starting in October in San Francisco, to pay criminals not to be criminals will work (or not)?"
+D_27_C30,26,D_27,30,"['hear', 'head', 'normal']",3,True,0.6577,Is it normal for the to brain think on its own?
+D_27_C31,26,D_27,31,"['annoys', 'isn', 'fault']",5,True,0.6241,"Dear Reddit, do any of you guys enjoy hurting your own feelings as much as I do?"
+D_28_C0,27,D_28,0,"['song', 'artist', 'stuck']",10,False,0.6157,What's a song you grew up with that's well known but underappreciated?
+D_28_C1,27,D_28,1,"['fictional', 'foods', 'real']",8,False,0.598,"eat anything from outside of the area of where you live, what would it be?"
+D_28_C2,27,D_28,2,"['refuse', 'break', 'living']",8,False,0.6398,What makes you excited?
+D_28_C3,27,D_28,3,"['movie', 'video', 'game']",12,False,0.603,What's that one movie/game everybody says is really bad but you really enjoyed it?
+D_28_C4,27,D_28,4,"['models', 'plus', 'size']",7,False,0.7017,plus size models prefer a brother over an ordinary man?
+D_28_C5,27,D_28,5,"['human', 'emotions', 'allowed']",13,False,0.4587,"What are your thoughts on human emotions and the ability to tell right from wrong, along with everyones own set of morals in this day amd age we live in now?"
+D_28_C8,27,D_28,8,"['deal', 'girlfriend', 'crush']",4,True,0.7426,"What is the deal with people who cannot get over their High School crush/girlfriend? Seriously, help me understand this. You were kids! How in the hell can you let this follow you around for what in some cases can be decades?"
+D_28_C9,27,D_28,9,"['habits', 'upgrades', 'easier']",5,True,0.7752,make the most of life?
+D_28_C10,27,D_28,10,"['childhood', 'snack', 'sick']",3,True,0.7521,What childhood snack do you still love?
+D_28_C11,27,D_28,11,"['tuna', 'sandwich', 'readymade']",3,True,0.9248,Do you make tuna melt / tuna sandwich / tuna salad with readymade dip? Share your favorite dip for tuna or favorite way to make tuna plz. Thx!
+D_28_C12,27,D_28,12,"['compliment', 'whats', 'handed']",4,True,0.7684,what's the rudest compliment you've ever received?
+D_28_C13,27,D_28,13,"['wasted', 'looking', 'screen']",6,True,0.6835,What's the last thing you enjoyed doing as if you were a kid?
+D_28_C14,27,D_28,14,"['historical', 'event', 'concerts']",5,True,0.6322,Which toy (or anything that was made to children directly) that was your dream as a kid but you never had? Something that your parents couldn't or didn't bought for you and made you really sad
+D_28_C15,27,D_28,15,"['girls', 'boys', 'attracted']",3,True,0.702,"thought about your inner voice, in terms of what it is female male high or low?"
+D_28_C16,27,D_28,16,"['guy', 'date', 'style']",3,True,0.7799,What makes you someone a guy would want to date?
+D_28_C17,27,D_28,17,"['win', 'giving', 'family']",3,True,0.7928,"You win $10,000,000 in the morning. How much are you giving to family? A set amount? Or do you just pay for their stuff when you're together."
+D_28_C18,27,D_28,18,"['parent', 'heard', 'sex']",3,True,0.8098,thing someone told you?
+D_28_C19,27,D_28,19,"['internet', 'google', 'account']",4,True,0.6957,What is the Internet?
+D_28_C20,27,D_28,20,"['friday', 'night', 'creative']",5,True,0.6803,What's your idea of a perfect Friday night?
+D_28_C21,27,D_28,21,"['downstairs', 'dream', 'weird']",6,True,0.725,nightmare you ever had?
+D_28_C22,27,D_28,22,"['zero', 'tolerance', 'policy']",3,True,0.7648,What laws did you get changed?
+D_28_C23,27,D_28,23,"['accused', 'rape', 'affect']",3,True,0.75,who have be accused of rape. How did it affect your life?
+D_28_C24,27,D_28,24,"['trimester', 'developmental', 'abortion']",5,True,0.824,"Pro choice people if reddit, at What trimester or developmental stage do you think normal abortions should be stopped?"
+D_28_C25,27,D_28,25,"['joked', 'came', 'comical']",3,True,0.7657,yet comical scenario that has happened?
+D_28_C26,27,D_28,26,"['quality', 'products', 'brands']",5,True,0.801,Do other countries have to worry about quality of products like America does?
+D_28_C27,27,D_28,27,"['marry', 'dose', 'polygamy']",4,True,0.6507,"who started dating their crush, after losing weight, puberty or ""glowing up,"" are you two still together?"
+D_28_C28,27,D_28,28,"['new', 'law', 'passed']",3,True,0.7081,"A new law passed, everyone have to have a pets. Which one do you pick, and why?"
+D_28_C29,27,D_28,29,"['vacation', 'russia', 'place']",4,True,0.5435,Is Biden Really as bad as he seems on tv or is he a good President?
+D_28_C30,27,D_28,30,"['likely', 'earth', 'movies']",6,True,0.5712,Covid-19 have impacted earth in 1939 - the start of the second world war?
+D_28_C31,27,D_28,31,"['view', 'doom', 'feelings']",5,True,0.6888,what is your view on doom
+D_28_C32,27,D_28,32,"['memory', 'million', 'fireflies']",3,True,0.7087,Do brains get hacked?
+D_28_C33,27,D_28,33,"['woke', 'yes', 'imagine']",6,True,0.6185,"Do you think a piss can feel better than an Orgasm, yes or no"
+D_28_C34,27,D_28,34,"['piss', 'orgasm', 'better']",3,True,0.8529,had a piss that is better than an orgasm
+D_29_C0,28,D_29,0,"['food', 'eat', 'pickles']",13,False,0.6243,What are your food hot takes?
+D_29_C1,28,D_29,1,"['friend', 'send', 'selfies']",7,False,0.6026,What are you most insecure about?
+D_29_C2,28,D_29,2,"['cigarettes', 'isn', 'picking']",22,False,0.4753,[throwaway] what is your darkest secret that no-one knows ?
+D_29_C3,28,D_29,3,"['tiktok', 'jonas', 'popular']",7,False,0.5404,TikTok so popular?
+D_29_C5,28,D_29,5,"['pandemic', 'curse', 'blessing']",8,False,0.5124,The pandemic has been a curse for a lot of people. In what way has it been a blessing for you?
+D_29_C6,28,D_29,6,"['resign', 'lose', 'position']",5,True,0.8304,Would you resign or lose position because of low salary offer?
+D_29_C7,28,D_29,7,"['device', 'elizabeth', 'holmes']",3,True,0.9436,Will there ever be a device as the one Theranos ( Elizabeth Holmes) claimed to have invented ?
+D_29_C8,28,D_29,8,"['territories', 'government', 'habitable']",4,True,0.9189,Are there any habitable territories that have no government?
+D_29_C9,28,D_29,9,"['story', 'weirdest', 'met']",3,True,0.7754,What is the story behind the weirdest person you have ever met ?
+D_29_C10,28,D_29,10,"['bug', 'pick', 'decided']",3,True,0.9815,"If you saw a weird bug about two inches long and decided to pick it up and it screamed at you, what would you do? The bug I'm thinking of is a cicada."
+D_29_C11,28,D_29,11,"['modern', 'technologies', 'little']",3,True,0.7151,What's an invention you'd like to see that would make one little thing in your life a little bit more convenient?
+D_29_C12,28,D_29,12,"['art', 'separated', 'artist']",3,True,0.7401,Is art able to be separated from the artist?
+D_29_C13,28,D_29,13,"['roomate', 'impossible', 'job']",5,True,0.6409,people sustain themselves with 15$ an hour? Even with a roomate it seems like an impossible task.
+D_29_C14,28,D_29,14,"['sport', 'considered', 'professional']",3,True,0.6833,What is considered a sport that should not be considered a sport?
+D_29_C15,28,D_29,15,"['play', 'minecraft', 'game']",6,True,0.6344,game you've played?
+D_29_C16,28,D_29,16,"['advice', 'given', 'piece']",3,True,0.8152,What's a piece of advice given to you that will stick with you forever?
+D_29_C17,28,D_29,17,"['cult', 'classic', 'stuff']",6,True,0.6294,What's one of your favorite B-list / lower-budget / low-key animated kids movies?
+D_29_C18,28,D_29,18,"['movie', 'live', 'action']",5,True,0.6965,"provided with all the necessities and wants you desire, but they all had to be mercy from a show/movie/videogame, what would it be?"
+D_29_C19,28,D_29,19,"['sent', 'official', 'account']",3,True,0.7631,Has reddit ever sent you something like this?
+D_29_C20,28,D_29,20,"['bed', 'quote', 'used']",3,True,0.7445,What is a movie quote that could be used in bed?
+D_29_C21,28,D_29,21,"['asks', 'insult', 'deal']",3,True,0.7,insult someone's said to you?
+D_29_C22,28,D_29,22,"['effect', 'inherently', 'reality']",3,True,0.7547,Do you really “have” to do anything?
+D_29_C23,28,D_29,23,"['mess', 'concern', 'idiots']",4,True,0.6658,mess up your life?
+D_29_C24,28,D_29,24,"['biggest', 'scandals', 'high']",4,True,0.7289,"Reddit, what was the biggest scandals at your High School?"
+D_29_C25,28,D_29,25,"['named', 'child', 'dead']",6,True,0.6743,Have you been named after a dead person and why?
+D_29_C26,28,D_29,26,"['wonder', 'cum', 'vagina']",6,True,0.607,"(Virgin) i always wonder how it feels after cumming while fucking, Whenever i nut to porn i feel dead like really bad, makes me wonder is that all?? U just feel good till u cum? Shoot and depression?? I hope it's not like that while having actual sex. Clarify Please"
+D_29_C27,28,D_29,27,"['riddle', 'heard', 'rabbit']",3,True,0.6803,How many rabbit holes have you gone down?
+D_30_C0,29,D_30,0,"['stranger', 'cried', 'scariest']",19,False,0.6169,What is the most scariest/shocking thing someone asked you that still haunts you to this day?
+D_30_C2,29,D_30,2,"['relationship', 'enjoy', 'looking']",23,False,0.4648,At what point in life do you feel like “Oh God this is it”?
+D_30_C3,29,D_30,3,"['shes', 'toxic', 'girl']",3,True,0.8544,Is it to call out a gurl if shes toxic af?
+D_30_C4,29,D_30,4,"['duty', 'battlefield', 'play']",3,True,0.8917,Would you rather play Call of Duty or Battlefield?
+D_30_C5,29,D_30,5,"['saved', 'happens', 'stay']",4,True,0.549,"I can't stay still and relaxed, i always move my legs and tighten some of my body parts when i'm sitting or laying.. if i try to stay still and relax i start having a rapid heart beat and a feeling of a panic attack. What could this mean? Any advice would be appreciated!"
+D_30_C6,29,D_30,6,"['commenter', 'decides', 'effect']",4,True,0.6409,"[serious] people who bet depression definitively, how ?"
+D_30_C7,29,D_30,7,"['teachers', 'job', 'actual']",6,True,0.6096,Describe different teachers' job in the most disturbing way without saying the actual proffesion
+D_30_C8,29,D_30,8,"['sexual', 'romantically', 'pressured']",5,True,0.5815,What do you say to somebody you like romantically to not make them feel pressured into sexual expectations with you?
+D_30_C9,29,D_30,9,"['listen', 'jazz', 'questions']",5,True,0.641,Which topics is best talking with girls?
+D_30_C10,29,D_30,10,"['country', 'neighboring', 'stereotypes']",4,True,0.7581,What are the common stereotypes of your country?
+D_30_C11,29,D_30,11,"['coolest', 'ver', 'doe']",3,True,0.7132,yet coolest thing ye'ver doe?
+D_30_C12,29,D_30,12,"['abused', 'children', 'misconception']",6,True,0.5963,What's a common misconception about your profession?
+D_30_C13,29,D_30,13,"['reason', 'blanket', 'labelled']",5,True,0.7412,"who can't be vaccinated for whatever reason, how do you feel about unvaxxed people being blanket being labelled as 'selfish'?"
+D_30_C14,29,D_30,14,"['work', 'cashier', 'stores']",3,True,0.7114,Unemployed redditors what do you think about work?
+D_30_C15,29,D_30,15,"['near', 'invited', 'party']",5,True,0.7329,"In the near future, you are invited by your friend to a party on the 57th ""floor"" in a 300-meter ""tall"" EARTHSCRAPER. What are your initial reactions and thoughts and what do you do and how do you respond?"
+D_30_C16,29,D_30,16,"['species', 'die', 'dispose']",4,True,0.6803,"everyone you know turns into endangered species, what do you do?"
+D_30_C17,29,D_30,17,"['moments', 'films', 'film']",4,True,0.7082,What's a scene in a movie of TV show that disgusted or shocked you to your core?
+D_30_C18,29,D_30,18,"['founding', 'fathers', 'showed']",3,True,0.7136,reality for America?
+D_30_C19,29,D_30,19,"['media', 'examples', 'sounds']",3,True,0.7244,What are some good examples of media where there is prevalent bio-modification? Are there any examples taking place in the future?
+D_30_C20,29,D_30,20,"['drug', 'game', 'extinct']",3,True,0.7171,make a drug go extinct which drug would it be?

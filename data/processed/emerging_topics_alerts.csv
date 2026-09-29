@@ -1,0 +1,11 @@
+window_id,window_index,cluster_key,cluster_label,topic_keywords,post_count,emergence_score,novelty_score,coherence_score,growth_score,persistence_score,representative_post
+W_1,0,W_1_C0,thing / ever / most,"thing, ever, most, done",50,0.7686,1.0,0.6746,1.0,0.0,What's the creepiest thing you've ever done? (But only judged your actions after it happened)
+W_2,1,W_2_C0,thing / most / life,"thing, most, life, reddit",145,0.558,0.09,0.5395,0.9667,1.0,"Out of all mistakes you have made in your life so far, what’s your favorite one?"
+W_4,3,W_4_C1,song / always / will,"song, always, will, sad",11,0.4999,0.2548,0.7728,0.3333,0.8942,What Song Always Puts a Tear in Your Eye?
+W_1,0,W_1_C1,movie / song / favourite,"movie, song, favourite, hated",11,0.4995,0.525,0.713,0.55,0.0,What is your favourite movie? why.
+W_3,2,W_3_C1,food / life / thing,"food, life, thing, world",9,0.4973,0.2888,0.6979,0.375,0.8534,"If you were to eat one dish for the rest of your life, what would it be?"
+W_2,1,W_2_C1,food / dish / most,"food, dish, most, underrated",8,0.4972,0.5985,0.7509,0.4,0.0,What home cooked meals are in heavy rotation in your household?
+W_5,4,W_5_C1,food / country / most,"food, country, most, without",13,0.492,0.1168,0.6946,0.5098,1.0,What food do you love that did not originate in your country?
+W_4,3,W_4_C0,thing / ever / life,"thing, ever, life, most",100,0.4159,0.0438,0.5784,0.4237,1.0,What's the funniest thing that has ever happened to you?
+W_5,4,W_5_C0,movie / thing / worst,"movie, thing, worst, most",64,0.3874,0.0742,0.5918,0.254,1.0,What movie unexpectedly made you laugh until you cried?
+W_3,2,W_3_C0,thing / ever / worst,"thing, ever, worst, most",41,0.3653,0.0474,0.6548,0.1402,1.0,What's the most SATISFYING incident in your life?

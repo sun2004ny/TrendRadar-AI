@@ -1,0 +1,4 @@
+candidate_id,topic_label,candidate_type,nlp_detection_window,nlp_window_index,baseline_detection_window,baseline_window_index,lead_time_checkpoints,baseline_matched_terms,baseline_alert_count,baseline_first_alert_ratio,representative_sample
+TRAJ_031,away / stupid / artists,[EMERGING],W_2,2,W_2,2,0,"artists, stupid, away",3,3.33,"Redditors of reddit, What is the most stupid post on reddit you've ever seen?"
+TRAJ_025,onlyfans / content / october,[BURST],W_2,2,W_2,2,0,"onlyfans, content, october, explicit content",4,64.0,So OnlyFans bans explicit content. How else do you think these girls will make money now?
+TRAJ_047,lock / vote / locked,[BURST],W_3,3,W_3,3,0,lock,1,3.75,Why is Reddit locking the comments that an OP makes?

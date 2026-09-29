@@ -1,0 +1,13 @@
+metric,E3_lexical_gate,E4_entity_aware,interpretation
+Total Trajectories,133,132,Entity linkage cleanly unifies related topic fragments
+Multi-Checkpoint Trajectories,11,12,Additional entity-grounded multi-checkpoint trajectory formed
+Max Checkpoint Span,5,5,Semantic drift remains strictly controlled
+Validated Candidates,35,35,Candidate count stable
+OnlyFans Captured,Yes,Yes,Core event signal strictly retained
+Hurricane Ida Captured,Yes,Yes,Core event signal strictly retained
+Lil Nas X Meme Captured,Yes,Yes,Viral event signal strictly retained
+Afghanistan Trajectory,Yes (span 5),Yes (span 5),Geopolitical entity trajectory retained
+FDA Vaccine Captured,No (N<7),No (N<7),Entity linkage cannot overcome N < min_cluster_size
+Locked Comments Captured,No (N<7),No (N<7),Entity linkage cannot overcome N < min_cluster_size
+Mean Candidate Coherence,0.6819,0.6819,Coherence remains stable
+Baseline Keyword Alerts,823,823,Frozen control baseline unchanged

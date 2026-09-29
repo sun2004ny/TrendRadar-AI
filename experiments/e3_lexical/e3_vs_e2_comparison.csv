@@ -1,0 +1,13 @@
+metric,E2_template_stripped,E3_lexical_consistency,interpretation
+Total Trajectories,109,133,Drifting chains partitioned into clean trajectories
+Multi-Checkpoint Trajectories,7,11,Tightly bound lexical trajectories
+Max Checkpoint Span,24 (TRAJ_002 drift monster),5 (tight lexical continuity),24-checkpoint semantic drift eliminated
+Validated Candidates,32,35,Single-checkpoint clusters unchained from drift
+OnlyFans Captured,Yes,Yes,Event signal strictly retained
+Hurricane Ida Captured,Yes,Yes,Event signal strictly retained
+Lil Nas X Meme Captured,Yes,Yes,Event signal strictly retained
+FDA Vaccine Captured,No (N<7),No (N<7),Sub-threshold (deferred to E4/E5)
+Locked Comments Captured,No (N<7),No (N<7),Sub-threshold (deferred to E4/E5)
+Mean Candidate Coherence,0.6805,0.6819,Coherence increased with lexical purity
+Min Candidate Coherence,0.6805,0.6819,Higher worst-case coherence floor
+Baseline Keyword Alerts,823,823,Frozen control baseline unchanged

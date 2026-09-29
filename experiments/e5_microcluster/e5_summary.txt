@@ -1,0 +1,54 @@
+================================================================================
+   EXPERIMENT 9F (E5): MICRO-CLUSTERING ABLATION REPORT                         
+================================================================================
+
+SCIENTIFIC HYPOTHESIS:
+  Can reducing the local density requirement to min_cluster_size=3 recover sparse
+  emerging-topic seeds (such as FDA/Pfizer vaccine mandates) that are invisible to
+  standard clustering (N >= 7), while measuring the trade-off in candidate noise?
+
+SUMMARY OF KEY FINDINGS:
+  1. High Sensitivity Gain (Sparse Seed Recovery):
+     - Under E4 (min_cluster_size=7): Exactly ZERO vaccine or FDA clusters formed.
+     - Under E5 (min_cluster_size=3): 10 discrete vaccine clusters formed!
+       * D_16 (TRAJ_573, 3 posts, Coherence: 0.938): Healthcare workers and vaccine mandates.
+       * D_18 (TRAJ_661, 3 posts, Coherence: 0.792): Delta Airlines employee vaccine surcharge.
+       * D_26 (TRAJ_961, 3 posts, Coherence: 0.829): School/workplace vaccine requirements.
+       * D_10 (TRAJ_345, 6 posts, Coherence: 0.754): "Get vaccinated or lose your job?" [BURST].
+  
+  2. The Noise Explosion Trade-off:
+     - Total Trajectories exploded from 132 to 1,121 (8.5x increase).
+     - Validated Candidates surged from 35 to 141 (4.0x increase).
+     - Candidate Micro-Seeds generated: 721.
+     - High sensitivity comes at a substantial precision cost: tiny clusters of 3-4 conversational
+       posts readily achieve high cosine similarity due to small sample size.
+  
+  3. Cluster Fragmentation of Medium-Sized Topics:
+     - OnlyFans was captured at D_11 (TRAJ_406, 9 posts, 3.0% share, coherence 0.710),
+       though slightly fragmented from its original 11 posts.
+     - Hurricane Ida was fragmented from a 7-post cluster into a 3-post [MICRO_SEED] (TRAJ_981, coherence: 0.802).
+  
+  4. The Boundary of Micro-Clustering (Reddit Locked Comments):
+     - Reddit locked comments mentions remained below N=3 in any single checkpoint
+       (D_22: 1 post, D_25: 1 post, D_27: 2 posts).
+     - Therefore, micro-clustering at N=3 still cannot cluster 1-2 stochastic posts.
+
+================================================================================
+ABLATION COMPARISON METRICS:
+================================================================================
+                                           metric               E4_entity_aware                                         E5_microcluster                                               interpretation
+          Minimum Cluster Size (min_cluster_size)                             7                                                       3 Density threshold lowered to capture micro-seeds (3-6 posts)
+          Raw Micro-Clusters Generated (size 3-6)                             0                                                     983                        Massive increase in local granularity
+          Standard Clusters Generated (size >= 7)                           155                                                     161      Standard clusters slightly reorganized by fragmentation
+Micro-Clusters Surviving Coherence Floor (>=0.45)                             0                                                     980      High raw coherence due to tiny cluster sizes (3-6 docs)
+                               Total Trajectories                           132                                                    1121         8.5x trajectory explosion due to local fragmentation
+                    Multi-Checkpoint Trajectories                            12                                                       4 Micro-clusters fragment across time; fewer persistent chains
+      Candidate Micro-Seeds (Size 3-6, coh>=0.65)                             0                                                     721           Extensive incubation pool of candidate micro-seeds
+                    Validated Emerging Candidates                            35                                                     141                       4.0x candidate surge (noise explosion)
+                                OnlyFans Captured Yes (D_11, [BURST], 11 posts)                  Yes (D_11, [BURST], 9 posts, TRAJ_406)           Captured (slight fragmentation from 11 -> 9 posts)
+                           Hurricane Ida Captured  Yes (D_24, [BURST], 7 posts) Yes (D_27, [MICRO_SEED], 3 posts, TRAJ_981, coh: 0.802)                            Fragmented into 3-post micro-seed
+                          Lil Nas X Meme Captured  Yes (D_17, [BURST], 8 posts)                  Yes (D_18, [BURST], 8 posts, TRAJ_679)                                                     Captured
+                 FDA/Pfizer Vaccine Seed Detected        No (0 clusters, N < 7)    Yes (10 clusters, 5 seeds, e.g. TRAJ_573 coh: 0.938) Sub-threshold emerging vaccine seeds successfully recovered!
+                    Locked Comments Seed Detected        No (0 clusters, N < 7)                                          No (N=1-2 < 3)                    Single-post bug mentions remain below N=3
+                         Mean Candidate Coherence                        0.6819                                                  0.6957                Small clusters have higher geometric cohesion
+                          Baseline Keyword Alerts                           823                                                     823                            Frozen control baseline unchanged

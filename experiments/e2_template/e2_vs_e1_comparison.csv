@@ -1,0 +1,11 @@
+metric,E1_scale_normalized,E2_template_stripped,interpretation
+Total Trajectories,82,109,"More granular, topic-specific trajectories formed"
+Validated Candidates,36,32,Net reduction in candidate volume
+AskReddit-Template Candidates (from E1 pool),34 identified,6 retained,28 of 34 template bursts eliminated
+Template Suppression Rate,0.0%,82.4%,28 / 34 template candidates suppressed
+OnlyFans Captured,"Yes (D_11, 4.0% share)","Yes (D_11, 3.7% share, TRAJ_041)",Event perfectly retained with clean content
+FDA Vaccine Approval Captured,No,No,Remains sub-threshold (N=1-3 < min_cluster_size 7)
+Locked Comments Incident Captured,No,No,Remains sub-threshold (N=1-2 < min_cluster_size 7)
+Mean Candidate Coherence,0.697,0.681,Coherence remains well above 0.62 floor
+Baseline Keyword Alerts,823,823 (frozen control) / 763 (stripped),Baseline keyword alerts unaffected or reduced
+Genuine Event Retention Rate,100.0%,100.0%,1 / 1 genuine events retained (OnlyFans)

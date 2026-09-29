@@ -1,0 +1,179 @@
+cluster_key,window_index,window_id,week_label,cluster_id,cluster_label,post_count,avg_semantic_coherence,representative_post
+D_01_C0,0,D_01,2021-08-11,0,"['happened', 'language', 'believe']",11,0.6007,What is the event in human history that you would like not to happen? None
+D_01_C1,0,D_01,2021-08-11,1,"['annoying', 'comes', 'aggravates']",10,0.6098,What is something you find very annoying/disturbing that others may find very minor? None
+D_01_C2,0,D_01,2021-08-11,2,"['series', 'watch', 'movie']",8,0.6683,Whats a movie that you really enjoyed but probably won't ever watch again? None
+D_01_C3,0,D_01,2021-08-11,3,"['changed', 'regret', 'paid']",7,0.7307,What experience changed your perspective on life? None
+D_01_C4,0,D_01,2021-08-11,4,"['sex', 'don', 'men']",11,0.5973,Why do you love Reddit? Meme edition. [removed]
+D_01_C5,0,D_01,2021-08-11,5,"['song', 'job', 'close']",11,0.5812,What is your darkest secret? None
+D_01_C6,0,D_01,2021-08-11,6,"['witnessed', 'moment', 'epileptics']",8,0.6897,what was your biggest embarrassment out in public? None
+D_01_C7,0,D_01,2021-08-11,7,"['live', 'current', 'usd']",7,0.5944,Where would you rather live: USA or UK? And what are the reasons? [removed]
+D_02_C0,1,D_02,2021-08-12,0,"['case', 'skin', 'company']",12,0.4643,[SERIOUS] What habit of yours do you think that can eventually kill you? None
+D_02_C1,1,D_02,2021-08-12,1,"['toppings', 'angriest', 'memory']",11,0.603,What did you forget to take with you this morning? None
+D_02_C2,1,D_02,2021-08-12,2,"['movie', 'book', 'recommend']",8,0.7417,What is your favourite movie this year? None
+D_02_C3,1,D_02,2021-08-12,3,"['fact', 'moon', 'completely']",13,0.5009,"What's a fact that's fake, but sounds completely true? None"
+D_02_C4,1,D_02,2021-08-12,4,"['sexy', 'sex', 'sexual']",8,0.6825,"Sexers of reddit, When have you sexed the sexy sex the most? [removed]"
+D_02_C5,1,D_02,2021-08-12,5,"['online', 'college', 'hot']",8,0.6565,"Online college students of Reddit, do you like online college? Did you regret anything about it? [removed]"
+D_02_C6,1,D_02,2021-08-12,6,"['richard', 'stupid', 'woman']",7,0.6059,Where is Richard Here and what is he up to? [removed]
+D_03_C0,2,D_03,2021-08-13,0,"['soper', 'movie', 'rename']",13,0.5261,What animal would would you choose as a pet for an inter planetary mission and why ? [deleted]
+D_03_C1,2,D_03,2021-08-13,1,"['memes', 'videos', 'numbers']",7,0.4854,"When there is more than one milf are they called ""milfs"" or ""milves""? [deleted]"
+D_03_C2,2,D_03,2021-08-13,2,"['state', 'older', 'wearing']",10,0.5655,What is the worst city in US and why? [deleted]
+D_03_C3,2,D_03,2021-08-13,3,"['white', 'native', 'afghanistan']",8,0.5777,Why did the US withdraw their troops from Afghanistan? None
+D_03_C4,2,D_03,2021-08-13,4,"['remember', 'conversation', 'witnessed']",26,0.5895,What was your best Déjà vu that possibly saved your life? None
+D_03_C5,2,D_03,2021-08-13,5,"['swear', 'artist', 'tropes']",8,0.6428,Who is the artist that everybody likes but you're not into? None
+D_04_C1,3,D_04,2021-08-14,1,"['weirdest', 'walked', 'moment']",19,0.6856,What is the most weirdest thing your parent has walked in on you doing or what you walked in on them doing? None
+D_04_C2,3,D_04,2021-08-14,2,"['phone', 'numbers', 'google']",7,0.5942,Are phone numbers given in google profile visible to other people? [removed]
+D_04_C3,3,D_04,2021-08-14,3,"['username', 'stuck', 'question']",7,0.7486,Your user name is now the answer to a question. What's the question? [removed]
+D_04_C4,3,D_04,2021-08-14,4,"['trolls', 'obsessed', 'incest']",12,0.6252,Why are Reddit trolls obsessed with incest? [removed]
+D_04_C5,3,D_04,2021-08-14,5,"['buying', 'wish', 'awake']",10,0.6186,what keeps you awake at night? None
+D_04_C6,3,D_04,2021-08-14,6,"['comes', 'believe', 'mind']",8,0.6381,What comes to mind when you think of Australia? None
+D_04_C7,3,D_04,2021-08-14,7,"['united', 'afghan', 'happen']",8,0.6235,Why do you think of Taliban’s blitzkrieg of Afghanistan? None
+D_04_C8,3,D_04,2021-08-14,8,"['food', 'second', 'ingredient']",20,0.5276,Whats the best subreddit [removed]
+D_05_C0,4,D_05,2021-08-15,0,"['differently', 'specific', 'examples']",10,0.6477,"If you knew when your last day would be, what would you do differently? And/or anything you'd want to do? Give specific examples! [removed]"
+D_05_C1,4,D_05,2021-08-15,1,"['tonight', 'keeping', 'awake']",9,0.6425,"Hey Reddit, what’s keeping you awake these nights? None"
+D_05_C2,4,D_05,2021-08-15,2,"['making', 'looking', 'online']",8,0.4813,What's a free online resource that everyone should take advantage of? None
+D_05_C3,4,D_05,2021-08-15,3,"['dumbest', 'moment', 'damn']",13,0.6754,"What is the worst thing you’ve done, without even realizing you’d done it? None"
+D_05_C4,4,D_05,2021-08-15,4,"['warning', 'label', 'parking']",7,0.577,What conspiracy theories do people close to you believe in? None
+D_05_C5,4,D_05,2021-08-15,5,"['games', 'movie', 'video']",25,0.5248,what’s the best video game of all time? [deleted]
+D_05_C6,4,D_05,2021-08-15,6,"['sex', 'women', 'men']",21,0.5764,"Women of reddit, big forehead on guys... yay, nay, or what else? [deleted]"
+D_06_C0,5,D_06,2021-08-15,0,"['afghanistan', 'taliban', 'veterans']",15,0.766,Afghans in the US and around the world- how do you feel about what’s happening currently in Afghanistan? [deleted]
+D_06_C1,5,D_06,2021-08-15,1,"['mind', 'comes', 'brazil']",19,0.7374,What comes to mind when you think of Germany? None
+D_06_C2,5,D_06,2021-08-15,2,"['women', 'lgbtqia', 'members']",10,0.5632,"Women of Reddit, what do you expect from a man during sex? None"
+D_06_C3,5,D_06,2021-08-15,3,"['mind', 'comes', 'germany']",9,0.7935,What comes to mind when you think of Germany? [deleted]
+D_06_C4,5,D_06,2021-08-15,4,"['column', 'leronlimab', 'hiv']",7,0.4576,"People who don't own a computer and only use their phone, how's that going for you? None"
+D_06_C5,5,D_06,2021-08-15,5,"['moment', 'today', 'school']",20,0.5672,What is the most embarrassing moment you had in your workplace? [removed]
+D_06_C6,5,D_06,2021-08-15,6,"['left', 'twix', 'debatable']",10,0.5935,What are some lighthearted but debatable questions? [deleted]
+D_06_C7,5,D_06,2021-08-15,7,"['funniest', 'heard', 'line']",12,0.6383,What is the funniest thing anyone has ever said to you? None
+D_06_C8,5,D_06,2021-08-15,8,"['celebrity', 'likely', 'stand']",10,0.6092,What’s your favorite type of written character? None
+D_07_C0,6,D_07,2021-08-16,0,"['afghanistan', 'taliban', 'help']",15,0.7143,How do you think we should handle the situation in Afghanistan? [deleted]
+D_07_C1,6,D_07,2021-08-16,1,"['comes', 'mind', 'hate']",9,0.7041,What comes to mind when you think of Japan? None
+D_07_C2,6,D_07,2021-08-16,2,"['sad', 'unfriended', 'friends']",7,0.6576,"If you have “unfriended” anyone since the start of the pandemic, what was the thing that they said to show their true colors? None"
+D_07_C3,6,D_07,2021-08-16,3,"['story', 'minute', 'death']",22,0.5814,What Reddit post were you most active in responding with? [deleted]
+D_07_C5,6,D_07,2021-08-16,5,"['movie', 'character', 'movies']",14,0.6704,What movie scored badly on rotten tomatoes that you actually love? None
+D_08_C0,7,D_08,2021-08-17,0,"['series', 'movie', 'book']",19,0.5965,Which book or book series would you like to see adapted for TV/Movie? None
+D_08_C1,7,D_08,2021-08-17,1,"['porn', 'buying', 'pay']",8,0.7624,Is habit of watching porn awful? [removed]
+D_08_C2,7,D_08,2021-08-17,2,"['beats', 'enable', 'cheats']",7,0.4855,"Wanting to drop some beats with some music, what is your favorite small setup for making some electronic beats, violin sounds and more with a MacBook? [deleted]"
+D_08_C3,7,D_08,2021-08-17,3,"['experience', 'public', 'transport']",10,0.7279,What is the worst thing you ever Done? None
+D_08_C4,7,D_08,2021-08-17,4,"['sex', 'sexy', 'sexiest']",18,0.5284,tell us something you would never tell anyone [removed]
+D_09_C0,8,D_09,2021-08-18,0,"['men', 'women', 'ears']",13,0.4986,Why the fuck did I get an orgasm from cleaning my ears with a cotton swab? [removed]
+D_09_C1,8,D_09,2021-08-18,1,"['home', 'politely', 'visitors']",7,0.6962,What do you do when you're drinking alone and have nothing to do? None
+D_09_C3,8,D_09,2021-08-18,3,"['wish', 'useful', 'events']",10,0.6152,"Dear people of reddit, What is the most stupid thing you have as a kid? None"
+D_09_C4,8,D_09,2021-08-18,4,"['question', 'tried', 'posting']",10,0.7673,How many subreddits are you in? [removed]
+D_09_C5,8,D_09,2021-08-18,5,"['revenge', 'secret', 'ruin']",9,0.6985,How do you take revenge on downvotes? [removed]
+D_09_C6,8,D_09,2021-08-18,6,"['song', 'listen', 'songs']",12,0.6494,What is the song that is in your head right now? None
+D_09_C7,8,D_09,2021-08-18,7,"['story', 'love', 'painful']",15,0.6396,Whats the weirdest thing someone you know has done/said? None
+D_10_C0,9,D_10,2021-08-19,0,"['change', 'power', 'bet']",8,0.6665,What's one thing you would change about this world? None
+D_10_C1,9,D_10,2021-08-19,1,"['superior', 'women', 'census']",8,0.5324,What ruins good food? [deleted]
+D_10_C2,9,D_10,2021-08-19,2,"['taliban', 'hate', 'watching']",12,0.5554,How dangerous are the Taliban? [deleted]
+D_10_C3,9,D_10,2021-08-19,3,"['moment', 'sad', 'dear']",17,0.655,"What is your most ""Bruh Moment"" in life? None"
+D_10_C4,9,D_10,2021-08-19,4,"['stories', 'word', 'recently']",14,0.7245,What is the best thing you came across on the internet today? [removed]
+D_11_C0,10,D_11,2021-08-19,0,"['god', 'pick', 'pigs']",11,0.5539,"If you could get a complete, 100% truthful account of one public figure's entire life who would it be? None"
+D_11_C1,10,D_11,2021-08-19,1,"['ideas', 'pop', 'toilet']",9,0.5441,Do you think the best ideas pop up when your on the toilet? If so share some of them? [removed]
+D_11_C2,10,D_11,2021-08-19,2,"['onlyfans', 'content', 'sexual']",12,0.6459,Onlyfansers of reddit. What are you going to do now that onlyfans is banning explicit content? None
+D_11_C3,10,D_11,2021-08-19,3,"['song', 'percentage', 'asian']",19,0.4685,What is your favourite milkshake flavour? None
+D_11_C4,10,D_11,2021-08-19,4,"['forever', 'dumbest', 'regret']",13,0.7001,What is the biggest regret of your life? None
+D_11_C5,10,D_11,2021-08-19,5,"['job', 'inspired', 'inmates']",12,0.5979,"What is the ""worst"" job you've worked that you miss? None"
+D_11_C6,10,D_11,2021-08-19,6,"['house', 'essential', 'scary']",9,0.6947,"What is something you have eaten, that your pretty sure no one else has? [deleted]"
+D_11_C7,10,D_11,2021-08-19,7,"['moment', 'embarrassing', 'old']",12,0.7078,What’s your embarrassing moment that will keep you up tonight? [deleted]
+D_12_C0,11,D_12,2021-08-20,0,"['sex', 'blah', 'karma']",7,0.7709,What's something you can say during sex but also blah blah karma please? [removed]
+D_12_C1,11,D_12,2021-08-20,1,"['climate', 'change', 'personally']",9,0.6274,"Afghans of Reddit, what about your situation should we be aware of that might not be so highlighted by press? None"
+D_12_C2,11,D_12,2021-08-20,2,"['starving', 'school', 'child']",23,0.6214,What do you absolutely hate? [removed]
+D_12_C3,11,D_12,2021-08-20,3,"['accidentally', 'moment', 'kindest']",10,0.7272,What's the meanest thing you've accidentally done? None
+D_12_C4,11,D_12,2021-08-20,4,"['food', 'dew', 'nay']",12,0.5937,What is your favourite underrated national cuisine? None
+D_12_C5,11,D_12,2021-08-20,5,"['song', 'game', 'played']",12,0.5349,What song gives you the absolute feels every time? None
+D_12_C6,11,D_12,2021-08-20,6,"['matter', 'cool', 'instantly']",11,0.6225,What is the weirdest thing that you’ve stuck “it” into? None
+D_13_C0,12,D_13,2021-08-21,0,"['movie', 'watched', 'anime']",8,0.7476,What popular movie have you never seen? [removed]
+D_13_C1,12,D_13,2021-08-21,1,"['better', 'ask', 'biden']",36,0.4632,I have ask? [removed]
+D_13_C2,12,D_13,2021-08-21,2,"['week', 'mind', 'live']",14,0.4935,What is in mind now? None
+D_13_C3,12,D_13,2021-08-21,3,"['stupid', 'embarrassing', 'significant']",9,0.69,What is the single dumbest thing you have done in your life? None
+D_14_C0,13,D_14,2021-08-22,0,"['game', 'video', 'movie']",16,0.6279,"without saying the title, what’s your favorite video game? None"
+D_14_C1,13,D_14,2021-08-22,1,"['end', 'pandemic', 'happen']",8,0.6392,What if the world admits there is no solution to end the Covid-19 pandemic that they have no choice but to declare it over by having 100% infected and continue normal life as usual and just normalize the virus instead? [deleted]
+D_14_C3,13,D_14,2021-08-22,3,"['workers', 'cyclists', 'hate']",7,0.643,Why do some people hate cyclists? [removed]
+D_14_C4,13,D_14,2021-08-22,4,"['belong', 'pizza', 'yes']",17,0.5176,"Hello, Everyone How are you. [removed]"
+D_14_C5,13,D_14,2021-08-22,5,"['expensive', 'parents', 'biggest']",18,0.6406,What is the dumbest thing you’ve ever done? [deleted]
+D_14_C6,13,D_14,2021-08-22,6,"['looking', 'apple', 'maybe']",16,0.5417,What is the weirdest punishment your parents gave you as a kid? None
+D_14_C7,13,D_14,2021-08-22,7,"['regret', 'opportunity', 'learn']",15,0.6252,What is the one thing in your life that you regret deeply? None
+D_15_C0,14,D_15,2021-08-23,0,"['whats', 'house', 'item']",7,0.6477,Whats the best house item that you ever bought? None
+D_15_C1,14,D_15,2021-08-23,1,"['arrive', 'fun', 'wear']",7,0.6479,"What is the most boring “activity”, intended for fun, you’ve ever had to do? None"
+D_15_C2,14,D_15,2021-08-23,2,"['country', 'future', 'body']",7,0.5739,What are the future upgrades we can accept in human body as a result of evolution? [deleted]
+D_15_C3,14,D_15,2021-08-23,3,"['stop', 'hentai', 'podcasts']",27,0.534,What do you genuinely not understand? [removed]
+D_15_C4,14,D_15,2021-08-23,4,"['pregnant', 'women', 'kicked']",11,0.6072,How many pregnant women have you kicked in your lifetime? [removed]
+D_16_C0,15,D_16,2021-08-24,0,"['content', 'social', 'media']",8,0.6021,Does anybody else feel the forced breaks reddit makes you take if you post or comment a lot should not be a thing? [removed]
+D_16_C1,15,D_16,2021-08-24,1,"['heard', 'craziest', 'story']",22,0.6424,What was the craziest thing u have heard of? None
+D_16_C2,15,D_16,2021-08-24,2,"['game', 'video', 'played']",8,0.8366,What video game you love the most? None
+D_16_C3,15,D_16,2021-08-24,3,"['youtuber', 'song', 'childhood']",14,0.6077,What is your favourite childhood snack? None
+D_16_C4,15,D_16,2021-08-24,4,"['brushing', 'school', 'floss']",26,0.5231,Is it just me or…? [removed]
+D_16_C6,15,D_16,2021-08-24,6,"['weirdest', 'embarrassing', 'internet']",7,0.8162,What is the most awkward thing you have ever done? None
+D_17_C0,16,D_17,2021-08-25,0,"['movie', 'foreign', 'film']",7,0.7853,Favorite movie? [removed]
+D_17_C1,16,D_17,2021-08-25,1,"['old', 'city', 'used']",7,0.6569,"When did you know you were ""old""? None"
+D_17_C2,16,D_17,2021-08-25,2,"['ruin', 'badoo', 'useless']",19,0.6247,most useless thing you have ever seen [removed]
+D_17_C3,16,D_17,2021-08-25,3,"['sell', 'whats', 'learned']",8,0.6692,"If you could reset the world to a certain year of your life, which would it be? [deleted]"
+D_17_C5,16,D_17,2021-08-25,5,"['brand', 'fast', 'listen']",12,0.5573,What is the best name for a pet? None
+D_17_C6,16,D_17,2021-08-25,6,"['weirdest', 'high', 'school']",9,0.7746,What is the most pettiest thing you’ve ever done? [deleted]
+D_17_C7,16,D_17,2021-08-25,7,"['parents', 'truck', 'drivers']",15,0.6524,What was the most petty thing you’ve done? None
+D_17_C8,16,D_17,2021-08-25,8,"['username', 'gender', 'respond']",9,0.6041,How do you act like an adult? None
+D_18_C0,17,D_18,2021-08-25,0,"['suddenly', 'men', 'sex']",7,0.7035,"If you could only eat one food for the rest of your life, what would it be? None"
+D_18_C1,17,D_18,2021-08-25,1,"['moment', 'stupid', 'warned']",8,0.704,What's something stupid you did and didn't realize until later? None
+D_18_C2,17,D_18,2021-08-25,2,"['non', 'binary', 'pansexual']",7,0.5345,"Dog or cat, why? None"
+D_18_C3,17,D_18,2021-08-25,3,"['wet', 'water', 'tea']",11,0.533,I got toothpaste in my eye. Will I be ok? [removed]
+D_18_C4,17,D_18,2021-08-25,4,"['fictional', 'item', 'real']",12,0.5412,What fictional item from a movie or TV show do you wish was real? [removed]
+D_18_C5,17,D_18,2021-08-25,5,"['song', 'event', 'memory']",18,0.6152,What’s your favorite movie? None
+D_18_C6,17,D_18,2021-08-25,6,"['help', 'naming', 'check']",14,0.7156,Can y’all answer the thing in the comments? [removed]
+D_18_C7,17,D_18,2021-08-25,7,"['nah', 'tweakin', 'tweaking']",7,0.8306,"Why is everyone commenting, “nah he tweakin” on social media? [removed]"
+D_19_C0,18,D_19,2021-08-26,0,"['song', 'guilty', 'pleasure']",12,0.7269,What song is a guilty pleasure for you? None
+D_19_C1,18,D_19,2021-08-26,1,"['miss', 'drugs', 'animal']",17,0.4704,What’s your favorite kind of potato? None
+D_19_C2,18,D_19,2021-08-26,2,"['button', 'large', 'site']",12,0.5812,What do you think of r/WhitePeopleTwitter? [removed]
+D_19_C3,18,D_19,2021-08-26,3,"['memes', 'help', 'karma']",10,0.7079,"Can't post in r/memes, help? [removed]"
+D_20_C0,19,D_20,2021-08-27,0,"['game', 'michael', 'movie']",17,0.5554,What are your top 5 movie/show series? None
+D_20_C1,19,D_20,2021-08-27,1,"['dumbest', 'conversation', 'overheard']",8,0.6886,What’s the dumbest thing someone’s ever said to you? None
+D_20_C2,19,D_20,2021-08-27,2,"['experienced', 'story', 'catch']",11,0.7088,What was the worst pain you ever felt ? None
+D_20_C4,19,D_20,2021-08-27,4,"['joke', 'believe', 'amendment']",26,0.5246,What is the most annoying minor inconvenience? [deleted]
+D_21_C0,20,D_21,2021-08-28,0,"['username', 'determines', 'ideal']",10,0.5751,Why you hate other people? None
+D_21_C1,20,D_21,2021-08-28,1,"['change', 'interesting', 'fact']",15,0.6257,What keeps you living? None
+D_21_C2,20,D_21,2021-08-28,2,"['die', 'happen', 'tattoo']",13,0.5256,what do you think happens when we die? None
+D_21_C3,20,D_21,2021-08-28,3,"['teachers', 'students', 'scariest']",7,0.7092,What’s the best thing that’s happened to you recently? None
+D_21_C4,20,D_21,2021-08-28,4,"['movie', 'popular', 'book']",16,0.6363,What is your guilty pleasure TV show/movie? None
+D_21_C5,20,D_21,2021-08-28,5,"['eazy', 'offend', 'question']",20,0.5805,Way are people on reddit so eazy to offend? [removed]
+D_22_C0,21,D_22,2021-08-29,0,"['song', 'music', 'albums']",15,0.592,What are your favourite music albums? None
+D_22_C2,21,D_22,2021-08-29,2,"['taste', 'chinese', 'consume']",8,0.6609,What is the spiciest food that you can tolerate and still enjoy? None
+D_22_C3,21,D_22,2021-08-29,3,"['nicest', 'hersheys', 'america']",46,0.5624,What’s the nicest thing someone has ever said to you [removed]
+D_22_C4,21,D_22,2021-08-29,4,"['weird', 'parents', 'biggest']",8,0.667,What's something that's ironically creepy? None
+D_23_C0,22,D_23,2021-08-30,0,"['main', 'everyday', 'age']",16,0.6046,What is something you love doing? None
+D_23_C1,22,D_23,2021-08-30,1,"['fact', 'future', 'game']",23,0.4993,What is your best horror story? None
+D_23_C2,22,D_23,2021-08-30,2,"['karma', 'moo', 'users']",30,0.5708,Why are you still awake? [removed]
+D_23_C4,22,D_23,2021-08-30,4,"['add', 'state', 'called']",7,0.5693,If we were to add a new state to the US what would it be called? None
+D_24_C0,23,D_24,2021-08-31,0,"['expensive', 'worth', 'universally']",9,0.6659,What is something expensive that you might have bought but totally worth the money? None
+D_24_C1,23,D_24,2021-08-31,1,"['wrong', 'moment', 'biggest']",18,0.635,What’s the scariest thing that happened to you? None
+D_24_C2,23,D_24,2021-08-31,2,"['taco', 'bell', 'considered']",7,0.5641,How come Taco Bell is considered a food? None
+D_24_C3,23,D_24,2021-08-31,3,"['video', 'game', 'plot']",7,0.6179,What is your guilty pleasure Tv series? None
+D_24_C4,23,D_24,2021-08-31,4,"['toilet', 'paper', 'mid']",17,0.5523,"People of Askreddit, tell me how you feel when you run out of toilet paper mid s***. [removed]"
+D_25_C0,24,D_25,2021-09-01,0,"['song', 'movie', 'school']",21,0.5753,what is your favorite movie of all time ? None
+D_25_C1,24,D_25,2021-09-01,1,"['moment', 'ridiculous', 'reason']",9,0.6915,What is the most ridiculous reason you have ever cried? None
+D_25_C3,24,D_25,2021-09-01,3,"['question', 'stopping', 'surprisingly']",12,0.7471,Hello everyone How are you [removed]
+D_26_C0,25,D_26,2021-09-02,0,"['song', 'songs', 'different']",11,0.7204,What’s your favourite song atm? None
+D_26_C1,25,D_26,2021-09-02,1,"['stop', 'comparing', 'wanna']",35,0.5746,What was your biggest unintentional fuckup? [deleted]
+D_26_C2,25,D_26,2021-09-02,2,"['shows', 'bum', 'cross']",7,0.5655,why would someone where shoes in their own house ? [deleted]
+D_26_C3,25,D_26,2021-09-02,3,"['school', 'high', 'gone']",14,0.5896,"High school grads, what was the most embarrassing moment of your high school years? None"
+D_26_C4,25,D_26,2021-09-02,4,"['overrated', 'vitamin', 'supplement']",8,0.6052,What overrated product do you regret buying the most? [deleted]
+D_27_C0,26,D_27,2021-09-03,0,"['buy', 'online', 'item']",7,0.6311,What amazing thing can you buy for less than 50$? None
+D_27_C1,26,D_27,2021-09-03,1,"['movie', 'story', 'school']",7,0.6955,What is your goto story at a party? None
+D_27_C2,26,D_27,2021-09-03,2,"['men', 'called', 'handsome']",11,0.5445,"What is something that annoys you, but isn't someone else's fault? [deleted]"
+D_27_C3,26,D_27,2021-09-03,3,"['account', 'banned', 'sub']",39,0.5182,What is a weird fact that you have [removed]
+D_27_C4,26,D_27,2021-09-03,4,"['public', 'meltdown', 'happened']",8,0.6938,What is the stupidest thing you have done as a grown up? None
+D_27_C5,26,D_27,2021-09-03,5,"['served', 'song', 'normal']",16,0.5604,What’s your favorite Green Day song? None
+D_28_C0,27,D_28,2021-09-04,0,"['models', 'plus', 'size']",8,0.685,Why do plus size models prefer a brother over an ordinary man? [removed]
+D_28_C1,27,D_28,2021-09-04,1,"['woke', 'emotions', 'human']",12,0.5276,"What is the biggest avoidable mistake, impacting the most people, of the last 100 years? None"
+D_28_C2,27,D_28,2021-09-04,2,"['girls', 'https', 'www']",9,0.6097,Aren't women just the best? https://www.facebook.com/groups/2388607238115764/permalink/2667190713590747/ [removed]
+D_28_C3,27,D_28,2021-09-04,3,"['number', 'crap', 'wait']",10,0.6233,Have you ever learned something useful in reddit? [removed]
+D_28_C4,27,D_28,2021-09-04,4,"['words', 'cult', 'decided']",27,0.5449,What's the last thing you enjoyed doing as if you were a kid? None
+D_28_C5,27,D_28,2021-09-04,5,"['commercial', 'heard', 'walked']",11,0.6807,What's the worst thing your parent heard/walked in on? None
+D_28_C6,27,D_28,2021-09-04,6,"['song', 'movie', 'watching']",18,0.5809,What’s your least favourite song by your favourite artist? [deleted]
+D_29_C0,28,D_29,2021-09-04,0,"['movie', 'whats', 'disney']",8,0.6497,"If you could erase one tv show, movie, or series from your brain so you could watch it again, which one would it be and why? [deleted]"
+D_29_C1,28,D_29,2021-09-04,1,"['planet', 'right', 'song']",18,0.5621,"What is something everyone wants but it is a ""nope"" for you? None"
+D_29_C2,28,D_29,2021-09-04,2,"['sex', 'girl', 'love']",7,0.6384,How to confess your love creatively? [removed]
+D_29_C3,28,D_29,2021-09-04,3,"['upvotes', 'max', 'ppl']",8,0.597,"You just started a band, and the name of your first song is ______ [removed]"
+D_30_C0,29,D_30,2021-09-05,0,"['restaurant', 'enjoy', 'eat']",14,0.6375,What’s the most unique or rare item you own? None
+D_30_C1,29,D_30,2021-09-05,1,"['scariest', 'advice', 'men']",19,0.5635,What is the most scariest/shocking thing someone asked you that still haunts you to this day? None
+D_30_C2,29,D_30,2021-09-05,2,"['embarrassing', 'dream', 'remember']",17,0.5529,What is the moste embarrassing thing a family member/friend almost caught you doing? None
+D_30_C3,29,D_30,2021-09-05,3,"['wish', 'meme', 'erase']",7,0.7124,What is something you wish you could do again as if it was the first time? [deleted]
+D_30_C4,29,D_30,2021-09-05,4,"['superpower', 'drug', 'examples']",8,0.5345,If you could make a drug go extinct which drug would it be? None
+D_30_C6,29,D_30,2021-09-05,6,"['stop', 'astrology', 'sign']",10,0.6502,Who cares ? [removed]
