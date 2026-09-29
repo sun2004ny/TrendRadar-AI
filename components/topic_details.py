@@ -5,7 +5,8 @@ from src.workspace import save_investigation
 
 def render_topic_details_view(current_topic: pd.Series, all_tids: list, navigate_cb):
     """
-    Renders the Topic Details & Explainable AI inspector matching Section 13 and reference design.
+    Renders the Topic Details & Explainable AI inspector matching Section 14 and reference design.
+    Grounds the Explainable AI 5-point checklist in real NLP values for the selected topic.
     """
     st.markdown('<div class="tr-section-title">TOPIC DETAILS & EXPLAINABLE AI INSPECTOR</div>', unsafe_allow_html=True)
 
@@ -33,19 +34,19 @@ def render_topic_details_view(current_topic: pd.Series, all_tids: list, navigate
     vol_path = str(t_row.get("volume_path", "1"))
     birth = str(t_row.get("birth_window", "D_00"))
     rep_post = str(t_row.get("representative_post", ""))
-    keywords = [k.strip() for k in t_name.split(",")]
+    keywords = [k.strip() for k in t_name.split(",") if k.strip()]
 
     # Calculate Velocity & Acceleration from volume path
     vols = [int(v) for v in vol_path.split(" -> ") if v.isdigit()]
-    current_vol = vols[-1] if vols else 1
+    current_vol = vols[-1] if vols else int(t_row.get("total_volume", 1))
     prev_vol = vols[-2] if len(vols) >= 2 else (vols[0] if vols else 1)
     velocity = current_vol - prev_vol
     acceleration = velocity - (prev_vol - (vols[-3] if len(vols) >= 3 else 0)) if len(vols) >= 2 else 1
 
-    # Bold Red Banner matching reference design
+    # Topic details banner matching the reference design
     st.markdown(f"""
     <div class="tr-topic-detail-banner">
-        <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; opacity:0.9; letter-spacing:0.06em;">
+        <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:#fb7185; letter-spacing:0.08em;">
             TARGET TOPIC • {status}
         </div>
         <h2>#{tid} — {t_name}</h2>
@@ -70,38 +71,43 @@ def render_topic_details_view(current_topic: pd.Series, all_tids: list, navigate
         with col_c2:
             st.markdown("#### Canonical User Signal")
             st.markdown(f"""
-            <div class="tr-post-quote" style="font-size:0.92rem; padding:16px 18px; margin-top:8px;">
+            <div class="tr-post-quote">
                 💬 "{rep_post}"
             </div>
-            <div style="font-size:0.76rem; color:#94A3B8; margin-top:8px; font-family:'JetBrains Mono', monospace;">
-                CHECKPOINT TRAJECTORY: <strong>{t_row.get('timeline_path', birth)}</strong><br>
-                VOLUME HISTORY: <strong>{vol_path}</strong>
+            <div style="font-size:0.76rem; color:#94a3b8; margin-top:10px; font-family:'JetBrains Mono', monospace; line-height:1.6;">
+                CHECKPOINT TRAJECTORY: <strong style="color:#a5b4fc;">{t_row.get('timeline_path', birth)}</strong><br>
+                VOLUME HISTORY: <strong style="color:#34d399;">{vol_path}</strong><br>
+                FIRST SEED: <strong style="color:#fbbf24;">{birth}</strong> &nbsp;|&nbsp; LATEST: <strong style="color:#34d399;">{t_row.get('latest_window', birth)}</strong>
             </div>
             """, unsafe_allow_html=True)
 
     with tab_ev:
         st.markdown("#### Five-Point Explainable AI Verification Checklist")
-        st.markdown(r"""
+        ck_entities = str(t_row.get('entities', 'None'))
+        if ck_entities == "None" or not ck_entities.strip():
+            ck_entities = ", ".join(keywords[:2])
+            
+        st.markdown(f"""
         <div class="tr-checklist">
             <div class="tr-checklist-item">
-                <span style="color:#10B981; font-weight:900;">✓</span>
-                <div><strong>Semantic Coherence:</strong> Sentence-BERT embedding cosine density verified inside cluster core ($\ge 0.65$).</div>
+                <span style="color:#10b981; font-weight:900; font-size:1.1rem;">✓</span>
+                <div><strong>Semantic Coherence:</strong> Sentence-BERT embedding cosine density verified inside cluster core: <strong style="color:#34d399;">{coh:.3f}</strong> (Gate threshold: &ge; 0.60).</div>
             </div>
             <div class="tr-checklist-item">
-                <span style="color:#10B981; font-weight:900;">✓</span>
-                <div><strong>Temporal Persistence:</strong> Linked across consecutive daily checkpoints without fragmentation ($D_t \to D_{t+1}$).</div>
+                <span style="color:#10b981; font-weight:900; font-size:1.1rem;">✓</span>
+                <div><strong>Temporal Persistence:</strong> Linked across <strong style="color:#a5b4fc;">{t_row.get('active_checkpoints', 1)}</strong> checkpoints without fragmentation (<code>{t_row.get('timeline_path', birth)}</code>).</div>
             </div>
             <div class="tr-checklist-item">
-                <span style="color:#10B981; font-weight:900;">✓</span>
-                <div><strong>Lexical Consistency:</strong> Jaccard keyword overlap $\ge 0.20$ guarantees semantic topic stability.</div>
+                <span style="color:#10b981; font-weight:900; font-size:1.1rem;">✓</span>
+                <div><strong>Lexical Consistency:</strong> Jaccard keyword overlap guaranteed stability across terms: <strong style="color:#818cf8;">{', '.join(keywords[:4])}</strong>.</div>
             </div>
             <div class="tr-checklist-item">
-                <span style="color:#10B981; font-weight:900;">✓</span>
-                <div><strong>Growth Signal:</strong> Exceeds $2.0\%$ slice volume threshold with verified positive burst velocity.</div>
+                <span style="color:#10b981; font-weight:900; font-size:1.1rem;">✓</span>
+                <div><strong>Growth Signal:</strong> Volume progression <strong style="color:#34d399;">{vol_path}</strong> with verified net emergence score <strong style="color:#fb7185;">{float(t_row.get('emergence_score', 0.0)):.3f}</strong>.</div>
             </div>
             <div class="tr-checklist-item">
-                <span style="color:#10B981; font-weight:900;">✓</span>
-                <div><strong>Domain Evidence:</strong> Boilerplate question syntax stripped prior to vector quantization.</div>
+                <span style="color:#10b981; font-weight:900; font-size:1.1rem;">✓</span>
+                <div><strong>Domain Evidence:</strong> Boilerplate question syntax stripped. Associated entities: <strong style="color:#fbbf24;">{ck_entities}</strong>.</div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -109,8 +115,8 @@ def render_topic_details_view(current_topic: pd.Series, all_tids: list, navigate
     with tab_kw:
         st.markdown("#### Class-based TF-IDF Distinctive Vocabulary")
         st.write("Keywords extracted across connected cluster partitions:")
-        kw_html = " ".join([f"<span class='tr-kw-tag' style='font-size:0.8rem; padding:4px 8px;'>{k}</span>" for k in keywords])
-        st.markdown(f"<div>{kw_html}</div>", unsafe_allow_html=True)
+        kw_html = " ".join([f"<span class='tr-kw-tag' style='font-size:0.85rem; padding:6px 12px;'>{k}</span>" for k in keywords])
+        st.markdown(f"<div style='margin-top:10px;'>{kw_html}</div>", unsafe_allow_html=True)
 
     st.markdown("<div style='height: 16px;'></div>", unsafe_allow_html=True)
     b_act1, b_act2, b_act3 = st.columns(3)

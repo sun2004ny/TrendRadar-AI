@@ -45,29 +45,60 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Load External CSS Design System & Page Stylesheets
+# ── Inject Tailwind CSS v3 CDN + Custom Design Overrides ──────────────────────
 def load_design_system():
-    page_css_files = [
-        "trendradar.css",
-        "overview.css",
-        "monitoring.css",
-        "topics.css",
-        "alerts.css",
-        "research.css",
-        "workspace.css",
-        "analytics.css",
-        "research_lab.css"
-    ]
-    combined_css = []
-    for fname in page_css_files:
-        fpath = os.path.join(BASE_DIR, "styles", fname)
-        if os.path.exists(fpath):
-            with open(fpath, "r", encoding="utf-8") as f:
-                combined_css.append(f.read())
-    if combined_css:
-        st.markdown(f"<style>{''.join(combined_css)}</style>", unsafe_allow_html=True)
+    # 1. Tailwind CDN
+    st.markdown(
+        '<script src="https://cdn.tailwindcss.com"></script>',
+        unsafe_allow_html=True
+    )
+    # 2. Configure Tailwind (dark mode, custom colors)
+    st.markdown("""
+    <script>
+    if (window.tailwind) {
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient-x': 'gradient-x 6s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                }
+            }
+        }
+    }
+    </script>
+    """, unsafe_allow_html=True)
+
+    # 3. Local custom design overrides (single consolidated stylesheet)
+    fpath = os.path.join(BASE_DIR, "styles", "trendradar.css")
+    if os.path.exists(fpath):
+        with open(fpath, "r", encoding="utf-8") as f:
+            css = f.read()
+        st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 load_design_system()
+
 
 # -----------------------------------------------------------------------------
 # Data Loaders (Robust Multilevel Production Loaders)
@@ -175,7 +206,7 @@ if search_q and not alerts_df.empty:
 # 1. OVERVIEW (Executive Intelligence Command Center)
 # -----------------------------------------------------------------------------
 if st.session_state["nav_section"] == "OVERVIEW":
-    st.markdown('<div class="tr-section-title">EXECUTIVE INTELLIGENCE OVERVIEW</div>', unsafe_allow_html=True)
+    st.markdown('<div class="tr-section-title">Executive Intelligence Overview</div>', unsafe_allow_html=True)
 
     # 1. KPI Strip (6 Cards)
     render_kpi_strip(alerts_df, trajs_df, posts_df, base_df)
@@ -201,7 +232,25 @@ if st.session_state["nav_section"] == "OVERVIEW":
         cols_show = ["trajectory_id", "lifecycle_status", "total_volume", "avg_coherence", "emergence_score", "birth_window"]
         avail_cols = [c for c in cols_show if c in filtered_alerts_df.columns]
         if not filtered_alerts_df.empty:
-            st.dataframe(filtered_alerts_df[avail_cols].head(10), width="stretch", hide_index=True)
+            df_event = st.dataframe(
+                filtered_alerts_df[avail_cols].head(15),
+                width="stretch",
+                hide_index=True,
+                selection_mode="single-row",
+                on_select="rerun",
+                key="overview_topics_table"
+            )
+            if df_event and hasattr(df_event, "selection") and df_event.selection and df_event.selection.rows:
+                sel_row_idx = df_event.selection.rows[0]
+                if sel_row_idx < len(filtered_alerts_df):
+                    clicked_tid = filtered_alerts_df.iloc[sel_row_idx]["trajectory_id"]
+                    if clicked_tid != st.session_state.get("selected_trajectory_id"):
+                        st.session_state["selected_trajectory_id"] = clicked_tid
+                        st.rerun()
+
+            c_sel_tid = st.session_state.get("selected_trajectory_id", "TRAJ_284")
+            if st.button(f"🔍 Drill Down into #{c_sel_tid} Details", key="btn_tbl_inspect", use_container_width=True):
+                navigate_to("TOPICS", c_sel_tid)
         else:
             st.info("No topics matching search query.")
 
@@ -213,21 +262,28 @@ if st.session_state["nav_section"] == "OVERVIEW":
 # 2. MONITORING (Live Ingestion & Stream Console)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "MONITORING":
-    st.markdown('<div class="tr-section-title">LIVE MONITORING CONSOLE</div>', unsafe_allow_html=True)
-    st.write("Real-time chronological stream filtered for boilerplate templates, encoded via Sentence-BERT, and mapped into cluster centroids.")
+    st.markdown('<div class="tr-section-title">Live Monitoring Console</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Real-time chronological stream filtered for boilerplate templates, encoded via Sentence-BERT, and mapped into cluster centroids.</p>', unsafe_allow_html=True)
 
     m_col1, m_col2, m_col3 = st.columns([1, 1, 2])
     with m_col1:
         st.selectbox("Channel Source", ["All Sources", "Reddit r/AskReddit", "Twitter/X", "Forums"])
     with m_col2:
-        st.slider("Semantic Similarity Floor", 0.50, 0.99, 0.68)
+        sim_floor = st.slider("Semantic Similarity Floor", 0.50, 0.99, 0.68)
     with m_col3:
-        st.text_input("Filter Stream Keyword", placeholder="Search live posts...")
+        stream_kw = st.text_input("Filter Stream Keyword", placeholder="Search live posts...").strip().lower()
 
     st.markdown("### Incoming Chronological Post Stream")
     if not posts_df.empty:
-        disp_posts = posts_df[["window_id", "cluster_id", "clean_text"]].head(25) if "clean_text" in posts_df.columns else posts_df.head(25)
-        st.dataframe(disp_posts, width="stretch", hide_index=True)
+        stream_data = posts_df
+        if stream_kw and "clean_text" in stream_data.columns:
+            stream_data = stream_data[stream_data["clean_text"].astype(str).str.lower().str.contains(stream_kw)]
+            
+        disp_cols = [c for c in ["datetime_utc", "cluster_name", "clean_text", "word_count", "score"] if c in stream_data.columns]
+        if not disp_cols:
+            disp_cols = [c for c in ["window_id", "cluster_id", "clean_text"] if c in stream_data.columns]
+            
+        st.dataframe(stream_data[disp_cols].head(35), width="stretch", hide_index=True)
     else:
         st.info("Live stream buffering incoming posts.")
 
@@ -236,12 +292,30 @@ elif st.session_state["nav_section"] == "MONITORING":
 # 2b. EMERGING TOPICS (Registry Directory)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "EMERGING TOPICS":
-    st.markdown('<div class="tr-section-title">EMERGING TOPICS REGISTRY</div>', unsafe_allow_html=True)
-    st.write("Complete directory of detected topic trajectories, emergence scores, coherence metrics, and lifecycle stages.")
+    st.markdown('<div class="tr-section-title">Emerging Topics Registry</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Complete directory of detected topic trajectories, emergence scores, coherence metrics, and lifecycle stages.</p>', unsafe_allow_html=True)
     cols_show = ["trajectory_id", "lifecycle_status", "total_volume", "avg_coherence", "emergence_score", "birth_window", "representative_post"]
     avail_cols = [c for c in cols_show if c in filtered_alerts_df.columns]
     if not filtered_alerts_df.empty:
-        st.dataframe(filtered_alerts_df[avail_cols], width="stretch", hide_index=True)
+        df_reg = st.dataframe(
+            filtered_alerts_df[avail_cols],
+            width="stretch",
+            hide_index=True,
+            selection_mode="single-row",
+            on_select="rerun",
+            key="registry_topics_table"
+        )
+        if df_reg and hasattr(df_reg, "selection") and df_reg.selection and df_reg.selection.rows:
+            sel_idx = df_reg.selection.rows[0]
+            if sel_idx < len(filtered_alerts_df):
+                reg_tid = filtered_alerts_df.iloc[sel_idx]["trajectory_id"]
+                if reg_tid != st.session_state.get("selected_trajectory_id"):
+                    st.session_state["selected_trajectory_id"] = reg_tid
+                    st.rerun()
+
+        cur_tid = st.session_state.get("selected_trajectory_id", "TRAJ_284")
+        if st.button(f"🔍 Drill Down into #{cur_tid} Deep Dive", key="btn_reg_inspect", use_container_width=True):
+            navigate_to("TOPICS", cur_tid)
     else:
         st.info("No emerging topics matching search filter.")
 
@@ -258,8 +332,8 @@ elif st.session_state["nav_section"] == "TOPICS":
 # 4. ALERTS (Dedicated Alert Center)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "ALERTS":
-    st.markdown('<div class="tr-section-title">PRIORITIZED ALERT CENTER</div>', unsafe_allow_html=True)
-    st.write("Action high-velocity topics or place nascent seeds on watchlist.")
+    st.markdown('<div class="tr-section-title">Prioritized Alert Center</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Action high-velocity topics or place nascent seeds on watchlist.</p>', unsafe_allow_html=True)
 
     bursts = alerts_df[alerts_df.get("lifecycle_status", "") == "[BURST]"]
     confirmed = alerts_df[alerts_df.get("lifecycle_status", "") == "[CONFIRMED_SEED]"]
@@ -297,8 +371,8 @@ elif st.session_state["nav_section"] == "ALERTS":
 # 5. RESEARCH (Research Hub)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "RESEARCH":
-    st.markdown('<div class="tr-section-title">RESEARCH HUB & EXTERNAL CORROBORATION</div>', unsafe_allow_html=True)
-    st.write("Separates internal platform evidence from external knowledge retrieval (**Wikipedia**, **arXiv**).")
+    st.markdown('<div class="tr-section-title">Research Hub &amp; External Corroboration</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Separates internal platform evidence from external knowledge retrieval (Wikipedia, arXiv).</p>', unsafe_allow_html=True)
 
     t_row = current_topic
     if t_row is not None:
@@ -315,8 +389,8 @@ elif st.session_state["nav_section"] == "RESEARCH":
         col_ev_left, col_ev_right = st.columns(2)
         with col_ev_left:
             st.markdown("""
-            <div style="background:#FFFFFF; border:1px solid var(--tr-border); border-radius:10px; padding:18px; margin-bottom:14px; box-shadow:0 1px 3px rgba(15,23,42,0.04);">
-                <h4 style="margin:0 0 8px 0; color:#0F172A;">📊 Internal Platform Evidence (TrendRadar AI)</h4>
+            <div class="tr-research-card">
+                <h4>📊 Internal Platform Evidence (TrendRadar AI)</h4>
             """, unsafe_allow_html=True)
             st.write(f"- **Volume Path**: `{t_row.get('volume_path')}`")
             st.write(f"- **Cluster Coherence**: `{t_row.get('avg_coherence', 0.0):.3f}`")
@@ -327,8 +401,8 @@ elif st.session_state["nav_section"] == "RESEARCH":
 
         with col_ev_right:
             st.markdown("""
-            <div style="background:#FFFFFF; border:1px solid var(--tr-border); border-radius:10px; padding:18px; margin-bottom:14px; box-shadow:0 1px 3px rgba(15,23,42,0.04);">
-                <h4 style="margin:0 0 8px 0; color:#0F172A;">🌐 External Context Corroboration</h4>
+            <div class="tr-research-card">
+                <h4>🌐 External Context Corroboration</h4>
             """, unsafe_allow_html=True)
             conf = dossier.get("corroboration_confidence", "Verified External Topic")
             st.markdown(f"**Corroboration Rating:** <span class='tr-badge tr-badge-confirmed'>{conf}</span>", unsafe_allow_html=True)
@@ -338,6 +412,12 @@ elif st.session_state["nav_section"] == "RESEARCH":
                 st.write(wiki.get("summary"))
             else:
                 st.info("No direct Wikipedia entry found. Community discourse is platform-specific.")
+
+            arxiv_list = dossier.get("arxiv_papers", [])
+            if arxiv_list:
+                st.markdown("<h5 style='color:#a5b4fc; margin-top:14px; font-size:0.85rem;'>📄 Academic Preprints (arXiv)</h5>", unsafe_allow_html=True)
+                for paper in arxiv_list[:2]:
+                    st.markdown(f"• **[{paper['title']}]({paper['url']})**  \n*{paper.get('summary', '')[:140]}...*")
             st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("---")
@@ -350,8 +430,8 @@ elif st.session_state["nav_section"] == "RESEARCH":
 # 6. AI BRIEFING (AI Executive Briefing Engine)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "AI BRIEFING":
-    st.markdown('<div class="tr-section-title">AI EXECUTIVE BRIEFING</div>', unsafe_allow_html=True)
-    st.write("Explains the mathematically proven evidence without hallucinating non-existent trends.")
+    st.markdown('<div class="tr-section-title">AI Executive Briefing</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Explains the mathematically proven evidence without hallucinating non-existent trends.</p>', unsafe_allow_html=True)
 
     t_row = current_topic
     if t_row is not None:
@@ -425,8 +505,8 @@ elif st.session_state["nav_section"] == "AI BRIEFING":
 # 7. ACTION HUB (Dispatch & Reporting)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "ACTION HUB":
-    st.markdown('<div class="tr-section-title">ACTION HUB & DISPATCH</div>', unsafe_allow_html=True)
-    st.write("Convert intelligence into formal briefs, stakeholder alerts, and committed workspace cases.")
+    st.markdown('<div class="tr-section-title">Action Hub & Dispatch</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Convert intelligence into formal briefs, stakeholder alerts, and committed workspace cases.</p>', unsafe_allow_html=True)
 
     t_row = current_topic
     if t_row is not None:
@@ -498,8 +578,8 @@ elif st.session_state["nav_section"] == "ACTION HUB":
 # 8. WORKSPACE (Investigation Desk)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "WORKSPACE":
-    st.markdown('<div class="tr-section-title">WORKSPACE & INVESTIGATION DESK</div>', unsafe_allow_html=True)
-    st.write("Track ongoing topic investigations, update statuses, and review pinned intelligence briefs.")
+    st.markdown('<div class="tr-section-title">Workspace & Investigation Desk</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Track ongoing topic investigations, update statuses, and review pinned intelligence briefs.</p>', unsafe_allow_html=True)
 
     investigations = list_investigations()
 
@@ -555,8 +635,8 @@ elif st.session_state["nav_section"] == "WORKSPACE":
 # 9. ANALYTICS (Comparative Evaluation & Benchmark)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "ANALYTICS":
-    st.markdown('<div class="tr-section-title">ANALYTICS & BENCHMARK AUDITS</div>', unsafe_allow_html=True)
-    st.write("Head-to-head empirical comparison: Keyword Frequency Monitoring vs. TrendRadar AI Dense Semantic Detection.")
+    st.markdown('<div class="tr-section-title">Analytics & Benchmark Audits</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Head-to-head empirical comparison: Keyword Frequency Monitoring vs. TrendRadar AI Dense Semantic Detection.</p>', unsafe_allow_html=True)
 
     c_an1, c_an2 = st.columns([1, 1])
     with c_an1:
@@ -572,28 +652,49 @@ elif st.session_state["nav_section"] == "ANALYTICS":
             color="Method",
             text="Alert Count",
             title="Total Alert Triggers: Term-Level vs. Topic-Level",
-            color_discrete_sequence=["#DC2626", "#059669"]
+            color_discrete_sequence=["#f43f5e", "#34d399"]
         )
         fig_bar.update_layout(
             height=340,
-            plot_bgcolor="#FFFFFF",
-            paper_bgcolor="#FFFFFF",
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
             showlegend=False,
-            font=dict(color="#475569")
+            font=dict(color="#94a3b8", family="Inter"),
+            title_font=dict(color="#a5b4fc", size=13),
+            xaxis=dict(gridcolor="rgba(99,102,241,0.1)", tickfont=dict(color="#94a3b8")),
+            yaxis=dict(gridcolor="rgba(99,102,241,0.1)", tickfont=dict(color="#94a3b8")),
         )
-        fig_bar.update_xaxes(showgrid=True, gridcolor="#F1F5F9", tickfont=dict(color="#64748B"))
-        fig_bar.update_yaxes(showgrid=True, gridcolor="#F1F5F9", tickfont=dict(color="#64748B"))
-        st.plotly_chart(fig_bar, width="stretch")
+        fig_bar.update_traces(textfont_color="#e2e8f0", textfont_size=14, textposition="outside")
+        st.plotly_chart(fig_bar, use_container_width=True)
 
     with c_an2:
-        st.markdown(f"""
-        <div style="background:#FFFFFF; border:1px solid var(--tr-border); border-radius:10px; padding:22px; margin-top:20px; box-shadow:0 1px 3px rgba(15,23,42,0.04);">
-            <div style="font-size:0.85rem; color:#059669; font-weight:700; text-transform:uppercase;">SCIENTIFICALLY DEFENSIBLE BENCHMARK</div>
-            <div style="font-size:2.8rem; font-weight:900; color:#0F172A; margin:8px 0; font-family:'JetBrains Mono', monospace;">87.6%</div>
-            <div style="font-size:0.95rem; color:#334155; font-weight:600;">Alert Noise Reduction</div>
-            <p style="font-size:0.84rem; color:#64748B; margin-top:8px;">
-                Traditional keyword-frequency monitoring triggered 823 disconnected spikes on common conversational terms ("help", "money", "people"). TrendRadar AI grouped the entire corpus into 102 clean, actionable topic events.
+        st.markdown("""
+        <div class="tr-stat-highlight" style="margin-top:20px;">
+            <div style="font-size:0.68rem; color:#34d399; font-weight:800; text-transform:uppercase;
+                        letter-spacing:0.12em; margin-bottom:12px;">
+                ✅ Scientifically Defensible Benchmark
+            </div>
+            <span class="tr-stat-number">87.6%</span>
+            <div style="font-size:1rem; color:#a5b4fc; font-weight:700; margin:10px 0 8px;">
+                Alert Noise Reduction
+            </div>
+            <p style="font-size:0.82rem; color:#64748b; line-height:1.6; margin:0;">
+                Traditional keyword-frequency monitoring triggered <strong style="color:#fb7185;">823</strong>
+                disconnected spikes. TrendRadar AI grouped the entire corpus into
+                <strong style="color:#34d399;">102</strong> clean, actionable topic events.
             </p>
+            <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
+                <div style="background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.25);
+                            border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
+                    <div style="font-size:1.6rem; font-weight:900; color:#fb7185; font-family:'JetBrains Mono';">823</div>
+                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">Baseline Alerts</div>
+                </div>
+                <div style="background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.25);
+                            border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
+                    <div style="font-size:1.6rem; font-weight:900; color:#34d399; font-family:'JetBrains Mono';">102</div>
+                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">AI Topics</div>
+                </div>
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -602,8 +703,8 @@ elif st.session_state["nav_section"] == "ANALYTICS":
 # 10. RESEARCH LAB (Ablations & Scientific Progression)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "RESEARCH LAB":
-    st.markdown('<div class="tr-section-title">SCIENTIFIC RESEARCH LAB</div>', unsafe_allow_html=True)
-    st.write("Rigorous empirical evaluation suite: Controlled Ablation progression (E0 to E6), lead-time evaluation, and observable density boundary.")
+    st.markdown('<div class="tr-section-title">Scientific Research Lab</div>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Rigorous empirical evaluation suite: Controlled Ablation progression (E0 to E6), lead-time evaluation, and observable density boundary.</p>', unsafe_allow_html=True)
 
     lab_t1, lab_t2 = st.tabs(["Master Ablation Progression (E0–E6)", "Lead-Time Evaluation & Density Boundaries"])
 

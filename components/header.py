@@ -2,11 +2,11 @@ import streamlit as st
 
 def render_header(current_source: str = "Reddit"):
     """
-    Renders the master top intelligence header matching the reference design:
-    - LIVE animated pill
+    Renders the master top intelligence header with Tailwind dark glass theme:
+    - LIVE animated pill with pulse dot
     - Multi-source selector chips (Reddit, X, Forums)
     - Search input field
-    - Operational status telemetry
+    - Operational status telemetry (Last updated, Alerts, User)
     """
     if "search_query" not in st.session_state:
         st.session_state["search_query"] = ""
@@ -40,11 +40,16 @@ def render_header(current_source: str = "Reddit"):
         if search_val != st.session_state["search_query"]:
             st.session_state["search_query"] = search_val
 
+    acknowledged = st.session_state.get("acknowledged_alerts", set())
+    dismissed = st.session_state.get("dismissed_alerts", set())
+    critical_tids = {"TRAJ_284", "TRAJ_757", "TRAJ_456"}
+    rem_alerts = max(0, len(critical_tids - acknowledged - dismissed))
+
     with col_h_right:
-        st.markdown("""
+        st.markdown(f"""
         <div class="tr-meta-status">
-            <span class="tr-meta-chip">Last updated: <strong>10s ago</strong></span>
-            <span class="tr-meta-alert">🔔 3 Alerts</span>
+            <span class="tr-meta-chip">🕐 <strong>10s ago</strong></span>
+            <span class="tr-meta-alert">🔔 {rem_alerts} Alerts</span>
             <span class="tr-meta-user">👤 Analyst Admin</span>
         </div>
         """, unsafe_allow_html=True)
