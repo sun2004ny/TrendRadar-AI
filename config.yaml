@@ -1,0 +1,122 @@
+# TrendRadar-AI Configuration File
+
+dataset:
+  name: "SocialGrep/one-million-reddit-questions"
+  time_resolution: "daily"
+  total_checkpoints: 30
+
+clustering:
+  svd_components: 12
+  min_cluster_size: 7
+  min_samples: 3
+  cluster_selection_method: "leaf"
+  metric: "euclidean"
+  spam_ratio_threshold: 0.35
+  max_cluster_size: 150
+  coherence_min: 0.45
+  c_tf_idf_top_k: 4
+
+temporal:
+  match_threshold: 0.68
+  keyword_jaccard_threshold: 0.20
+  entity_jaccard_threshold: 0.20
+  centroid_ema_alpha: 0.65
+  max_gap_checkpoints: 1
+
+emergence:
+  coherence_floor: 0.62
+  min_coherence_floor: 0.60
+  burst_topic_share: 0.020  # 2.0% of checkpoint volume
+  burst_static_volume: 15
+  growth_ratio_threshold: 1.3
+  seed_promotion_coherence: 0.85
+  quarantine_volume_min: 3
+  quarantine_volume_max: 6
+
+rolling_buffer:
+  enabled: false  # When false, outputs equal Phase 2 golden results
+  window_hours: 72  # 3 days: D_{t-2}, D_{t-1}, D_t
+  min_sparse_posts: 1
+  incubation_posts_threshold: 2
+  confirmed_seed_threshold: 3
+  semantic_similarity_threshold: 0.65
+  time_decay_factor: 0.85
+  coherence_floor: 0.65
+  # Hardening Gates:
+  velocity_gate_enabled: true
+  conversational_trope_filter_enabled: true
+  broad_vocabulary_gate_enabled: true
+  broad_vocabulary_coherence_threshold: 0.88
+  broad_vocabulary_min_posts: 4
+  trope_stop_phrases:
+    - "what is your favorite"
+    - "what's your favorite"
+    - "whats your favorite"
+    - "people of reddit"
+    - "redditors of reddit"
+    - "what are some"
+    - "what was the"
+    - "what would you"
+    - "if you could"
+    - "have you ever"
+    - "what is the most"
+    - "what's the most"
+    - "what do you think"
+    - "why do you"
+    - "what is something"
+    - "what's something"
+    - "how do you feel"
+    - "how did you"
+    - "what did you"
+    - "who is the"
+    - "when did you"
+    - "what makes you"
+    - "you have to"
+    - "superpower"
+    - "what is your love"
+    - "what's a positive obsession"
+    - "what is the quickest way"
+
+baseline:
+  min_freq: 5
+  surge_threshold: 2.0
+  z_score_threshold: 3.0
+  ngram_range: [1, 2]
+
+evaluation:
+  tuning_days:
+    - "D_01"
+    - "D_02"
+    - "D_03"
+    - "D_04"
+    - "D_05"
+    - "D_06"
+    - "D_07"
+    - "D_08"
+    - "D_09"
+    - "D_10"
+    - "D_11"
+    - "D_12"
+    - "D_13"
+    - "D_14"
+    - "D_15"
+    - "D_16"
+    - "D_17"
+    - "D_18"
+    - "D_19"
+    - "D_20"
+  held_out_days:
+    - "D_21"
+    - "D_22"
+    - "D_23"
+    - "D_24"
+    - "D_25"
+    - "D_26"
+    - "D_27"
+    - "D_28"
+    - "D_29"
+    - "D_30"
+  # Temporal matching tolerance (in days) relative to event start_day
+  lead_window_days_prior: 2
+  lag_window_days_post: 3
+  min_keyword_matches: 1

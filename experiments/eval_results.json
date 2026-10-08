@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "tuning_days": [
+      "D_01",
+      "D_02",
+      "D_03",
+      "D_04",
+      "D_05",
+      "D_06",
+      "D_07",
+      "D_08",
+      "D_09",
+      "D_10",
+      "D_11",
+      "D_12",
+      "D_13",
+      "D_14",
+      "D_15",
+      "D_16",
+      "D_17",
+      "D_18",
+      "D_19",
+      "D_20"
+    ],
+    "held_out_days": [
+      "D_21",
+      "D_22",
+      "D_23",
+      "D_24",
+      "D_25",
+      "D_26",
+      "D_27",
+      "D_28",
+      "D_29",
+      "D_30"
+    ],
+    "total_ground_truth_events": 5,
+    "real_events_count": 4,
+    "noise_events_count": 1
+  },
+  "pipeline": {
+    "full_stream": {
+      "total_alerts": 102,
+      "true_positives": 4,
+      "false_positives": 98,
+      "precision": 0.0392,
+      "recall": 0.75,
+      "f1": 0.0745,
+      "precision_at_10": 0.0,
+      "detected_real_events": 3,
+      "total_real_events": 4,
+      "mean_lead_time_days": 0.33,
+      "detected_event_ids": [
+        "EVT_001",
+        "EVT_002",
+        "EVT_004"
+      ]
+    },
+    "tuning_split": {
+      "total_alerts": 67,
+      "true_positives": 3,
+      "false_positives": 64,
+      "precision": 0.0448,
+      "recall": 1.0,
+      "f1": 0.0857,
+      "precision_at_10": 0.0,
+      "detected_real_events": 2,
+      "total_real_events": 2,
+      "mean_lead_time_days": 0.5,
+      "detected_event_ids": [
+        "EVT_001",
+        "EVT_002"
+      ]
+    },
+    "held_out_test_split": {
+      "total_alerts": 35,
+      "true_positives": 1,
+      "false_positives": 34,
+      "precision": 0.0286,
+      "recall": 0.5,
+      "f1": 0.0541,
+      "precision_at_10": 0.0,
+      "detected_real_events": 1,
+      "total_real_events": 2,
+      "mean_lead_time_days": 0.0,
+      "detected_event_ids": [
+        "EVT_004"
+      ]
+    }
+  },
+  "baseline": {
+    "full_stream": {
+      "total_alerts": 763,
+      "true_positives": 3,
+      "false_positives": 760,
+      "precision": 0.0039,
+      "recall": 0.5,
+      "f1": 0.0078,
+      "precision_at_10": 0.0,
+      "detected_real_events": 2,
+      "total_real_events": 4,
+      "mean_lead_time_days": 0.5,
+      "detected_event_ids": [
+        "EVT_001",
+        "EVT_002"
+      ]
+    },
+    "tuning_split": {
+      "total_alerts": 592,
+      "true_positives": 3,
+      "false_positives": 589,
+      "precision": 0.0051,
+      "recall": 1.0,
+      "f1": 0.0101,
+      "precision_at_10": 0.1,
+      "detected_real_events": 2,
+      "total_real_events": 2,
+      "mean_lead_time_days": 0.5,
+      "detected_event_ids": [
+        "EVT_001",
+        "EVT_002"
+      ]
+    },
+    "held_out_test_split": {
+      "total_alerts": 171,
+      "true_positives": 0,
+      "false_positives": 171,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "precision_at_10": 0.0,
+      "detected_real_events": 0,
+      "total_real_events": 2,
+      "mean_lead_time_days": 0.0,
+      "detected_event_ids": []
+    }
+  },
+  "event_detection_audit": [
+    {
+      "event_id": "EVT_001",
+      "label": "real_event",
+      "start_day": "D_11",
+      "split": "tuning",
+      "notes": "OnlyFans announced policy banning sexually explicit content",
+      "pipeline_detected": true,
+      "pipeline_earliest_day": "D_11",
+      "pipeline_lead_time_days": 0,
+      "pipeline_matched_count": 1,
+      "baseline_detected": true,
+      "baseline_earliest_day": "D_11",
+      "baseline_lead_time_days": 0,
+      "baseline_matched_count": 2
+    },
+    {
+      "event_id": "EVT_002",
+      "label": "real_event",
+      "start_day": "D_16",
+      "split": "tuning",
+      "notes": "FDA grants full approval to Pfizer COVID-19 vaccine and subsequent mandates",
+      "pipeline_detected": true,
+      "pipeline_earliest_day": "D_15",
+      "pipeline_lead_time_days": 1,
+      "pipeline_matched_count": 2,
+      "baseline_detected": true,
+      "baseline_earliest_day": "D_15",
+      "baseline_lead_time_days": 1,
+      "baseline_matched_count": 2
+    },
+    {
+      "event_id": "EVT_003",
+      "label": "real_event",
+      "start_day": "D_22",
+      "split": "held_out",
+      "notes": "Reddit iOS app bug causing OP comments to be locked by default",
+      "pipeline_detected": false,
+      "pipeline_earliest_day": "NEVER",
+      "pipeline_lead_time_days": null,
+      "pipeline_matched_count": 0,
+      "baseline_detected": false,
+      "baseline_earliest_day": "NEVER",
+      "baseline_lead_time_days": null,
+      "baseline_matched_count": 0
+    },
+    {
+      "event_id": "EVT_004",
+      "label": "real_event",
+      "start_day": "D_27",
+      "split": "held_out",
+      "notes": "Hurricane Ida rapid intensification and Category 4 Louisiana landfall",
+      "pipeline_detected": true,
+      "pipeline_earliest_day": "D_27",
+      "pipeline_lead_time_days": 0,
+      "pipeline_matched_count": 1,
+      "baseline_detected": false,
+      "baseline_earliest_day": "NEVER",
+      "baseline_lead_time_days": null,
+      "baseline_matched_count": 0
+    },
+    {
+      "event_id": "EVT_005",
+      "label": "noise",
+      "start_day": "D_04",
+      "split": "tuning",
+      "notes": "Conversational AskReddit recurring trope on creepy secrets and dreams",
+      "pipeline_detected": false,
+      "pipeline_earliest_day": "NEVER",
+      "pipeline_lead_time_days": null,
+      "pipeline_matched_count": 0,
+      "baseline_detected": false,
+      "baseline_earliest_day": "NEVER",
+      "baseline_lead_time_days": null,
+      "baseline_matched_count": 0
+    }
+  ]
+}

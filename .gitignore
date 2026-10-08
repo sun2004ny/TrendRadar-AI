@@ -30,12 +30,28 @@ venv/
 env/
 ENV/
 .venv/
+.clean_venv/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+.streamlit/secrets.toml
 
 # IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# Test & coverage caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs & scratch
+*.log
+scratch/
 
 # Large raw archives (>50MB)
 *.tar.gz

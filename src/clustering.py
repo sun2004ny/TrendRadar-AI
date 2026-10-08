@@ -1,14 +1,24 @@
-import os
+"""
+src/clustering.py - HDBSCAN density-based topic clustering and c-TF-IDF keyword extraction
+Uses pathlib, Python logging, and centralized config.
+"""
+
+from pathlib import Path
 import re
 import warnings
+import logging
+from collections import Counter
+from typing import Optional, Dict, List, Any
 import pandas as pd
 import numpy as np
-from collections import Counter
 from sklearn.decomposition import TruncatedSVD
 from sklearn.cluster import HDBSCAN
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
+from src.config import ROOT_DIR, get_config
+
+logger = logging.getLogger(__name__)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 # 1. Spam & Piracy Bot Regex Filter
@@ -43,12 +53,16 @@ REDDIT_TROPES = {
 # Complete union of standard English stopwords + Reddit tropes
 ALL_STOPWORDS = set(ENGLISH_STOP_WORDS).union(REDDIT_TROPES)
 
-def extract_clean_ctf_idf(cluster_texts_map: dict, top_k: int = 4) -> dict:
+
+def extract_clean_ctf_idf(cluster_texts_map: Dict[Any, List[str]], top_k: Optional[int] = None) -> Dict[Any, List[str]]:
     """
     Computes Class-based TF-IDF (c-TF-IDF):
-    Finds keywords that are uniquely distinctive to a specific cluster
-    while completely excluding boilerplate and cross-topic filler words.
+    Finds keywords uniquely distinctive to a specific cluster
+    while excluding boilerplate and cross-topic filler words.
     """
+    cfg = get_config()
+    k = top_k if top_k is not None else int(cfg.clustering.get("c_tf_idf_top_k", 4))
+
     cluster_vocab = {}
     all_word_doc_freq = Counter()
 
@@ -75,64 +89,78 @@ def extract_clean_ctf_idf(cluster_texts_map: dict, top_k: int = 4) -> dict:
             tf_norm = count / total_cluster_words
             idf = np.log(1.0 + (total_clusters / (all_word_doc_freq[w] + 1e-9)))
             scores[w] = tf_norm * idf
-        top_words = [w for w, _ in sorted(scores.items(), key=lambda x: x[1], reverse=True)[:top_k]]
+        top_words = [w for w, _ in sorted(scores.items(), key=lambda x: x[1], reverse=True)[:k]]
         topic_keywords[c_id] = top_words
 
     return topic_keywords
 
+
 def cluster_multiweek_topics(
-    embeddings_path: str = None,
-    meta_path: str = None,
-    output_path: str = None,
-    reduced_dims: int = 12,
-    min_cluster_size: int = 7
+    embeddings_path: Optional[Path] = None,
+    meta_path: Optional[Path] = None,
+    output_path: Optional[Path] = None,
+    reduced_dims: Optional[int] = None,
+    min_cluster_size: Optional[int] = None,
+    min_samples: Optional[int] = None
 ) -> pd.DataFrame:
     """
-    Step 6A Part 4 (Refined):
+    Density-based clustering with HDBSCAN and c-TF-IDF:
     1. SVD Dimensionality Reduction: 384D -> 12D for sharp local density.
-    2. HDBSCAN with leaf selection: Extracts tight, homogenous topics without mega-clusters.
-    3. Spam Filtering: Excludes bot/software piracy posts.
-    4. Quality Filtering: Prunes diffuse catch-all clusters (coherence < 0.45 or size > 150).
-    5. Clean c-TF-IDF Keywords: Pure substantive topic vocabulary.
+    2. HDBSCAN with leaf selection.
+    3. Quality Filtering: Prunes diffuse catch-all clusters.
+    4. Clean c-TF-IDF Keywords.
     """
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    if embeddings_path is None:
-        embeddings_path = os.path.join(base_dir, "data", "processed", "embeddings_6weeks.npy")
-    if meta_path is None:
-        meta_path = os.path.join(base_dir, "data", "processed", "embeddings_metadata_6weeks.csv")
-    if output_path is None:
-        output_path = os.path.join(base_dir, "data", "processed", "clustered_topics_6weeks.csv")
+    cfg = get_config()
+    dims = reduced_dims or int(cfg.clustering.get("svd_components", 12))
+    min_c_size = min_cluster_size or int(cfg.clustering.get("min_cluster_size", 7))
+    min_samp = min_samples or int(cfg.clustering.get("min_samples", 3))
+    spam_thresh = float(cfg.clustering.get("spam_ratio_threshold", 0.35))
+    max_c_size = int(cfg.clustering.get("max_cluster_size", 150))
+    coh_min = float(cfg.clustering.get("coherence_min", 0.45))
+    top_k = int(cfg.clustering.get("c_tf_idf_top_k", 4))
 
-    print(f"1. Loading 6-week embeddings from: {embeddings_path}")
+    if embeddings_path is None:
+        embeddings_path = ROOT_DIR / "data" / "processed" / "embeddings_6weeks.npy"
+    else:
+        embeddings_path = Path(embeddings_path)
+
+    if meta_path is None:
+        meta_path = ROOT_DIR / "data" / "processed" / "embeddings_metadata_6weeks.csv"
+    else:
+        meta_path = Path(meta_path)
+
+    if output_path is None:
+        output_path = ROOT_DIR / "data" / "processed" / "clustered_topics_6weeks.csv"
+    else:
+        output_path = Path(output_path)
+
+    logger.info("Loading embeddings from: %s", embeddings_path)
     embeddings = np.load(embeddings_path)
     df = pd.read_csv(meta_path)
-    print(f"   Embeddings shape: {embeddings.shape}, Total Posts: {len(df):,}")
+    logger.info("Embeddings shape: %s, Total Posts: %d", embeddings.shape, len(df))
 
     df["cluster_id"] = -1
     df["cluster_name"] = "Noise"
 
     windows = sorted(df["window_id"].unique(), key=lambda w: int(w.split("_")[1]))
-    print(f"2. Running Refined Topic Discovery across {len(windows)} weekly windows...")
-
-    cluster_summaries = []
+    logger.info("Running Topic Discovery across %d windows...", len(windows))
 
     for win_idx, win in enumerate(windows):
         mask = (df["window_id"] == win).values
         win_emb = embeddings[mask]
         win_df = df[mask]
-        week_label = win_df["week_label"].iloc[0] if "week_label" in win_df.columns else win
 
-        if len(win_emb) < min_cluster_size:
+        if len(win_emb) < min_c_size:
             continue
 
-        # Dimensionality Reduction strictly within window
-        svd = TruncatedSVD(n_components=reduced_dims, random_state=42)
+        # SVD Dimensionality Reduction strictly within window
+        svd = TruncatedSVD(n_components=dims, random_state=42)
         reduced_emb = svd.fit_transform(win_emb)
 
-        # HDBSCAN with leaf selection to extract tight semantic sub-topics
+        # HDBSCAN with leaf selection
         clusterer = HDBSCAN(
-            min_cluster_size=min_cluster_size,
-            min_samples=3,
+            min_cluster_size=min_c_size,
+            min_samples=min_samp,
             cluster_selection_method='leaf',
             metric='euclidean',
             copy=True
@@ -146,82 +174,36 @@ def cluster_multiweek_topics(
         for c in unique_c:
             c_posts = win_df[labels == c]["clean_text"].tolist()
             spam_ratio = sum(1 for p in c_posts if SPAM_REGEX.search(p)) / len(c_posts)
-            if spam_ratio < 0.30:
+            if spam_ratio < spam_thresh and len(c_posts) <= max_c_size:
                 clean_clusters[c] = c_posts
 
         # c-TF-IDF keyword extraction
-        keywords_map = extract_clean_ctf_idf(clean_clusters, top_k=4)
+        keywords_map = extract_clean_ctf_idf(clean_clusters, top_k=top_k)
 
-        accepted_window_topics = 0
         for c, c_posts in clean_clusters.items():
             c_mask = labels == c
-            c_orig_emb = win_emb[c_mask]
-            c_indices = win_df[c_mask].index.tolist()
-
-            # Centroid in original 384D semantic space
-            centroid = np.mean(c_orig_emb, axis=0, keepdims=True)
+            c_indices = np.where(c_mask)[0]
+            c_vectors = win_emb[c_indices]
+            centroid = np.mean(c_vectors, axis=0, keepdims=True)
             centroid = centroid / (np.linalg.norm(centroid) + 1e-12)
+            sims = cosine_similarity(c_vectors, centroid).flatten()
+            avg_coherence = float(np.mean(sims))
 
-            # Measure Semantic Coherence
-            coherences = cosine_similarity(c_orig_emb, centroid).flatten()
-            avg_coherence = float(np.mean(coherences))
-
-            # Quality Gate: Filter out diffuse background catch-all blobs
-            if avg_coherence < 0.45 or len(c_posts) > 150:
+            if avg_coherence < coh_min:
+                labels[c_mask] = -1
                 continue
 
-            rep_idx = int(np.argmax(coherences))
-            rep_post = c_posts[rep_idx]
+            kws = keywords_map.get(c, [f"topic_{c}"])
+            df.loc[df[mask].index[c_mask], "cluster_id"] = c
+            df.loc[df[mask].index[c_mask], "cluster_name"] = " / ".join(kws[:3])
 
-            kw = keywords_map.get(c, [])
-            topic_label = " / ".join(kw[:3]) if kw else f"Topic_{c}"
-            full_cluster_key = f"{win}_C{c}"
-
-            df.loc[c_indices, "cluster_id"] = c
-            df.loc[c_indices, "cluster_name"] = topic_label
-
-            cluster_summaries.append({
-                "window_id": win,
-                "window_index": win_idx,
-                "week_label": week_label,
-                "cluster_key": full_cluster_key,
-                "cluster_label": topic_label,
-                "topic_keywords": ", ".join(kw),
-                "post_count": len(c_posts),
-                "avg_semantic_coherence": round(avg_coherence, 4),
-                "representative_post": rep_post
-            })
-            accepted_window_topics += 1
-
-        print(f"   Window {win} ({week_label}): Discovered {accepted_window_topics} high-coherence topics.")
-
-    # Save labeled posts and cluster summaries
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    summary_df = pd.DataFrame(cluster_summaries)
-    summary_path = os.path.join(base_dir, "data", "processed", "clusters_summary_6weeks.csv")
-
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_path, index=False)
-    summary_df.to_csv(summary_path, index=False)
-    print(f"\n3. Saved labeled posts to: {output_path}")
-    print(f"   Saved refined topic clusters summary to: {summary_path}")
+    logger.info("Saved clustered topics to: %s", output_path)
 
-    # Summary table
-    print("\n--- Summary of High-Quality Topics by Week ---")
-    topic_distribution = summary_df.groupby(["window_index", "window_id", "week_label"]).agg(
-        topic_count=("cluster_label", "count"),
-        total_clustered_posts=("post_count", "sum"),
-        avg_coherence=("avg_semantic_coherence", "mean")
-    ).reset_index()
-    print(topic_distribution.to_string(index=False))
+    return df
 
-    # Preview sample topics
-    print("\n--- Discovered Substantive Semantic Topics (Top Sample) ---")
-    preview = summary_df.sort_values(by="avg_semantic_coherence", ascending=False).head(10)
-    for _, row in preview.iterrows():
-        print(f"\n[{row['window_id']} - {row['week_label']}] Topic: '{row['cluster_label']}' (Size: {row['post_count']}, Coherence: {row['avg_semantic_coherence']:.3f})")
-        print(f"  Rep: \"{row['representative_post']}\"")
-
-    return summary_df
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
     cluster_multiweek_topics()

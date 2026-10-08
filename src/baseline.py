@@ -1,61 +1,71 @@
-import os
+"""
+src/baseline.py - Conventional Volume-Based Trend Detector (Baseline)
+Uses pathlib, Python logging, and centralized config.
+"""
+
+from pathlib import Path
 import re
+import logging
 from collections import Counter
+from typing import Optional, Tuple
 import pandas as pd
 
-def extract_ngrams(text: str, n_range=(1, 2)):
-    """
-    Extracts simple unigrams and bigrams from cleaned text,
-    ignoring common English stop words.
-    """
-    # Basic English stopwords
-    stopwords = {
-        "the", "a", "an", "in", "on", "at", "to", "for", "of", "with",
-        "and", "or", "is", "are", "was", "were", "what", "how", "why",
-        "who", "where", "which", "your", "you", "my", "i", "it", "this",
-        "that", "do", "does", "did", "have", "has", "had", "can", "could",
-        "would", "should", "if", "be", "been", "being", "from", "as", "by"
-    }
-    
-    words = [w for w in re.findall(r'\b[a-zA-Z]{3,}\b', text.lower()) if w not in stopwords]
+from src.config import ROOT_DIR, get_config
+
+logger = logging.getLogger(__name__)
+
+STOPWORDS = {
+    "the", "a", "an", "in", "on", "at", "to", "for", "of", "with",
+    "and", "or", "is", "are", "was", "were", "what", "how", "why",
+    "who", "where", "which", "your", "you", "my", "i", "it", "this",
+    "that", "do", "does", "did", "have", "has", "had", "can", "could",
+    "would", "should", "if", "be", "been", "being", "from", "as", "by"
+}
+
+
+def extract_ngrams(text: str, n_range: Tuple[int, ...] = (1, 2)):
+    """Extracts simple unigrams and bigrams from cleaned text."""
+    words = [w for w in re.findall(r'\b[a-zA-Z]{3,}\b', str(text).lower()) if w not in STOPWORDS]
     ngrams = []
-    
-    # Unigrams (single words)
     if 1 in n_range:
         ngrams.extend(words)
-        
-    # Bigrams (two-word phrases)
     if 2 in n_range:
         for i in range(len(words) - 1):
             ngrams.append(f"{words[i]} {words[i+1]}")
-            
     return ngrams
 
+
 def run_volume_baseline(
-    input_path: str = None,
-    output_path: str = None,
-    min_freq: int = 5,
-    surge_threshold: float = 2.0
+    input_path: Optional[Path] = None,
+    output_path: Optional[Path] = None,
+    min_freq: Optional[int] = None,
+    surge_threshold: Optional[float] = None
 ) -> pd.DataFrame:
     """
     Conventional Volume-Based Trend Detector (Baseline):
-    - Computes term/n-gram frequency for each chronological time window W_0, W_1, ...
-    - Tracks raw volume of each phrase.
-    - Flags a phrase as 'trending' when its volume in window W_t surges significantly
-      compared to its historical average.
+    Computes n-gram frequency surges window-by-window.
     """
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    if input_path is None:
-        input_path = os.path.join(base_dir, "data", "processed", "reddit_cleaned_6weeks.csv")
-    if output_path is None:
-        output_path = os.path.join(base_dir, "data", "processed", "baseline_volume_alerts_6weeks.csv")
+    cfg = get_config()
+    freq_min = min_freq if min_freq is not None else int(cfg.baseline.get("min_freq", 5))
+    surge_thresh = surge_threshold if surge_threshold is not None else float(cfg.baseline.get("surge_threshold", 2.0))
+    n_range = tuple(cfg.baseline.get("ngram_range", [1, 2]))
 
-    print(f"1. Loading processed data from: {input_path}")
+    if input_path is None:
+        input_path = ROOT_DIR / "data" / "processed" / "reddit_cleaned_6weeks.csv"
+    else:
+        input_path = Path(input_path)
+
+    if output_path is None:
+        output_path = ROOT_DIR / "data" / "processed" / "baseline_volume_alerts_6weeks.csv"
+    else:
+        output_path = Path(output_path)
+
+    logger.info("Loading processed data from: %s", input_path)
     df = pd.read_csv(input_path)
-    print(f"   Total posts to analyze: {len(df)}")
-    
+    logger.info("Total posts to analyze: %d", len(df))
+
     windows = sorted(df["window_id"].unique(), key=lambda w: int(w.split("_")[1]))
-    print(f"   Total windows to analyze: {len(windows)}")
+    logger.info("Total windows to analyze: %d", len(windows))
 
     # Window-by-window n-gram frequency counter
     window_term_counts = {}
@@ -63,33 +73,30 @@ def run_volume_baseline(
         win_df = df[df["window_id"] == win]
         term_counter = Counter()
         for text in win_df["clean_text"]:
-            for ngram in extract_ngrams(text):
+            for ngram in extract_ngrams(text, n_range=n_range):
                 term_counter[ngram] += 1
         window_term_counts[win] = term_counter
 
-    # Calculate baseline growth / surge for each term over time
     alerts = []
     all_terms = set()
     for counts in window_term_counts.values():
         all_terms.update(counts.keys())
 
-    print("2. Detecting volume bursts across time windows...")
+    logger.info("Detecting volume bursts across time windows (min_freq=%d, surge=%.1fx)...", freq_min, surge_thresh)
     for term in all_terms:
         history = []
         for t_idx, win in enumerate(windows):
             current_count = window_term_counts[win].get(term, 0)
-            
-            # If we have at least 1 previous window to establish historical volume
-            if t_idx > 0 and current_count >= min_freq:
+
+            if t_idx > 0 and current_count >= freq_min:
                 avg_past_volume = sum(history) / len(history) if history else 0
-                
-                # Check if current volume surged significantly above past volume
+
                 if avg_past_volume > 0:
                     surge_ratio = current_count / avg_past_volume
                 else:
-                    surge_ratio = float(current_count)  # Brand new appearance
+                    surge_ratio = float(current_count)
 
-                if surge_ratio >= surge_threshold:
+                if surge_ratio >= surge_thresh:
                     alerts.append({
                         "term": term,
                         "detected_window": win,
@@ -98,24 +105,21 @@ def run_volume_baseline(
                         "past_avg_volume": round(avg_past_volume, 2),
                         "surge_ratio": round(surge_ratio, 2)
                     })
-                    break  # Record first time detected by volume baseline
-            
+                    break
+
             history.append(current_count)
 
     alert_df = pd.DataFrame(alerts)
     if not alert_df.empty:
         alert_df = alert_df.sort_values(by=["window_index", "surge_ratio"], ascending=[True, False]).reset_index(drop=True)
-    
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     alert_df.to_csv(output_path, index=False)
-    print(f"3. Volume Baseline generated {len(alert_df)} trend alerts.")
-    print(f"   Saved baseline alerts to: {output_path}")
+    logger.info("Volume Baseline generated %d trend alerts to: %s", len(alert_df), output_path)
+
     return alert_df
 
+
 if __name__ == "__main__":
-    alerts = run_volume_baseline()
-    if not alerts.empty:
-        print("\n--- Sample Volume-Based Baseline Alerts ---")
-        print(alerts.head(15).to_string())
-    else:
-        print("No alerts met the threshold in this slice.")
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+    run_volume_baseline()

@@ -8,6 +8,7 @@ Data Retrieval -> Trend Radar -> Emerging Topics -> Topic Details -> Research Hu
 import os
 import sys
 import unittest
+from unittest.mock import patch
 import pandas as pd
 
 # Add repo root to path
@@ -47,15 +48,23 @@ class TestTrendRadarE2E(unittest.TestCase):
         self.assertIn("TRAJ_456", tids, "TRAJ_456 (Vaccine Mandate) must exist")
 
     def test_02_research_hub_external_context(self):
-        """Verify Research Hub retrieves live external knowledge from Wikipedia/arXiv."""
+        """Verify Research Hub retrieves external knowledge without depending on external network."""
         row = self.alerts_df[self.alerts_df["trajectory_id"] == "TRAJ_284"].iloc[0]
         keywords = ["onlyfans", "ban", "content"]
-        
-        dossier = get_topic_research_dossier("OnlyFans Policy Shift", keywords, row["representative_post"])
-        self.assertIsNotNone(dossier)
-        self.assertTrue(dossier["wikipedia"]["found"], "Wikipedia entry for OnlyFans must be found")
-        self.assertIn("onlyfans", dossier["wikipedia"]["url"].lower())
-        self.assertGreater(len(dossier["wikipedia"]["summary"]), 50)
+
+        mock_wiki = {
+            "found": True,
+            "title": "OnlyFans",
+            "summary": "OnlyFans is an internet content subscription service based in London.",
+            "url": "https://en.wikipedia.org/wiki/OnlyFans",
+            "related_topics": []
+        }
+        with patch("src.research_service.fetch_wikipedia_context", return_value=mock_wiki):
+            dossier = get_topic_research_dossier("OnlyFans Policy Shift", keywords, row["representative_post"])
+            self.assertIsNotNone(dossier)
+            self.assertTrue(dossier["wikipedia"]["found"], "Wikipedia entry for OnlyFans must be found")
+            self.assertIn("onlyfans", dossier["wikipedia"]["url"].lower())
+            self.assertGreater(len(dossier["wikipedia"]["summary"]), 50)
 
     def test_03_ai_executive_brief_synthesis(self):
         """Verify AI Briefing correctly populates all 4 executive boxes from evidence."""
