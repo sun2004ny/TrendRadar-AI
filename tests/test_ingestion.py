@@ -33,8 +33,7 @@ class TestNormalizedPostModel(unittest.TestCase):
             raw_id="p_001",
             text="Valid technical discussion text about machine learning",
             timestamp=utc_now,
-            source="reddit",
-            author="engineer_1"
+            source="reddit"
         )
         self.assertEqual(post.id, "p_001")
         self.assertEqual(post.raw_id, "p_001")
@@ -42,7 +41,11 @@ class TestNormalizedPostModel(unittest.TestCase):
         self.assertEqual(post.timestamp, utc_now)
         self.assertEqual(post.timestamp.tzinfo, timezone.utc)
         self.assertEqual(post.source, "reddit")
-        self.assertEqual(post.author, "engineer_1")
+        self.assertFalse(hasattr(post, "author"))
+
+        # Test C4 requirement: delete raw text after processing
+        post.delete_raw_text()
+        self.assertEqual(post.text, "")
 
     def test_rejection_empty_text(self):
         """Empty or whitespace-only text must be rejected."""

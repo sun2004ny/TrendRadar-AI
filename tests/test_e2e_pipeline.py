@@ -96,40 +96,50 @@ class TestTrendRadarE2E(unittest.TestCase):
         self.assertTrue(len(brief["recommended_next_steps"]) > 20)
 
     def test_04_workspace_persistence_and_management(self):
-        """Verify saving, updating, listing, and exporting investigations."""
+        """Verify saving, updating, listing, and exporting investigations without mutating tracked file."""
+        import tempfile
+        import shutil
+
         row = self.alerts_df[self.alerts_df["trajectory_id"] == "TRAJ_456"].iloc[0]
         keywords = ["vaccine", "mandate", "medical"]
 
-        # Save
-        rec = save_investigation(
-            trajectory_id="TRAJ_456",
-            topic_name="Vaccine Mandate Discussion",
-            lifecycle_status=row["lifecycle_status"],
-            volume_path=str(row["volume_path"]),
-            coherence=float(row["avg_coherence"]),
-            birth_window=row["birth_window"],
-            representative_post=row["representative_post"],
-            keywords=keywords,
-            analyst_notes="Early incubation signal. Extreme coherence 0.938.",
-            status="Monitoring"
-        )
-        self.assertEqual(rec["id"], "INV_TRAJ_456")
-        self.assertEqual(rec["status"], "Monitoring")
+        with tempfile.TemporaryDirectory() as tmpdir:
+            temp_ws_file = os.path.join(tmpdir, "workspace_investigations.json")
+            real_ws_file = os.path.join(ROOT_DIR, "data", "workspace_investigations.json")
+            if os.path.exists(real_ws_file):
+                shutil.copy(real_ws_file, temp_ws_file)
 
-        # List
-        cases = list_investigations()
-        self.assertTrue(any(c["id"] == "INV_TRAJ_456" for c in cases))
+            with patch("src.workspace.WORKSPACE_FILE", temp_ws_file):
+                # Save
+                rec = save_investigation(
+                    trajectory_id="TRAJ_456",
+                    topic_name="Vaccine Mandate Discussion",
+                    lifecycle_status=row["lifecycle_status"],
+                    volume_path=str(row["volume_path"]),
+                    coherence=float(row["avg_coherence"]),
+                    birth_window=row["birth_window"],
+                    representative_post=row["representative_post"],
+                    keywords=keywords,
+                    analyst_notes="Early incubation signal. Extreme coherence 0.938.",
+                    status="Monitoring"
+                )
+                self.assertEqual(rec["id"], "INV_TRAJ_456")
+                self.assertEqual(rec["status"], "Monitoring")
 
-        # Update
-        updated = update_investigation_status("INV_TRAJ_456", "Active", "Upgraded to active investigation.")
-        self.assertTrue(updated)
-        fetched = get_investigation("INV_TRAJ_456")
-        self.assertEqual(fetched["status"], "Active")
+                # List
+                cases = list_investigations()
+                self.assertTrue(any(c["id"] == "INV_TRAJ_456" for c in cases))
 
-        # Export Dossier
-        md_dossier = export_workspace_markdown()
-        self.assertIn("TrendRadar AI: Master Workspace Dossier", md_dossier)
-        self.assertIn("TRAJ_456", md_dossier)
+                # Update
+                updated = update_investigation_status("INV_TRAJ_456", "Active", "Upgraded to active investigation.")
+                self.assertTrue(updated)
+                fetched = get_investigation("INV_TRAJ_456")
+                self.assertEqual(fetched["status"], "Active")
+
+                # Export Dossier
+                md_dossier = export_workspace_markdown()
+                self.assertIn("TrendRadar AI: Master Workspace Dossier", md_dossier)
+                self.assertIn("TRAJ_456", md_dossier)
 
 
 if __name__ == "__main__":

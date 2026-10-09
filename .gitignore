@@ -51,7 +51,21 @@ htmlcov/
 
 # Logs & scratch
 *.log
+logs/
 scratch/
+_removed_review/
+review/
+data/cache/
+data/alerts.db
+
+# Documentation & Reports (Keep only root README.md public)
+*.md
+!/README.md
+reports/
+FutureGoal.md
+PRESENTATION_GUIDE.md
+data/README.md
+
 
 # Large raw archives (>50MB)
 *.tar.gz

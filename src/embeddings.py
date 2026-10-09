@@ -90,9 +90,13 @@ class IncrementalFAISSIndex:
     def __init__(
         self,
         dim: int = 384,
+        dimension: Optional[int] = None,
         index_path: Optional[Path] = None,
-        meta_path: Optional[Path] = None
+        meta_path: Optional[Path] = None,
+        max_vectors: Optional[int] = 10000
     ):
+        if dimension is not None:
+            dim = dimension
         try:
             import faiss
             self.faiss = faiss
@@ -103,6 +107,7 @@ class IncrementalFAISSIndex:
             logger.warning("FAISS is not installed; vector indexing fallback mode.")
 
         self.dim = dim
+        self.max_vectors = max_vectors
         self.id_map: list = []
         self.index_path = Path(index_path) if index_path else None
         self.meta_path = Path(meta_path) if meta_path else None
@@ -110,8 +115,13 @@ class IncrementalFAISSIndex:
         if self.index_path and self.index_path.exists():
             self.load()
 
-    def add(self, vectors: np.ndarray, post_ids: list) -> None:
-        """Adds normalized vector embeddings and associates them with post IDs."""
+    @property
+    def total_vectors(self) -> int:
+        """Returns the total number of indexed vectors."""
+        return self.index.ntotal if self.index is not None else 0
+
+    def add(self, vectors: np.ndarray, post_ids: Optional[list] = None) -> None:
+        """Adds normalized vector embeddings and associates them with post IDs, enforcing rolling window."""
         if self.index is None:
             raise RuntimeError("FAISS is not available")
 
@@ -121,8 +131,26 @@ class IncrementalFAISSIndex:
         norms = np.linalg.norm(v, axis=1, keepdims=True)
         v = v / np.maximum(norms, 1e-12)
 
+        if post_ids is None:
+            current_count = len(self.id_map)
+            post_ids = [str(current_count + i) for i in range(len(v))]
+
         self.index.add(v)
         self.id_map.extend([str(pid) for pid in post_ids])
+
+    def add_vectors(self, vectors: np.ndarray, post_ids: Optional[list] = None) -> None:
+        """Alias for add() for flexible vector indexing."""
+        self.add(vectors, post_ids=post_ids)
+
+
+        # Enforce rolling window so memory does not grow unbounded
+        if self.max_vectors and self.index.ntotal > self.max_vectors:
+            keep_n = self.max_vectors
+            recent_v = self.index.reconstruct_n(self.index.ntotal - keep_n, keep_n)
+            self.id_map = self.id_map[-keep_n:]
+            fresh_idx = self.faiss.IndexFlatIP(self.dim)
+            fresh_idx.add(recent_v)
+            self.index = fresh_idx
 
     def search(self, query_vectors: np.ndarray, top_k: int = 5) -> Tuple[np.ndarray, list]:
         """Performs cosine similarity search against existing vectors."""

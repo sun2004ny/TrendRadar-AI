@@ -1,14 +1,32 @@
 import streamlit as st
 import pandas as pd
+from src.telemetry import get_telemetry
 
 def render_live_monitoring_feed(posts_df: pd.DataFrame):
     """
     Renders the live monitoring stream connected to real posts from posts_df.
-    Displays source, timestamp, canonical text, similarity, and cluster tag.
+    Displays source, timestamp, canonical text, similarity, and cluster tag,
+    along with real-time telemetry metrics.
     """
+    telemetry = get_telemetry()
+    metrics = telemetry.get_metrics()
+
     st.markdown("""
-    <div class="tr-section-title">Live Monitoring Stream</div>
+    <div class="tr-section-title">Live Monitoring Stream & System Telemetry</div>
     """, unsafe_allow_html=True)
+
+    # Real-time Telemetry Metrics Bar
+    col1, col2, col3, col4, col5 = st.columns(5)
+    with col1:
+        st.metric("Posts Ingested", f"{metrics['posts_processed']:,}", delta=f"{metrics['posts_received']} recv")
+    with col2:
+        st.metric("Rejected / Spam", f"{metrics['posts_rejected']:,}")
+    with col3:
+        st.metric("Avg Latency", f"{metrics['latency_ms']:.1f} ms")
+    with col4:
+        st.metric("Process RSS", f"{metrics['memory_use_mb']:.1f} MB")
+    with col5:
+        st.metric("Vector Index", f"{metrics['vector_index_size']:,} vecs")
 
     items = []
 

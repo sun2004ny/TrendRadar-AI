@@ -59,7 +59,7 @@ def render_sidebar(current_topic: dict = None) -> str:
             <span class="tr-brand-dish-icon">📡</span>
             <div style="line-height:1.25; min-width:0;">
                 <div class="tr-brand-heading">TrendRadar AI</div>
-                <div class="tr-brand-subheading">Emerging Topics Intelligence</div>
+                <div class="tr-brand-subheading">Causal Topic Emergence Detection</div>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@ def render_sidebar(current_topic: dict = None) -> str:
     nav_labels = [f"{NAV_ICONS.get(n, '•')}  {n}" for n in NAV_ITEMS]
 
     selected_nav_label = st.sidebar.radio(
-        label="",
+        label="Navigation Menu",
         options=NAV_ITEMS,
         format_func=lambda x: f"{NAV_ICONS.get(x, '•')}  {x}",
         index=nav_idx,
@@ -124,7 +124,7 @@ def render_sidebar(current_topic: dict = None) -> str:
                          font-family:'JetBrains Mono', monospace; display:flex; align-items:center; gap:6px;">
                 <span>🎯</span> {tid}
             </span>
-            <span class="tr-badge tr-badge-stable" style="font-size:0.55rem; padding:2px 6px;">LIVE</span>
+            <span class="tr-badge tr-badge-stable" style="font-size:0.55rem; padding:2px 6px;">HISTORICAL REPLAY</span>
         </div>
         <div style="font-size:0.8rem; color:#94a3b8; font-weight:500;
                     white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">

@@ -77,6 +77,17 @@ rolling_buffer:
     - "what's a positive obsession"
     - "what is the quickest way"
 
+novelty_gate:
+  enabled: false  # When false, outputs equal baseline golden results
+  similarity_threshold: 0.70  # Picked using ONLY D01-D20 (max real event similarity was 0.598, noise median was 0.68)
+  action: "quarantine"        # "quarantine" (removes from candidate alerts) or "demote" (penalizes ranking score)
+  demote_penalty: 0.20        # Multiplier applied when action is demote
+
+shadow_mode:
+  enabled: false
+  log_path: "logs/shadow_log.jsonl"
+
+
 baseline:
   min_freq: 5
   surge_threshold: 2.0

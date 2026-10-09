@@ -60,14 +60,30 @@ def clean_reddit_text(text: str) -> str:
     return text
 
 
+def clean_generic_text(text: str) -> str:
+    """Cleans general web/news text by removing URLs, HTML entities, and normalizing whitespace."""
+    if not isinstance(text, str):
+        return ""
+    text = re.sub(r'https?://\S+|www\.\S+', '', text)
+    text = re.sub(r'&\w+;', ' ', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+
 def clean_normalized_post(post: NormalizedPost) -> Optional[NormalizedPost]:
     """
-    Applies standard cleaning and question-template stripping directly to a NormalizedPost.
+    Applies standard cleaning directly to a NormalizedPost.
+    Source-aware: applies AskReddit interrogative template stripping only for Reddit-style posts.
     Drops posts that are trivially short (< 15 characters or < 3 words).
     Returns a new NormalizedPost with cleaned text, or None if filtered out.
     """
-    cleaned = clean_reddit_text(post.text)
-    cleaned = strip_interrogative_templates(cleaned)
+    source_lower = str(post.source).lower()
+    if "reddit" in source_lower:
+        cleaned = clean_reddit_text(post.text)
+        cleaned = strip_interrogative_templates(cleaned)
+    else:
+        cleaned = clean_generic_text(post.text)
+
     words = cleaned.split()
     if len(cleaned) < 15 or len(words) < 3:
         return None
@@ -82,7 +98,6 @@ def clean_normalized_post(post: NormalizedPost) -> Optional[NormalizedPost]:
         text=cleaned,
         timestamp=post.timestamp,
         source=post.source,
-        author=post.author,
         metadata=new_meta
     )
 

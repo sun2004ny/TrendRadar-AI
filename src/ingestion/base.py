@@ -31,8 +31,26 @@ class NormalizedPost(BaseModel):
     text: str
     timestamp: datetime
     source: str
-    author: Optional[str] = "unknown"
     metadata: Dict[str, Any] = Field(default_factory=dict)
+
+    @property
+    def datetime_utc(self) -> str:
+        """Returns ISO 8601 UTC timestamp string."""
+        return self.timestamp.isoformat()
+
+    @property
+    def timestamp_epoch(self) -> int:
+        """Returns integer unix timestamp epoch."""
+        return int(self.timestamp.timestamp())
+
+    def delete_raw_text(self) -> None:
+
+        """Deletes raw text content to preserve privacy, retaining embeddings and metadata."""
+        object.__setattr__(self, "text", "")
+        if "clean_text" in self.metadata:
+            self.metadata["clean_text"] = ""
+        if "raw_clean_text" in self.metadata:
+            self.metadata["raw_clean_text"] = ""
 
     @field_validator("id", "raw_id", mode="before")
     @classmethod

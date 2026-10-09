@@ -39,7 +39,7 @@ from components.pipeline import render_pipeline_loop
 # Streamlit Configuration & Light Enterprise Styling Injection
 # -----------------------------------------------------------------------------
 st.set_page_config(
-    page_title="TrendRadar AI | Real-Time Emerging Topics Intelligence",
+    page_title="TrendRadar AI | Causal Topic Emergence Detection (research prototype)",
     page_icon="📡",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -636,23 +636,23 @@ elif st.session_state["nav_section"] == "WORKSPACE":
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "ANALYTICS":
     st.markdown('<div class="tr-section-title">Analytics & Benchmark Audits</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Head-to-head empirical comparison: Keyword Frequency Monitoring vs. TrendRadar AI Dense Semantic Detection.</p>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Head-to-head empirical comparison on Held-Out Test Split (Days D_21 to D_30, Denominator = 5 Ground Truth Events).</p>', unsafe_allow_html=True)
 
     c_an1, c_an2 = st.columns([1, 1])
     with c_an1:
         comp_df = pd.DataFrame({
-            "Method": ["Keyword Baseline", "TrendRadar AI Pipeline"],
-            "Alert Count": [823, 102],
-            "Type": ["Fragmented Term Alerts", "Coherent Topic Narratives"]
+            "System": ["Keyword Baseline", "Pipeline (Un-Gated)", "TrendRadar-AI (+ Novelty Gate)"],
+            "Alert Count": [171, 39, 14],
+            "Type": ["Term Spikes", "Candidate Alerts", "Novelty Filtered Alerts"]
         })
         fig_bar = px.bar(
             comp_df,
-            x="Method",
+            x="System",
             y="Alert Count",
-            color="Method",
+            color="System",
             text="Alert Count",
-            title="Total Alert Triggers: Term-Level vs. Topic-Level",
-            color_discrete_sequence=["#f43f5e", "#34d399"]
+            title="Held-Out Alert Volume (Days D21–D30)",
+            color_discrete_sequence=["#f43f5e", "#818cf8", "#34d399"]
         )
         fig_bar.update_layout(
             height=340,
@@ -672,31 +672,71 @@ elif st.session_state["nav_section"] == "ANALYTICS":
         <div class="tr-stat-highlight" style="margin-top:20px;">
             <div style="font-size:0.68rem; color:#34d399; font-weight:800; text-transform:uppercase;
                         letter-spacing:0.12em; margin-bottom:12px;">
-                ✅ Scientifically Defensible Benchmark
+                ✅ Held-Out Empirical Benchmark (D_21–D_30)
             </div>
-            <span class="tr-stat-number">87.6%</span>
+            <span class="tr-stat-number">2 / 5 (40.0%)</span>
             <div style="font-size:1rem; color:#a5b4fc; font-weight:700; margin:10px 0 8px;">
-                Alert Noise Reduction
+                Strict Event Recall
             </div>
             <p style="font-size:0.82rem; color:#64748b; line-height:1.6; margin:0;">
-                Traditional keyword-frequency monitoring triggered <strong style="color:#fb7185;">823</strong>
-                disconnected spikes. TrendRadar AI grouped the entire corpus into
-                <strong style="color:#34d399;">102</strong> clean, actionable topic events.
+                The causal novelty gate quarantined <strong style="color:#34d399;">25 recurring chatter alerts</strong>,
+                reducing candidate volume from <strong style="color:#818cf8;">39</strong> to <strong style="color:#34d399;">14</strong>
+                (vs. <strong style="color:#fb7185;">171</strong> keyword baseline spikes) with zero loss of real events.
             </p>
             <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
                 <div style="background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.25);
                             border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
-                    <div style="font-size:1.6rem; font-weight:900; color:#fb7185; font-family:'JetBrains Mono';">823</div>
-                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">Baseline Alerts</div>
+                    <div style="font-size:1.5rem; font-weight:900; color:#fb7185; font-family:'JetBrains Mono';">171</div>
+                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">Keyword Baseline</div>
+                </div>
+                <div style="background:rgba(129,140,248,0.12); border:1px solid rgba(129,140,248,0.25);
+                            border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
+                    <div style="font-size:1.5rem; font-weight:900; color:#818cf8; font-family:'JetBrains Mono';">39</div>
+                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">Pipeline Un-Gated</div>
                 </div>
                 <div style="background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.25);
                             border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
-                    <div style="font-size:1.6rem; font-weight:900; color:#34d399; font-family:'JetBrains Mono';">102</div>
-                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">AI Topics</div>
+                    <div style="font-size:1.5rem; font-weight:900; color:#34d399; font-family:'JetBrains Mono';">14</div>
+                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">With Novelty Gate</div>
                 </div>
             </div>
         </div>
         """, unsafe_allow_html=True)
+
+    st.markdown("### Held-Out Evaluation Summary Table (Days D_21 to D_30)")
+    bench_table_data = [
+        {
+            "System": "Keyword Frequency Baseline",
+            "Total Alerts": 171,
+            "Real Events Detected": "2 / 5 (EVT_003, EVT_008)",
+            "Strict Recall": "0.4000 (2/5)",
+            "Precision": 0.0175,
+            "F1 Score": 0.0336,
+            "P@10": 0.1000,
+            "Mean Lead Time": "0.0 days"
+        },
+        {
+            "System": "Phase 3 Pipeline (Un-Gated)",
+            "Total Alerts": 39,
+            "Real Events Detected": "2 / 5 (EVT_003, EVT_004)",
+            "Strict Recall": "0.4000 (2/5)",
+            "Precision": 0.0513,
+            "F1 Score": 0.0909,
+            "P@10": 0.1000,
+            "Mean Lead Time": "0.0 days"
+        },
+        {
+            "System": "TrendRadar-AI (+ Novelty Gate)",
+            "Total Alerts": 14,
+            "Real Events Detected": "2 / 5 (EVT_003, EVT_004)",
+            "Strict Recall": "0.4000 (2/5)",
+            "Precision": 0.1429,
+            "F1 Score": 0.2105,
+            "P@10": 0.2000,
+            "Mean Lead Time": "0.0 days"
+        },
+    ]
+    st.dataframe(pd.DataFrame(bench_table_data), width="stretch", hide_index=True)
 
 
 # -----------------------------------------------------------------------------

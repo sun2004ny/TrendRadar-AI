@@ -214,3 +214,87 @@ def _format_markdown_report(topic_name: str, brief: Dict[str, str]) -> str:
 ---
 *Notice: This brief was algorithmically generated using dense semantic embeddings and external knowledge grounding.*
 """
+
+
+def synthesize_bounded_brief(
+    evidence: Dict[str, Any],
+    api_key: Optional[str] = None
+) -> Dict[str, str]:
+    """
+    Synthesize an executive brief strictly bounded by mathematical evidence and verified posts.
+    Does NOT hallucinate or extrapolate beyond provided facts.
+    Falls back gracefully to deterministic synthesis if API key is missing or call fails.
+    """
+    gemini_key = api_key or os.getenv("GEMINI_API_KEY", "")
+    tid = evidence.get("trajectory_id", "UNKNOWN")
+    title = evidence.get("title", f"Topic {tid}")
+    metrics = evidence.get("metrics", {})
+    decision_factors = evidence.get("decision_factors", [])
+    samples = evidence.get("sample_posts", [])
+    sample_text = f'"{samples[0]}"' if samples else "N/A"
+
+    if gemini_key:
+        prompt = f"""You are a specialized intelligence analyst assistant.
+You are given STRICTLY VERIFIED mathematical evidence from an NLP emergence detection system.
+Synthesize ONLY the facts provided below into a concise executive briefing (2-3 sentences).
+Do NOT extrapolate, assume, or add external facts.
+
+EVIDENCE:
+- Trajectory ID: {tid}
+- Detection Window: {evidence.get('day', 'N/A')}
+- Volume: {metrics.get('post_count', 0)} posts
+- Volume Velocity: {metrics.get('velocity', 0.0):.2f}x
+- Semantic Coherence: {metrics.get('coherence', 0.0):.3f}
+- Dominant Keywords: {', '.join(evidence.get('keywords', []))}
+- Key Decision Factors: {'; '.join(decision_factors)}
+- Representative Community Post: {sample_text}
+
+Respond in JSON with exact keys:
+{{
+  "what_is_happening": "1-2 sentences summarizing the verified discussion topic based only on the evidence.",
+  "why_is_it_emerging": "1 sentence explaining the mathematical acceleration and coherence metrics.",
+  "evidence_summary": "Concise bullet summary of the metrics and representative quote.",
+  "recommended_next_steps": "Actionable monitoring recommendation."
+}}
+"""
+        try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
+            payload = {
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"response_mime_type": "application/json", "temperature": 0.1}
+            }
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers={"Content-Type": "application/json"}
+            )
+            with urllib.request.urlopen(req, timeout=6) as response:
+                result = json.loads(response.read().decode("utf-8"))
+                text_content = result["candidates"][0]["content"]["parts"][0]["text"]
+                parsed = json.loads(text_content)
+                parsed["full_brief_markdown"] = _format_markdown_report(title, parsed)
+                parsed["bounded_summary"] = parsed.get("what_is_happening", "")
+                return parsed
+        except Exception as e:
+            logger.info(f"Bounded brief LLM call failed ({e}); falling back to deterministic explanation.")
+
+    # High-precision deterministic fallback
+    df_text = " ".join(decision_factors[:2])
+    brief = {
+        "what_is_happening": evidence.get("deterministic_explanation", f"Emerging topic #{tid}: {title}"),
+        "why_is_it_emerging": df_text or f"Accelerated volume with coherence {metrics.get('coherence', 0.0):.3f}.",
+        "evidence_summary": (
+            f"• Coherence: {metrics.get('coherence', 0.0):.3f} (density)\n"
+            f"• Velocity: {metrics.get('velocity', 0.0):.2f}x growth\n"
+            f"• Volume: {metrics.get('post_count', 0)} posts\n"
+            f"• Citation: {sample_text}"
+        ),
+        "recommended_next_steps": (
+            "1. Monitor subsequent checkpoint for continued volume growth.\n"
+            "2. Cross-correlate with live news and external streams."
+        ),
+        "bounded_summary": evidence.get("deterministic_explanation", "")
+    }
+    brief["full_brief_markdown"] = _format_markdown_report(title, brief)
+    return brief
+

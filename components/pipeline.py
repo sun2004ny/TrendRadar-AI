@@ -29,4 +29,4 @@ def render_pipeline_loop():
         <div class="tr-pipe-node">MONITOR AGAIN</div>
     </div>
     """, unsafe_allow_html=True)
-    st.caption("TrendRadar AI • Real-Time Emerging Topics Intelligence Platform • Powered by Dense Semantic NLP")
+    st.caption("TrendRadar AI • Causal Topic Emergence Detection (research prototype) • Powered by Dense Semantic NLP")
