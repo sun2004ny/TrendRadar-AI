@@ -5,7 +5,9 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Architecture](https://img.shields.io/badge/Architecture-Streaming%20NLP%20%2B%20FAISS%20%2B%20SQLite%20WAL-purple.svg)]()
 
-> **Overview:** TrendRadar AI is an end-to-end forward-only streaming NLP intelligence engine (**live ingestion; detection runs on historical replay**). It monitors real-time text streams across news feeds, forums, and developer platforms to detect genuine breaking news, policy changes, and emergent topics—while systematically filtering out repetitive conversational chatter through causal novelty gating.
+> **Overview:** TrendRadar AI is an end-to-end forward-only streaming NLP intelligence engine. It supports real-time multi-source ingestion and incremental vector indexing, with causal topic-emergence detection evaluated through historical replay and batch processing. It monitors text streams across news feeds, forums, and developer platforms to detect genuine breaking news, policy changes, and emergent topics—while systematically filtering out repetitive conversational chatter through causal novelty gating.
+>
+> *(Note on Terminology: "Causal" in this project denotes strict forward-in-time temporal ordering to eliminate future-data lookahead in streaming evaluation, rather than statistical/econometric causal inference).*
 
 ---
 
@@ -30,8 +32,8 @@ flowchart TD
     subgraph Temporal["Temporal Tracking & Novelty Gate (src/)"]
         HDBSCAN --> Traj[Causal Trajectory Tracking\nCosine Sim >= 0.68 + Jaccard >= 0.20\nsrc/temporal.py]
         Traj --> Gate{Novelty Gate\nThreshold: 0.70\nsrc/novelty.py}
-        Gate -- Max Sim >= 0.70 --> Quarantined[Quarantined Chatter\nScore Demoted]
-        Gate -- Max Sim < 0.70 --> Candidate[Promoted Candidate Alert]
+        Gate -- Prior Sim >= 0.70 --> Quarantined[Quarantined Chatter\nScore Demoted]
+        Gate -- Prior Sim < 0.70 --> Candidate[Promoted Candidate Alert]
     end
 
     subgraph Lifecycle["Alert Lifecycle & Explainability"]
@@ -53,33 +55,30 @@ flowchart TD
 
 ## 2. Rigorous Empirical Benchmarks
 
-All parameters (clustering components, temporal thresholds, and the **0.70 novelty gate threshold**) were selected strictly on the tuning set (**Days $D_{01}$ to $D_{20}$**). The held-out test split (**Days $D_{21}$ to $D_{30}$**) was evaluated strictly out-of-sample with zero parameter adjustment against **5 ground-truth events** (`EVT_003`, `EVT_004`, `EVT_008`, `EVT_010`, `EVT_013`).
+Parameters were initially selected using the tuning set (**Days $D_{01}$ to $D_{20}$**). Days $D_{21}$ to $D_{30}$ were reserved as a held-out evaluation split, inspected iteratively during development and verification (~8 evaluation cycles). Results should therefore be interpreted as held-out evaluation metrics, not as an independent blind prospective trial.
 
 ### Held-Out Evaluation ($D_{21}$ – $D_{30}$, Denominator = 5 Ground Truth Events)
 
-| System | Total Alerts | Real Events Detected | Missed Events | Precision | Recall (Strict) | F1 Score | P@10 | Mean Lead Time |
+| System | Total Alerts | Real Events Detected | Missed Events | Precision (Scored Unit) | Recall (Strict) | F1 Score | P@10 | Mean Lead Time |
 |---|---|---|---|---|---|---|---|---|
-| **Keyword Frequency Baseline** | 171 | 2 / 5 (`EVT_003`, `EVT_008`) | 3 | 0.0175 | **0.4000** (2/5) | 0.0336 | 0.1000 | 0.0 days |
-| **Pipeline (Un-Gated, Phase 3)** | 39 | 2 / 5 (`EVT_003`, `EVT_004`) | 3 | 0.0513 | **0.4000** (2/5) | 0.0909 | 0.1000 | 0.0 days |
-| **TrendRadar AI (+ Novelty Gate)** | **14** | **2 / 5 (`EVT_003`, `EVT_004`)** | **3** | **0.1429** | **0.4000** (2/5) | **0.2105** | **0.2000** | **0.0 days** |
+| **Keyword Frequency Baseline** | 171 | 2 / 5 (`EVT_003`, `EVT_008`) | 3 | **0.0175** *(3 / 171 term hits)* | **0.4000** (2/5) | 0.0336 | 0.1000 | 0.0 days |
+| **Pipeline (Un-Gated, Phase 3)** | 39 | 2 / 5 (`EVT_003`, `EVT_004`) | 3 | **0.0513** *(2 / 39 clusters)* | **0.4000** (2/5) | 0.0909 | 0.1000 | 0.0 days |
+| **TrendRadar AI (+ Novelty Gate)** | **14** | **2 / 5 (`EVT_003`, `EVT_004`)** | **3** | **0.1429** *(2 / 14 clusters)* | **0.4000** (2/5) | **0.2105** | **0.2000** | **0.0 days** |
 
-### Benchmark Takeaways & Critical Disclosures
+### Benchmark Takeaways & Methodological Disclosures
 > [!IMPORTANT]
 > **Methodological Disclosures:**
-> 1. **Strict Recall Denominator (5 Events):** Evaluated strictly against all 5 ground-truth real-world events occurring in $D_{21}$–$D_{30}$. Both the un-gated and gated pipelines successfully capture 2 events (`SEED_579` on $D_{26}$ for Reddit lock bug `EVT_003`, and `TRAJ_757` on $D_{27}$ for Hurricane Ida `EVT_004`), yielding a strict recall of **0.4000 (2/5)** as the main metric.
->    - **Baseline Detected `EVT_008`, Pipeline Did Not:** The keyword baseline detected `EVT_008` (via keyword volume spikes for `"texas"` and `"abortion"`) while the semantic pipeline did not, because no coherent topic cluster about the Texas abortion law was formed (the only related post is one commentary post on $D_{26}$ `pg8ylz`, and the 4 posts on $D_{27}$ in `TRAJ_766` were inquiries about Texas-based companies).
->    - For `EVT_010` (Kanye Donda), only 1 post on $D_{25}$ was directly about the album release (`pfmwm8`), so total event volume was insufficient to cluster ($N < 3$).
->    - For `EVT_013` (DC-Unlocker crack), `EVT_013` is spam (only 1 post in the dataset mentions DC-Unlocker: `pf16ci` on $D_{24}$ in noise).
-> 2. **True Positive (TP) Definition Difference:**
->    - *Baseline TP:* Defined as keyword alert hits matching event terms (`EVT_003` matched 1 alert hit; `EVT_008` matched 2 alert hits, total TP=3 alert hits across 2 detected events).
->    - *Pipeline TP:* Defined as coherent topic clusters corresponding to verified real events (2 cluster alerts across 2 detected events).
-> 3. **Config Evaluation Matching Window:** Baseline temporal matching reads `evaluation.lead_window_days_prior: 2` and `evaluation.lag_window_days_post: 3` from `config.yaml`, evaluating alert hits within $[\text{start\_day}-2, \text{start\_day}+3]$. Novelty gate reads `novelty_gate.similarity_threshold: 0.70` from `config.yaml`.
-> 4. **No Unseen-Day Test Was Possible:** The local dataset strictly terminates at Day $D_{30}$ (`data/raw/daily/D_30.csv`). No subsequent unseen days exist in the archive, so a prospective out-of-dataset test could not be run.
-> 5. **Held-Out Set Evaluated ~8 Times (Not Blind):** The held-out test split ($D_{21}$–$D_{30}$) was evaluated approximately 8 times during development and verification; it was not a blind, single-run prospective evaluation.
-> 6. **Live Mode Operational Scope:** Live mode is **live ingestion; detection runs on historical replay**. The live streaming runner (`scripts/run_live_hn_rss_shadow.py`) performs real-time ingestion, text cleaning, and incremental vector indexing, while emergence detection is evaluated on historical replay batches.
-> 7. **Gain Based on 2 Real Alerts:** The held-out test split contains **2 real detected events** (`SEED_579` and `TRAJ_757`). Precision improved from 0.0513 to 0.1429 while maintaining strict recall at 0.4000 (2/5).
-> 8. **Chatter Reduction:** The causal novelty gate quarantined **25 recurring chatter alerts** on held-out days, reducing alert volume from 39 to 14 (**-64.1% reduction** in analyst review load).
-
+> 1. **Strict Recall Denominator (5 Events):** Evaluated strictly against all 5 ground-truth real-world events occurring in $D_{21}$–$D_{30}$. Both the un-gated and gated pipelines captured 2 events (`SEED_579` on $D_{26}$ for Reddit lock bug `EVT_003`, and `TRAJ_757` on $D_{27}$ for Hurricane Ida `EVT_004`), yielding a strict recall of **0.4000 (2/5)**.
+>    - **Baseline Detected `EVT_008`, Pipeline Did Not:** The keyword baseline detected `EVT_008` (via keyword volume spikes for `"texas"` and `"abortion"`) while the semantic pipeline did not, because no coherent topic cluster about the Texas abortion law formed (the only related post is one commentary post on $D_{26}$ `pg8ylz`, and the 4 posts on $D_{27}$ in `TRAJ_766` were inquiries about Texas-based companies).
+>    - For `EVT_010` (Kanye Donda), only 1 post on $D_{25}$ was directly about the album release (`pfmwm8`), so volume was insufficient to cluster ($N < 3$).
+>    - For `EVT_013` (DC-Unlocker crack), `EVT_013` is a single spam post ($N=1$ on $D_{24}$ in noise).
+> 2. **Evaluation Unit Differences:**
+>    - *Keyword Baseline Precision:* Measures keyword alert hits matching event terms (3 matching hits / 171 total alerts = 0.0175).
+>    - *Pipeline Precision:* Measures coherent topic clusters corresponding to verified real events (2 real clusters / 14 gated alerts = 0.1429).
+> 3. **Lead Time Definition:** Mean lead time of 0.0 days indicates that alerts fired on the same operational day ($D_t$) as the recorded event start day.
+> 4. **Config Matching Window:** Baseline temporal matching reads `evaluation.lead_window_days_prior: 2` and `evaluation.lag_window_days_post: 3` from `config.yaml`, evaluating alert hits within $[\text{start\_day}-2, \text{start\_day}+3]$. Novelty gate reads `novelty_gate.similarity_threshold: 0.70`.
+> 5. **No Post-$D_{30}$ Data:** The historical corpus strictly terminates at Day $D_{30}$ (`data/raw/daily/D_30.csv`); no unseen post-$D_{30}$ days exist in the archive.
+> 6. **Alert Volume Reduction:** The causal novelty gate quarantined **25 recurring chatter alerts** on held-out days, reducing candidate alert volume from 39 to 14 (**-64.1% reduction** in analyst review load).
 
 ---
 
@@ -88,10 +87,10 @@ All parameters (clustering components, temporal thresholds, and the **0.70 novel
 ### 1. Ingestion Layer (`src/ingestion/`)
 * **Supported Sources:** Supported sources are **Reddit historical replay**, **Hacker News Firebase REST API**, and **Technology RSS Feeds** only.
 * **Privacy & Compliance:** Canonical `NormalizedPost` schema strips `author` fields to guarantee user anonymity and prevent persistent storage of personally identifiable usernames.
-* **Bounded Vector Index:** `IncrementalFAISSIndex` automatically maintains a rolling memory window (default `max_vectors: 10,000`) using FAISS vector reconstruction to enforce deterministic RAM boundaries.
+* **Bounded Vector Index:** `IncrementalFAISSIndex` maintains a configured rolling memory window (`max_vectors: 10,000`, 8,784 active vectors in 30-day replay) using FAISS vector reconstruction to enforce deterministic RAM boundaries.
 
 ### 2. Causal Novelty Gate (`src/novelty.py`)
-* Compares incoming candidate topic centroids strictly backward-looking against prior historical centroids ($\le D_t$).
+* Compares incoming candidate topic centroids strictly backward-looking against prior historical centroids established strictly prior to the candidate's detection day ($d < t$).
 * Topics exhibiting $\ge 0.70$ cosine similarity to historical conversation centroids are quarantined or demoted, effectively neutralizing repetitive conversational tropes (*"Redditors of Reddit", "What's your favorite...", "Superpower hypotheticals"*).
 
 ### 3. Persistent Alert Lifecycle (`src/alerts_db.py`)
@@ -105,8 +104,8 @@ All parameters (clustering components, temporal thresholds, and the **0.70 novel
 * Generates mathematical decision dossiers explicitly detailing why an alert fired:
   * Observed volume velocity vs. growth ratio threshold.
   * Observed semantic coherence vs. baseline coherence floor.
-  * Maximum similarity to historical topics vs. novelty threshold.
-* **Zero Hallucination:** The LLM briefing synthesizer is strictly bounded to the generated mathematical evidence. If an API key is missing or fails, it falls back gracefully to deterministic Markdown briefing text.
+  * Maximum similarity to prior historical topics vs. novelty threshold.
+* **Bounded Synthesis:** The LLM briefing synthesizer is constrained to the structured evidence dossier. If an API key is missing or fails, it falls back gracefully to deterministic Markdown briefing text. LLM-generated summaries are guided by the evidence dossier but are not guaranteed to be completely hallucination-free.
 
 ### 5. Production Telemetry & Shadow Mode (`src/telemetry.py`, `src/shadow_mode.py`)
 * Thread-safe telemetry tracking posts received, processed, rejected, processing latency (ms), process RSS memory (MB), and vector index size.
