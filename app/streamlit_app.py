@@ -25,6 +25,11 @@ from src.workspace import (
 )
 
 # Import Modular UI Components
+import importlib
+import components.header
+import components.loader
+importlib.reload(components.header)
+importlib.reload(components.loader)
 from components.header import render_header
 from components.sidebar import render_sidebar, SECTION_TO_NAV
 from components.kpi_cards import render_kpi_strip
@@ -34,6 +39,7 @@ from components.monitoring import render_live_monitoring_feed
 from components.alerts import render_alert_center_panel
 from components.topic_details import render_topic_details_view
 from components.pipeline import render_pipeline_loop
+from components.loader import show_page_loader, clear_page_loader, section_spinner
 
 # -----------------------------------------------------------------------------
 # Streamlit Configuration & Light Enterprise Styling Injection
@@ -44,6 +50,15 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# ── Cached CSS Stylesheet Loader ─────────────────────────────────────────────
+@st.cache_data
+def load_cached_custom_css():
+    fpath = os.path.join(BASE_DIR, "styles", "trendradar.css")
+    if os.path.exists(fpath):
+        with open(fpath, "r", encoding="utf-8") as f:
+            return f.read()
+    return ""
 
 # ── Inject Tailwind CSS v3 CDN + Custom Design Overrides ──────────────────────
 def load_design_system():
@@ -90,11 +105,9 @@ def load_design_system():
     </script>
     """, unsafe_allow_html=True)
 
-    # 3. Local custom design overrides (single consolidated stylesheet)
-    fpath = os.path.join(BASE_DIR, "styles", "trendradar.css")
-    if os.path.exists(fpath):
-        with open(fpath, "r", encoding="utf-8") as f:
-            css = f.read()
+    # 3. Local custom design overrides (cached read)
+    css = load_cached_custom_css()
+    if css:
         st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 load_design_system()
@@ -184,6 +197,87 @@ def get_current_topic_row(tid: str):
     return alerts_df.iloc[0]
 
 
+# ── Cached Research & Benchmark Functions ─────────────────────────────────────
+@st.cache_data(show_spinner=False, ttl=3600)
+def get_cached_topic_research_dossier(topic_name: str, keywords: tuple, rep_post: str):
+    return get_topic_research_dossier(topic_name, list(keywords), rep_post)
+
+@st.cache_data(show_spinner=False)
+def get_cached_executive_brief(
+    topic_name: str,
+    lifecycle_status: str,
+    volume_history: str,
+    coherence: float,
+    birth_window: str,
+    representative_post: str,
+    keywords: tuple,
+    api_key: str = ""
+):
+    return generate_executive_brief(
+        topic_name=topic_name,
+        lifecycle_status=lifecycle_status,
+        volume_history=volume_history,
+        coherence=coherence,
+        birth_window=birth_window,
+        representative_post=representative_post,
+        keywords=list(keywords),
+        api_key=api_key or None
+    )
+
+@st.cache_data
+def get_analytics_benchmark_data():
+    comp_df = pd.DataFrame({
+        "System": ["Keyword Baseline", "Pipeline (Un-Gated)", "TrendRadar-AI (+ Novelty Gate)"],
+        "Alert Count": [171, 39, 14],
+        "Type": ["Term Spikes", "Candidate Alerts", "Novelty Filtered Alerts"]
+    })
+    bench_table_data = [
+        {
+            "System": "Keyword Frequency Baseline",
+            "Total Alerts": 171,
+            "Real Events Detected": "2 / 5 (EVT_003, EVT_008)",
+            "Strict Recall": "0.4000 (2/5)",
+            "Precision": 0.0175,
+            "F1 Score": 0.0336,
+            "P@10": 0.1000,
+            "Mean Lead Time": "0.0 days"
+        },
+        {
+            "System": "Phase 3 Pipeline (Un-Gated)",
+            "Total Alerts": 39,
+            "Real Events Detected": "2 / 5 (EVT_003, EVT_004)",
+            "Strict Recall": "0.4000 (2/5)",
+            "Precision": 0.0513,
+            "F1 Score": 0.0909,
+            "P@10": 0.1000,
+            "Mean Lead Time": "0.0 days"
+        },
+        {
+            "System": "TrendRadar-AI (+ Novelty Gate)",
+            "Total Alerts": 14,
+            "Real Events Detected": "2 / 5 (EVT_003, EVT_004)",
+            "Strict Recall": "0.4000 (2/5)",
+            "Precision": 0.1429,
+            "F1 Score": 0.2105,
+            "P@10": 0.2000,
+            "Mean Lead Time": "0.0 days"
+        },
+    ]
+    return comp_df, pd.DataFrame(bench_table_data)
+
+@st.cache_data
+def get_research_lab_ablation_data():
+    master_data = [
+        {"Experiment": "E0 Control", "Mechanism / Threshold": "Absolute vol >= 15 posts", "Total Traj": 82, "Multi-Ckpt": 6, "Candidates": 2, "Incub. Seeds": 0, "OnlyFans (D11)": "Missed (<15 vol)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 10, "Mean Coh": 0.6670, "Drift": "Present", "Baseline Alerts": 823},
+        {"Experiment": "E1 Scale Normalization", "Mechanism / Threshold": "Share >= 2.0% slice volume", "Total Traj": 82, "Multi-Ckpt": 6, "Candidates": 36, "Incub. Seeds": 0, "OnlyFans (D11)": "Captured (D11)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 10, "Mean Coh": 0.6974, "Drift": "Present", "Baseline Alerts": 823},
+        {"Experiment": "E2 Template Stripping", "Mechanism / Threshold": "Interrogative syntax removal", "Total Traj": 109, "Multi-Ckpt": 7, "Candidates": 32, "Incub. Seeds": 0, "OnlyFans (D11)": "Captured (D11)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 24, "Mean Coh": 0.6805, "Drift": "Severe (TRAJ_002)", "Baseline Alerts": 823},
+        {"Experiment": "E3 Lexical Consistency", "Mechanism / Threshold": "Cosine >= 0.68 + Jaccard >= 0.20", "Total Traj": 133, "Multi-Ckpt": 11, "Candidates": 35, "Incub. Seeds": 0, "OnlyFans (D11)": "Captured (D11)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 5, "Mean Coh": 0.6819, "Drift": "Controlled", "Baseline Alerts": 823},
+        {"Experiment": "E4 Entity-Aware Linkage", "Mechanism / Threshold": "NER dual gate (J_ent >= 0.20)", "Total Traj": 132, "Multi-Ckpt": 12, "Candidates": 35, "Incub. Seeds": 0, "OnlyFans (D11)": "Captured (D11)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 5, "Mean Coh": 0.6819, "Drift": "Controlled", "Baseline Alerts": 823},
+        {"Experiment": "E5 Micro-Clustering", "Mechanism / Threshold": "Density lowered to N >= 3", "Total Traj": 1121, "Multi-Ckpt": 4, "Candidates": 141, "Incub. Seeds": 721, "OnlyFans (D11)": "Fragmented (9p)", "FDA/Pfizer (D16)": "Recovered (10 clusters)", "Locked Comms": "Missed (<3)", "Max Span": 3, "Mean Coh": 0.6957, "Drift": "Fragmented", "Baseline Alerts": 823},
+        {"Experiment": "E6 Combined Two-Tier", "Mechanism / Threshold": "Two-Tier (N>=7 + Incub. 3<=N<7)", "Total Traj": 862, "Multi-Ckpt": 23, "Candidates": 102, "Incub. Seeds": 517, "OnlyFans (D11)": "Captured (11p intact)", "FDA/Pfizer (D16)": "Recovered (D16 seed)", "Locked Comms": "Missed (<3)", "Max Span": 5, "Mean Coh": 0.6983, "Drift": "Controlled", "Baseline Alerts": 823},
+    ]
+    return pd.DataFrame(master_data)
+
 current_topic = get_current_topic_row(st.session_state["selected_trajectory_id"])
 
 # -----------------------------------------------------------------------------
@@ -191,6 +285,11 @@ current_topic = get_current_topic_row(st.session_state["selected_trajectory_id"]
 # -----------------------------------------------------------------------------
 render_sidebar(current_topic)
 render_header(st.session_state["source_filter"])
+
+# ── Immediate Page-Change Loader (Cleared after main area finishes) ───────────
+page_loader = st.empty()
+cur_section = st.session_state.get("nav_section", "OVERVIEW")
+show_page_loader(page_loader, cur_section)
 
 # Filter alerts_df if search query is active
 filtered_alerts_df = alerts_df
@@ -206,261 +305,267 @@ if search_q and not alerts_df.empty:
 # 1. OVERVIEW (Executive Intelligence Command Center)
 # -----------------------------------------------------------------------------
 if st.session_state["nav_section"] == "OVERVIEW":
-    st.markdown('<div class="tr-section-title">Executive Intelligence Overview</div>', unsafe_allow_html=True)
+    with section_spinner("Loading Executive Intelligence Overview..."):
+        st.markdown('<div class="tr-section-title">Executive Intelligence Overview</div>', unsafe_allow_html=True)
 
-    # 1. KPI Strip (6 Cards)
-    render_kpi_strip(alerts_df, trajs_df, posts_df, base_df)
+        # 1. KPI Strip (6 Cards)
+        render_kpi_strip(alerts_df, trajs_df, posts_df, base_df)
 
-    # 2. What's Emerging Right Now (3x2 Grid with Rapidly Growing Topics chart)
-    render_whats_emerging(alerts_df, navigate_to)
+        # 2. What's Emerging Right Now (3x2 Grid with Rapidly Growing Topics chart)
+        render_whats_emerging(alerts_df, navigate_to)
 
-    st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
+        st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
 
-    # 3. Middle Split: Trend Velocity & Live Monitoring
-    c_vel, c_mon = st.columns([3, 2])
-    with c_vel:
-        render_trend_velocity_chart(alerts_df, st.session_state["selected_trajectory_id"])
-    with c_mon:
-        render_live_monitoring_feed(posts_df)
+        # 3. Middle Split: Trend Velocity & Live Monitoring
+        c_vel, c_mon = st.columns([3, 2])
+        with c_vel:
+            render_trend_velocity_chart(alerts_df, st.session_state["selected_trajectory_id"])
+        with c_mon:
+            render_live_monitoring_feed(posts_df)
 
-    st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
+        st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
 
-    # 4. Lower Split: Emerging Topics Table Registry & Alert Center
-    c_tab, c_alt = st.columns([3, 2])
-    with c_tab:
-        st.markdown('<div class="tr-section-title">EMERGING TOPICS REGISTRY (SELECTABLE)</div>', unsafe_allow_html=True)
-        cols_show = ["trajectory_id", "lifecycle_status", "total_volume", "avg_coherence", "emergence_score", "birth_window"]
-        avail_cols = [c for c in cols_show if c in filtered_alerts_df.columns]
-        if not filtered_alerts_df.empty:
-            df_event = st.dataframe(
-                filtered_alerts_df[avail_cols].head(15),
-                width="stretch",
-                hide_index=True,
-                selection_mode="single-row",
-                on_select="rerun",
-                key="overview_topics_table"
-            )
-            if df_event and hasattr(df_event, "selection") and df_event.selection and df_event.selection.rows:
-                sel_row_idx = df_event.selection.rows[0]
-                if sel_row_idx < len(filtered_alerts_df):
-                    clicked_tid = filtered_alerts_df.iloc[sel_row_idx]["trajectory_id"]
-                    if clicked_tid != st.session_state.get("selected_trajectory_id"):
-                        st.session_state["selected_trajectory_id"] = clicked_tid
-                        st.rerun()
+        # 4. Lower Split: Emerging Topics Table Registry & Alert Center
+        c_tab, c_alt = st.columns([3, 2])
+        with c_tab:
+            st.markdown('<div class="tr-section-title">EMERGING TOPICS REGISTRY (SELECTABLE)</div>', unsafe_allow_html=True)
+            cols_show = ["trajectory_id", "lifecycle_status", "total_volume", "avg_coherence", "emergence_score", "birth_window"]
+            avail_cols = [c for c in cols_show if c in filtered_alerts_df.columns]
+            if not filtered_alerts_df.empty:
+                df_event = st.dataframe(
+                    filtered_alerts_df[avail_cols].head(15),
+                    width="stretch",
+                    hide_index=True,
+                    selection_mode="single-row",
+                    on_select="rerun",
+                    key="overview_topics_table"
+                )
+                if df_event and hasattr(df_event, "selection") and df_event.selection and df_event.selection.rows:
+                    sel_row_idx = df_event.selection.rows[0]
+                    if sel_row_idx < len(filtered_alerts_df):
+                        clicked_tid = filtered_alerts_df.iloc[sel_row_idx]["trajectory_id"]
+                        if clicked_tid != st.session_state.get("selected_trajectory_id"):
+                            st.session_state["selected_trajectory_id"] = clicked_tid
+                            st.rerun()
 
-            c_sel_tid = st.session_state.get("selected_trajectory_id", "TRAJ_284")
-            if st.button(f"🔍 Drill Down into #{c_sel_tid} Details", key="btn_tbl_inspect", use_container_width=True):
-                navigate_to("TOPICS", c_sel_tid)
-        else:
-            st.info("No topics matching search query.")
+                c_sel_tid = st.session_state.get("selected_trajectory_id", "TRAJ_284")
+                if st.button(f"🔍 Drill Down into #{c_sel_tid} Details", key="btn_tbl_inspect", use_container_width=True):
+                    navigate_to("TOPICS", c_sel_tid)
+            else:
+                st.info("No topics matching search query.")
 
-    with c_alt:
-        render_alert_center_panel(alerts_df, navigate_to)
+        with c_alt:
+            render_alert_center_panel(alerts_df, navigate_to)
 
 
 # -----------------------------------------------------------------------------
 # 2. MONITORING (Live Ingestion & Stream Console)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "MONITORING":
-    st.markdown('<div class="tr-section-title">Live Monitoring Console</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Real-time chronological stream filtered for boilerplate templates, encoded via Sentence-BERT, and mapped into cluster centroids.</p>', unsafe_allow_html=True)
+    with section_spinner("Loading Live Stream Console..."):
+        st.markdown('<div class="tr-section-title">Live Monitoring Console</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Real-time chronological stream filtered for boilerplate templates, encoded via Sentence-BERT, and mapped into cluster centroids.</p>', unsafe_allow_html=True)
 
-    m_col1, m_col2, m_col3 = st.columns([1, 1, 2])
-    with m_col1:
-        st.selectbox("Channel Source", ["All Sources", "Reddit r/AskReddit", "Twitter/X", "Forums"])
-    with m_col2:
-        sim_floor = st.slider("Semantic Similarity Floor", 0.50, 0.99, 0.68)
-    with m_col3:
-        stream_kw = st.text_input("Filter Stream Keyword", placeholder="Search live posts...").strip().lower()
+        m_col1, m_col2, m_col3 = st.columns([1, 1, 2])
+        with m_col1:
+            st.selectbox("Channel Source", ["All Sources", "Reddit r/AskReddit", "Twitter/X", "Forums"])
+        with m_col2:
+            sim_floor = st.slider("Semantic Similarity Floor", 0.50, 0.99, 0.68)
+        with m_col3:
+            stream_kw = st.text_input("Filter Stream Keyword", placeholder="Search live posts...").strip().lower()
 
-    st.markdown("### Incoming Chronological Post Stream")
-    if not posts_df.empty:
-        stream_data = posts_df
-        if stream_kw and "clean_text" in stream_data.columns:
-            stream_data = stream_data[stream_data["clean_text"].astype(str).str.lower().str.contains(stream_kw)]
-            
-        disp_cols = [c for c in ["datetime_utc", "cluster_name", "clean_text", "word_count", "score"] if c in stream_data.columns]
-        if not disp_cols:
-            disp_cols = [c for c in ["window_id", "cluster_id", "clean_text"] if c in stream_data.columns]
-            
-        st.dataframe(stream_data[disp_cols].head(35), width="stretch", hide_index=True)
-    else:
-        st.info("Live stream buffering incoming posts.")
+        st.markdown("### Incoming Chronological Post Stream")
+        if not posts_df.empty:
+            stream_data = posts_df
+            if stream_kw and "clean_text" in stream_data.columns:
+                stream_data = stream_data[stream_data["clean_text"].astype(str).str.lower().str.contains(stream_kw)]
+                
+            disp_cols = [c for c in ["datetime_utc", "cluster_name", "clean_text", "word_count", "score"] if c in stream_data.columns]
+            if not disp_cols:
+                disp_cols = [c for c in ["window_id", "cluster_id", "clean_text"] if c in stream_data.columns]
+                
+            st.dataframe(stream_data[disp_cols].head(35), width="stretch", hide_index=True)
+        else:
+            st.info("Live stream buffering incoming posts.")
 
 
 # -----------------------------------------------------------------------------
 # 2b. EMERGING TOPICS (Registry Directory)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "EMERGING TOPICS":
-    st.markdown('<div class="tr-section-title">Emerging Topics Registry</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Complete directory of detected topic trajectories, emergence scores, coherence metrics, and lifecycle stages.</p>', unsafe_allow_html=True)
-    cols_show = ["trajectory_id", "lifecycle_status", "total_volume", "avg_coherence", "emergence_score", "birth_window", "representative_post"]
-    avail_cols = [c for c in cols_show if c in filtered_alerts_df.columns]
-    if not filtered_alerts_df.empty:
-        df_reg = st.dataframe(
-            filtered_alerts_df[avail_cols],
-            width="stretch",
-            hide_index=True,
-            selection_mode="single-row",
-            on_select="rerun",
-            key="registry_topics_table"
-        )
-        if df_reg and hasattr(df_reg, "selection") and df_reg.selection and df_reg.selection.rows:
-            sel_idx = df_reg.selection.rows[0]
-            if sel_idx < len(filtered_alerts_df):
-                reg_tid = filtered_alerts_df.iloc[sel_idx]["trajectory_id"]
-                if reg_tid != st.session_state.get("selected_trajectory_id"):
-                    st.session_state["selected_trajectory_id"] = reg_tid
-                    st.rerun()
+    with section_spinner("Loading Emerging Topics Registry..."):
+        st.markdown('<div class="tr-section-title">Emerging Topics Registry</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Complete directory of detected topic trajectories, emergence scores, coherence metrics, and lifecycle stages.</p>', unsafe_allow_html=True)
+        cols_show = ["trajectory_id", "lifecycle_status", "total_volume", "avg_coherence", "emergence_score", "birth_window", "representative_post"]
+        avail_cols = [c for c in cols_show if c in filtered_alerts_df.columns]
+        if not filtered_alerts_df.empty:
+            df_reg = st.dataframe(
+                filtered_alerts_df[avail_cols],
+                width="stretch",
+                hide_index=True,
+                selection_mode="single-row",
+                on_select="rerun",
+                key="registry_topics_table"
+            )
+            if df_reg and hasattr(df_reg, "selection") and df_reg.selection and df_reg.selection.rows:
+                sel_idx = df_reg.selection.rows[0]
+                if sel_idx < len(filtered_alerts_df):
+                    reg_tid = filtered_alerts_df.iloc[sel_idx]["trajectory_id"]
+                    if reg_tid != st.session_state.get("selected_trajectory_id"):
+                        st.session_state["selected_trajectory_id"] = reg_tid
+                        st.rerun()
 
-        cur_tid = st.session_state.get("selected_trajectory_id", "TRAJ_284")
-        if st.button(f"🔍 Drill Down into #{cur_tid} Deep Dive", key="btn_reg_inspect", use_container_width=True):
-            navigate_to("TOPICS", cur_tid)
-    else:
-        st.info("No emerging topics matching search filter.")
+            cur_tid = st.session_state.get("selected_trajectory_id", "TRAJ_284")
+            if st.button(f"🔍 Drill Down into #{cur_tid} Deep Dive", key="btn_reg_inspect", use_container_width=True):
+                navigate_to("TOPICS", cur_tid)
+        else:
+            st.info("No emerging topics matching search filter.")
 
 
 # -----------------------------------------------------------------------------
 # 3. TOPICS (Topic Details / Deep Dive & Explainable AI)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "TOPICS":
-    all_tids = alerts_df["trajectory_id"].tolist() if not alerts_df.empty else []
-    render_topic_details_view(current_topic, all_tids, navigate_to)
+    with section_spinner("Loading Topic Details & Evidence Inspector..."):
+        all_tids = alerts_df["trajectory_id"].tolist() if not alerts_df.empty else []
+        render_topic_details_view(current_topic, all_tids, navigate_to)
 
 
 # -----------------------------------------------------------------------------
 # 4. ALERTS (Dedicated Alert Center)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "ALERTS":
-    st.markdown('<div class="tr-section-title">Prioritized Alert Center</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Action high-velocity topics or place nascent seeds on watchlist.</p>', unsafe_allow_html=True)
+    with section_spinner("Loading Prioritized Alert Center..."):
+        st.markdown('<div class="tr-section-title">Prioritized Alert Center</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Action high-velocity topics or place nascent seeds on watchlist.</p>', unsafe_allow_html=True)
 
-    bursts = alerts_df[alerts_df.get("lifecycle_status", "") == "[BURST]"]
-    confirmed = alerts_df[alerts_df.get("lifecycle_status", "") == "[CONFIRMED_SEED]"]
+        bursts = alerts_df[alerts_df.get("lifecycle_status", "") == "[BURST]"]
+        confirmed = alerts_df[alerts_df.get("lifecycle_status", "") == "[CONFIRMED_SEED]"]
 
-    st.markdown(f"### High-Priority Alerts ({len(bursts)} Bursts • {len(confirmed)} Confirmed Seeds)")
-    for _, r in bursts.head(8).iterrows():
-        tid = r["trajectory_id"]
-        t_name = str(r["topic_name"]).replace("[", "").replace("]", "").replace("'", "")
-        st.markdown(f"""
-        <div class="tr-alert-banner">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <h4 style="margin:0; color:#B91C1C;">🚨 #{tid} — {t_name}</h4>
-                <span class="tr-badge tr-badge-emerging">BURST • SCORE {r.get('emergence_score', 0.0):.3f}</span>
+        st.markdown(f"### High-Priority Alerts ({len(bursts)} Bursts • {len(confirmed)} Confirmed Seeds)")
+        for _, r in bursts.head(8).iterrows():
+            tid = r["trajectory_id"]
+            t_name = str(r["topic_name"]).replace("[", "").replace("]", "").replace("'", "")
+            st.markdown(f"""
+            <div class="tr-alert-banner">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h4 style="margin:0; color:#B91C1C;">🚨 #{tid} — {t_name}</h4>
+                    <span class="tr-badge tr-badge-emerging">BURST • SCORE {r.get('emergence_score', 0.0):.3f}</span>
+                </div>
+                <p style="margin:6px 0; color:#334155; font-size:0.86rem;">"{r.get('representative_post', '')}"</p>
+                <div style="font-size:0.75rem; color:#64748B; font-family:'JetBrains Mono', monospace;">
+                    Volume Path: <code>{r.get('volume_path')}</code> &nbsp;|&nbsp; Coherence: <strong>{r.get('avg_coherence', 0.0):.3f}</strong> &nbsp;|&nbsp; Detected: <strong>{r.get('birth_window')}</strong>
+                </div>
             </div>
-            <p style="margin:6px 0; color:#334155; font-size:0.86rem;">"{r.get('representative_post', '')}"</p>
-            <div style="font-size:0.75rem; color:#64748B; font-family:'JetBrains Mono', monospace;">
-                Volume Path: <code>{r.get('volume_path')}</code> &nbsp;|&nbsp; Coherence: <strong>{r.get('avg_coherence', 0.0):.3f}</strong> &nbsp;|&nbsp; Detected: <strong>{r.get('birth_window')}</strong>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-        c_a1, c_a2, c_a3 = st.columns(3)
-        with c_a1:
-            if st.button("INVESTIGATE", key=f"al_inv_{tid}", use_container_width=True):
-                navigate_to("TOPICS", tid)
-        with c_a2:
-            if st.button("RESEARCH CONTEXT", key=f"al_res_{tid}", use_container_width=True):
-                navigate_to("RESEARCH", tid)
-        with c_a3:
-            if st.button("PIN CASE", key=f"al_pin_{tid}", use_container_width=True):
-                save_investigation(tid, t_name, "[BURST]", str(r.get("volume_path")), float(r.get("avg_coherence", 0.0)), str(r.get("birth_window")), str(r.get("representative_post")), [k.strip() for k in t_name.split(",")])
-                st.toast(f"Pinned {tid} to Desk", icon="📌")
+            """, unsafe_allow_html=True)
+            c_a1, c_a2, c_a3 = st.columns(3)
+            with c_a1:
+                if st.button("INVESTIGATE", key=f"al_inv_{tid}", use_container_width=True):
+                    navigate_to("TOPICS", tid)
+            with c_a2:
+                if st.button("RESEARCH CONTEXT", key=f"al_res_{tid}", use_container_width=True):
+                    navigate_to("RESEARCH", tid)
+            with c_a3:
+                if st.button("PIN CASE", key=f"al_pin_{tid}", use_container_width=True):
+                    save_investigation(tid, t_name, "[BURST]", str(r.get("volume_path")), float(r.get("avg_coherence", 0.0)), str(r.get("birth_window")), str(r.get("representative_post")), [k.strip() for k in t_name.split(",")])
+                    st.toast(f"Pinned {tid} to Desk", icon="📌")
 
 
 # -----------------------------------------------------------------------------
 # 5. RESEARCH (Research Hub)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "RESEARCH":
-    st.markdown('<div class="tr-section-title">Research Hub &amp; External Corroboration</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Separates internal platform evidence from external knowledge retrieval (Wikipedia, arXiv).</p>', unsafe_allow_html=True)
+    with section_spinner("Loading Research Hub & External Corroboration..."):
+        st.markdown('<div class="tr-section-title">Research Hub &amp; External Corroboration</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Separates internal platform evidence from external knowledge retrieval (Wikipedia, arXiv).</p>', unsafe_allow_html=True)
 
-    t_row = current_topic
-    if t_row is not None:
-        tid = t_row["trajectory_id"]
-        t_name = str(t_row["topic_name"]).replace("[", "").replace("]", "").replace("'", "")
-        keywords = [k.strip() for k in t_name.split(",")]
-        rep_post = str(t_row.get("representative_post", ""))
+        t_row = current_topic
+        if t_row is not None:
+            tid = t_row["trajectory_id"]
+            t_name = str(t_row["topic_name"]).replace("[", "").replace("]", "").replace("'", "")
+            keywords = [k.strip() for k in t_name.split(",")]
+            rep_post = str(t_row.get("representative_post", ""))
 
-        st.markdown(f"### Research Dossier: #{tid} — {t_name}")
+            st.markdown(f"### Research Dossier: #{tid} — {t_name}")
 
-        with st.spinner("Querying live Wikipedia & arXiv APIs..."):
-            dossier = get_topic_research_dossier(t_name, keywords, rep_post)
+            with section_spinner("Querying live Wikipedia & arXiv APIs..."):
+                dossier = get_cached_topic_research_dossier(t_name, tuple(keywords), rep_post)
 
-        col_ev_left, col_ev_right = st.columns(2)
-        with col_ev_left:
-            st.markdown("""
-            <div class="tr-research-card">
-                <h4>📊 Internal Platform Evidence (TrendRadar AI)</h4>
-            """, unsafe_allow_html=True)
-            st.write(f"- **Volume Path**: `{t_row.get('volume_path')}`")
-            st.write(f"- **Cluster Coherence**: `{t_row.get('avg_coherence', 0.0):.3f}`")
-            st.write(f"- **Detection Window**: `{t_row.get('birth_window')}`")
-            st.write(f"- **Extracted Entities**: `{t_row.get('entities', 'None')}`")
-            st.markdown(f"**Canonical Post:** *\"{rep_post}\"*")
-            st.markdown("</div>", unsafe_allow_html=True)
+            col_ev_left, col_ev_right = st.columns(2)
+            with col_ev_left:
+                st.markdown("""
+                <div class="tr-research-card">
+                    <h4>📊 Internal Platform Evidence (TrendRadar AI)</h4>
+                """, unsafe_allow_html=True)
+                st.write(f"- **Volume Path**: `{t_row.get('volume_path')}`")
+                st.write(f"- **Cluster Coherence**: `{t_row.get('avg_coherence', 0.0):.3f}`")
+                st.write(f"- **Detection Window**: `{t_row.get('birth_window')}`")
+                st.write(f"- **Extracted Entities**: `{t_row.get('entities', 'None')}`")
+                st.markdown(f"**Canonical Post:** *\"{rep_post}\"*")
+                st.markdown("</div>", unsafe_allow_html=True)
 
-        with col_ev_right:
-            st.markdown("""
-            <div class="tr-research-card">
-                <h4>🌐 External Context Corroboration</h4>
-            """, unsafe_allow_html=True)
-            conf = dossier.get("corroboration_confidence", "Verified External Topic")
-            st.markdown(f"**Corroboration Rating:** <span class='tr-badge tr-badge-confirmed'>{conf}</span>", unsafe_allow_html=True)
-            wiki = dossier.get("wikipedia", {})
-            if wiki.get("found"):
-                st.write(f"**Wikipedia Title:** [{wiki.get('title')}]({wiki.get('url')})")
-                st.write(wiki.get("summary"))
-            else:
-                st.info("No direct Wikipedia entry found. Community discourse is platform-specific.")
+            with col_ev_right:
+                st.markdown("""
+                <div class="tr-research-card">
+                    <h4>🌐 External Context Corroboration</h4>
+                """, unsafe_allow_html=True)
+                conf = dossier.get("corroboration_confidence", "Verified External Topic")
+                st.markdown(f"**Corroboration Rating:** <span class='tr-badge tr-badge-confirmed'>{conf}</span>", unsafe_allow_html=True)
+                wiki = dossier.get("wikipedia", {})
+                if wiki.get("found"):
+                    st.write(f"**Wikipedia Title:** [{wiki.get('title')}]({wiki.get('url')})")
+                    st.write(wiki.get("summary"))
+                else:
+                    st.info("No direct Wikipedia entry found. Community discourse is platform-specific.")
 
-            arxiv_list = dossier.get("arxiv_papers", [])
-            if arxiv_list:
-                st.markdown("<h5 style='color:#a5b4fc; margin-top:14px; font-size:0.85rem;'>📄 Academic Preprints (arXiv)</h5>", unsafe_allow_html=True)
-                for paper in arxiv_list[:2]:
-                    st.markdown(f"• **[{paper['title']}]({paper['url']})**  \n*{paper.get('summary', '')[:140]}...*")
-            st.markdown("</div>", unsafe_allow_html=True)
+                arxiv_list = dossier.get("arxiv_papers", [])
+                if arxiv_list:
+                    st.markdown("<h5 style='color:#a5b4fc; margin-top:14px; font-size:0.85rem;'>📄 Academic Preprints (arXiv)</h5>", unsafe_allow_html=True)
+                    for paper in arxiv_list[:2]:
+                        st.markdown(f"• **[{paper['title']}]({paper['url']})**  \n*{paper.get('summary', '')[:140]}...*")
+                st.markdown("</div>", unsafe_allow_html=True)
 
-        st.markdown("---")
-        if st.button("🧠 Synthesize AI Briefing with this Evidence Package", use_container_width=True):
-            st.session_state["cached_dossier"] = dossier
-            navigate_to("AI BRIEFING", tid)
+            st.markdown("---")
+            if st.button("🧠 Synthesize AI Briefing with this Evidence Package", use_container_width=True):
+                st.session_state["cached_dossier"] = dossier
+                navigate_to("AI BRIEFING", tid)
 
 
 # -----------------------------------------------------------------------------
 # 6. AI BRIEFING (AI Executive Briefing Engine)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "AI BRIEFING":
-    st.markdown('<div class="tr-section-title">AI Executive Briefing</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Explains the mathematically proven evidence without hallucinating non-existent trends.</p>', unsafe_allow_html=True)
+    with section_spinner("Loading AI Executive Briefing Engine..."):
+        st.markdown('<div class="tr-section-title">AI Executive Briefing</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Explains the mathematically proven evidence without hallucinating non-existent trends.</p>', unsafe_allow_html=True)
 
-    t_row = current_topic
-    if t_row is not None:
-        tid = t_row["trajectory_id"]
-        t_name = str(t_row["topic_name"]).replace("[", "").replace("]", "").replace("'", "")
-        keywords = [k.strip() for k in t_name.split(",")]
-        rep_post = str(t_row.get("representative_post", ""))
-        vol_path = str(t_row.get("volume_path", "N/A"))
-        coh = float(t_row.get("avg_coherence", 0.0))
-        birth = str(t_row.get("birth_window", "D_00"))
-        status = str(t_row.get("lifecycle_status", "[ALERT]"))
+        t_row = current_topic
+        if t_row is not None:
+            tid = t_row["trajectory_id"]
+            t_name = str(t_row["topic_name"]).replace("[", "").replace("]", "").replace("'", "")
+            keywords = [k.strip() for k in t_name.split(",")]
+            rep_post = str(t_row.get("representative_post", ""))
+            vol_path = str(t_row.get("volume_path", "N/A"))
+            coh = float(t_row.get("avg_coherence", 0.0))
+            birth = str(t_row.get("birth_window", "D_00"))
+            status = str(t_row.get("lifecycle_status", "[ALERT]"))
 
-        dossier = st.session_state.get("cached_dossier") or get_topic_research_dossier(t_name, keywords, rep_post)
+            dossier = st.session_state.get("cached_dossier") or get_cached_topic_research_dossier(t_name, tuple(keywords), rep_post)
 
-        with st.spinner("Generating executive intelligence brief..."):
-            brief = generate_executive_brief(
-                topic_name=t_name,
-                lifecycle_status=status,
-                volume_history=vol_path,
-                coherence=coh,
-                birth_window=birth,
-                representative_post=rep_post,
-                keywords=keywords,
-                research_dossier=dossier,
-                api_key=st.session_state.get("api_key")
-            )
-            st.session_state["cached_brief"] = brief
+            with section_spinner("Generating executive intelligence brief..."):
+                brief = get_cached_executive_brief(
+                    topic_name=t_name,
+                    lifecycle_status=status,
+                    volume_history=vol_path,
+                    coherence=coh,
+                    birth_window=birth,
+                    representative_post=rep_post,
+                    keywords=tuple(keywords),
+                    api_key=st.session_state.get("api_key", "")
+                )
+                st.session_state["cached_brief"] = brief
 
-        st.markdown(f"### Executive Intelligence Brief: #{tid} — {t_name}")
+            st.markdown(f"### Executive Intelligence Brief: #{tid} — {t_name}")
 
         b1, b2 = st.columns(2)
         with b1:
@@ -505,284 +610,249 @@ elif st.session_state["nav_section"] == "AI BRIEFING":
 # 7. ACTION HUB (Dispatch & Reporting)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "ACTION HUB":
-    st.markdown('<div class="tr-section-title">Action Hub & Dispatch</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Convert intelligence into formal briefs, stakeholder alerts, and committed workspace cases.</p>', unsafe_allow_html=True)
+    with section_spinner("Loading Action Hub & Dispatch..."):
+        st.markdown('<div class="tr-section-title">Action Hub & Dispatch</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Convert intelligence into formal briefs, stakeholder alerts, and committed workspace cases.</p>', unsafe_allow_html=True)
 
-    t_row = current_topic
-    if t_row is not None:
-        tid = t_row["trajectory_id"]
-        t_name = str(t_row["topic_name"]).replace("[", "").replace("]", "").replace("'", "")
-        rep_post = str(t_row.get("representative_post", ""))
-        vol_path = str(t_row.get("volume_path", "N/A"))
-        coh = float(t_row.get("avg_coherence", 0.0))
-        birth = str(t_row.get("birth_window", "D_00"))
-        status = str(t_row.get("lifecycle_status", "[ALERT]"))
-        keywords = [k.strip() for k in t_name.split(",")]
+        t_row = current_topic
+        if t_row is not None:
+            tid = t_row["trajectory_id"]
+            t_name = str(t_row["topic_name"]).replace("[", "").replace("]", "").replace("'", "")
+            rep_post = str(t_row.get("representative_post", ""))
+            vol_path = str(t_row.get("volume_path", "N/A"))
+            coh = float(t_row.get("avg_coherence", 0.0))
+            birth = str(t_row.get("birth_window", "D_00"))
+            status = str(t_row.get("lifecycle_status", "[ALERT]"))
+            keywords = [k.strip() for k in t_name.split(",")]
 
-        brief = st.session_state.get("cached_brief") or generate_executive_brief(
-            topic_name=t_name,
-            lifecycle_status=status,
-            volume_history=vol_path,
-            coherence=coh,
-            birth_window=birth,
-            representative_post=rep_post,
-            keywords=keywords
-        )
-
-        col_a1, col_a2 = st.columns(2)
-        with col_a1:
-            st.markdown("### 📄 Formal Intelligence Brief")
-            brief_md = brief.get("full_brief_markdown", "No content.")
-            st.download_button(
-                label="📥 Download 1-Page Intelligence Brief (.md)",
-                data=brief_md,
-                file_name=f"TrendRadar_Brief_{tid}.md",
-                mime="text/markdown",
-                use_container_width=True
+            brief = st.session_state.get("cached_brief") or get_cached_executive_brief(
+                topic_name=t_name,
+                lifecycle_status=status,
+                volume_history=vol_path,
+                coherence=coh,
+                birth_window=birth,
+                representative_post=rep_post,
+                keywords=tuple(keywords)
             )
 
-            st.markdown("### 📢 Stakeholder Alert (Slack / Teams Ready)")
-            slack_alert = (
-                f"🚨 *TRENDRADAR AI ALERT: {t_name.upper()}*\n"
-                f"• *Status*: {status} | *First Detected*: {birth} | *Volume Path*: `{vol_path}`\n"
-                f"• *Core Theme*: {brief.get('what_is_happening')[:180]}...\n"
-                f"• *Recommended Action*: {brief.get('recommended_next_steps')[:140]}...\n"
-                f"• *Analyst Dashboard*: http://localhost:8501"
-            )
-            st.code(slack_alert, language="markdown")
+            col_a1, col_a2 = st.columns(2)
+            with col_a1:
+                st.markdown("### 📄 Formal Intelligence Brief")
+                brief_md = brief.get("full_brief_markdown", "No content.")
+                st.download_button(
+                    label="📥 Download 1-Page Intelligence Brief (.md)",
+                    data=brief_md,
+                    file_name=f"TrendRadar_Brief_{tid}.md",
+                    mime="text/markdown",
+                    use_container_width=True
+                )
 
-        with col_a2:
-            st.markdown("### 💾 Commit Investigation to Workspace")
-            with st.form("workspace_form_act"):
-                c_status = st.selectbox("Investigation Status", ["Active", "Monitoring", "Escalated", "Resolved"])
-                c_notes = st.text_area("Analyst Notes & Strategic Context", "High-velocity signal verified. Monitor next checkpoint.")
-                commit_btn = st.form_submit_button("Commit Case to Workspace", use_container_width=True)
-                if commit_btn:
-                    save_investigation(
-                        trajectory_id=tid,
-                        topic_name=t_name,
-                        lifecycle_status=status,
-                        volume_path=vol_path,
-                        coherence=coh,
-                        birth_window=birth,
-                        representative_post=rep_post,
-                        keywords=keywords,
-                        ai_brief=brief,
-                        analyst_notes=c_notes,
-                        status=c_status
-                    )
-                    st.success(f"Case `{tid}` committed to Workspace with status '{c_status}'!")
+                st.markdown("### 📢 Stakeholder Alert (Slack / Teams Ready)")
+                slack_alert = (
+                    f"🚨 *TRENDRADAR AI ALERT: {t_name.upper()}*\n"
+                    f"• *Status*: {status} | *First Detected*: {birth} | *Volume Path*: `{vol_path}`\n"
+                    f"• *Core Theme*: {brief.get('what_is_happening')[:180]}...\n"
+                    f"• *Recommended Action*: {brief.get('recommended_next_steps')[:140]}...\n"
+                    f"• *Analyst Dashboard*: http://localhost:8501"
+                )
+                st.code(slack_alert, language="markdown")
+
+            with col_a2:
+                st.markdown("### 💾 Commit Investigation to Workspace")
+                with st.form("workspace_form_act"):
+                    c_status = st.selectbox("Investigation Status", ["Active", "Monitoring", "Escalated", "Resolved"])
+                    c_notes = st.text_area("Analyst Notes & Strategic Context", "High-velocity signal verified. Monitor next checkpoint.")
+                    commit_btn = st.form_submit_button("Commit Case to Workspace", use_container_width=True)
+                    if commit_btn:
+                        save_investigation(
+                            trajectory_id=tid,
+                            topic_name=t_name,
+                            lifecycle_status=status,
+                            volume_path=vol_path,
+                            coherence=coh,
+                            birth_window=birth,
+                            representative_post=rep_post,
+                            keywords=keywords,
+                            ai_brief=brief,
+                            analyst_notes=c_notes,
+                            status=c_status
+                        )
+                        st.success(f"Case `{tid}` committed to Workspace with status '{c_status}'!")
 
 
 # -----------------------------------------------------------------------------
 # 8. WORKSPACE (Investigation Desk)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "WORKSPACE":
-    st.markdown('<div class="tr-section-title">Workspace & Investigation Desk</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Track ongoing topic investigations, update statuses, and review pinned intelligence briefs.</p>', unsafe_allow_html=True)
+    with section_spinner("Loading Workspace & Investigation Desk..."):
+        st.markdown('<div class="tr-section-title">Workspace & Investigation Desk</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Track ongoing topic investigations, update statuses, and review pinned intelligence briefs.</p>', unsafe_allow_html=True)
 
-    investigations = list_investigations()
+        investigations = list_investigations()
 
-    if not investigations:
-        st.info("No investigations currently logged. Go to **Overview** or **Topics** to pin a topic.")
-    else:
-        k_w1, k_w2, k_w3 = st.columns(3)
-        k_w1.metric("Total Monitored Cases", len(investigations))
-        active_cnt = len([i for i in investigations if i.get("status") in ["Active", "Escalated"]])
-        k_w2.metric("Active / Escalated", active_cnt)
-        mon_cnt = len([i for i in investigations if i.get("status") == "Monitoring"])
-        k_w3.metric("Under Monitoring", mon_cnt)
+        if not investigations:
+            st.info("No investigations currently logged. Go to **Overview** or **Topics** to pin a topic.")
+        else:
+            k_w1, k_w2, k_w3 = st.columns(3)
+            k_w1.metric("Total Monitored Cases", len(investigations))
+            active_cnt = len([i for i in investigations if i.get("status") in ["Active", "Escalated"]])
+            k_w2.metric("Active / Escalated", active_cnt)
+            mon_cnt = len([i for i in investigations if i.get("status") == "Monitoring"])
+            k_w3.metric("Under Monitoring", mon_cnt)
 
-        st.download_button(
-            "📥 Export Master Workspace Dossier (.md)",
-            data=export_workspace_markdown(),
-            file_name="TrendRadar_Master_Workspace.md",
-            mime="text/markdown"
-        )
+            st.download_button(
+                "📥 Export Master Workspace Dossier (.md)",
+                data=export_workspace_markdown(),
+                file_name="TrendRadar_Master_Workspace.md",
+                mime="text/markdown"
+            )
 
-        st.markdown("---")
-        st.markdown("### Saved Investigation Cases")
-        for inv in investigations:
-            inv_id = inv["id"]
-            with st.expander(f"[{inv.get('status', 'Active')}] {inv['topic_name']} — {inv['trajectory_id']}"):
-                ci1, ci2 = st.columns([2, 1])
-                with ci1:
-                    st.write(f"**Canonical Post:** *\"{inv.get('representative_post')}\"*")
-                    st.write(f"**Volume Path:** `{inv.get('volume_path')}` | **Coherence:** `{inv.get('avg_coherence')}`")
-                    st.write(f"**Analyst Notes:** {inv.get('analyst_notes')}")
-                    st.caption(f"Last Updated: {inv.get('updated_at')}")
+            st.markdown("---")
+            st.markdown("### Saved Investigation Cases")
+            for inv in investigations:
+                inv_id = inv["id"]
+                with st.expander(f"[{inv.get('status', 'Active')}] {inv['topic_name']} — {inv['trajectory_id']}"):
+                    ci1, ci2 = st.columns([2, 1])
+                    with ci1:
+                        st.write(f"**Canonical Post:** *\"{inv.get('representative_post')}\"*")
+                        st.write(f"**Volume Path:** `{inv.get('volume_path')}` | **Coherence:** `{inv.get('avg_coherence')}`")
+                        st.write(f"**Analyst Notes:** {inv.get('analyst_notes')}")
+                        st.caption(f"Last Updated: {inv.get('updated_at')}")
 
-                with ci2:
-                    new_st = st.selectbox(
-                        "Update Status",
-                        ["Active", "Monitoring", "Escalated", "Resolved"],
-                        index=["Active", "Monitoring", "Escalated", "Resolved"].index(inv.get("status", "Active")),
-                        key=f"st_sel_{inv_id}"
-                    )
-                    new_nt = st.text_input("Edit Notes", value=inv.get("analyst_notes", ""), key=f"nt_sel_{inv_id}")
-                    if st.button("Save Update", key=f"btn_sv_{inv_id}"):
-                        update_investigation_status(inv_id, new_st, new_nt)
-                        st.toast(f"Updated {inv_id}", icon="✅")
-                        st.rerun()
+                    with ci2:
+                        new_st = st.selectbox(
+                            "Update Status",
+                            ["Active", "Monitoring", "Escalated", "Resolved"],
+                            index=["Active", "Monitoring", "Escalated", "Resolved"].index(inv.get("status", "Active")),
+                            key=f"st_sel_{inv_id}"
+                        )
+                        new_nt = st.text_input("Edit Notes", value=inv.get("analyst_notes", ""), key=f"nt_sel_{inv_id}")
+                        if st.button("Save Update", key=f"btn_sv_{inv_id}"):
+                            update_investigation_status(inv_id, new_st, new_nt)
+                            st.toast(f"Updated {inv_id}", icon="✅")
+                            st.rerun()
 
-                    if st.button("🗑️ Delete Case", key=f"btn_dl_{inv_id}"):
-                        delete_investigation(inv_id)
-                        st.toast(f"Deleted {inv_id}", icon="🗑️")
-                        st.rerun()
+                        if st.button("🗑️ Delete Case", key=f"btn_dl_{inv_id}"):
+                            delete_investigation(inv_id)
+                            st.toast(f"Deleted {inv_id}", icon="🗑️")
+                            st.rerun()
 
 
 # -----------------------------------------------------------------------------
 # 9. ANALYTICS (Comparative Evaluation & Benchmark)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "ANALYTICS":
-    st.markdown('<div class="tr-section-title">Analytics & Benchmark Audits</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Head-to-head empirical comparison on Held-Out Test Split (Days D_21 to D_30, Denominator = 5 Ground Truth Events).</p>', unsafe_allow_html=True)
+    with section_spinner("Loading Benchmark Analytics..."):
+        st.markdown('<div class="tr-section-title">Analytics & Benchmark Audits</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Head-to-head empirical comparison on Held-Out Test Split (Days D_21 to D_30, Denominator = 5 Ground Truth Events).</p>', unsafe_allow_html=True)
 
-    c_an1, c_an2 = st.columns([1, 1])
-    with c_an1:
-        comp_df = pd.DataFrame({
-            "System": ["Keyword Baseline", "Pipeline (Un-Gated)", "TrendRadar-AI (+ Novelty Gate)"],
-            "Alert Count": [171, 39, 14],
-            "Type": ["Term Spikes", "Candidate Alerts", "Novelty Filtered Alerts"]
-        })
-        fig_bar = px.bar(
-            comp_df,
-            x="System",
-            y="Alert Count",
-            color="System",
-            text="Alert Count",
-            title="Held-Out Alert Volume (Days D21–D30)",
-            color_discrete_sequence=["#f43f5e", "#818cf8", "#34d399"]
-        )
-        fig_bar.update_layout(
-            height=340,
-            plot_bgcolor="rgba(0,0,0,0)",
-            paper_bgcolor="rgba(0,0,0,0)",
-            showlegend=False,
-            font=dict(color="#94a3b8", family="Inter"),
-            title_font=dict(color="#a5b4fc", size=13),
-            xaxis=dict(gridcolor="rgba(99,102,241,0.1)", tickfont=dict(color="#94a3b8")),
-            yaxis=dict(gridcolor="rgba(99,102,241,0.1)", tickfont=dict(color="#94a3b8")),
-        )
-        fig_bar.update_traces(textfont_color="#e2e8f0", textfont_size=14, textposition="outside")
-        st.plotly_chart(fig_bar, use_container_width=True)
+        comp_df, bench_df = get_analytics_benchmark_data()
 
-    with c_an2:
-        st.markdown("""
-        <div class="tr-stat-highlight" style="margin-top:20px;">
-            <div style="font-size:0.68rem; color:#34d399; font-weight:800; text-transform:uppercase;
-                        letter-spacing:0.12em; margin-bottom:12px;">
-                ✅ Held-Out Empirical Benchmark (D_21–D_30)
-            </div>
-            <span class="tr-stat-number">2 / 5 (40.0%)</span>
-            <div style="font-size:1rem; color:#a5b4fc; font-weight:700; margin:10px 0 8px;">
-                Strict Event Recall
-            </div>
-            <p style="font-size:0.82rem; color:#64748b; line-height:1.6; margin:0;">
-                The causal novelty gate quarantined <strong style="color:#34d399;">25 recurring chatter alerts</strong>,
-                reducing candidate volume from <strong style="color:#818cf8;">39</strong> to <strong style="color:#34d399;">14</strong>
-                (vs. <strong style="color:#fb7185;">171</strong> keyword baseline spikes) with zero loss of real events.
-            </p>
-            <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
-                <div style="background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.25);
-                            border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
-                    <div style="font-size:1.5rem; font-weight:900; color:#fb7185; font-family:'JetBrains Mono';">171</div>
-                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">Keyword Baseline</div>
-                </div>
-                <div style="background:rgba(129,140,248,0.12); border:1px solid rgba(129,140,248,0.25);
-                            border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
-                    <div style="font-size:1.5rem; font-weight:900; color:#818cf8; font-family:'JetBrains Mono';">39</div>
-                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">Pipeline Un-Gated</div>
-                </div>
-                <div style="background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.25);
-                            border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
-                    <div style="font-size:1.5rem; font-weight:900; color:#34d399; font-family:'JetBrains Mono';">14</div>
-                    <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">With Novelty Gate</div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        c_an1, c_an2 = st.columns([1, 1])
+        with c_an1:
+            fig_bar = px.bar(
+                comp_df,
+                x="System",
+                y="Alert Count",
+                color="System",
+                text="Alert Count",
+                title="Held-Out Alert Volume (Days D21–D30)",
+                color_discrete_sequence=["#f43f5e", "#818cf8", "#34d399"]
+            )
+            fig_bar.update_layout(
+                height=340,
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)",
+                showlegend=False,
+                font=dict(color="#94a3b8", family="Inter"),
+                title_font=dict(color="#a5b4fc", size=13),
+                xaxis=dict(gridcolor="rgba(99,102,241,0.1)", tickfont=dict(color="#94a3b8")),
+                yaxis=dict(gridcolor="rgba(99,102,241,0.1)", tickfont=dict(color="#94a3b8")),
+            )
+            fig_bar.update_traces(textfont_color="#e2e8f0", textfont_size=14, textposition="outside")
+            st.plotly_chart(fig_bar, use_container_width=True)
 
-    st.markdown("### Held-Out Evaluation Summary Table (Days D_21 to D_30)")
-    bench_table_data = [
-        {
-            "System": "Keyword Frequency Baseline",
-            "Total Alerts": 171,
-            "Real Events Detected": "2 / 5 (EVT_003, EVT_008)",
-            "Strict Recall": "0.4000 (2/5)",
-            "Precision": 0.0175,
-            "F1 Score": 0.0336,
-            "P@10": 0.1000,
-            "Mean Lead Time": "0.0 days"
-        },
-        {
-            "System": "Phase 3 Pipeline (Un-Gated)",
-            "Total Alerts": 39,
-            "Real Events Detected": "2 / 5 (EVT_003, EVT_004)",
-            "Strict Recall": "0.4000 (2/5)",
-            "Precision": 0.0513,
-            "F1 Score": 0.0909,
-            "P@10": 0.1000,
-            "Mean Lead Time": "0.0 days"
-        },
-        {
-            "System": "TrendRadar-AI (+ Novelty Gate)",
-            "Total Alerts": 14,
-            "Real Events Detected": "2 / 5 (EVT_003, EVT_004)",
-            "Strict Recall": "0.4000 (2/5)",
-            "Precision": 0.1429,
-            "F1 Score": 0.2105,
-            "P@10": 0.2000,
-            "Mean Lead Time": "0.0 days"
-        },
-    ]
-    st.dataframe(pd.DataFrame(bench_table_data), width="stretch", hide_index=True)
+        with c_an2:
+            st.markdown("""
+            <div class="tr-stat-highlight" style="margin-top:20px;">
+                <div style="font-size:0.68rem; color:#34d399; font-weight:800; text-transform:uppercase;
+                            letter-spacing:0.12em; margin-bottom:12px;">
+                    ✅ Held-Out Empirical Benchmark (D_21–D_30)
+                </div>
+                <span class="tr-stat-number">2 / 5 (40.0%)</span>
+                <div style="font-size:1rem; color:#a5b4fc; font-weight:700; margin:10px 0 8px;">
+                    Strict Event Recall
+                </div>
+                <p style="font-size:0.82rem; color:#64748b; line-height:1.6; margin:0;">
+                    The causal novelty gate quarantined <strong style="color:#34d399;">25 recurring chatter alerts</strong>,
+                    reducing candidate volume from <strong style="color:#818cf8;">39</strong> to <strong style="color:#34d399;">14</strong>
+                    (vs. <strong style="color:#fb7185;">171</strong> keyword baseline spikes) with zero loss of real events.
+                </p>
+                <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
+                    <div style="background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.25);
+                                border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
+                        <div style="font-size:1.5rem; font-weight:900; color:#fb7185; font-family:'JetBrains Mono';">171</div>
+                        <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">Keyword Baseline</div>
+                    </div>
+                    <div style="background:rgba(129,140,248,0.12); border:1px solid rgba(129,140,248,0.25);
+                                border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
+                        <div style="font-size:1.5rem; font-weight:900; color:#818cf8; font-family:'JetBrains Mono';">39</div>
+                        <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">Pipeline Un-Gated</div>
+                    </div>
+                    <div style="background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.25);
+                                border-radius:10px; padding:10px 16px; flex:1; text-align:center;">
+                        <div style="font-size:1.5rem; font-weight:900; color:#34d399; font-family:'JetBrains Mono';">14</div>
+                        <div style="font-size:0.65rem; color:#64748b; font-weight:600; text-transform:uppercase;">With Novelty Gate</div>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("### Held-Out Evaluation Summary Table (Days D_21 to D_30)")
+        st.dataframe(bench_df, width="stretch", hide_index=True)
 
 
 # -----------------------------------------------------------------------------
 # 10. RESEARCH LAB (Ablations & Scientific Progression)
 # -----------------------------------------------------------------------------
 elif st.session_state["nav_section"] == "RESEARCH LAB":
-    st.markdown('<div class="tr-section-title">Scientific Research Lab</div>', unsafe_allow_html=True)
-    st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Rigorous empirical evaluation suite: Controlled Ablation progression (E0 to E6), lead-time evaluation, and observable density boundary.</p>', unsafe_allow_html=True)
+    with section_spinner("Loading Scientific Research Lab..."):
+        st.markdown('<div class="tr-section-title">Scientific Research Lab</div>', unsafe_allow_html=True)
+        st.markdown('<p style="color:#64748b; font-size:0.85rem; margin-bottom:16px;">Rigorous empirical evaluation suite: Controlled Ablation progression (E0 to E6), lead-time evaluation, and observable density boundary.</p>', unsafe_allow_html=True)
 
-    lab_t1, lab_t2 = st.tabs(["Master Ablation Progression (E0–E6)", "Lead-Time Evaluation & Density Boundaries"])
+        lab_t1, lab_t2 = st.tabs(["Master Ablation Progression (E0–E6)", "Lead-Time Evaluation & Density Boundaries"])
 
-    with lab_t1:
-        st.subheader("Controlled Ablation Progression (E0 to E6)")
-        master_data = [
-            {"Experiment": "E0 Control", "Mechanism / Threshold": "Absolute vol >= 15 posts", "Total Traj": 82, "Multi-Ckpt": 6, "Candidates": 2, "Incub. Seeds": 0, "OnlyFans (D11)": "Missed (<15 vol)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 10, "Mean Coh": 0.6670, "Drift": "Present", "Baseline Alerts": 823},
-            {"Experiment": "E1 Scale Normalization", "Mechanism / Threshold": "Share >= 2.0% slice volume", "Total Traj": 82, "Multi-Ckpt": 6, "Candidates": 36, "Incub. Seeds": 0, "OnlyFans (D11)": "Captured (D11)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 10, "Mean Coh": 0.6974, "Drift": "Present", "Baseline Alerts": 823},
-            {"Experiment": "E2 Template Stripping", "Mechanism / Threshold": "Interrogative syntax removal", "Total Traj": 109, "Multi-Ckpt": 7, "Candidates": 32, "Incub. Seeds": 0, "OnlyFans (D11)": "Captured (D11)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 24, "Mean Coh": 0.6805, "Drift": "Severe (TRAJ_002)", "Baseline Alerts": 823},
-            {"Experiment": "E3 Lexical Consistency", "Mechanism / Threshold": "Cosine >= 0.68 + Jaccard >= 0.20", "Total Traj": 133, "Multi-Ckpt": 11, "Candidates": 35, "Incub. Seeds": 0, "OnlyFans (D11)": "Captured (D11)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 5, "Mean Coh": 0.6819, "Drift": "Controlled", "Baseline Alerts": 823},
-            {"Experiment": "E4 Entity-Aware Linkage", "Mechanism / Threshold": "NER dual gate (J_ent >= 0.20)", "Total Traj": 132, "Multi-Ckpt": 12, "Candidates": 35, "Incub. Seeds": 0, "OnlyFans (D11)": "Captured (D11)", "FDA/Pfizer (D16)": "Missed (N<7)", "Locked Comms": "Missed (N<7)", "Max Span": 5, "Mean Coh": 0.6819, "Drift": "Controlled", "Baseline Alerts": 823},
-            {"Experiment": "E5 Micro-Clustering", "Mechanism / Threshold": "Density lowered to N >= 3", "Total Traj": 1121, "Multi-Ckpt": 4, "Candidates": 141, "Incub. Seeds": 721, "OnlyFans (D11)": "Fragmented (9p)", "FDA/Pfizer (D16)": "Recovered (10 clusters)", "Locked Comms": "Missed (<3)", "Max Span": 3, "Mean Coh": 0.6957, "Drift": "Fragmented", "Baseline Alerts": 823},
-            {"Experiment": "E6 Combined Two-Tier", "Mechanism / Threshold": "Two-Tier (N>=7 + Incub. 3<=N<7)", "Total Traj": 862, "Multi-Ckpt": 23, "Candidates": 102, "Incub. Seeds": 517, "OnlyFans (D11)": "Captured (11p intact)", "FDA/Pfizer (D16)": "Recovered (D16 seed)", "Locked Comms": "Missed (<3)", "Max Span": 5, "Mean Coh": 0.6983, "Drift": "Controlled", "Baseline Alerts": 823},
-        ]
-        st.dataframe(pd.DataFrame(master_data), width="stretch")
+        with lab_t1:
+            st.subheader("Controlled Ablation Progression (E0 to E6)")
+            master_df = get_research_lab_ablation_data()
+            st.dataframe(master_df, width="stretch")
 
-        st.markdown(r"""
-        ### Key Scientific Findings
-        - **E0 -> E1 (Scale Normalization):** Solved sample-size mismatch, allowing OnlyFans (11-12 posts) to be detected.
-        - **E1 -> E2 (Template Stripping):** Suppressed **82.4% (28/34)** of conversational question-template bursts while surfacing Hurricane Ida.
-        - **E2 -> E3 (Lexical Consistency Gate):** Eliminated the 24-checkpoint semantic drift pseudo-chain (`TRAJ_002`), capping max lifespan at 5 checkpoints.
-        - **E5 -> E6 (Two-Tier Architecture):** Mitigated the sensitivity-inflation trade-off by decoupling standard topic detection ($N \ge 7$) from quarantined incubation ($3 \le N < 7$).
-        """)
+            st.markdown(r"""
+            ### Key Scientific Findings
+            - **E0 -> E1 (Scale Normalization):** Solved sample-size mismatch, allowing OnlyFans (11-12 posts) to be detected.
+            - **E1 -> E2 (Template Stripping):** Suppressed **82.4% (28/34)** of conversational question-template bursts while surfacing Hurricane Ida.
+            - **E2 -> E3 (Lexical Consistency Gate):** Eliminated the 24-checkpoint semantic drift pseudo-chain (`TRAJ_002`), capping max lifespan at 5 checkpoints.
+            - **E5 -> E6 (Two-Tier Architecture):** Mitigated the sensitivity-inflation trade-off by decoupling standard topic detection ($N \ge 7$) from quarantined incubation ($3 \le N < 7$).
+            """)
 
-    with lab_t2:
-        st.subheader("Checkpoint Lead-Time & Observable Density Boundary")
-        if not eval_df.empty:
-            st.dataframe(eval_df, width="stretch", hide_index=True)
+        with lab_t2:
+            st.subheader("Checkpoint Lead-Time & Observable Density Boundary")
+            if not eval_df.empty:
+                st.dataframe(eval_df, width="stretch", hide_index=True)
 
-        st.markdown(r"""
-        ### Observable Detection Boundary
-        - **Single-Checkpoint Clustering Limit:** HDBSCAN requires at least $N = 3$ co-occurring posts to form a cluster core.
-        - Events with $\le 2$ posts per day (e.g. Reddit locked comments bug) are mathematically indistinguishable from noise within a single time slice.
-        - **Strategic Extension:** Continuous 48–72h sliding vector buffers to accumulate sparse signals across time slices.
-        """)
+            st.markdown(r"""
+            ### Observable Detection Boundary
+            - **Single-Checkpoint Clustering Limit:** HDBSCAN requires at least $N = 3$ co-occurring posts to form a cluster core.
+            - Events with $\le 2$ posts per day (e.g. Reddit locked comments bug) are mathematically indistinguishable from noise within a single time slice.
+            - **Strategic Extension:** Continuous 48–72h sliding vector buffers to accumulate sparse signals across time slices.
+            """)
 
+
+# ── Clear Page Transition Loader ──────────────────────────────────────────────
+clear_page_loader(page_loader)
 
 # -----------------------------------------------------------------------------
 # BOTTOM TECHNICAL PIPELINE PROCESS LOOP
 # -----------------------------------------------------------------------------
 render_pipeline_loop()
+

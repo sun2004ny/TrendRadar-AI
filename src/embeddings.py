@@ -17,6 +17,15 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_MODEL_NAME = "all-MiniLM-L6-v2"
 
+try:
+    import streamlit as st
+    @st.cache_resource
+    def get_sentence_transformer_model(model_name: str = DEFAULT_MODEL_NAME) -> SentenceTransformer:
+        return SentenceTransformer(model_name)
+except Exception:
+    def get_sentence_transformer_model(model_name: str = DEFAULT_MODEL_NAME) -> SentenceTransformer:
+        return SentenceTransformer(model_name)
+
 
 def generate_embeddings(
     input_path: Optional[Path] = None,
@@ -52,7 +61,7 @@ def generate_embeddings(
 
     logger.info("Loading Sentence-Transformer model '%s'...", model_name)
     start_model_load = time.time()
-    model = SentenceTransformer(model_name)
+    model = get_sentence_transformer_model(model_name)
     logger.info("Model loaded in %.2f seconds.", time.time() - start_model_load)
 
     logger.info("Generating embeddings for %d posts (batch size: %d)...", len(df), batch_size)
